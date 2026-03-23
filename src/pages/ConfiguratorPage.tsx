@@ -6,6 +6,7 @@ import { useCart } from '../context/CartContext';
 import { motion, AnimatePresence } from 'motion/react';
 import { ProductImageGallery } from '../components/ProductImageGallery';
 import { ColorisSelector, ROBINET_COLORIS } from '../components/ColorisSelector';
+import { defaultImages } from '../assets/products';
 
 interface ConfiguratorPageProps {
   navigate: (page: Page) => void;
@@ -219,7 +220,7 @@ export function ConfiguratorPage({ navigate }: ConfiguratorPageProps) {
         price: model.price,
         quantity: 1,
         type: 'Configuration personnalisée',
-        image: 'https://images.unsplash.com/photo-1701510453951-425c888e3407?w=400'
+        image: defaultImages.faucet
       });
       navigate('cart');
     }

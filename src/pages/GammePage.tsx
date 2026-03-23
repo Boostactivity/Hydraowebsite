@@ -4,6 +4,7 @@ import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { faucetModels, finishes } from '../data/products';
 import { ArrowRight, Check } from 'lucide-react';
 import { motion } from 'motion/react';
+import { defaultImages } from '../assets/products';
 
 interface GammePageProps {
   navigate: (page: Page, params?: any) => void;
@@ -82,7 +83,7 @@ export function GammePage({ navigate }: GammePageProps) {
               >
                 <div className="h-80 bg-gradient-to-br from-[#F5F1ED] to-white relative overflow-hidden">
                   <ImageWithFallback
-                    src="https://images.unsplash.com/photo-1701510453951-425c888e3407?w=600"
+                    src={defaultImages.faucet}
                     alt={model.name}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />

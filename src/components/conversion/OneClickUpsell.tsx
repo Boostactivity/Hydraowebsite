@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Plus, Check, Sparkles, TrendingUp, Shield, X } from 'lucide-react';
+import { defaultImages } from '../../assets/products';
 
 interface UpsellProduct {
   id: string;
@@ -47,7 +48,7 @@ export function OneClickUpsell({
         'Rappel avant chaque envoi',
         'Sans engagement, pausable'
       ],
-      image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=400',
+      image: defaultImages.faucet,
       badge: 'Recommandé'
     },
     {
@@ -63,7 +64,7 @@ export function OneClickUpsell({
         'Livraison tous les 3 mois',
         'Recyclage des cartouches'
       ],
-      image: 'https://images.unsplash.com/photo-1625772299848-391b6a87d7b3?w=400',
+      image: defaultImages.sparkling,
       badge: 'Populaire'
     },
     {
@@ -78,7 +79,7 @@ export function OneClickUpsell({
         'Hotline prioritaire 7j/7',
         'Transfert possible si déménagement'
       ],
-      image: 'https://images.unsplash.com/photo-1556740758-90de374c12ad?w=400',
+      image: defaultImages.boiling,
       badge: 'Tranquillité'
     }
   ];

@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 import { Page } from '../../App';
+import { defaultImages } from '../../assets/products';
 
 // DNS Preconnect pour origines externes
 const EXTERNAL_ORIGINS = [
-  'https://images.unsplash.com',
   'https://fonts.googleapis.com',
   'https://fonts.gstatic.com',
   'https://cdn.jsdelivr.net'
@@ -90,13 +90,13 @@ function prefetchRoute(page: Page) {
 function preloadCriticalAssets(page: Page) {
   const criticalAssets: Record<Page, string[]> = {
     'home': [
-      'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1200&q=80&fm=webp'
+      defaultImages.faucet
     ],
     'product': [
-      'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1200&q=80&fm=webp'
+      defaultImages.faucet
     ],
     'configurator': [
-      'https://images.unsplash.com/photo-1556909212-d5b604d0c90d?w=1200&q=80&fm=webp'
+      defaultImages.faucet
     ]
   };
 

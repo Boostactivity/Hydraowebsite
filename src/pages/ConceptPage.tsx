@@ -3,6 +3,7 @@ import { Page } from '../App';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { Flame, Droplet, Snowflake, Sparkles, Filter, Shield, Zap, Leaf, ArrowRight, Check } from 'lucide-react';
 import { motion } from 'motion/react';
+import { defaultImages } from '../assets/products';
 
 interface ConceptPageProps {
   navigate: (page: Page) => void;
@@ -137,7 +138,7 @@ export function ConceptPage({ navigate }: ConceptPageProps) {
               <div className="relative">
                 <div className="aspect-[4/3] bg-gradient-to-br from-[#F5F1ED] to-white rounded-3xl overflow-hidden shadow-xl border border-gray-200">
                   <ImageWithFallback
-                    src="https://images.unsplash.com/photo-1609716668247-d418f3d81159?w=800"
+                    src={defaultImages.boiling}
                     alt="Eau bouillante instantanée"
                     className="w-full h-full object-cover"
                   />
@@ -157,7 +158,7 @@ export function ConceptPage({ navigate }: ConceptPageProps) {
                 <div className="relative">
                   <div className="aspect-[4/3] bg-gradient-to-br from-[#F5F1ED] to-white rounded-3xl overflow-hidden shadow-xl border border-gray-200">
                     <ImageWithFallback
-                      src="https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=800"
+                      src={defaultImages.faucet}
                       alt="Eau filtrée pure"
                       className="w-full h-full object-cover"
                     />
@@ -225,7 +226,7 @@ export function ConceptPage({ navigate }: ConceptPageProps) {
               <div className="relative">
                 <div className="aspect-[4/3] bg-gradient-to-br from-[#F5F1ED] to-white rounded-3xl overflow-hidden shadow-xl border border-gray-200">
                   <ImageWithFallback
-                    src="https://images.unsplash.com/photo-1585421514738-01798e348b17?w=800"
+                    src={defaultImages.sparkling}
                     alt="Eau pétillante"
                     className="w-full h-full object-cover"
                   />
@@ -245,7 +246,7 @@ export function ConceptPage({ navigate }: ConceptPageProps) {
                 <div className="relative">
                   <div className="aspect-[4/3] bg-gradient-to-br from-[#F5F1ED] to-white rounded-3xl overflow-hidden shadow-xl border border-gray-200">
                     <ImageWithFallback
-                      src="https://images.unsplash.com/photo-1523362628745-0c100150b504?w=800"
+                      src={defaultImages.faucet}
                       alt="Eau réfrigérée"
                       className="w-full h-full object-cover"
                     />
@@ -313,7 +314,7 @@ export function ConceptPage({ navigate }: ConceptPageProps) {
               <div className="relative">
                 <div className="aspect-[4/3] bg-gradient-to-br from-[#F5F1ED] to-white rounded-3xl overflow-hidden shadow-xl border border-gray-200">
                   <ImageWithFallback
-                    src="https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=800"
+                    src={defaultImages.faucet}
                     alt="Mitigeur classique"
                     className="w-full h-full object-cover"
                   />
@@ -344,7 +345,7 @@ export function ConceptPage({ navigate }: ConceptPageProps) {
             <div className="bg-gradient-to-br from-[#FAF8F5] to-white p-10 lg:p-16 rounded-3xl shadow-xl border border-gray-200/50">
               <div className="aspect-video bg-gradient-to-br from-[#F5F1ED] to-white rounded-2xl mb-12 flex items-center justify-center border border-gray-200">
                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1200"
+                  src={defaultImages.faucet}
                   alt="Système sous évier HYDRAL"
                   className="w-full h-full object-cover rounded-2xl"
                 />

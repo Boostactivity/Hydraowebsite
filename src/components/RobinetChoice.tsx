@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { Droplets, Sparkles, Zap, Check, X } from 'lucide-react';
 import { ColorisSelector, ROBINET_COLORIS } from './ColorisSelector';
+import { defaultImages } from '../assets/products';
 
 type SKUType = 'pure' | 'spark' | 'one';
 
@@ -19,7 +20,7 @@ const ROBINETS = [
     price: 490,
     icon: Droplets,
     gradient: 'from-[#6B1E3E] to-[#8B2E5E]',
-    image: 'https://images.unsplash.com/photo-1765501789295-cc0f92e734bc?w=400',
+    image: defaultImages.faucet,
     
     // Fonctionnalités
     features: [
@@ -39,7 +40,7 @@ const ROBINETS = [
     price: 890,
     icon: Sparkles,
     gradient: 'from-[#6B1E3E] to-[#8B2E5E]',
-    image: 'https://images.unsplash.com/photo-1742729251293-fc42ab3ebcda?w=400',
+    image: defaultImages.sparkling,
     popular: true,
     
     // Fonctionnalités
@@ -60,7 +61,7 @@ const ROBINETS = [
     price: 990,
     icon: Zap,
     gradient: 'from-[#6B1E3E] to-[#8B2E5E]',
-    image: 'https://images.unsplash.com/photo-1773579223066-4b54a17ec8cc?w=400',
+    image: defaultImages.boiling,
     recommended: true,
     
     // Fonctionnalités

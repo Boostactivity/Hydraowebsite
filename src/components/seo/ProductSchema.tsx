@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import chromeFaucet from '../../assets/products/chrome-faucet.png';
 
 interface ProductSchemaProps {
   name: string;
@@ -110,7 +111,7 @@ export function HYDRALProductSchema() {
     <ProductSchema
       name="HYDRAL Robinet 5-en-1"
       description="Robinet intelligent haut de gamme 5-en-1 : eau filtrée, pétillante, bouillante, froide et chaude. Installation simple, design premium, économies garanties."
-      image="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1200"
+      image={chromeFaucet}
       price={490}
       priceCurrency="EUR"
       availability="InStock"

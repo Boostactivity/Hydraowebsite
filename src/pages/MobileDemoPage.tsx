@@ -5,6 +5,7 @@ import { Page } from '../App';
 import { MobileOptimizedVideo } from '../components/mobile/MobileOptimizedVideo';
 import { TouchGestureCarousel, PinchZoomImage } from '../components/mobile/TouchGestureCarousel';
 import { MobileInput, MobileSelect, MobileForm, commonValidations } from '../components/mobile/MobileForms';
+import { defaultImages } from '../assets/products';
 
 interface MobileDemoPageProps {
   navigate: (page: Page) => void;
@@ -105,7 +106,7 @@ export function MobileDemoPage({ navigate }: MobileDemoPageProps) {
 
             <MobileOptimizedVideo
               src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-              poster="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800"
+              poster={defaultImages.faucet}
               title="HYDRAL en action"
               duration="2:30"
               autoPlay={false}
@@ -157,7 +158,7 @@ export function MobileDemoPage({ navigate }: MobileDemoPageProps) {
             <div className="mt-8">
               <h3 className="text-xl text-gray-900 mb-4">Pinch to Zoom</h3>
               <PinchZoomImage
-                src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800"
+                src={defaultImages.faucet}
                 alt="HYDRAL robinet détail"
                 className="aspect-video rounded-2xl"
               />

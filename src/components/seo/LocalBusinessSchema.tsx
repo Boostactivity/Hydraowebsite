@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import chromeFaucet from '../../assets/products/chrome-faucet.png';
 
 interface LocalBusinessSchemaProps {
   name?: string;
@@ -55,7 +56,7 @@ export function LocalBusinessSchema({
     '@id': 'https://hydral.fr',
     name,
     description,
-    image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1200',
+    image: chromeFaucet,
     telephone,
     email,
     url: 'https://hydral.fr',

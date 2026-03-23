@@ -5,6 +5,7 @@ import { Droplets, Sparkles, Zap, Check, X, ChevronDown, ShoppingCart, TrendingD
 import { Page } from '../App';
 import { ColorisSelector, ROBINET_COLORIS } from './ColorisSelector';
 import { ProductImageGallery } from './ProductImageGallery';
+import { defaultImages } from '../assets/products';
 
 // Types
 type SKUType = 'pure' | 'spark' | 'one';
@@ -89,7 +90,7 @@ const ROBINETS = [
     tagline: 'L\'essentiel premium',
     price: 490,
     icon: Droplets,
-    image: 'https://images.unsplash.com/photo-1765501789295-cc0f92e734bc?w=400',
+    image: defaultImages.faucet,
     features: [
       { label: 'Eau filtrée', desc: 'Chlore éliminé, goût amélioré', included: true },
       { label: 'Eau bouillante instantanée', desc: '100°C à la demande, fini la bouilloire', included: true },
@@ -105,7 +106,7 @@ const ROBINETS = [
     tagline: 'Le préféré des familles',
     price: 890,
     icon: Sparkles,
-    image: 'https://images.unsplash.com/photo-1742729251293-fc42ab3ebcda?w=400',
+    image: defaultImages.sparkling,
     features: [
       { label: 'Eau filtrée', desc: 'Chlore éliminé, goût amélioré', included: true },
       { label: 'Eau gazeuse à la demande', desc: 'Fini les bouteilles Perrier/Badoit', included: true },
@@ -120,7 +121,7 @@ const ROBINETS = [
     tagline: 'Le plus choisi',
     price: 990,
     icon: Zap,
-    image: 'https://images.unsplash.com/photo-1773579223066-4b54a17ec8cc?w=400',
+    image: defaultImages.boiling,
     recommended: true,
     popular: true,
     features: [

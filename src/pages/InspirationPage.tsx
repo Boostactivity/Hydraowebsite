@@ -2,6 +2,7 @@ import React from 'react';
 import { Page } from '../App';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { ArrowRight } from 'lucide-react';
+import { productImages, defaultImages } from '../assets/products';
 
 interface InspirationPageProps {
   navigate: (page: Page) => void;
@@ -36,15 +37,22 @@ export function InspirationPage({ navigate }: InspirationPageProps) {
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <h2 className="text-center mb-12 text-gray-900">Cuisines équipées HYDRAL</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-            {[1, 2, 3, 4, 5, 6].map(i => (
+            {[
+              { img: productImages['chrome'].faucet, style: 'Moderne' },
+              { img: productImages['gold'].faucet, style: 'Classique' },
+              { img: productImages['gunmetal'].faucet, style: 'Industriel' },
+              { img: productImages['brushed'].faucet, style: 'Scandinave' },
+              { img: productImages['black-matt'].faucet, style: 'Minimaliste' },
+              { img: productImages['chrome'].sparkling, style: 'Contemporary' },
+            ].map((item, i) => (
               <div key={i} className="group relative aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all">
                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1639405069836-f82aa6dcb900?w=800"
-                  alt={`Cuisine ${i}`}
+                  src={item.img}
+                  alt={`Cuisine ${item.style}`}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
-                  <p className="text-white">Style {i === 1 ? 'Moderne' : i === 2 ? 'Classique' : i === 3 ? 'Industriel' : i === 4 ? 'Scandinave' : i === 5 ? 'Minimaliste' : 'Contemporary'}</p>
+                  <p className="text-white">Style {item.style}</p>
                 </div>
               </div>
             ))}

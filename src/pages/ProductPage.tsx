@@ -6,6 +6,7 @@ import { Check, ChevronRight, Download } from 'lucide-react';
 import { motion } from 'motion/react';
 import { UnderSinkChecker } from '../components/tools/UnderSinkChecker';
 import { ExpressCheckoutBadges } from '../components/ExpressCheckoutBadges';
+import { productImages, defaultImages } from '../assets/products';
 
 interface ProductPageProps {
   navigate: (page: Page) => void;
@@ -78,7 +79,7 @@ export function ProductPage({ navigate, productId }: ProductPageProps) {
                 
                 <div className="relative aspect-square bg-gradient-to-br from-[#F5F1ED] to-white rounded-3xl overflow-hidden shadow-2xl border border-gray-200">
                   <ImageWithFallback
-                    src="https://images.unsplash.com/photo-1701510453951-425c888e3407?w=1000"
+                    src={(productImages[selectedFinish as keyof typeof productImages] || defaultImages).faucet}
                     alt={product.name}
                     className="w-full h-full object-cover"
                   />
@@ -86,12 +87,12 @@ export function ProductPage({ navigate, productId }: ProductPageProps) {
               </div>
 
               {/* Miniatures */}
-              <div className="grid grid-cols-4 gap-4 mt-6">
-                {[1, 2, 3, 4].map(i => (
-                  <div key={i} className="aspect-square bg-white rounded-xl border border-gray-200 overflow-hidden hover:border-[#6B1E3E]/40 transition-all cursor-pointer">
+              <div className="grid grid-cols-3 gap-4 mt-6">
+                {(['faucet', 'sparkling', 'boiling'] as const).map(view => (
+                  <div key={view} className="aspect-square bg-white rounded-xl border border-gray-200 overflow-hidden hover:border-[#6B1E3E]/40 transition-all cursor-pointer">
                     <ImageWithFallback
-                      src={`https://images.unsplash.com/photo-${1556909212 + i * 1000}-d5b604d0c90d?w=200`}
-                      alt={`${product.name} - Vue ${i}`}
+                      src={(productImages[selectedFinish as keyof typeof productImages] || defaultImages)[view]}
+                      alt={`${product.name} - ${view}`}
                       className="w-full h-full object-cover"
                     />
                   </div>
