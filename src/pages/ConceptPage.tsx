@@ -12,7 +12,7 @@ export function ConceptPage({ navigate }: ConceptPageProps) {
   return (
     <div className="bg-[#FAF8F5]">
       {/* Hero - Storytelling du problème avant la solution */}
-      <section className="relative pt-40 pb-32 bg-gradient-to-br from-white via-[#FAF8F5] to-[#E8D5DC]/10">
+      <section className="relative pt-24 sm:pt-32 lg:pt-40 pb-16 sm:pb-24 lg:pb-32 bg-gradient-to-br from-white via-[#FAF8F5] to-[#E8D5DC]/10">
         <div className="max-w-5xl mx-auto px-6 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

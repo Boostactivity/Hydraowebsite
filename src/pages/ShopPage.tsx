@@ -38,7 +38,7 @@ export function ShopPage({ navigate }: ShopPageProps) {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero ultra-minimaliste */}
-      <section className="relative pt-40 pb-24 bg-white">
+      <section className="relative pt-24 sm:pt-32 lg:pt-40 pb-16 sm:pb-24 bg-white">
         <div className="max-w-4xl mx-auto px-6 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -194,7 +194,7 @@ export function ShopPage({ navigate }: ShopPageProps) {
             </motion.button>
             <motion.button
               onClick={() => navigate('support')}
-              className="px-10 py-4 border border-gray-300 text-gray-700 rounded-full text-sm hover:border-[#6B1E3E] hover:text-[#6B1E3E] transition-colors"
+              className="px-10 py-4 border border-[#6B1E3E]/30 text-[#6B1E3E] rounded-full text-sm hover:border-[#6B1E3E] hover:bg-[#6B1E3E]/5 transition-colors"
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.98 }}
             >

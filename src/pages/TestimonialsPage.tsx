@@ -94,7 +94,7 @@ export function TestimonialsPage({ navigate }: TestimonialsPageProps) {
   return (
     <div className="min-h-screen bg-[#FAF8F5]">
       {/* Hero */}
-      <section className="pt-32 pb-20 bg-gradient-to-br from-white via-[#FAF8F5] to-[#E8D5DC]/10">
+      <section className="pt-20 sm:pt-28 lg:pt-32 pb-12 sm:pb-16 lg:pb-20 bg-gradient-to-br from-white via-[#FAF8F5] to-[#E8D5DC]/10">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

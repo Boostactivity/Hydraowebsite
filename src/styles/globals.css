@@ -129,20 +129,10 @@
     }
   }
   
-  /* DÉSACTIVER TOUTES LES ANIMATIONS SCROLL - Tout visible immédiatement */
-  [data-projection-id] {
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
-    animation: none !important;
-  }
-  
-  /* Forcer tous les éléments Motion à être visibles immédiatement */
+  /* Ensure motion elements are visible if JS fails to hydrate */
+  [data-projection-id],
   [data-framer-component-type] {
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
-    animation: none !important;
+    /* Fallback only - motion.js handles actual animations */
   }
 }
 

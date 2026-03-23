@@ -11,7 +11,7 @@ export function CubePage({ navigate }: CubePageProps) {
   return (
     <div className="min-h-screen bg-[#FAF8F5]">
       {/* Hero */}
-      <section className="relative pt-32 pb-16 bg-gradient-to-br from-white via-[#FAF8F5] to-[#E8D5DC]/20 overflow-hidden">
+      <section className="relative pt-20 sm:pt-28 lg:pt-32 pb-12 sm:pb-16 bg-gradient-to-br from-white via-[#FAF8F5] to-[#E8D5DC]/20 overflow-hidden">
         <div className="absolute top-20 right-10 w-72 h-72 bg-[#E8D5DC]/30 rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 left-10 w-96 h-96 bg-[#D4AF37]/10 rounded-full blur-3xl"></div>
 

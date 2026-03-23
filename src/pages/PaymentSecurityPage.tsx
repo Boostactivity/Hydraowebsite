@@ -9,7 +9,7 @@ interface PaymentSecurityPageProps {
 
 export function PaymentSecurityPage({ navigate }: PaymentSecurityPageProps) {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 py-20">
+    <div className="min-h-screen bg-[#FAF8F5] py-20">
       <div className="container mx-auto px-4 max-w-6xl">
         {/* Hero */}
         <motion.div
@@ -17,14 +17,14 @@ export function PaymentSecurityPage({ navigate }: PaymentSecurityPageProps) {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-16"
         >
-          <div className="w-20 h-20 rounded-full bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center mx-auto mb-6">
-            <Lock className="w-10 h-10 text-white" />
+          <div className="w-20 h-20 rounded-full bg-[#6B1E3E]/10 flex items-center justify-center mx-auto mb-6">
+            <Lock className="w-10 h-10 text-[#6B1E3E]" />
           </div>
-          
-          <h1 className="text-5xl font-bold text-gray-900 mb-4">
+
+          <h1 className="mb-6 text-gray-900">
             Paiement 100% Sécurisé
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-[#8B7E74] max-w-2xl mx-auto">
             Vos données bancaires sont protégées par les technologies de sécurité les plus avancées
           </p>
         </motion.div>
@@ -77,7 +77,7 @@ export function PaymentSecurityPage({ navigate }: PaymentSecurityPageProps) {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl p-8 mb-12 border-2 border-blue-200"
+          className="bg-gradient-to-br from-[#FAF8F5] to-[#E8D5DC]/20 rounded-3xl p-8 mb-12 border border-gray-200/60"
         >
           <h2 className="text-3xl font-semibold text-gray-900 mb-8 text-center">
             Comment nous protégeons vos données
@@ -210,7 +210,7 @@ export function PaymentSecurityPage({ navigate }: PaymentSecurityPageProps) {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-3xl p-8 mb-12 border-2 border-purple-200"
+          className="bg-gradient-to-br from-white to-[#E8D5DC]/10 rounded-3xl p-8 mb-12 border border-gray-200/60"
         >
           <h2 className="text-3xl font-semibold text-gray-900 mb-8 text-center">
             Flux de paiement sécurisé

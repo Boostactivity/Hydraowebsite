@@ -147,7 +147,7 @@ export function VideoHubPage({ navigate }: VideoHubPageProps) {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 py-20">
+    <div className="min-h-screen bg-[#FAF8F5] py-20">
       <div className="container mx-auto px-4 max-w-7xl">
         {/* Hero */}
         <motion.div
@@ -155,13 +155,13 @@ export function VideoHubPage({ navigate }: VideoHubPageProps) {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-16"
         >
-          <div className="w-20 h-20 rounded-full bg-gradient-to-br from-red-500 to-pink-600 flex items-center justify-center mx-auto mb-6">
-            <Video className="w-10 h-10 text-white" />
+          <div className="w-20 h-20 rounded-full bg-[#6B1E3E]/10 flex items-center justify-center mx-auto mb-6">
+            <Video className="w-10 h-10 text-[#6B1E3E]" />
           </div>
-          <h1 className="text-5xl font-bold text-gray-900 mb-4">
+          <h1 className="mb-6 text-gray-900">
             Vidéothèque HYDRAL
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-[#8B7E74] max-w-2xl mx-auto">
             Tutoriels, témoignages et inspirations pour devenir un pro HYDRAL
           </p>
         </motion.div>
@@ -186,10 +186,10 @@ export function VideoHubPage({ navigate }: VideoHubPageProps) {
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`px-6 py-2 rounded-full font-medium transition-all ${
+                className={`px-6 py-2 rounded-full text-sm font-medium transition-all ${
                   selectedCategory === cat
-                    ? 'bg-gradient-to-r from-red-500 to-pink-600 text-white shadow-lg'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                    ? 'bg-[#6B1E3E] text-white shadow-lg'
+                    : 'bg-white border border-gray-200 text-gray-700 hover:border-[#6B1E3E] hover:text-[#6B1E3E]'
                 }`}
               >
                 {cat}
@@ -249,17 +249,17 @@ export function VideoHubPage({ navigate }: VideoHubPageProps) {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-16 bg-gradient-to-r from-red-500 to-pink-600 rounded-3xl p-12 text-center text-white"
+          className="mt-16 bg-gradient-to-r from-[#6B1E3E] to-[#8B2E54] rounded-3xl p-12 text-center text-white"
         >
           <Video className="w-16 h-16 mx-auto mb-6 text-white/90" />
-          <h2 className="text-3xl font-semibold mb-4">
+          <h2 className="mb-4 text-white">
             Nouveautés vidéo chaque semaine
           </h2>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
             Abonnez-vous pour recevoir nos derniers tutoriels et témoignages
           </p>
-          
-          <button className="px-8 py-4 bg-white text-red-600 rounded-full font-semibold hover:shadow-xl transition-all">
+
+          <button className="px-8 py-4 bg-white text-[#6B1E3E] rounded-full font-medium hover:shadow-xl transition-all">
             S'abonner à la chaîne YouTube
           </button>
         </motion.div>
@@ -295,12 +295,12 @@ function FeaturedVideoCard({ video, onClick }: { video: VideoContent; onClick: (
       
       <div className="p-6">
         <div className="flex items-center gap-3 mb-3">
-          <span className="px-3 py-1 bg-red-100 text-red-700 rounded-full text-xs font-medium">
+          <span className="px-3 py-1 bg-[#6B1E3E]/10 text-[#6B1E3E] rounded-full text-xs font-medium">
             {video.category}
           </span>
         </div>
 
-        <h3 className="font-bold text-gray-900 mb-2 group-hover:text-red-600 transition-colors line-clamp-2">
+        <h3 className="font-bold text-gray-900 mb-2 group-hover:text-[#6B1E3E] transition-colors line-clamp-2">
           {video.title}
         </h3>
         
@@ -352,7 +352,7 @@ function VideoCard({ video, onClick }: { video: VideoContent; onClick: () => voi
           </span>
         </div>
 
-        <h3 className="font-semibold text-gray-900 mb-2 group-hover:text-red-600 transition-colors line-clamp-2">
+        <h3 className="font-semibold text-gray-900 mb-2 group-hover:text-[#6B1E3E] transition-colors line-clamp-2">
           {video.title}
         </h3>
         
@@ -407,7 +407,7 @@ function VideoPlayer({ video, onBack, navigate }: { video: VideoContent; onBack:
         {/* Video Info */}
         <div className="bg-white rounded-3xl p-8">
           <div className="mb-6">
-            <span className="inline-block px-4 py-2 bg-red-100 text-red-700 rounded-full text-sm font-semibold mb-4">
+            <span className="inline-block px-4 py-2 bg-[#6B1E3E]/10 text-[#6B1E3E] rounded-full text-sm font-semibold mb-4">
               {video.category}
             </span>
             <h1 className="text-3xl font-bold text-gray-900 mb-4">

@@ -331,7 +331,7 @@ export function CheckoutPage({ navigate }: CheckoutPageProps) {
                     <button
                       type="button"
                       onClick={() => setStep('info')}
-                      className="flex-1 px-8 py-4 border-2 border-gray-300 text-gray-700 rounded-full hover:border-[#6B1E3E] hover:text-[#6B1E3E] transition-colors"
+                      className="flex-1 px-8 py-4 border border-[#6B1E3E]/30 text-[#6B1E3E] rounded-full hover:border-[#6B1E3E] hover:bg-[#6B1E3E]/5 transition-colors"
                     >
                       Retour
                     </button>

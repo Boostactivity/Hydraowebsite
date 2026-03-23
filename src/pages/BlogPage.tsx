@@ -179,7 +179,7 @@ export function BlogPage({ navigate }: BlogPageProps) {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 py-20">
+    <div className="min-h-screen bg-[#FAF8F5] py-20">
       <div className="container mx-auto px-4 max-w-7xl">
         {/* Hero */}
         <motion.div
@@ -187,10 +187,10 @@ export function BlogPage({ navigate }: BlogPageProps) {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-16"
         >
-          <h1 className="text-5xl font-bold text-gray-900 mb-4">
+          <h1 className="mb-6 text-gray-900">
             Blog HYDRAL
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-[#8B7E74] max-w-2xl mx-auto">
             Inspirations, conseils et guides pour tirer le meilleur de votre robinet 5-en-1
           </p>
         </motion.div>
@@ -414,11 +414,11 @@ function BlogPostCard({ post, onClick }: { post: BlogPost; onClick: () => void }
 
 function BlogPostView({ post, onBack, navigate }: { post: BlogPost; onBack: () => void; navigate: (page: Page) => void }) {
   return (
-    <div className="min-h-screen bg-white py-20">
+    <div className="min-h-screen bg-[#FAF8F5] py-20">
       <div className="container mx-auto px-4 max-w-4xl">
         <button
           onClick={onBack}
-          className="flex items-center gap-2 text-gray-600 hover:text-[#6B1E3E] transition-colors mb-8"
+          className="flex items-center gap-2 text-[#8B7E74] hover:text-[#6B1E3E] transition-colors mb-8"
         >
           <ArrowRight className="w-5 h-5 rotate-180" />
           <span>Retour aux articles</span>
@@ -426,10 +426,10 @@ function BlogPostView({ post, onBack, navigate }: { post: BlogPost; onBack: () =
 
         <article>
           <div className="mb-8">
-            <span className="inline-block px-4 py-2 bg-[#6B1E3E] text-white rounded-full text-sm font-semibold mb-4">
+            <span className="inline-block px-4 py-2 bg-[#6B1E3E] text-white rounded-full text-sm font-medium mb-4">
               {post.category}
             </span>
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">
+            <h1 className="mb-4 text-gray-900">
               {post.title}
             </h1>
             <div className="flex items-center gap-6 text-gray-600">

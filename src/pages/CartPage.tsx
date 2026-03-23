@@ -44,7 +44,7 @@ export function CartPage({ navigate }: CartPageProps) {
               </motion.button>
               <motion.button
                 onClick={() => navigate('gamme')}
-                className="px-12 py-5 border-2 border-gray-300 text-gray-700 rounded-full text-lg hover:border-[#6B1E3E] hover:text-[#6B1E3E] transition-colors"
+                className="px-12 py-5 border border-[#6B1E3E]/30 text-[#6B1E3E] rounded-full text-lg hover:border-[#6B1E3E] hover:bg-[#6B1E3E]/5 transition-colors"
                 whileHover={{ scale: 1.05, y: -3 }}
                 whileTap={{ scale: 0.98 }}
               >

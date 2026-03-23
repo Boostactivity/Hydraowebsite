@@ -83,7 +83,7 @@ export function ResourcesPage({ navigate }: ResourcesPageProps) {
   const [activeTab, setActiveTab] = useState<'guides' | 'videos' | 'blog' | 'cases' | 'faq'>('guides');
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 py-20">
+    <div className="min-h-screen bg-[#FAF8F5] py-20">
       <div className="container mx-auto px-4 max-w-7xl">
         {/* Hero */}
         <motion.div
@@ -91,10 +91,10 @@ export function ResourcesPage({ navigate }: ResourcesPageProps) {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-16"
         >
-          <h1 className="text-5xl font-bold text-gray-900 mb-4">
+          <h1 className="mb-6 text-gray-900">
             Centre de ressources HYDRAL
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-[#8B7E74] max-w-2xl mx-auto">
             Tout ce dont vous avez besoin pour devenir un expert HYDRAL
           </p>
         </motion.div>
@@ -166,7 +166,7 @@ function VideosTab({ navigate }: { navigate: (page: Page) => void }) {
       </p>
       <button
         onClick={() => navigate('home')}
-        className="px-8 py-4 bg-gradient-to-r from-red-500 to-pink-600 text-white rounded-full font-semibold hover:shadow-xl transition-all"
+        className="px-8 py-4 bg-[#6B1E3E] text-white rounded-full font-medium hover:bg-[#6B1E3E]/90 hover:shadow-xl transition-all"
       >
         Accéder aux vidéos
       </button>

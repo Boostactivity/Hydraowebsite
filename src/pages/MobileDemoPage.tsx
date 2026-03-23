@@ -40,7 +40,7 @@ export function MobileDemoPage({ navigate }: MobileDemoPageProps) {
     {
       id: '2',
       content: (
-        <div className="bg-gradient-to-br from-blue-600 to-cyan-600 rounded-3xl p-8 text-white">
+        <div className="bg-gradient-to-br from-[#6B1E3E]/80 to-[#8B2E4E] rounded-3xl p-8 text-white">
           <h3 className="text-2xl mb-4">Eau Pétillante</h3>
           <p className="text-white/90 mb-4">3 niveaux de gazéification</p>
           <div className="aspect-video bg-white/10 rounded-2xl" />
@@ -50,7 +50,7 @@ export function MobileDemoPage({ navigate }: MobileDemoPageProps) {
     {
       id: '3',
       content: (
-        <div className="bg-gradient-to-br from-green-600 to-emerald-600 rounded-3xl p-8 text-white">
+        <div className="bg-gradient-to-br from-[#4B1528] to-[#6B1E3E] rounded-3xl p-8 text-white">
           <h3 className="text-2xl mb-4">Eau Chaude</h3>
           <p className="text-white/90 mb-4">100°C instantané</p>
           <div className="aspect-video bg-white/10 rounded-2xl" />

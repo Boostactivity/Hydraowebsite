@@ -63,7 +63,7 @@ export function ProductPage({ navigate, productId }: ProductPageProps) {
   return (
     <div className="bg-[#FAF8F5] min-h-screen">
       {/* Hero avec storytelling */}
-      <section className="pt-32 pb-20 bg-gradient-to-br from-white via-[#FAF8F5] to-[#E8D5DC]/10">
+      <section className="pt-20 sm:pt-28 lg:pt-32 pb-12 sm:pb-16 lg:pb-20 bg-gradient-to-br from-white via-[#FAF8F5] to-[#E8D5DC]/10">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Image du produit */}
@@ -122,7 +122,7 @@ export function ProductPage({ navigate, productId }: ProductPageProps) {
               <div className="mb-10 p-8 bg-white border border-gray-200/60 rounded-2xl">
                 <p className="text-sm text-[#8B7E74] mb-2">À partir de</p>
                 <div className="flex items-baseline gap-2 mb-3">
-                  <span className="text-6xl text-gray-900">{BASE_PRICE}€</span>
+                  <span className="text-4xl sm:text-5xl lg:text-6xl text-gray-900">{BASE_PRICE}€</span>
                   <span className="text-xl text-[#8B7E74]">TTC</span>
                 </div>
                 <p className="text-sm text-[#8B7E74]">Installation et garantie 5 ans incluses</p>
@@ -156,11 +156,11 @@ export function ProductPage({ navigate, productId }: ProductPageProps) {
                 </motion.button>
                 
                 <motion.button
-                  className="px-6 py-4 bg-white border border-gray-300 rounded-full hover:border-[#6B1E3E]/40 transition-all flex items-center justify-center"
+                  className="px-6 py-4 bg-white border border-[#6B1E3E]/30 rounded-full hover:border-[#6B1E3E] hover:bg-[#6B1E3E]/5 transition-all flex items-center justify-center"
                   whileHover={{ scale: 1.02, y: -2 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  <Download className="w-5 h-5 text-gray-900" />
+                  <Download className="w-5 h-5 text-[#6B1E3E]" />
                 </motion.button>
               </div>
 

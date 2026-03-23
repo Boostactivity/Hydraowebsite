@@ -86,7 +86,7 @@ export function VirtualShowroom({ navigate }: VirtualShowroomProps) {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 px-4 py-2 bg-cyan-500/20 rounded-full text-cyan-400 text-sm font-semibold mb-4"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-[#6B1E3E]/30 rounded-full text-[#E8D5DC] text-sm font-medium mb-4"
           >
             <Sparkles className="w-4 h-4" />
             <span>EXPÉRIENCE IMMERSIVE</span>
@@ -96,7 +96,7 @@ export function VirtualShowroom({ navigate }: VirtualShowroomProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-5xl font-bold text-white mb-4"
+            className="text-white mb-4"
           >
             Showroom Virtuel 3D
           </motion.h1>
@@ -331,7 +331,7 @@ export function VirtualShowroom({ navigate }: VirtualShowroomProps) {
         <div className="mt-12 text-center">
           <motion.button
             onClick={() => navigate('configurator')}
-            className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-2xl font-semibold text-lg hover:from-cyan-600 hover:to-blue-700 transition-colors shadow-lg"
+            className="px-8 py-4 bg-white text-[#6B1E3E] rounded-full font-medium text-lg hover:bg-[#FAF8F5] transition-colors shadow-lg"
             whileHover={{ scale: 1.05, y: -3 }}
             whileTap={{ scale: 0.98 }}
           >
@@ -348,7 +348,7 @@ export function VirtualShowroomCTA({ onClick }: { onClick: () => void }) {
   return (
     <motion.button
       onClick={onClick}
-      className="px-6 py-4 bg-gradient-to-r from-purple-500 to-pink-600 text-white rounded-2xl font-semibold flex items-center justify-center gap-2 hover:from-purple-600 hover:to-pink-700 transition-colors shadow-lg"
+      className="px-6 py-4 bg-[#6B1E3E] text-white rounded-full font-medium flex items-center justify-center gap-2 hover:bg-[#6B1E3E]/90 transition-colors shadow-lg"
       whileHover={{ scale: 1.05, y: -2 }}
       whileTap={{ scale: 0.98 }}
     >

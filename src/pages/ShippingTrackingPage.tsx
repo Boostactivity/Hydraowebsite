@@ -82,7 +82,7 @@ export function ShippingTrackingPage({ navigate }: TrackingPageProps) {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 py-20">
+    <div className="min-h-screen bg-[#FAF8F5] py-20">
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
         <motion.div
@@ -90,13 +90,13 @@ export function ShippingTrackingPage({ navigate }: TrackingPageProps) {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-12"
         >
-          <div className="w-20 h-20 rounded-full bg-gradient-to-br from-blue-500 to-cyan-600 flex items-center justify-center mx-auto mb-6">
-            <Truck className="w-10 h-10 text-white" />
+          <div className="w-20 h-20 rounded-full bg-[#6B1E3E]/10 flex items-center justify-center mx-auto mb-6">
+            <Truck className="w-10 h-10 text-[#6B1E3E]" />
           </div>
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+          <h1 className="mb-6 text-gray-900">
             Suivi de commande
           </h1>
-          <p className="text-xl text-gray-600">
+          <p className="text-xl text-[#8B7E74]">
             Suivez votre HYDRAL en temps réel jusqu'à la livraison
           </p>
         </motion.div>

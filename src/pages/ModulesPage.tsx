@@ -9,11 +9,14 @@ interface ModulesPageProps {
 
 export function ModulesPage({ navigate }: ModulesPageProps) {
   return (
-    <div className="bg-white">
-      <section className="py-20 bg-gradient-to-br from-[#6B1E3E] to-[#8B2E54] text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl mb-6">Les modules sous évier</h1>
-          <p className="text-2xl text-white/90 max-w-3xl mx-auto">
+    <div className="bg-[#FAF8F5]">
+      <section className="relative pt-24 sm:pt-32 lg:pt-40 pb-16 sm:pb-24 lg:pb-32 bg-gradient-to-br from-white via-[#FAF8F5] to-[#E8D5DC]/10">
+        <div className="max-w-5xl mx-auto px-6 lg:px-12 text-center">
+          <h1 className="mb-8">
+            <span className="block text-gray-900">Les modules sous évier</span>
+            <span className="block text-[#6B1E3E]">Compacts et performants</span>
+          </h1>
+          <p className="text-xl text-[#8B7E74] leading-relaxed max-w-3xl mx-auto">
             Compacts, silencieux et ultra-performants. Choisissez les modules adaptés à vos besoins.
           </p>
         </div>

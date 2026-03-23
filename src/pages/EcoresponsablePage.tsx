@@ -11,7 +11,7 @@ export function EcoresponsablePage({ navigate }: EcoresponsablePageProps) {
   return (
     <div className="min-h-screen bg-[#FAF8F5]">
       {/* Hero */}
-      <section className="relative pt-40 pb-32 bg-gradient-to-br from-white via-[#FAF8F5] to-[#E8D5DC]/10">
+      <section className="relative pt-24 sm:pt-32 lg:pt-40 pb-16 sm:pb-24 lg:pb-32 bg-gradient-to-br from-white via-[#FAF8F5] to-[#E8D5DC]/10">
         <div className="max-w-5xl mx-auto px-6 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -55,7 +55,7 @@ export function EcoresponsablePage({ navigate }: EcoresponsablePageProps) {
               viewport={{ once: true }}
               className="p-8 bg-gradient-to-br from-[#FAF8F5] to-white rounded-3xl border border-gray-200 text-center"
             >
-              <div className="text-5xl text-[#6B1E3E] mb-4">7-9 Mds</div>
+              <div className="text-3xl sm:text-4xl lg:text-5xl text-[#6B1E3E] mb-4">7-9 Mds</div>
               <h3 className="text-lg text-gray-900 mb-2">Bouteilles/an</h3>
               <p className="text-sm text-[#8B7E74]">Consommées en France chaque année</p>
             </motion.div>
@@ -67,7 +67,7 @@ export function EcoresponsablePage({ navigate }: EcoresponsablePageProps) {
               transition={{ delay: 0.1 }}
               className="p-8 bg-gradient-to-br from-[#FAF8F5] to-white rounded-3xl border border-gray-200 text-center"
             >
-              <div className="text-5xl text-[#6B1E3E] mb-4">150 000 t</div>
+              <div className="text-3xl sm:text-4xl lg:text-5xl text-[#6B1E3E] mb-4">150 000 t</div>
               <h3 className="text-lg text-gray-900 mb-2">Déchets plastique</h3>
               <p className="text-sm text-[#8B7E74]">Soit 10 kg par personne et par an</p>
             </motion.div>
@@ -79,7 +79,7 @@ export function EcoresponsablePage({ navigate }: EcoresponsablePageProps) {
               transition={{ delay: 0.2 }}
               className="p-8 bg-gradient-to-br from-[#FAF8F5] to-white rounded-3xl border border-gray-200 text-center"
             >
-              <div className="text-5xl text-[#6B1E3E] mb-4">50%</div>
+              <div className="text-3xl sm:text-4xl lg:text-5xl text-[#6B1E3E] mb-4">50%</div>
               <h3 className="text-lg text-gray-900 mb-2">Non recyclées</h3>
               <p className="text-sm text-[#8B7E74]">1 bouteille sur 2 finit incinérée ou dans la nature</p>
             </motion.div>
@@ -91,7 +91,7 @@ export function EcoresponsablePage({ navigate }: EcoresponsablePageProps) {
               transition={{ delay: 0.3 }}
               className="p-8 bg-gradient-to-br from-[#FAF8F5] to-white rounded-3xl border border-gray-200 text-center"
             >
-              <div className="text-5xl text-[#6B1E3E] mb-4">300 km</div>
+              <div className="text-3xl sm:text-4xl lg:text-5xl text-[#6B1E3E] mb-4">300 km</div>
               <h3 className="text-lg text-gray-900 mb-2">Distance moyenne</h3>
               <p className="text-sm text-[#8B7E74]">Parcourue par une bouteille avant consommation</p>
             </motion.div>
