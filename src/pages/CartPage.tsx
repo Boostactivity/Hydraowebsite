@@ -31,7 +31,7 @@ export function CartPage({ navigate }: CartPageProps) {
             </div>
             <h1 className="mb-6 text-gray-900">Votre panier est vide</h1>
             <p className="text-xl text-[#8B7E74] mb-10">
-              Configurez votre robinet HYDRAO en 3 minutes.
+              Configurez votre robinet HYDRAL en 3 minutes.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <motion.button
@@ -136,7 +136,7 @@ export function CartPage({ navigate }: CartPageProps) {
                   <div className="flex-1">
                     <h3 className="text-xl text-gray-900 mb-2">Installation professionnelle</h3>
                     <p className="text-[#8B7E74] mb-4 leading-relaxed">
-                      Un installateur agréé HYDRAO intervient chez vous sous 7-10 jours. Installation complète en 2-3h (raccordement, boiler, tests).
+                      Un installateur agréé HYDRAL intervient chez vous sous 7-10 jours. Installation complète en 2-3h (raccordement, boiler, tests).
                     </p>
                     <button
                       onClick={(e) => {
@@ -163,7 +163,7 @@ export function CartPage({ navigate }: CartPageProps) {
                           </li>
                           <li className="flex items-start gap-2">
                             <Check className="w-4 h-4 text-[#6B1E3E] flex-shrink-0 mt-0.5" />
-                            <span>Pose robinet HYDRAO + boiler</span>
+                            <span>Pose robinet HYDRAL + boiler</span>
                           </li>
                           <li className="flex items-start gap-2">
                             <Check className="w-4 h-4 text-[#6B1E3E] flex-shrink-0 mt-0.5" />
@@ -208,7 +208,7 @@ export function CartPage({ navigate }: CartPageProps) {
 
               <div className="space-y-4 mb-6 pb-6 border-b border-gray-200">
                 <div className="flex justify-between text-[#8B7E74]">
-                  <span>Robinet HYDRAO</span>
+                  <span>Robinet HYDRAL</span>
                   <span className="text-gray-900">{cartTotal}€</span>
                 </div>
                 {includeInstallation && (
@@ -251,7 +251,7 @@ export function CartPage({ navigate }: CartPageProps) {
                   <div className="w-8 h-8 bg-[#6B1E3E]/10 rounded-lg flex items-center justify-center flex-shrink-0">
                     <Truck className="w-4 h-4 text-[#6B1E3E]" />
                   </div>
-                  <span>Livraison 48-72h</span>
+                  <span>Livraison 5-7 jours</span>
                 </div>
                 <div className="flex items-center gap-3 text-sm text-[#8B7E74]">
                   <div className="w-8 h-8 bg-[#6B1E3E]/10 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -275,7 +275,7 @@ export function CartPage({ navigate }: CartPageProps) {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-[#8B7E74]">
             <div className="flex items-start gap-2">
               <Check className="w-4 h-4 text-[#6B1E3E] flex-shrink-0 mt-0.5" />
-              <span>Robinet HYDRAO complet (mitigeur + boiler + module filtration)</span>
+              <span>Robinet HYDRAL complet (mitigeur + boiler + module filtration)</span>
             </div>
             <div className="flex items-start gap-2">
               <Check className="w-4 h-4 text-[#6B1E3E] flex-shrink-0 mt-0.5" />
@@ -295,7 +295,7 @@ export function CartPage({ navigate }: CartPageProps) {
             </div>
             <div className="flex items-start gap-2">
               <Check className="w-4 h-4 text-[#6B1E3E] flex-shrink-0 mt-0.5" />
-              <span>Livraison offerte (48-72h)</span>
+              <span>Livraison offerte (5-7 jours)</span>
             </div>
           </div>
           <div className="mt-6 pt-6 border-t border-gray-200">

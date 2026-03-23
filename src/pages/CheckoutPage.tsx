@@ -108,7 +108,7 @@ export function CheckoutPage({ navigate }: CheckoutPageProps) {
             </p>
             <div className="p-6 bg-[#FAF8F5] rounded-2xl mb-8 text-left">
               <h3 className="text-lg mb-4 text-gray-900">Numéro de commande</h3>
-              <p className="text-3xl text-[#6B1E3E] mb-6">HYDRAO-{Date.now().toString().slice(-8)}</p>
+              <p className="text-3xl text-[#6B1E3E] mb-6">HYDRAL-{Date.now().toString().slice(-8)}</p>
               
               <div className="space-y-3 text-sm text-[#8B7E74]">
                 <div className="flex justify-between">

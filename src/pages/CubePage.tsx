@@ -23,7 +23,7 @@ export function CubePage({ navigate }: CubePageProps) {
           >
             <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#6B1E3E]/10 rounded-full mb-8 border border-[#6B1E3E]/20">
               <Sparkles className="w-4 h-4 text-[#6B1E3E]" />
-              <span className="text-sm text-[#6B1E3E] font-medium">Inclus dans chaque HYDRAO</span>
+              <span className="text-sm text-[#6B1E3E] font-medium">Inclus dans chaque HYDRAL</span>
             </div>
 
             <h1 className="mb-6">
@@ -31,7 +31,7 @@ export function CubePage({ navigate }: CubePageProps) {
               <span className="block text-[#6B1E3E]">Eau fraîche et pétillante à volonté</span>
             </h1>
             <p className="text-xl text-[#8B7E74] max-w-3xl mx-auto leading-relaxed">
-              Le module CUBE est intégré à chaque robinet HYDRAO. Obtenez instantanément de l'eau froide filtrée, plate ou gazeuse, directement du robinet.
+              Le module CUBE est intégré à chaque robinet HYDRAL. Obtenez instantanément de l'eau froide filtrée, plate ou gazeuse, directement du robinet.
             </p>
           </motion.div>
         </div>
@@ -114,7 +114,7 @@ export function CubePage({ navigate }: CubePageProps) {
               <div className="text-center">
                 <Sparkles className="w-32 h-32 text-[#6B1E3E]/20 mx-auto mb-4" />
                 <div className="text-2xl text-gray-900">Module CUBE</div>
-                <div className="text-[#8B7E74]">Inclus avec HYDRAO</div>
+                <div className="text-[#8B7E74]">Inclus avec HYDRAL</div>
               </div>
             </div>
           </div>
@@ -133,7 +133,7 @@ export function CubePage({ navigate }: CubePageProps) {
         >
           <h2 className="mb-6">
             CUBE inclus
-            <span className="block">dans chaque HYDRAO</span>
+            <span className="block">dans chaque HYDRAL</span>
           </h2>
           <p className="text-xl text-white/90 mb-12 max-w-2xl mx-auto">
             Profitez de l'eau fraîche et pétillante sans supplément.
@@ -145,7 +145,7 @@ export function CubePage({ navigate }: CubePageProps) {
             whileHover={{ scale: 1.05, y: -3 }}
             whileTap={{ scale: 0.98 }}
           >
-            Choisir mon HYDRAO
+            Choisir mon HYDRAL
             <ChevronRight className="inline w-6 h-6 ml-2" />
           </motion.button>
         </motion.div>

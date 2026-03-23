@@ -25,10 +25,10 @@ interface LocalBusinessSchemaProps {
 }
 
 export function LocalBusinessSchema({
-  name = 'HYDRAO France',
+  name = 'HYDRAL France',
   description = 'Robinets intelligents 5-en-1 haut de gamme : eau filtrée, pétillante, bouillante. Showroom et installation professionnelle en France.',
   telephone = '+33 1 76 34 00 00',
-  email = 'contact@hydrao.com',
+  email = 'contact@hydral.fr',
   address = {
     streetAddress: '123 Avenue des Champs-Élysées',
     addressLocality: 'Paris',
@@ -52,13 +52,13 @@ export function LocalBusinessSchema({
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    '@id': 'https://hydrao.com',
+    '@id': 'https://hydral.fr',
     name,
     description,
     image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1200',
     telephone,
     email,
-    url: 'https://hydrao.com',
+    url: 'https://hydral.fr',
     address: {
       '@type': 'PostalAddress',
       streetAddress: address.streetAddress,
@@ -119,10 +119,10 @@ export function LocalBusinessSchema({
     },
     hasMap: `https://www.google.com/maps?q=${geo.latitude},${geo.longitude}`,
     sameAs: [
-      'https://www.facebook.com/hydrao',
-      'https://www.instagram.com/hydrao',
-      'https://www.linkedin.com/company/hydrao',
-      'https://twitter.com/hydrao'
+      'https://www.facebook.com/hydral',
+      'https://www.instagram.com/hydral',
+      'https://www.linkedin.com/company/hydral',
+      'https://twitter.com/hydral'
     ]
   };
 
@@ -140,11 +140,11 @@ export function OrganizationSchema() {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    '@id': 'https://hydrao.com/#organization',
-    name: 'HYDRAO',
-    legalName: 'HYDRAO SAS',
-    url: 'https://hydrao.com',
-    logo: 'https://hydrao.com/logo.png',
+    '@id': 'https://hydral.fr/#organization',
+    name: 'HYDRAL',
+    legalName: 'HYDRAL SAS',
+    url: 'https://hydral.fr',
+    logo: 'https://hydral.fr/logo.png',
     description: 'Leader français des robinets intelligents 5-en-1 pour une cuisine moderne, écologique et économique.',
     foundingDate: '2019',
     founders: [
@@ -157,15 +157,15 @@ export function OrganizationSchema() {
       '@type': 'ContactPoint',
       telephone: '+33 1 76 34 00 00',
       contactType: 'Customer Service',
-      email: 'contact@hydrao.com',
+      email: 'contact@hydral.fr',
       areaServed: 'FR',
       availableLanguage: ['French', 'English']
     },
     sameAs: [
-      'https://www.facebook.com/hydrao',
-      'https://www.instagram.com/hydrao',
-      'https://www.linkedin.com/company/hydrao',
-      'https://twitter.com/hydrao'
+      'https://www.facebook.com/hydral',
+      'https://www.instagram.com/hydral',
+      'https://www.linkedin.com/company/hydral',
+      'https://twitter.com/hydral'
     ],
     address: {
       '@type': 'PostalAddress',

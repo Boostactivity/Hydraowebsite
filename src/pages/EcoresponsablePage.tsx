@@ -29,7 +29,7 @@ export function EcoresponsablePage({ navigate }: EcoresponsablePageProps) {
             </h1>
             <p className="text-xl text-[#8B7E74] leading-relaxed max-w-3xl mx-auto">
               En France, <strong>7 à 9 milliards de bouteilles plastique</strong> sont consommées chaque année pour l'eau. 
-              HYDRAO transforme cette aberration en opportunité : <strong>zéro bouteille, zéro transport, zéro déchet</strong>.
+              HYDRAL transforme cette aberration en opportunité : <strong>zéro bouteille, zéro transport, zéro déchet</strong>.
             </p>
           </motion.div>
         </div>
@@ -186,7 +186,7 @@ export function EcoresponsablePage({ navigate }: EcoresponsablePageProps) {
                 <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
                   <Leaf className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-3xl">Avec HYDRAO</h3>
+                <h3 className="text-3xl">Avec HYDRAL</h3>
               </div>
               
               <div className="space-y-8">
@@ -262,7 +262,7 @@ export function EcoresponsablePage({ navigate }: EcoresponsablePageProps) {
             </div>
 
             <div className="p-10 bg-gradient-to-br from-[#6B1E3E] to-[#6B1E3E]/90 text-white rounded-3xl">
-              <h3 className="text-2xl mb-6">Avec HYDRAO (1 an)</h3>
+              <h3 className="text-2xl mb-6">Avec HYDRAL (1 an)</h3>
               <div className="space-y-4">
                 <div className="flex justify-between items-baseline pb-3 border-b border-white/20">
                   <span className="text-white/80">Distance parcourue (eau du robinet)</span>
@@ -312,7 +312,7 @@ export function EcoresponsablePage({ navigate }: EcoresponsablePageProps) {
               </div>
               <h2 className="mb-6 text-gray-900">Électricité optimisée</h2>
               <p className="text-xl text-[#8B7E74] mb-8 leading-relaxed">
-                Le boiler HYDRAO consomme environ 10W en veille (maintien à température). C'est 50% moins qu'une bouilloire électrique qui chauffe à la demande.
+                Le boiler HYDRAL consomme environ 10W en veille (maintien à température). C'est 50% moins qu'une bouilloire électrique qui chauffe à la demande.
               </p>
               <div className="space-y-4">
                 <div className="p-6 bg-[#FAF8F5] rounded-2xl border border-gray-200/50">
@@ -364,7 +364,7 @@ export function EcoresponsablePage({ navigate }: EcoresponsablePageProps) {
                   <p className="text-sm text-gray-700 mt-2">~60€/an</p>
                 </div>
                 <div>
-                  <p className="text-sm text-[#8B7E74] mb-2">HYDRAO (boiler optimisé)</p>
+                  <p className="text-sm text-[#8B7E74] mb-2">HYDRAL (boiler optimisé)</p>
                   <div className="h-4 bg-gray-200 rounded-full overflow-hidden">
                     <div className="h-full bg-green-600" style={{ width: '53%' }}></div>
                   </div>
@@ -385,7 +385,7 @@ export function EcoresponsablePage({ navigate }: EcoresponsablePageProps) {
             </div>
             <h2 className="mb-6 text-gray-900">Un produit durable</h2>
             <p className="text-xl text-[#8B7E74] max-w-3xl mx-auto">
-              HYDRAO n'est pas un gadget qu'on jette au bout de 2 ans. C'est un investissement pensé pour durer minimum 10 ans.
+              HYDRAL n'est pas un gadget qu'on jette au bout de 2 ans. C'est un investissement pensé pour durer minimum 10 ans.
             </p>
           </div>
 
@@ -441,13 +441,13 @@ export function EcoresponsablePage({ navigate }: EcoresponsablePageProps) {
             <h2 className="mb-6 text-gray-900">Soyons honnêtes</h2>
             <div className="space-y-4 text-lg text-[#8B7E74]">
               <p>
-                <strong className="text-gray-900">HYDRAO n'est pas neutre en carbone.</strong> Sa fabrication émet du CO₂. Les composants électroniques viennent d'Asie. Le boiler est fabriqué en Europe, mais avec de l'acier dont la production émet du CO₂.
+                <strong className="text-gray-900">HYDRAL n'est pas neutre en carbone.</strong> Sa fabrication émet du CO₂. Les composants électroniques viennent d'Asie. Le boiler est fabriqué en Europe, mais avec de l'acier dont la production émet du CO₂.
               </p>
               <p>
                 <strong className="text-gray-900">Mais.</strong> Sur sa durée de vie (10 ans minimum), il compense largement son empreinte initiale en évitant 1 460 bouteilles plastique par an, 104 packs transportés, 85€ d'électricité gaspillée.
               </p>
               <p>
-                <strong className="text-gray-900">L'écologie,</strong> ce n'est pas acheter des produits "verts". C'est acheter moins, mais mieux. Et garder plus longtemps. HYDRAO s'inscrit dans cette logique.
+                <strong className="text-gray-900">L'écologie,</strong> ce n'est pas acheter des produits "verts". C'est acheter moins, mais mieux. Et garder plus longtemps. HYDRAL s'inscrit dans cette logique.
               </p>
             </div>
           </div>

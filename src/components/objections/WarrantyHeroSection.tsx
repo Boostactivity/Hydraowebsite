@@ -26,7 +26,7 @@ export function WarrantyHeroSection({ className = '' }: WarrantyHeroSectionProps
       icon: Wrench,
       title: 'Technicien certifié à domicile',
       description: 'Réparation chez vous',
-      details: ['Expert HYDRAO formé', 'Outils professionnels', 'Réparation sur place']
+      details: ['Expert HYDRAL formé', 'Outils professionnels', 'Réparation sur place']
     },
     {
       icon: Package,
@@ -50,7 +50,7 @@ export function WarrantyHeroSection({ className = '' }: WarrantyHeroSectionProps
       answer: 'Oui, extension de garantie 3 ans supplémentaires disponible pour 99€ au moment de l\'achat.'
     },
     {
-      question: 'Que se passe-t-il si HYDRAO arrête la production ?',
+      question: 'Que se passe-t-il si HYDRAL arrête la production ?',
       answer: 'Nous garantissons la disponibilité des pièces détachées pendant 10 ans minimum, même en cas d\'arrêt de production.'
     }
   ];

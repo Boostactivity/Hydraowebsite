@@ -173,7 +173,7 @@ export default function SubscriptionPlans({
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-50 border border-green-200 rounded-full text-green-700 text-sm">
               <CheckCircle2 className="w-4 h-4" />
-              <span>Vous économisez <strong>au minimum {formatPrice(yearlySavings)}/an</strong> avec votre robinet HYDRAO</span>
+              <span>Vous économisez <strong>au minimum {formatPrice(yearlySavings)}/an</strong> avec votre robinet HYDRAL</span>
             </div>
           </motion.div>
         )}

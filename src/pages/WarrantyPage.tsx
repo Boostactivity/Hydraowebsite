@@ -43,7 +43,7 @@ export function WarrantyPage({ navigate }: WarrantyPageProps) {
               <div className="w-16 h-16 rounded-full bg-[#6B1E3E]/10 flex items-center justify-center mx-auto mb-4">
                 <Shield className="w-8 h-8 text-[#6B1E3E]" />
               </div>
-              <h3 className="text-2xl mb-2 text-gray-900">2 ans</h3>
+              <h3 className="text-2xl mb-2 text-gray-900">5 ans</h3>
               <p className="text-[#8B7E74] font-light">Garantie constructeur</p>
             </div>
 
@@ -240,11 +240,11 @@ export function WarrantyPage({ navigate }: WarrantyPageProps) {
               <span>Contacter le support</span>
             </button>
             <a
-              href="mailto:support@hydrao.fr"
+              href="mailto:support@hydral.fr"
               className="px-8 py-4 bg-white/20 text-white rounded-full hover:bg-white/30 transition-all flex items-center gap-2 backdrop-blur-sm"
             >
               <Mail className="w-5 h-5" />
-              <span>support@hydrao.fr</span>
+              <span>support@hydral.fr</span>
             </a>
           </div>
         </motion.div>
@@ -296,11 +296,11 @@ function FAQItem({
 const warrantyFaqs = [
   {
     question: 'La garantie est-elle automatique ?',
-    answer: 'Oui, la garantie de 2 ans est automatiquement activée dès l\'achat. Conservez votre facture comme preuve d\'achat.'
+    answer: 'Oui, la garantie de 5 ans est automatiquement activée dès l\'achat. Conservez votre facture comme preuve d\'achat.'
   },
   {
     question: 'Que faire en cas de problème ?',
-    answer: 'Contactez notre support par email (support@hydrao.fr) ou téléphone. Nous effectuons un diagnostic et vous guidons vers la solution adaptée : envoi de pièces, manuel de dépannage, ou retour produit selon le cas.'
+    answer: 'Contactez notre support par email (support@hydral.fr) ou téléphone. Nous effectuons un diagnostic et vous guidons vers la solution adaptée : envoi de pièces, manuel de dépannage, ou retour produit selon le cas.'
   },
   {
     question: 'Les filtres sont-ils couverts ?',
@@ -312,6 +312,6 @@ const warrantyFaqs = [
   },
   {
     question: 'Quelle est la durée de vie du robinet ?',
-    answer: 'HYDRAO est conçu pour durer plus de 10 ans avec un entretien régulier. Les pièces détachées sont disponibles pendant toute la durée de vie du produit.'
+    answer: 'HYDRAL est conçu pour durer plus de 10 ans avec un entretien régulier. Les pièces détachées sont disponibles pendant toute la durée de vie du produit.'
   }
 ];

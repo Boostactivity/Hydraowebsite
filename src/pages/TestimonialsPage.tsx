@@ -18,7 +18,7 @@ export function TestimonialsPage({ navigate }: TestimonialsPageProps) {
       date: "Installé depuis 8 mois",
       image: "https://images.unsplash.com/photo-1672462478040-a5920e2c23d8?w=400",
       quote: "J'ai arrêté de compter le temps gagné",
-      text: "Plus de bouilloire qui chauffe pendant 5 minutes. Plus de packs d'eau à porter jusqu'au 3ème étage. Mon HYDRAO m'a fait gagner au moins 20 minutes par jour. Et mes enfants adorent l'eau pétillante.",
+      text: "Plus de bouilloire qui chauffe pendant 5 minutes. Plus de packs d'eau à porter jusqu'au 3ème étage. Mon HYDRAL m'a fait gagner au moins 20 minutes par jour. Et mes enfants adorent l'eau pétillante.",
       verified: true,
       usage: "Utilise principalement eau bouillante et pétillante"
     },
@@ -30,7 +30,7 @@ export function TestimonialsPage({ navigate }: TestimonialsPageProps) {
       date: "Installé depuis 1 an",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400",
       quote: "La fin des compromis en cuisine",
-      text: "J'ai testé plusieurs robinets premium avant de choisir HYDRAO. Rapport qualité-prix imbattable : toutes les fonctionnalités que je cherchais à un prix accessible. L'eau pétillante intégrée change tout. Je ne reviendrai jamais en arrière.",
+      text: "J'ai testé plusieurs robinets premium avant de choisir HYDRAL. Rapport qualité-prix imbattable : toutes les fonctionnalités que je cherchais à un prix accessible. L'eau pétillante intégrée change tout. Je ne reviendrai jamais en arrière.",
       verified: true,
       usage: "Utilise les 5 types d'eau quotidiennement"
     },
@@ -42,9 +42,9 @@ export function TestimonialsPage({ navigate }: TestimonialsPageProps) {
       date: "Installé depuis 6 mois",
       image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400",
       quote: "Mes clients me demandent tous la même chose",
-      text: "Depuis que j'ai installé HYDRAO chez moi, 100% de mes projets de rénovation cuisine incluent un robinet 5-en-1. C'est devenu le standard. Plus personne ne veut revenir à l'ancien système.",
+      text: "Depuis que j'ai installé HYDRAL chez moi, 100% de mes projets de rénovation cuisine incluent un robinet 5-en-1. C'est devenu le standard. Plus personne ne veut revenir à l'ancien système.",
       verified: true,
-      usage: "Recommande HYDRAO dans tous ses projets"
+      usage: "Recommande HYDRAL dans tous ses projets"
     },
     {
       name: "Marc Lefebvre",
@@ -54,7 +54,7 @@ export function TestimonialsPage({ navigate }: TestimonialsPageProps) {
       date: "Installé depuis 4 mois",
       image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400",
       quote: "Économies réelles dès le premier mois",
-      text: "On buvait 2 packs de 6 bouteilles d'eau par semaine (24 bouteilles). Plus 4 cartouches Sodastream par mois. Tout ça a disparu. HYDRAO est rentabilisé en moins de 2 ans avec nos économies.",
+      text: "On buvait 2 packs de 6 bouteilles d'eau par semaine (24 bouteilles). Plus 4 cartouches Sodastream par mois. Tout ça a disparu. HYDRAL est rentabilisé en moins de 2 ans avec nos économies.",
       verified: true,
       usage: "Famille nombreuse, gros consommateur d'eau"
     },
@@ -113,7 +113,7 @@ export function TestimonialsPage({ navigate }: TestimonialsPageProps) {
             </h1>
 
             <p className="text-xl text-[#8B7E74] leading-relaxed max-w-3xl mx-auto">
-              Plus de 2000 foyers ont déjà installé HYDRAO. Pas de langue de bois : découvrez leurs témoignages authentiques, leurs chiffres réels, et pourquoi ils ne reviendraient jamais en arrière.
+              Plus de 2000 foyers ont déjà installé HYDRAL. Pas de langue de bois : découvrez leurs témoignages authentiques, leurs chiffres réels, et pourquoi ils ne reviendraient jamais en arrière.
             </p>
           </motion.div>
 
@@ -217,7 +217,7 @@ export function TestimonialsPage({ navigate }: TestimonialsPageProps) {
               <span className="block text-[#6B1E3E]">Bientôt disponibles</span>
             </h2>
             <p className="text-xl text-[#8B7E74] mb-12 max-w-3xl mx-auto">
-              Nous préparons une série de visites chez nos clients pour vous montrer leur HYDRAO en action, dans de vraies cuisines, avec de vrais retours d'expérience.
+              Nous préparons une série de visites chez nos clients pour vous montrer leur HYDRAL en action, dans de vraies cuisines, avec de vrais retours d'expérience.
             </p>
             <div className="aspect-video max-w-4xl mx-auto bg-gradient-to-br from-gray-100 to-gray-200 rounded-3xl flex items-center justify-center border border-gray-300">
               <div className="text-center">
@@ -245,7 +245,7 @@ export function TestimonialsPage({ navigate }: TestimonialsPageProps) {
               <span className="block">nos 2000+ clients ?</span>
             </h2>
             <p className="text-xl text-white/90 mb-12 max-w-2xl mx-auto">
-              Choisissez votre HYDRAO maintenant et transformez votre quotidien en cuisine.
+              Choisissez votre HYDRAL maintenant et transformez votre quotidien en cuisine.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <motion.button
@@ -254,7 +254,7 @@ export function TestimonialsPage({ navigate }: TestimonialsPageProps) {
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.98 }}
               >
-                Créer mon HYDRAO
+                Créer mon HYDRAL
               </motion.button>
               <motion.button
                 onClick={() => navigate('faq')}

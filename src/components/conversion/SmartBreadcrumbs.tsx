@@ -117,7 +117,7 @@ export function SmartBreadcrumbs({ currentPage, navigate, className = '' }: Smar
                 '@type': 'ListItem',
                 position: idx + 1,
                 name: crumb.label,
-                item: `https://hydrao.com/${crumb.page === 'home' ? '' : crumb.page}`
+                item: `https://hydral.fr/${crumb.page === 'home' ? '' : crumb.page}`
               }))
             })
           }}

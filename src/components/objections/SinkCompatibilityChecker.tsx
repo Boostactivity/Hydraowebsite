@@ -309,7 +309,7 @@ export function SinkCompatibilityChecker({ className = '' }: SinkCompatibilityCh
                       ✅ Parfait ! Votre évier est compatible
                     </h3>
                     <p className="text-lg text-gray-700">
-                      HYDRAO peut être installé sans problème dans votre cuisine
+                      HYDRAL peut être installé sans problème dans votre cuisine
                     </p>
                   </>
                 )}

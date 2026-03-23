@@ -38,7 +38,7 @@ export function VirtualShowroom({ navigate }: VirtualShowroomProps) {
       description: 'Design épuré avec finitions chromées',
       image: '/api/placeholder/1920/1080?text=Cuisine+Moderne',
       hotspots: [
-        { id: '1', x: 45, y: 40, productId: 'premium', productName: 'HYDRAO Premium', price: '490€' },
+        { id: '1', x: 45, y: 40, productId: 'premium', productName: 'HYDRAL Premium', price: '490€' },
         { id: '2', x: 60, y: 55, productId: 'filtre', productName: 'Filtre Charbon', price: '29€' }
       ]
     },
@@ -48,7 +48,7 @@ export function VirtualShowroom({ navigate }: VirtualShowroomProps) {
       description: 'Style loft avec finitions noires mates',
       image: '/api/placeholder/1920/1080?text=Cuisine+Industrielle',
       hotspots: [
-        { id: '3', x: 50, y: 45, productId: 'premium', productName: 'HYDRAO Premium Black', price: '490€' }
+        { id: '3', x: 50, y: 45, productId: 'premium', productName: 'HYDRAL Premium Black', price: '490€' }
       ]
     },
     {
@@ -57,7 +57,7 @@ export function VirtualShowroom({ navigate }: VirtualShowroomProps) {
       description: 'Élégance intemporelle avec finitions dorées',
       image: '/api/placeholder/1920/1080?text=Cuisine+Classique',
       hotspots: [
-        { id: '4', x: 48, y: 42, productId: 'premium', productName: 'HYDRAO Premium Gold', price: '490€' }
+        { id: '4', x: 48, y: 42, productId: 'premium', productName: 'HYDRAL Premium Gold', price: '490€' }
       ]
     }
   ];
@@ -107,7 +107,7 @@ export function VirtualShowroom({ navigate }: VirtualShowroomProps) {
             transition={{ delay: 0.2 }}
             className="text-xl text-gray-400 max-w-2xl mx-auto"
           >
-            Explorez nos robinets HYDRAO dans différents environnements et styles de cuisine
+            Explorez nos robinets HYDRAL dans différents environnements et styles de cuisine
           </motion.p>
         </div>
 
@@ -335,7 +335,7 @@ export function VirtualShowroom({ navigate }: VirtualShowroomProps) {
             whileHover={{ scale: 1.05, y: -3 }}
             whileTap={{ scale: 0.98 }}
           >
-            Choisissez votre HYDRAO
+            Choisissez votre HYDRAL
           </motion.button>
         </div>
       </div>

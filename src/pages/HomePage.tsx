@@ -232,7 +232,7 @@ export function HomePage({ navigate }: HomePageProps) {
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
-                <p className="text-sm text-gray-600 mb-2">Robinet HYDRAL One</p>
+                <p className="text-sm text-gray-600 mb-2">Robinet HYDRAL (à partir de)</p>
                 <p className="text-4xl font-bold text-gray-900 mb-4">490€</p>
                 <ul className="space-y-2 text-sm text-gray-700">
                   <li className="flex items-start gap-2">
@@ -297,19 +297,19 @@ export function HomePage({ navigate }: HomePageProps) {
             />
             <FAQItem
               question="Qu'est-ce que j'entretiens et à quel coût ?"
-              answer="Cartouche filtrante tous les 6 mois (~35€). CO2 selon consommation. Notre abonnement annuel 129€ couvre tout."
+              answer="Cartouche filtrante tous les 6 mois (~35€). CO2 selon consommation. Nos abonnements de 59€ à 139€/an couvrent tout, sans engagement."
             />
             <FAQItem
               question="Quelle différence entre Pure, Spark et One ?"
-              answer="Pure 490€ : les 4 fonctions essentielles. Spark 890€ : + température précise + carbonatation réglable. One 990€ : + connecté WiFi + filtration NSF certifiée + garantie 5 ans."
+              answer="Pure 490€ : eau filtrée + bouillante. Spark 890€ : eau filtrée + gazeuse + froide réfrigérée. One 990€ : toutes les eaux en un seul robinet (filtrée, gazeuse, bouillante, froide). Garantie 5 ans sur tous les modèles."
             />
             <FAQItem
               question="Livrez-vous partout en France ?"
-              answer="Oui, France entière, livraison offerte sous 48h."
+              answer="Oui, France entière, livraison offerte sous 5 à 7 jours ouvrés."
             />
             <FAQItem
               question="Et si ça tombe en panne ?"
-              answer="Garantie 3 ans (5 ans sur le One). SAV français, intervention à domicile 1ère année."
+              answer="Garantie 5 ans pièces et main d'oeuvre. SAV français, intervention à domicile 1ère année."
             />
             <FAQItem
               question="Puis-je retourner le produit ?"

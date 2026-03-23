@@ -51,7 +51,7 @@ export function SecuritePage({ navigate }: SecuritePageProps) {
           <div className="p-8 bg-gradient-to-br from-[#6B1E3E]/5 to-white rounded-3xl border border-[#6B1E3E]/20">
             <h3 className="text-2xl mb-6 text-gray-900">Ce que nous avons fait</h3>
             <p className="text-lg text-[#8B7E74] mb-6">
-              HYDRAO intègre 4 niveaux de sécurité pour éviter que l'eau bouillante ne coule par accident. Pas de promesse miracle. Juste du bon sens et de l'ingénierie.
+              HYDRAL intègre 4 niveaux de sécurité pour éviter que l'eau bouillante ne coule par accident. Pas de promesse miracle. Juste du bon sens et de l'ingénierie.
             </p>
           </div>
         </div>
@@ -194,9 +194,9 @@ export function SecuritePage({ navigate }: SecuritePageProps) {
               </ul>
             </div>
 
-            {/* HYDRAO */}
+            {/* HYDRAL */}
             <div className="p-10 bg-gradient-to-br from-[#6B1E3E] to-[#6B1E3E]/90 text-white rounded-3xl">
-              <h3 className="text-2xl mb-6">HYDRAO</h3>
+              <h3 className="text-2xl mb-6">HYDRAL</h3>
               <ul className="space-y-4 text-white/90">
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 flex-shrink-0 mt-1" />
@@ -233,7 +233,7 @@ export function SecuritePage({ navigate }: SecuritePageProps) {
             </div>
             <h2 className="mb-6 text-gray-900">Certifications et normes</h2>
             <p className="text-xl text-[#8B7E74]">
-              Tous les modèles HYDRAO respectent les normes européennes les plus strictes.
+              Tous les modèles HYDRAL respectent les normes européennes les plus strictes.
             </p>
           </div>
 
@@ -292,7 +292,7 @@ export function SecuritePage({ navigate }: SecuritePageProps) {
             <div className="p-8 bg-[#FAF8F5] rounded-3xl border border-gray-200/50">
               <h3 className="text-lg mb-3 text-gray-900">Superviser les premières fois</h3>
               <p className="text-[#8B7E74]">
-                Si un enfant de 8-10 ans veut se servir un thé, restez présent les premières fois. Ensuite, faites confiance. HYDRAO est conçu pour être utilisable par un adolescent responsable.
+                Si un enfant de 8-10 ans veut se servir un thé, restez présent les premières fois. Ensuite, faites confiance. HYDRAL est conçu pour être utilisable par un adolescent responsable.
               </p>
             </div>
           </div>

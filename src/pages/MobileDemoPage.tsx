@@ -106,7 +106,7 @@ export function MobileDemoPage({ navigate }: MobileDemoPageProps) {
             <MobileOptimizedVideo
               src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
               poster="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800"
-              title="HYDRAO en action"
+              title="HYDRAL en action"
               duration="2:30"
               autoPlay={false}
               muted={true}
@@ -158,7 +158,7 @@ export function MobileDemoPage({ navigate }: MobileDemoPageProps) {
               <h3 className="text-xl text-gray-900 mb-4">Pinch to Zoom</h3>
               <PinchZoomImage
                 src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800"
-                alt="HYDRAO robinet détail"
+                alt="HYDRAL robinet détail"
                 className="aspect-video rounded-2xl"
               />
             </div>

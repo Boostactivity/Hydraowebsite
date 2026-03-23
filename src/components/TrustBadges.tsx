@@ -18,7 +18,7 @@ export function TrustBadges({ variant = 'full', className = '' }: TrustBadgesPro
     {
       icon: Truck,
       title: 'Livraison offerte',
-      description: 'Sous 7 jours',
+      description: 'Sous 5-7 jours',
       color: 'text-blue-600',
       bgColor: 'bg-blue-50'
     },
@@ -81,7 +81,7 @@ export function TrustBadges({ variant = 'full', className = '' }: TrustBadgesPro
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h3 className="text-2xl text-gray-900 mb-2">Vos garanties HYDRAO</h3>
+          <h3 className="text-2xl text-gray-900 mb-2">Vos garanties HYDRAL</h3>
           <p className="text-gray-600">Achetez en toute confiance</p>
         </motion.div>
 

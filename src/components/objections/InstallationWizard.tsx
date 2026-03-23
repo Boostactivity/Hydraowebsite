@@ -176,7 +176,7 @@ export function InstallationWizard({ className = '', onComplete }: InstallationW
             <span className="block text-[#6B1E3E]">en 30 secondes</span>
           </h2>
           <p className="text-xl text-gray-600">
-            99% des cuisines sont compatibles HYDRAO
+            99% des cuisines sont compatibles HYDRAL
           </p>
         </motion.div>
 
@@ -278,7 +278,7 @@ export function InstallationWizard({ className = '', onComplete }: InstallationW
                   ✅ Votre cuisine est compatible !
                 </h3>
                 <p className="text-xl text-gray-700">
-                  HYDRAO peut être installé chez vous
+                  HYDRAL peut être installé chez vous
                 </p>
               </div>
 

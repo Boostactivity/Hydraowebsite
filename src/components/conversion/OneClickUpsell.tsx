@@ -129,7 +129,7 @@ export function OneClickUpsell({
             <span className="block text-[#6B1E3E]">dès maintenant</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Profitez d'offres exclusives réservées aux nouveaux clients HYDRAO
+            Profitez d'offres exclusives réservées aux nouveaux clients HYDRAL
           </p>
         </motion.div>
 

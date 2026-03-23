@@ -39,7 +39,7 @@ const faqData: FAQItem[] = [
   {
     category: 'Installation',
     question: "Que se passe-t-il si je déménage ?",
-    answer: "Vous emportez votre robinet. C'est votre investissement, pas celui du propriétaire. Le démontage prend 1 heure. Vous réinstallez un robinet classique (30-50€) dans l'ancien logement, et vous remontez votre HYDRAO dans le nouveau. C'est exactement comme déménager avec votre électroménager. Beaucoup de clients le font."
+    answer: "Vous emportez votre robinet. C'est votre investissement, pas celui du propriétaire. Le démontage prend 1 heure. Vous réinstallez un robinet classique (30-50€) dans l'ancien logement, et vous remontez votre HYDRAL dans le nouveau. C'est exactement comme déménager avec votre électroménager. Beaucoup de clients le font."
   },
 
   // Technique
@@ -78,12 +78,12 @@ const faqData: FAQItem[] = [
   {
     category: 'Prix',
     question: "Y a-t-il des frais cachés ?",
-    answer: "Non. 490€ = le robinet + boiler + filtre + garantie 5 ans. Tous les modèles et toutes les finitions sont au même prix. Ce qui est EN PLUS (optionnel) : installation par professionnel (prix à définir selon région), extension de garantie à 10 ans (prix à définir), formule d'entretien annuelle (59-139€/an selon usage). Tout est détaillé, tout est transparent. Zéro surprise."
+    answer: "Non. À partir de 490€ pour le Pure (eau filtrée + bouillante), 890€ pour le Spark (+ gazeuse + froide), 990€ pour le One (toutes les eaux). Toutes les finitions sont incluses dans le prix. Ce qui est EN PLUS (optionnel) : installation par professionnel (prix à définir selon région), extension de garantie à 10 ans (prix à définir), formule d'entretien annuelle (59-139€/an selon usage). Garantie 5 ans incluse sur tous les modèles. Tout est transparent. Zéro surprise."
   },
   {
     category: 'Prix',
     question: "Est-ce rentable par rapport à acheter de l'eau en bouteille ?",
-    answer: "Oui, rapidement. Une famille de 4 qui achète 2 packs d'eau/semaine dépense ~520€/an. Ajoutez l'électricité de la bouilloire (~85€/an). Total : 605€/an. Avec HYDRAO : robinet 490€ (amorti en 9 mois) + formule entretien 99€/an + électricité optimisée 45€/an = 144€/an en fonctionnement récurrent. Économie nette : ~460€/an dès la deuxième année. Sans compter le temps gagné (plus de courses, plus de stockage, plus de déchets)."
+    answer: "Oui, rapidement. Une famille de 4 qui achète 2 packs d'eau/semaine dépense ~520€/an. Ajoutez l'électricité de la bouilloire (~85€/an). Total : 605€/an. Avec HYDRAL : robinet 490€ (amorti en 9 mois) + formule entretien 99€/an + électricité optimisée 45€/an = 144€/an en fonctionnement récurrent. Économie nette : ~460€/an dès la deuxième année. Sans compter le temps gagné (plus de courses, plus de stockage, plus de déchets)."
   },
   {
     category: 'Prix',
@@ -134,7 +134,7 @@ const faqData: FAQItem[] = [
   {
     category: 'Comparaison',
     question: "Pourquoi ne pas acheter une bouilloire + une carafe filtrante + une SodaStream ?",
-    answer: "Vous pouvez. Ça coûtera ~150€ au total. Mais : (1) vous perdez de l'espace (3 appareils sur le plan de travail ou dans le placard), (2) vous perdez du temps (remplir, attendre, transvaser), (3) vous multipliez les gestes (ça semble anodin, mais répétez 3-4 fois par jour pendant 10 ans, vous verrez). HYDRAO n'est pas 'mieux' dans l'absolu. Il est mieux si vous valorisez votre temps, votre espace et la fluidité de vos gestes quotidiens. Si ça ne compte pas pour vous, gardez vos 3 appareils."
+    answer: "Vous pouvez. Ça coûtera ~150€ au total. Mais : (1) vous perdez de l'espace (3 appareils sur le plan de travail ou dans le placard), (2) vous perdez du temps (remplir, attendre, transvaser), (3) vous multipliez les gestes (ça semble anodin, mais répétez 3-4 fois par jour pendant 10 ans, vous verrez). HYDRAL n'est pas 'mieux' dans l'absolu. Il est mieux si vous valorisez votre temps, votre espace et la fluidité de vos gestes quotidiens. Si ça ne compte pas pour vous, gardez vos 3 appareils."
   },
 
   // Garantie & SAV
@@ -327,7 +327,7 @@ export function FAQPage({ navigate }: FAQPageProps) {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="mailto:contact@hydrao.fr"
+                href="mailto:contact@hydral.fr"
                 className="px-8 py-4 bg-[#6B1E3E] text-white rounded-full hover:bg-[#6B1E3E]/90 transition-colors"
               >
                 Envoyer un email

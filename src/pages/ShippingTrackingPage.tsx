@@ -17,7 +17,7 @@ interface TrackingStep {
 }
 
 export function ShippingTrackingPage({ navigate }: TrackingPageProps) {
-  const [orderNumber, setOrderNumber] = useState('HYDRAO-12345678');
+  const [orderNumber, setOrderNumber] = useState('HYDRAL-12345678');
   const [showTracking, setShowTracking] = useState(true);
 
   // Mock tracking data
@@ -33,7 +33,7 @@ export function ShippingTrackingPage({ navigate }: TrackingPageProps) {
     {
       id: '2',
       label: 'En préparation',
-      description: 'Votre HYDRAO est en cours de préparation dans notre entrepôt',
+      description: 'Votre HYDRAL est en cours de préparation dans notre entrepôt',
       date: '20 déc. 2024, 16:00',
       completed: true,
       current: false
@@ -65,7 +65,7 @@ export function ShippingTrackingPage({ navigate }: TrackingPageProps) {
     {
       id: '6',
       label: 'Livré',
-      description: 'Votre HYDRAO a été livré avec succès',
+      description: 'Votre HYDRAL a été livré avec succès',
       date: '',
       completed: false,
       current: false
@@ -97,7 +97,7 @@ export function ShippingTrackingPage({ navigate }: TrackingPageProps) {
             Suivi de commande
           </h1>
           <p className="text-xl text-gray-600">
-            Suivez votre HYDRAO en temps réel jusqu'à la livraison
+            Suivez votre HYDRAL en temps réel jusqu'à la livraison
           </p>
         </motion.div>
 
@@ -352,7 +352,7 @@ export function ShippingTrackingPage({ navigate }: TrackingPageProps) {
                   type="text"
                   value={orderNumber}
                   onChange={(e) => setOrderNumber(e.target.value)}
-                  placeholder="HYDRAO-12345678"
+                  placeholder="HYDRAL-12345678"
                   className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-[#6B1E3E] focus:outline-none transition-colors"
                 />
               </div>

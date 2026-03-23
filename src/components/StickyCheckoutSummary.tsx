@@ -30,7 +30,7 @@ export function StickyCheckoutSummary({
   const handleApplyPromo = () => {
     // Simulation codes promo
     const validCodes: { [key: string]: number } = {
-      'HYDRAO10': 10,
+      'HYDRAL10': 10,
       'BIENVENUE': 5,
       'PREMIER': 15
     };
@@ -97,7 +97,7 @@ export function StickyCheckoutSummary({
                 <div className="flex gap-2">
                   <input
                     type="text"
-                    placeholder="HYDRAO10"
+                    placeholder="HYDRAL10"
                     value={promoCode}
                     onChange={(e) => setPromoCode(e.target.value)}
                     className="flex-1 px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:border-[#6B1E3E] text-sm"

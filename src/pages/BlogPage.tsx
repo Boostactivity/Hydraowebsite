@@ -25,7 +25,7 @@ interface BlogPost {
 const BLOG_POSTS: BlogPost[] = [
   {
     id: '1',
-    title: '10 recettes rafraîchissantes avec eau pétillante HYDRAO',
+    title: '10 recettes rafraîchissantes avec eau pétillante HYDRAL',
     excerpt: 'Découvrez comment transformer votre eau pétillante en cocktails, mocktails et boissons santé qui impressionneront vos invités.',
     content: 'Article complet à venir...',
     image: 'https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=800&h=500&fit=crop',
@@ -40,7 +40,7 @@ const BLOG_POSTS: BlogPost[] = [
   {
     id: '2',
     title: 'Comment économiser 1000€/an sur l\'eau : guide complet',
-    excerpt: 'Analyse détaillée des économies réelles avec HYDRAO. Calculs, comparaisons et témoignages de clients qui ont fait le switch.',
+    excerpt: 'Analyse détaillée des économies réelles avec HYDRAL. Calculs, comparaisons et témoignages de clients qui ont fait le switch.',
     content: 'Article complet à venir...',
     image: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&h=500&fit=crop',
     category: 'Économies',
@@ -53,8 +53,8 @@ const BLOG_POSTS: BlogPost[] = [
   },
   {
     id: '3',
-    title: 'Installation HYDRAO : notre guide complet en 10 étapes',
-    excerpt: 'De la préparation à la première utilisation, suivez notre guide étape par étape pour installer votre robinet HYDRAO comme un pro.',
+    title: 'Installation HYDRAL : notre guide complet en 10 étapes',
+    excerpt: 'De la préparation à la première utilisation, suivez notre guide étape par étape pour installer votre robinet HYDRAL comme un pro.',
     content: 'Article complet à venir...',
     image: 'https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?w=800&h=500&fit=crop',
     category: 'Installation',
@@ -68,7 +68,7 @@ const BLOG_POSTS: BlogPost[] = [
   {
     id: '4',
     title: 'L\'impact environnemental : 5000 bouteilles plastique en moins',
-    excerpt: 'Une famille parisienne témoigne de son année avec HYDRAO et calcule son empreinte écologique évitée.',
+    excerpt: 'Une famille parisienne témoigne de son année avec HYDRAL et calcule son empreinte écologique évitée.',
     content: 'Article complet à venir...',
     image: 'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=800&h=500&fit=crop',
     category: 'Écologie',
@@ -94,7 +94,7 @@ const BLOG_POSTS: BlogPost[] = [
   {
     id: '6',
     title: 'Café et thé sublimés : le rôle crucial de l\'eau filtrée',
-    excerpt: 'Découvrez pourquoi votre café du matin mérite une eau de qualité et comment HYDRAO révèle les vrais arômes.',
+    excerpt: 'Découvrez pourquoi votre café du matin mérite une eau de qualité et comment HYDRAL révèle les vrais arômes.',
     content: 'Article complet à venir...',
     image: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&h=500&fit=crop',
     category: 'Lifestyle',
@@ -106,7 +106,7 @@ const BLOG_POSTS: BlogPost[] = [
   },
   {
     id: '7',
-    title: 'Design et innovation : l\'histoire de la création HYDRAO',
+    title: 'Design et innovation : l\'histoire de la création HYDRAL',
     excerpt: 'Plongez dans les coulisses du design de notre robinet 5-en-1 et découvrez les défis techniques relevés.',
     content: 'Article complet à venir...',
     image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=500&fit=crop',
@@ -119,7 +119,7 @@ const BLOG_POSTS: BlogPost[] = [
   },
   {
     id: '8',
-    title: 'HYDRAO vs robinets premium : comparatif objectif 2024',
+    title: 'HYDRAL vs robinets premium : comparatif objectif 2024',
     excerpt: 'Analyse point par point du marché des robinets 5-en-1. Prix, fonctionnalités, économies : on vous dit tout.',
     content: 'Article complet à venir...',
     image: 'https://images.unsplash.com/photo-1560185127-6a7e3e5b9f09?w=800&h=500&fit=crop',
@@ -133,7 +133,7 @@ const BLOG_POSTS: BlogPost[] = [
   {
     id: '9',
     title: 'Les 7 erreurs à éviter avec votre robinet 5-en-1',
-    excerpt: 'Conseils de nos techniciens pour éviter les problèmes courants et maximiser la durée de vie de votre HYDRAO.',
+    excerpt: 'Conseils de nos techniciens pour éviter les problèmes courants et maximiser la durée de vie de votre HYDRAL.',
     content: 'Article complet à venir...',
     image: 'https://images.unsplash.com/photo-1585128792334-2e82b9813d70?w=800&h=500&fit=crop',
     category: 'Maintenance',
@@ -146,7 +146,7 @@ const BLOG_POSTS: BlogPost[] = [
   {
     id: '10',
     title: 'Hydratation optimale : 8 verres par jour devenus faciles',
-    excerpt: 'Comment HYDRAO transforme la contrainte de boire de l\'eau en un plaisir quotidien pour toute la famille.',
+    excerpt: 'Comment HYDRAL transforme la contrainte de boire de l\'eau en un plaisir quotidien pour toute la famille.',
     content: 'Article complet à venir...',
     image: 'https://images.unsplash.com/photo-1550572017-4814e7a8fde0?w=800&h=500&fit=crop',
     category: 'Santé',
@@ -188,7 +188,7 @@ export function BlogPage({ navigate }: BlogPageProps) {
           className="text-center mb-16"
         >
           <h1 className="text-5xl font-bold text-gray-900 mb-4">
-            Blog HYDRAO
+            Blog HYDRAL
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Inspirations, conseils et guides pour tirer le meilleur de votre robinet 5-en-1
@@ -490,7 +490,7 @@ function BlogPostView({ post, onBack, navigate }: { post: BlogPost; onBack: () =
             onClick={() => navigate('configurator')}
             className="px-8 py-4 bg-white text-[#6B1E3E] rounded-full font-semibold hover:shadow-xl transition-all text-lg"
           >
-            Choisir mon HYDRAO
+            Choisir mon HYDRAL
           </button>
         </div>
       </div>

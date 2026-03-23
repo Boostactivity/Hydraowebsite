@@ -96,7 +96,7 @@ export function ConceptPage({ navigate }: ConceptPageProps) {
               Un robinet unique, central,<span className="block text-[#6B1E3E]">capable de tout fournir</span>
             </h2>
             <p className="text-xl text-[#8B7E74] max-w-3xl mx-auto leading-relaxed">
-              Pas comme des options gadget. Mais comme des usages naturels, intégrés, fiables et sécurisés. HYDRAO ne cherche pas à impressionner. Il cherche à corriger une incohérence du quotidien.
+              Pas comme des options gadget. Mais comme des usages naturels, intégrés, fiables et sécurisés. HYDRAL ne cherche pas à impressionner. Il cherche à corriger une incohérence du quotidien.
             </p>
           </motion.div>
 
@@ -345,7 +345,7 @@ export function ConceptPage({ navigate }: ConceptPageProps) {
               <div className="aspect-video bg-gradient-to-br from-[#F5F1ED] to-white rounded-2xl mb-12 flex items-center justify-center border border-gray-200">
                 <ImageWithFallback
                   src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1200"
-                  alt="Système sous évier HYDRAO"
+                  alt="Système sous évier HYDRAL"
                   className="w-full h-full object-cover rounded-2xl"
                 />
               </div>
@@ -445,7 +445,7 @@ export function ConceptPage({ navigate }: ConceptPageProps) {
             Prêt à simplifier<span className="block">votre quotidien ?</span>
           </h2>
           <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Configurez votre système HYDRAO en quelques clics. Choisissez votre modèle, vos finitions, vos modules.
+            Configurez votre système HYDRAL en quelques clics. Choisissez votre modèle, vos finitions, vos modules.
           </p>
           
           <motion.button 

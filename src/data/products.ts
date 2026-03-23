@@ -360,7 +360,7 @@ export const shopItems: ShopItem[] = [
   {
     id: 'bottle-50cl-glass',
     category: 'bottle',
-    name: 'Bouteille Verre 1L',
+    name: 'Bouteille Verre 50cl',
     description: 'Bouteille en verre borosilicate',
     price: 8,
     stock: 200,
@@ -371,7 +371,7 @@ export const shopItems: ShopItem[] = [
     category: 'bottle',
     name: 'Bouteille Verre 1L',
     description: 'Grande bouteille en verre borosilicate',
-    price: 8,
+    price: 12,
     stock: 180,
     image: 'https://images.unsplash.com/photo-1608397981882-47bc3baec431?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxnbGFzcyUyMHdhdGVyJTIwYm90dGxlJTIwMUwlMjBtaW5pbWFsaXN0fGVufDF8fHx8MTc3MjMyNTU2Nnww&ixlib=rb-4.1.0&q=80&w=1080'
   },

@@ -186,7 +186,7 @@ export function ProductPage({ navigate, productId }: ProductPageProps) {
           >
             <h2 className="mb-4 text-gray-900">Vérifiez la compatibilité</h2>
             <p className="text-xl text-[#8B7E74]">
-              Assurez-vous que HYDRAO s'intègre parfaitement dans votre cuisine.
+              Assurez-vous que HYDRAL s'intègre parfaitement dans votre cuisine.
             </p>
           </motion.div>
 

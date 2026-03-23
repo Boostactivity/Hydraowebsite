@@ -23,8 +23,8 @@ interface VideoContent {
 const VIDEOS: VideoContent[] = [
   {
     id: '1',
-    title: 'Installation HYDRAO en 15 minutes : tutoriel complet',
-    description: 'Suivez notre expert pas à pas pour installer votre robinet HYDRAO sans plombier. Outils nécessaires, astuces et pièges à éviter.',
+    title: 'Installation HYDRAL en 15 minutes : tutoriel complet',
+    description: 'Suivez notre expert pas à pas pour installer votre robinet HYDRAL sans plombier. Outils nécessaires, astuces et pièges à éviter.',
     thumbnail: 'https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?w=800&h=500&fit=crop',
     duration: '15:23',
     category: 'Tutoriels',
@@ -34,7 +34,7 @@ const VIDEOS: VideoContent[] = [
   },
   {
     id: '2',
-    title: 'Témoignage : Comment j\'économise 1200€/an avec HYDRAO',
+    title: 'Témoignage : Comment j\'économise 1200€/an avec HYDRAL',
     description: 'Marie, mère de 3 enfants à Lyon, partage son expérience après 1 an d\'utilisation. Calculs détaillés et surprise à la clé !',
     thumbnail: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&h=500&fit=crop',
     duration: '8:45',
@@ -45,7 +45,7 @@ const VIDEOS: VideoContent[] = [
   },
   {
     id: '3',
-    title: 'HYDRAO vs robinets premium : comparatif détaillé 2024',
+    title: 'HYDRAL vs robinets premium : comparatif détaillé 2024',
     description: 'Analyse objective du marché des robinets 5-en-1. Prix, fonctionnalités, économies, design. On teste tout pour vous.',
     thumbnail: 'https://images.unsplash.com/photo-1560185127-6a7e3e5b9f09?w=800&h=500&fit=crop',
     duration: '12:17',
@@ -57,7 +57,7 @@ const VIDEOS: VideoContent[] = [
   {
     id: '4',
     title: 'Entretien et maintenance : tout ce qu\'il faut savoir',
-    description: 'Changement de filtre, nettoyage, détartrage... Nos conseils pour maintenir votre HYDRAO au top pendant des années.',
+    description: 'Changement de filtre, nettoyage, détartrage... Nos conseils pour maintenir votre HYDRAL au top pendant des années.',
     thumbnail: 'https://images.unsplash.com/photo-1585128792334-2e82b9813d70?w=800&h=500&fit=crop',
     duration: '10:34',
     category: 'Tutoriels',
@@ -66,7 +66,7 @@ const VIDEOS: VideoContent[] = [
   },
   {
     id: '5',
-    title: 'Unboxing HYDRAO Premium : découverte complète',
+    title: 'Unboxing HYDRAL Premium : découverte complète',
     description: 'Déballage et première impression du robinet 5-en-1. Contenu du colis, qualité de fabrication, accessoires inclus.',
     thumbnail: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=500&fit=crop',
     duration: '7:23',
@@ -86,7 +86,7 @@ const VIDEOS: VideoContent[] = [
   },
   {
     id: '7',
-    title: '10 cocktails à faire avec votre eau pétillante HYDRAO',
+    title: '10 cocktails à faire avec votre eau pétillante HYDRAL',
     description: 'Un mixologue professionnel vous dévoile ses recettes favorites. Impressionnez vos invités sans effort !',
     thumbnail: 'https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=800&h=500&fit=crop',
     duration: '14:08',
@@ -97,7 +97,7 @@ const VIDEOS: VideoContent[] = [
   {
     id: '8',
     title: 'Avant/Après : transformation complète d\'une cuisine',
-    description: 'Suivez la rénovation d\'une cuisine parisienne avec l\'intégration d\'un HYDRAO. Design, travaux, résultat final.',
+    description: 'Suivez la rénovation d\'une cuisine parisienne avec l\'intégration d\'un HYDRAL. Design, travaux, résultat final.',
     thumbnail: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=500&fit=crop',
     duration: '9:41',
     category: 'Inspiration',
@@ -107,7 +107,7 @@ const VIDEOS: VideoContent[] = [
   {
     id: '9',
     title: 'FAQ en vidéo : 20 questions les plus fréquentes',
-    description: 'Réponses rapides et claires aux questions que vous vous posez sur HYDRAO. Installation, garantie, maintenance...',
+    description: 'Réponses rapides et claires aux questions que vous vous posez sur HYDRAL. Installation, garantie, maintenance...',
     thumbnail: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800&h=500&fit=crop',
     duration: '18:45',
     category: 'FAQ',
@@ -159,10 +159,10 @@ export function VideoHubPage({ navigate }: VideoHubPageProps) {
             <Video className="w-10 h-10 text-white" />
           </div>
           <h1 className="text-5xl font-bold text-gray-900 mb-4">
-            Vidéothèque HYDRAO
+            Vidéothèque HYDRAL
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Tutoriels, témoignages et inspirations pour devenir un pro HYDRAO
+            Tutoriels, témoignages et inspirations pour devenir un pro HYDRAL
           </p>
         </motion.div>
 
@@ -447,7 +447,7 @@ function VideoPlayer({ video, onBack, navigate }: { video: VideoContent; onBack:
         {/* CTA */}
         <div className="mt-8 bg-gradient-to-r from-[#6B1E3E] to-[#8B2E4E] rounded-3xl p-8 text-center text-white">
           <h3 className="text-2xl font-semibold mb-4">
-            Convaincu ? Choisissez votre HYDRAO
+            Convaincu ? Choisissez votre HYDRAL
           </h3>
           <button
             onClick={() => navigate('configurator')}

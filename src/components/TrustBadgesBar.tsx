@@ -3,7 +3,7 @@ import { Check } from 'lucide-react';
 export function TrustBadgesBar() {
   const badges = [
     { text: 'Livraison offerte en France', icon: Check },
-    { text: 'Garantie 3 ans', icon: Check },
+    { text: 'Garantie 5 ans', icon: Check },
     { text: 'Satisfait ou remboursé 30 jours', icon: Check },
     { text: 'SAV français 7j/7', icon: Check },
   ];

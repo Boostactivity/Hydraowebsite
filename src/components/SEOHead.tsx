@@ -273,7 +273,7 @@ function getSEOData(page: Page, productId?: string): SEOData {
     },
     testimonials: {
       title: `Avis Clients ${BRAND_NAME} - Témoignages Vérifiés | 4.8/5`,
-      description: 'Découvrez les avis clients HYDRAL : témoignages vérifiés, retours d\'expérience authentiques, photos installations. Note moyenne 4.8/5 sur 500+ avis.',
+      description: 'Découvrez les avis clients HYDRAL : témoignages vérifiés, retours d\'expérience authentiques, photos installations. Note moyenne 4.9/5 sur 500+ avis.',
       canonical: `${BASE_URL}/avis`,
       keywords: ['avis HYDRAL', 'témoignages clients', 'retours expérience', 'avis robinet', 'satisfaction clients'],
       ogType: 'article',
@@ -284,6 +284,83 @@ function getSEOData(page: Page, productId?: string): SEOData {
       description: 'Découvrez combien vous économisez avec HYDRAL : au minimum 500€ à 1200€/an selon votre foyer. Comparaison transparente eau embouteillée vs robinet 5-en-1.',
       canonical: `${BASE_URL}/economies`,
       keywords: ['économies eau robinet', 'prix eau bouteille vs robinet', 'calculer économies HYDRAL', 'rentabilité robinet 5-en-1', 'économies annuelles'],
+      ogType: 'website'
+    },
+    objections: {
+      title: `Vos Questions sur ${BRAND_NAME} - Nous Répondons Sans Détour`,
+      description: 'Trop cher ? Installation compliquée ? Locataire ? Nous répondons honnêtement à toutes vos objections sur le robinet HYDRAL.',
+      canonical: `${BASE_URL}/objections`,
+      keywords: ['robinet trop cher', 'installation robinet', 'locataire robinet', 'objections HYDRAL'],
+      ogType: 'article'
+    },
+    'mobile-demo': {
+      title: `Démo Mobile ${BRAND_NAME} - Découvrez HYDRAL sur Votre Smartphone`,
+      description: 'Explorez les fonctionnalités HYDRAL optimisées pour mobile : vidéos, carrousel tactile, formulaires simplifiés.',
+      canonical: `${BASE_URL}/demo-mobile`,
+      keywords: ['demo HYDRAL', 'robinet mobile', 'HYDRAL smartphone'],
+      ogType: 'website'
+    },
+    warranty: {
+      title: `Garantie 5 Ans ${BRAND_NAME} - SAV Français, Pièces & Main d'Oeuvre`,
+      description: 'Garantie constructeur 5 ans HYDRAL : pièces et main d\'oeuvre, SAV français réactif, technicien à domicile. Tranquillité totale.',
+      canonical: `${BASE_URL}/garantie`,
+      keywords: ['garantie HYDRAL', 'SAV robinet', 'garantie 5 ans', 'service après-vente'],
+      ogType: 'article'
+    },
+    'payment-security': {
+      title: `Paiement Sécurisé ${BRAND_NAME} - SSL, 3D Secure, Données Protégées`,
+      description: 'Paiement 100% sécurisé sur HYDRAL : SSL, 3D Secure, conformité PCI-DSS. Vos données sont protégées.',
+      canonical: `${BASE_URL}/paiement-securise`,
+      keywords: ['paiement sécurisé', 'HYDRAL sécurité', 'SSL', '3D Secure'],
+      ogType: 'article'
+    },
+    blog: {
+      title: `Blog ${BRAND_NAME} - Conseils, Recettes et Actualités`,
+      description: 'Le blog HYDRAL : conseils d\'utilisation, recettes avec eau pétillante, guides d\'entretien, témoignages clients.',
+      canonical: `${BASE_URL}/blog`,
+      keywords: ['blog HYDRAL', 'conseils robinet', 'recettes eau pétillante', 'entretien robinet'],
+      ogType: 'article'
+    },
+    'video-hub': {
+      title: `Vidéos ${BRAND_NAME} - Tutoriels, Démonstrations et Témoignages`,
+      description: 'Vidéos HYDRAL : tutoriels d\'installation, démonstrations produit, témoignages clients en vidéo.',
+      canonical: `${BASE_URL}/videos`,
+      keywords: ['vidéos HYDRAL', 'tutoriel installation', 'démonstration robinet'],
+      ogType: 'website'
+    },
+    resources: {
+      title: `Ressources ${BRAND_NAME} - Guides, Documentation et FAQ`,
+      description: 'Centre de ressources HYDRAL : guides téléchargeables, documentation technique, FAQ complète.',
+      canonical: `${BASE_URL}/ressources`,
+      keywords: ['ressources HYDRAL', 'guides robinet', 'documentation technique'],
+      ogType: 'website'
+    },
+    'shipping-tracking': {
+      title: `Suivi de Commande ${BRAND_NAME} - Livraison et Tracking`,
+      description: 'Suivez votre commande HYDRAL en temps réel. Livraison gratuite en France, suivi détaillé.',
+      canonical: `${BASE_URL}/suivi-commande`,
+      keywords: ['suivi commande HYDRAL', 'livraison robinet', 'tracking'],
+      ogType: 'website'
+    },
+    'virtual-showroom': {
+      title: `Showroom Virtuel ${BRAND_NAME} - Visualisez HYDRAL dans Votre Cuisine`,
+      description: 'Explorez le showroom virtuel HYDRAL : visualisez nos robinets dans différents styles de cuisines.',
+      canonical: `${BASE_URL}/showroom`,
+      keywords: ['showroom HYDRAL', 'visualisation cuisine', 'robinet 3D'],
+      ogType: 'website'
+    },
+    personalization: {
+      title: `Personnalisation ${BRAND_NAME} - Couleurs et Gravures sur Mesure`,
+      description: 'Personnalisez votre HYDRAL : choix de couleurs, gravures, pack de bienvenue personnalisé.',
+      canonical: `${BASE_URL}/personnalisation`,
+      keywords: ['personnalisation HYDRAL', 'robinet sur mesure', 'couleurs robinet'],
+      ogType: 'website'
+    },
+    'robinet-choice': {
+      title: `Guide de Choix ${BRAND_NAME} - Quel Robinet est Fait Pour Vous ?`,
+      description: 'Trouvez le robinet HYDRAL idéal pour votre cuisine. Guide interactif basé sur vos besoins.',
+      canonical: `${BASE_URL}/guide-choix`,
+      keywords: ['guide choix robinet', 'quel robinet choisir', 'HYDRAL modèles'],
       ogType: 'website'
     }
   };
@@ -336,7 +413,7 @@ function getProductSchema(productId: string) {
       priceCurrency: 'EUR',
       availability: 'https://schema.org/InStock',
       url: `${BASE_URL}/produit/${productId}`,
-      priceValidUntil: '2025-12-31',
+      priceValidUntil: '2026-12-31',
       seller: {
         '@type': 'Organization',
         name: BRAND_NAME
@@ -344,8 +421,8 @@ function getProductSchema(productId: string) {
     },
     aggregateRating: {
       '@type': 'AggregateRating',
-      ratingValue: '4.8',
-      reviewCount: '523',
+      ratingValue: '4.9',
+      reviewCount: '500',
       bestRating: '5',
       worstRating: '1'
     }
@@ -380,8 +457,8 @@ function getArticleSchema(title: string, description: string) {
         url: `${BASE_URL}/logo.png`
       }
     },
-    datePublished: '2024-01-01',
-    dateModified: '2024-12-15'
+    datePublished: '2025-01-01',
+    dateModified: '2026-03-01'
   };
 }
 
@@ -476,13 +553,13 @@ function getReviewsSchema() {
       price: '490',
       priceCurrency: 'EUR',
       availability: 'https://schema.org/InStock',
-      priceValidUntil: '2025-12-31',
+      priceValidUntil: '2026-12-31',
       url: `${BASE_URL}/configurator`
     },
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: '4.9',
-      reviewCount: '347',
+      reviewCount: '500',
       bestRating: '5',
       worstRating: '1'
     },

@@ -26,7 +26,7 @@ const GUIDES: Guide[] = [
   },
   {
     id: 'installation-checklist',
-    title: 'Checklist installation robinet HYDRAO',
+    title: 'Checklist installation robinet HYDRAL',
     description: 'Liste complète des outils nécessaires, étapes à suivre et pièges à éviter. Installation réussie garantie !',
     pages: 12,
     downloadCount: 2876,
@@ -37,7 +37,7 @@ const GUIDES: Guide[] = [
   {
     id: 'maintenance-guide',
     title: 'Guide entretien et maintenance',
-    description: 'Calendrier de maintenance, procédures de nettoyage et conseils pour prolonger la durée de vie de votre HYDRAO.',
+    description: 'Calendrier de maintenance, procédures de nettoyage et conseils pour prolonger la durée de vie de votre HYDRAL.',
     pages: 16,
     downloadCount: 1954,
     image: 'https://images.unsplash.com/photo-1585128792334-2e82b9813d70?w=400&h=500&fit=crop',
@@ -46,7 +46,7 @@ const GUIDES: Guide[] = [
   {
     id: 'recipes-book',
     title: 'Livre de recettes eau pétillante',
-    description: '50 recettes de cocktails, mocktails et boissons santé à réaliser avec votre eau pétillante HYDRAO.',
+    description: '50 recettes de cocktails, mocktails et boissons santé à réaliser avec votre eau pétillante HYDRAL.',
     pages: 48,
     downloadCount: 4532,
     image: 'https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=400&h=500&fit=crop',
@@ -65,7 +65,7 @@ const GUIDES: Guide[] = [
   {
     id: 'kitchen-design',
     title: 'Guide design cuisine moderne',
-    description: 'Inspirations, tendances 2024 et conseils d\'architectes pour intégrer HYDRAO dans votre cuisine de rêve.',
+    description: 'Inspirations, tendances 2024 et conseils d\'architectes pour intégrer HYDRAL dans votre cuisine de rêve.',
     pages: 32,
     downloadCount: 2134,
     image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=500&fit=crop',
@@ -332,7 +332,7 @@ export function GuidesSection() {
             <FileText className="w-10 h-10 text-white" />
           </div>
           <h2 className="text-5xl font-bold text-gray-900 mb-4">
-            Guides gratuits HYDRAO
+            Guides gratuits HYDRAL
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Téléchargez nos guides PDF experts pour devenir un pro du robinet 5-en-1

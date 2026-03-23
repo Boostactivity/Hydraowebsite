@@ -35,7 +35,7 @@ export function ProductSchema({
   priceCurrency = 'EUR',
   availability = 'InStock',
   condition = 'NewCondition',
-  brand = 'HYDRAO',
+  brand = 'HYDRAL',
   sku,
   gtin,
   rating,
@@ -62,7 +62,7 @@ export function ProductSchema({
       itemCondition: `https://schema.org/${condition}`,
       seller: {
         '@type': 'Organization',
-        name: 'HYDRAO'
+        name: 'HYDRAL'
       }
     },
     ...(sku && { sku }),
@@ -104,19 +104,19 @@ export function ProductSchema({
   );
 }
 
-// Composant pré-configuré pour HYDRAO Robinet 5-en-1
-export function HYDRAOProductSchema() {
+// Composant pré-configuré pour HYDRAL Robinet 5-en-1
+export function HYDRALProductSchema() {
   return (
     <ProductSchema
-      name="HYDRAO Robinet 5-en-1"
+      name="HYDRAL Robinet 5-en-1"
       description="Robinet intelligent haut de gamme 5-en-1 : eau filtrée, pétillante, bouillante, froide et chaude. Installation simple, design premium, économies garanties."
       image="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1200"
       price={490}
       priceCurrency="EUR"
       availability="InStock"
       condition="NewCondition"
-      brand="HYDRAO"
-      sku="HYDRAO-5EN1-001"
+      brand="HYDRAL"
+      sku="HYDRAL-5EN1-001"
       rating={{
         value: 4.9,
         count: 523,

@@ -87,7 +87,7 @@ export function InstallationWizard({ onComplete, onClose }: InstallationWizardPr
       return {
         type: 'diy',
         title: 'Installation DIY recommandée',
-        desc: 'Vous avez les compétences nécessaires pour installer HYDRAO vous-même.',
+        desc: 'Vous avez les compétences nécessaires pour installer HYDRAL vous-même.',
         time: '3-4 heures',
         difficulty: 'Intermédiaire',
         cost: '0€',
@@ -95,7 +95,7 @@ export function InstallationWizard({ onComplete, onClose }: InstallationWizardPr
           'Couper l\'arrivée d\'eau principale',
           'Démonter l\'ancien robinet',
           'Installer le module sous évier (COMBI/CUBE)',
-          'Poser le robinet HYDRAO',
+          'Poser le robinet HYDRAL',
           'Raccorder les flexibles',
           'Tester et régler'
         ],
@@ -105,7 +105,7 @@ export function InstallationWizard({ onComplete, onClose }: InstallationWizardPr
       return {
         type: 'assisted',
         title: 'Installation assistée recommandée',
-        desc: 'Un plombier partenaire HYDRAO pour une installation rapide et garantie.',
+        desc: 'Un plombier partenaire HYDRAL pour une installation rapide et garantie.',
         time: '2-3 heures',
         difficulty: 'Professionnel',
         cost: '290€',
@@ -124,12 +124,12 @@ export function InstallationWizard({ onComplete, onClose }: InstallationWizardPr
       return {
         type: 'premium',
         title: 'Installation Premium recommandée',
-        desc: 'Service complet avec expert HYDRAO : installation + formation + suivi.',
+        desc: 'Service complet avec expert HYDRAL : installation + formation + suivi.',
         time: '2 heures',
         difficulty: 'Professionnel Expert',
         cost: '490€',
         steps: [
-          'Rendez-vous avec expert HYDRAO certifié',
+          'Rendez-vous avec expert HYDRAL certifié',
           'Vérification complète de compatibilité',
           'Installation premium avec finitions soignées',
           'Formation complète à toutes les fonctionnalités',

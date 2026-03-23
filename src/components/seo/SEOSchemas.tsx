@@ -1,7 +1,7 @@
 import React from 'react';
 import { Page } from '../../App';
-import { HYDRAOProductSchema } from './ProductSchema';
-import { HYDRAOFAQSchema } from './FAQSchema';
+import { HYDRALProductSchema } from './ProductSchema';
+import { HYDRALFAQSchema } from './FAQSchema';
 import { AutoBreadcrumbSchema } from './BreadcrumbSchema';
 import { LocalBusinessSchema, OrganizationSchema } from './LocalBusinessSchema';
 
@@ -25,10 +25,10 @@ export function SEOSchemas({ currentPage }: SEOSchemasProps) {
       <AutoBreadcrumbSchema currentPage={currentPage} />
 
       {/* Product schema - pages produit */}
-      {productPages.includes(currentPage) && <HYDRAOProductSchema />}
+      {productPages.includes(currentPage) && <HYDRALProductSchema />}
 
       {/* FAQ schema - pages FAQ */}
-      {faqPages.includes(currentPage) && <HYDRAOFAQSchema />}
+      {faqPages.includes(currentPage) && <HYDRALFAQSchema />}
 
       {/* Local Business schema - page contact/installers */}
       {(currentPage === 'installers' || currentPage === 'support') && (

@@ -96,7 +96,7 @@ export function ObjectionsPage({ navigate }: ObjectionsPageProps) {
 
       {/* BATCH 24 - One-Click Upsell (Point 120) - P2 IMPORTANT */}
       <OneClickUpsell 
-        mainProduct={{ name: 'HYDRAO Robinet 5-en-1', price: 490 }}
+        mainProduct={{ name: 'HYDRAL Robinet 5-en-1', price: 490 }}
         onUpsellAccepted={(productId) => console.log('Upsell accepted:', productId)}
         onUpsellDeclined={() => console.log('Upsell declined')}
       />
@@ -113,7 +113,7 @@ export function ObjectionsPage({ navigate }: ObjectionsPageProps) {
               Plus aucune hésitation ?
             </h2>
             <p className="text-xl text-white/90 mb-10">
-              Choisissez votre HYDRAO maintenant et profitez de l'installation gratuite
+              Choisissez votre HYDRAL maintenant et profitez de l'installation gratuite
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -121,7 +121,7 @@ export function ObjectionsPage({ navigate }: ObjectionsPageProps) {
                 onClick={() => navigate('configurator')}
                 className="px-10 py-5 bg-white text-[#6B1E3E] rounded-full font-medium text-lg hover:bg-gray-100 transition-colors shadow-2xl"
               >
-                Choisir mon HYDRAO
+                Choisir mon HYDRAL
                 <ArrowRight className="inline w-5 h-5 ml-2" />
               </button>
               <button

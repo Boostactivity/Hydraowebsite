@@ -11,11 +11,11 @@ interface ConfiguratorPageProps {
   navigate: (page: Page) => void;
 }
 
-// Les 3 vrais modèles HYDRAO avec leurs prix respectifs
+// Les 3 vrais modèles HYDRAL avec leurs prix respectifs
 const hydroModels = [
   {
     id: 'pure',
-    name: 'HYDRAO Pure',
+    name: 'HYDRAL Pure',
     tagline: 'L\'essentiel',
     description: 'Eau filtrée + bouillante',
     price: HYDRAL_PRICES.pure,
@@ -32,7 +32,7 @@ const hydroModels = [
   },
   {
     id: 'spark',
-    name: 'HYDRAO Spark',
+    name: 'HYDRAL Spark',
     tagline: 'Le préféré des familles',
     description: 'Eau filtrée + gazeuse + froide',
     price: HYDRAL_PRICES.spark,
@@ -49,7 +49,7 @@ const hydroModels = [
   },
   {
     id: 'one',
-    name: 'HYDRAO One',
+    name: 'HYDRAL One',
     tagline: 'Le plus choisi',
     description: 'Eau filtrée + gazeuse + bouillante + froide',
     price: HYDRAL_PRICES.one,
@@ -239,7 +239,7 @@ export function ConfiguratorPage({ navigate }: ConfiguratorPageProps) {
             </div>
 
             <h1 className="mb-6 text-gray-900">
-              Choisissez votre HYDRAO
+              Choisissez votre HYDRAL
             </h1>
           </div>
 

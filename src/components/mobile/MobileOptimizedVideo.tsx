@@ -15,7 +15,7 @@ interface MobileOptimizedVideoProps {
 export function MobileOptimizedVideo({ 
   src, 
   poster, 
-  title = 'Vidéo HYDRAO',
+  title = 'Vidéo HYDRAL',
   duration,
   autoPlay = false,
   muted = true,

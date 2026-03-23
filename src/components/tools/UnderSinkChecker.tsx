@@ -12,7 +12,7 @@ export function UnderSinkChecker({ onClose }: UnderSinkCheckerProps) {
   const [depth, setDepth] = useState(50);
   const [showResults, setShowResults] = useState(false);
 
-  // Dimensions modules HYDRAO
+  // Dimensions modules HYDRAL
   const modules = {
     combi3L: { width: 30, height: 42, depth: 38, name: 'COMBI 3L (bouillante + froide)' },
     combi7L: { width: 35, height: 51, depth: 38, name: 'COMBI 7L (bouillante + froide)' },
@@ -295,7 +295,7 @@ export function UnderSinkChecker({ onClose }: UnderSinkCheckerProps) {
                   <h5 className="text-gray-900 mb-2">Notre recommandation</h5>
                   <p className="text-sm text-gray-700">
                     {canFitCompletePack ? (
-                      "Votre espace est idéal pour le Pack Complet. Vous aurez toutes les fonctionnalités HYDRAO."
+                      "Votre espace est idéal pour le Pack Complet. Vous aurez toutes les fonctionnalités HYDRAL."
                     ) : canFitCombi7L ? (
                       "Installez le COMBI 7L sous l'évier. Le CUBE peut être installé sur le côté ou dans un autre meuble."
                     ) : canFitCombi3L ? (

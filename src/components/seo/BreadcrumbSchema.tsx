@@ -34,7 +34,7 @@ export function BreadcrumbSchema({ items }: BreadcrumbSchemaProps) {
 
 // Générateur automatique de breadcrumb selon la page
 export function AutoBreadcrumbSchema({ currentPage }: { currentPage: Page }) {
-  const baseUrl = typeof window !== 'undefined' ? window.location.origin : 'https://hydrao.com';
+  const baseUrl = typeof window !== 'undefined' ? window.location.origin : 'https://hydral.fr';
 
   const breadcrumbMap: Record<Page, BreadcrumbItem[]> = {
     'home': [

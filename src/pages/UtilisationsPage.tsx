@@ -144,7 +144,7 @@ export function UtilisationsPage({ navigate }: UtilisationsPageProps) {
               <p className="text-sm text-[#6B1E3E] mb-4 tracking-wide">MIDI & SOIR • CUISINE</p>
               <h2 className="mb-6 text-gray-900">Cuisson accélérée</h2>
               <p className="text-xl text-[#8B7E74] mb-8 leading-relaxed">
-                Le scénario classique : vous rentrez du travail, il est 19h30, vous voulez manger rapidement. Vous faites des pâtes. Avec l'eau froide, vous attendez 10 minutes. Avec HYDRAO, vous démarrez la cuisson immédiatement.
+                Le scénario classique : vous rentrez du travail, il est 19h30, vous voulez manger rapidement. Vous faites des pâtes. Avec l'eau froide, vous attendez 10 minutes. Avec HYDRAL, vous démarrez la cuisson immédiatement.
               </p>
               <div className="p-6 bg-gradient-to-br from-[#6B1E3E]/5 to-white rounded-2xl border border-[#6B1E3E]/20">
                 <p className="text-sm text-[#8B7E74] mb-2">Témoignage client (Bordeaux)</p>
@@ -270,7 +270,7 @@ export function UtilisationsPage({ navigate }: UtilisationsPageProps) {
                 <h3 className="text-2xl mb-8 text-gray-900">Préparation biberons simplifiée</h3>
                 <div className="space-y-6">
                   <div className="p-6 bg-[#FAF8F5] rounded-2xl">
-                    <p className="text-lg text-gray-900 mb-3"><strong>Scénario classique (sans HYDRAO)</strong></p>
+                    <p className="text-lg text-gray-900 mb-3"><strong>Scénario classique (sans HYDRAL)</strong></p>
                     <ol className="space-y-2 text-[#8B7E74] list-decimal list-inside">
                       <li>Faire bouillir de l'eau (5 min)</li>
                       <li>Attendre qu'elle refroidisse à 70°C (15-20 min)</li>
@@ -281,7 +281,7 @@ export function UtilisationsPage({ navigate }: UtilisationsPageProps) {
                   </div>
 
                   <div className="p-6 bg-gradient-to-br from-[#6B1E3E] to-[#6B1E3E]/90 text-white rounded-2xl">
-                    <p className="text-lg mb-3"><strong>Avec HYDRAO</strong></p>
+                    <p className="text-lg mb-3"><strong>Avec HYDRAL</strong></p>
                     <ol className="space-y-2 text-white/90 list-decimal list-inside">
                       <li>Eau bouillante instantanée dans le biberon</li>
                       <li>Ajouter l'eau froide filtrée pour ajuster</li>
@@ -312,7 +312,7 @@ export function UtilisationsPage({ navigate }: UtilisationsPageProps) {
               <p className="text-sm text-[#6B1E3E] mb-4 tracking-wide">PARENTS • JEUNES ENFANTS</p>
               <h2 className="mb-6 text-gray-900">Biberons, purées, sécurité</h2>
               <p className="text-xl text-[#8B7E74] mb-8 leading-relaxed">
-                Si vous avez un bébé ou un jeune enfant, HYDRAO devient rapidement indispensable. Eau stérilisée instantanée, température contrôlable, sécurité renforcée.
+                Si vous avez un bébé ou un jeune enfant, HYDRAL devient rapidement indispensable. Eau stérilisée instantanée, température contrôlable, sécurité renforcée.
               </p>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
@@ -354,7 +354,7 @@ export function UtilisationsPage({ navigate }: UtilisationsPageProps) {
           <div className="text-center mb-16">
             <h2 className="mb-6 text-gray-900">Les usages invisibles</h2>
             <p className="text-xl text-[#8B7E74] max-w-3xl mx-auto leading-relaxed">
-              Et puis il y a tous ces petits moments où vous utilisez HYDRAO sans y penser. C'est là qu'on mesure à quel point c'est devenu naturel.
+              Et puis il y a tous ces petits moments où vous utilisez HYDRAL sans y penser. C'est là qu'on mesure à quel point c'est devenu naturel.
             </p>
           </div>
 
@@ -411,7 +411,7 @@ export function UtilisationsPage({ navigate }: UtilisationsPageProps) {
           >
             <h2 className="mb-6">Vous vous reconnaissez ?</h2>
             <p className="text-xl text-white/90 mb-10 leading-relaxed">
-              Si vous faites ne serait-ce que 3 de ces actions quotidiennement, HYDRAO va simplifier votre vie.
+              Si vous faites ne serait-ce que 3 de ces actions quotidiennement, HYDRAL va simplifier votre vie.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <motion.button

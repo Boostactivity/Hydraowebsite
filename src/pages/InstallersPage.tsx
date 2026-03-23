@@ -33,7 +33,7 @@ export function InstallersPage({ navigate }: InstallersPageProps) {
             </div>
             <h1 className="mb-8">
               <span className="block text-gray-900">Vous êtes plombier-installateur ?</span>
-              <span className="block text-[#6B1E3E]">Devenez partenaire HYDRAO</span>
+              <span className="block text-[#6B1E3E]">Devenez partenaire HYDRAL</span>
             </h1>
             <p className="text-xl text-[#8B7E74] leading-relaxed max-w-3xl mx-auto">
               Nous cherchons des professionnels sérieux pour installer nos robinets chez nos clients. Pas de démarchage, pas de vente. Juste de l'installation technique de qualité.
@@ -94,7 +94,7 @@ export function InstallersPage({ navigate }: InstallersPageProps) {
               </div>
               <h3 className="text-2xl mb-4 text-gray-900">Formation technique</h3>
               <p className="text-[#8B7E74] mb-6 leading-relaxed">
-                1 journée de formation sur l'installation des robinets HYDRAO. Raccordement électrique, boiler, module CO₂. Gratuit, avec certification.
+                1 journée de formation sur l'installation des robinets HYDRAL. Raccordement électrique, boiler, module CO₂. Gratuit, avec certification.
               </p>
               <ul className="space-y-2 text-[#8B7E74]">
                 <li className="flex items-start gap-2">
@@ -192,7 +192,7 @@ export function InstallersPage({ navigate }: InstallersPageProps) {
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-[#6B1E3E] flex-shrink-0 mt-0.5" />
-                  <span>Respect des consignes de montage HYDRAO</span>
+                  <span>Respect des consignes de montage HYDRAL</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-[#6B1E3E] flex-shrink-0 mt-0.5" />
@@ -430,7 +430,7 @@ export function InstallersPage({ navigate }: InstallersPageProps) {
                 <Mail className="w-6 h-6 text-[#6B1E3E]" />
               </div>
               <p className="text-sm text-[#8B7E74] mb-2">Email</p>
-              <p className="text-lg text-gray-900">pro@hydrao.fr</p>
+              <p className="text-lg text-gray-900">pro@hydral.fr</p>
             </div>
 
             <div className="p-8 bg-white rounded-3xl border border-gray-200/50 text-center">

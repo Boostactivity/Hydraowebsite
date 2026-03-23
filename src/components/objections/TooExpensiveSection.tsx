@@ -62,7 +62,7 @@ export function TooExpensiveSection({ className = '' }: TooExpensiveSectionProps
             <span className="block text-[#6B1E3E]">un investissement à une dépense</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            HYDRAO n'est pas une dépense de 490€. C'est un investissement qui vous rapporte de l'argent.
+            HYDRAL n'est pas une dépense de 490€. C'est un investissement qui vous rapporte de l'argent.
           </p>
         </motion.div>
 
@@ -75,7 +75,7 @@ export function TooExpensiveSection({ className = '' }: TooExpensiveSectionProps
         >
           <div className="bg-white rounded-3xl border-2 border-[#6B1E3E]/20 p-8 md:p-12 text-center shadow-xl">
             <div className="mb-6">
-              <div className="text-sm text-gray-600 mb-2">HYDRAO coûte</div>
+              <div className="text-sm text-gray-600 mb-2">HYDRAL coûte</div>
               <div className="text-7xl md:text-8xl font-light text-[#6B1E3E] mb-4">
                 1.34€
               </div>
@@ -123,7 +123,7 @@ export function TooExpensiveSection({ className = '' }: TooExpensiveSectionProps
               <div className="text-2xl font-light text-gray-900 mb-1">{comp.price}€</div>
               <div className="text-sm text-gray-600 mb-4">{comp.item}</div>
               <div className="text-xs text-gray-500">
-                HYDRAO = {comp.times.toFixed(1)}× moins cher par jour
+                HYDRAL = {comp.times.toFixed(1)}× moins cher par jour
               </div>
             </motion.div>
           ))}
@@ -166,10 +166,10 @@ export function TooExpensiveSection({ className = '' }: TooExpensiveSectionProps
             >
               {/* Barres comparatives */}
               <div className="space-y-4">
-                {/* HYDRAO */}
+                {/* HYDRAL */}
                 <div>
                   <div className="flex items-center justify-between mb-2">
-                    <span className="font-medium text-[#6B1E3E]">HYDRAO</span>
+                    <span className="font-medium text-[#6B1E3E]">HYDRAL</span>
                     <span className="text-2xl font-light text-[#6B1E3E]">{hydroCost5years.toLocaleString()}€</span>
                   </div>
                   <div className="h-12 bg-gray-100 rounded-xl overflow-hidden">
@@ -235,7 +235,7 @@ export function TooExpensiveSection({ className = '' }: TooExpensiveSectionProps
           viewport={{ once: true }}
           className="bg-gradient-to-r from-[#6B1E3E] to-[#8B2E4E] text-white rounded-3xl p-8 md:p-12 text-center"
         >
-          <h3 className="mb-6">Le vrai coût, c'est de ne PAS acheter HYDRAO</h3>
+          <h3 className="mb-6">Le vrai coût, c'est de ne PAS acheter HYDRAL</h3>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             <div>

@@ -50,7 +50,7 @@ export function ShopPage({ navigate }: ShopPageProps) {
               <span className="block text-gray-900 font-light">Boutique</span>
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed mb-8">
-              Filtres, CO₂, bouteilles et accessoires pour votre robinet HYDRAO.
+              Filtres, CO₂, bouteilles et accessoires pour votre robinet HYDRAL.
             </p>
             
             {/* Mention discrète abonnements */}

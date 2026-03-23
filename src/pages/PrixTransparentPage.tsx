@@ -55,7 +55,7 @@ export function PrixTransparentPage({ navigate }: PrixTransparentPageProps) {
                 desc: "Robinets haut de gamme 5-en-1 traditionnels, qualité reconnue mais prix élevés qui excluent la majorité des foyers"
               },
               {
-                brand: "HYDRAO",
+                brand: "HYDRAL",
                 price: `${BASE_PRICE}€`,
                 desc: "Même technologie, même qualité, modèle économique repensé pour la classe moyenne",
                 highlight: true
@@ -121,25 +121,25 @@ export function PrixTransparentPage({ navigate }: PrixTransparentPageProps) {
                 icon: <Users className="w-10 h-10 text-[#6B1E3E]" />,
                 title: "Vente directe",
                 traditional: "Réseau de revendeurs avec marges étagées (40-60%)",
-                hydrao: "Site officiel uniquement. Pas d'intermédiaire. La marge sert la qualité et le prix."
+                hydral: "Site officiel uniquement. Pas d'intermédiaire. La marge sert la qualité et le prix."
               },
               {
                 icon: <Building2 className="w-10 h-10 text-[#6B1E3E]" />,
                 title: "Structure légère",
                 traditional: "Showrooms, force de vente, marketing massif",
-                hydrao: "Équipe réduite, site performant, bouche-à-oreille et satisfaction client."
+                hydral: "Équipe réduite, site performant, bouche-à-oreille et satisfaction client."
               },
               {
                 icon: <Truck className="w-10 h-10 text-[#6B1E3E]" />,
                 title: "Logistique optimisée",
                 traditional: "Stock local, logistique complexe, surcoûts",
-                hydrao: "Partenariat industriel direct, livraison efficace, volumes maîtrisés."
+                hydral: "Partenariat industriel direct, livraison efficace, volumes maîtrisés."
               },
               {
                 icon: <TrendingDown className="w-10 h-10 text-[#6B1E3E]" />,
                 title: "Modèle récurrent",
                 traditional: "Tout le profit sur la vente initiale",
-                hydrao: "Marge réduite à l'achat, récurrence saine sur les consommables (filtres/CO₂)."
+                hydral: "Marge réduite à l'achat, récurrence saine sur les consommables (filtres/CO₂)."
               }
             ].map((item, idx) => (
               <motion.div
@@ -160,8 +160,8 @@ export function PrixTransparentPage({ navigate }: PrixTransparentPageProps) {
                     <p className="text-gray-700">{item.traditional}</p>
                   </div>
                   <div className="p-4 bg-[#6B1E3E]/5 border border-[#6B1E3E]/10 rounded-xl">
-                    <p className="text-sm text-[#6B1E3E] mb-1">HYDRAO :</p>
-                    <p className="text-gray-900">{item.hydrao}</p>
+                    <p className="text-sm text-[#6B1E3E] mb-1">HYDRAL :</p>
+                    <p className="text-gray-900">{item.hydral}</p>
                   </div>
                 </div>
               </motion.div>
@@ -248,7 +248,7 @@ export function PrixTransparentPage({ navigate }: PrixTransparentPageProps) {
             className="p-8 bg-[#6B1E3E]/5 border border-[#6B1E3E]/20 rounded-2xl text-center"
           >
             <p className="text-lg text-gray-900">
-              <strong>Prix final :</strong> {BASE_PRICE}€ TTC pour le robinet complet, peu importe le modèle ou la finition. Toujours 40-60% moins cher que la concurrence.
+              <strong>Prix final :</strong> A partir de {BASE_PRICE}€ TTC pour le robinet complet (Pure), 890€ (Spark), 990€ (One). Toutes les finitions sont incluses. Toujours 40-60% moins cher que la concurrence.
             </p>
           </motion.div>
         </div>
@@ -321,7 +321,7 @@ export function PrixTransparentPage({ navigate }: PrixTransparentPageProps) {
             Prêt à faire le choix<span className="block">d'un prix juste ?</span>
           </h2>
           <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Configurez votre robinet HYDRAO et découvrez le prix exact selon vos choix.
+            Configurez votre robinet HYDRAL et découvrez le prix exact selon vos choix.
           </p>
 
           <motion.button

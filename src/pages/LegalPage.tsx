@@ -45,13 +45,13 @@ export function LegalPage({ navigate, type = 'mentions' }: LegalPageProps) {
                   <h2 className="text-2xl mb-4 text-gray-900">Éditeur du site</h2>
                   <div className="p-6 bg-[#FAF8F5] rounded-2xl border border-gray-200">
                     <p className="text-[#8B7E74] leading-relaxed mb-0">
-                      <strong className="text-gray-900">HYDRAO SAS</strong><br />
+                      <strong className="text-gray-900">HYDRAL SAS</strong><br />
                       Capital social : 500 000€<br />
                       SIRET : XXX XXX XXX XXXXX<br />
                       RCS Paris<br />
                       Siège social : XX rue de [Adresse], 75XXX Paris<br />
                       Téléphone : 01 XX XX XX XX<br />
-                      Email : contact@hydrao.fr
+                      Email : contact@hydral.fr
                     </p>
                   </div>
                 </div>
@@ -75,7 +75,7 @@ export function LegalPage({ navigate, type = 'mentions' }: LegalPageProps) {
                 <div>
                   <h2 className="text-2xl mb-4 text-gray-900">Propriété intellectuelle</h2>
                   <p className="text-[#8B7E74] leading-relaxed">
-                    L'ensemble du contenu de ce site (textes, images, vidéos, logos, design) est protégé par le droit d'auteur et est la propriété exclusive de HYDRAO SAS. Toute reproduction ou utilisation sans autorisation préalable est interdite.
+                    L'ensemble du contenu de ce site (textes, images, vidéos, logos, design) est protégé par le droit d'auteur et est la propriété exclusive de HYDRAL SAS. Toute reproduction ou utilisation sans autorisation préalable est interdite.
                   </p>
                 </div>
 
@@ -91,7 +91,7 @@ export function LegalPage({ navigate, type = 'mentions' }: LegalPageProps) {
                 <div>
                   <h2 className="text-2xl mb-4 text-gray-900">Protection des données personnelles</h2>
                   <p className="text-[#8B7E74] leading-relaxed">
-                    HYDRAO SAS s'engage à protéger vos données personnelles conformément au Règlement Général sur la Protection des Données (RGPD). Cette politique vous informe sur la manière dont nous collectons, utilisons et protégeons vos données.
+                    HYDRAL SAS s'engage à protéger vos données personnelles conformément au Règlement Général sur la Protection des Données (RGPD). Cette politique vous informe sur la manière dont nous collectons, utilisons et protégeons vos données.
                   </p>
                 </div>
 
@@ -133,7 +133,7 @@ export function LegalPage({ navigate, type = 'mentions' }: LegalPageProps) {
                     <li>• <strong className="text-gray-900">Droit d'opposition :</strong> refuser l'utilisation de vos données à des fins marketing</li>
                   </ul>
                   <p className="text-[#8B7E74] mt-4">
-                    Pour exercer ces droits, contactez-nous à <a href="mailto:privacy@hydrao.fr" className="text-[#6B1E3E] hover:underline">privacy@hydrao.fr</a>. Nous vous répondons sous 30 jours.
+                    Pour exercer ces droits, contactez-nous à <a href="mailto:privacy@hydral.fr" className="text-[#6B1E3E] hover:underline">privacy@hydral.fr</a>. Nous vous répondons sous 30 jours.
                   </p>
                 </div>
 
@@ -188,7 +188,7 @@ export function LegalPage({ navigate, type = 'mentions' }: LegalPageProps) {
                 <div>
                   <h2 className="text-2xl mb-4 text-gray-900">Article 1 - Objet</h2>
                   <p className="text-[#8B7E74] leading-relaxed">
-                    Les présentes Conditions Générales de Vente (CGV) régissent les ventes de robinets HYDRAO et services associés (installation, abonnements) sur le site hydrao.fr. Toute commande implique l'acceptation sans réserve de ces CGV.
+                    Les présentes Conditions Générales de Vente (CGV) régissent les ventes de robinets HYDRAL et services associés (installation, abonnements) sur le site hydral.fr. Toute commande implique l'acceptation sans réserve de ces CGV.
                   </p>
                 </div>
 
@@ -205,7 +205,7 @@ export function LegalPage({ navigate, type = 'mentions' }: LegalPageProps) {
                     La commande est finalisée après validation du paiement. Vous recevez une confirmation par email avec récapitulatif de votre commande et facture.
                   </p>
                   <p className="text-[#8B7E74] leading-relaxed">
-                    HYDRAO se réserve le droit d'annuler une commande en cas d'indisponibilité du produit, d'erreur manifeste de prix, ou de problème de paiement. Vous serez remboursé intégralement sous 14 jours.
+                    HYDRAL se réserve le droit d'annuler une commande en cas d'indisponibilité du produit, d'erreur manifeste de prix, ou de problème de paiement. Vous serez remboursé intégralement sous 14 jours.
                   </p>
                 </div>
 
@@ -224,7 +224,7 @@ export function LegalPage({ navigate, type = 'mentions' }: LegalPageProps) {
                 <div>
                   <h2 className="text-2xl mb-4 text-gray-900">Article 5 - Livraison</h2>
                   <p className="text-[#8B7E74] leading-relaxed mb-4">
-                    Livraison gratuite en France métropolitaine sous 48-72h ouvrées. Expédition par transporteur avec suivi. Vous recevez un email avec numéro de suivi dès l'expédition.
+                    Livraison gratuite en France métropolitaine sous 5 à 7 jours ouvrés. Expédition par transporteur avec suivi. Vous recevez un email avec numéro de suivi dès l'expédition.
                   </p>
                   <p className="text-[#8B7E74] leading-relaxed">
                     En cas d'absence, le transporteur laisse un avis de passage. Le colis est disponible en point relais ou réexpédié sous 48h.
@@ -247,7 +247,7 @@ export function LegalPage({ navigate, type = 'mentions' }: LegalPageProps) {
                 <div>
                   <h2 className="text-2xl mb-4 text-gray-900">Article 7 - Garantie</h2>
                   <p className="text-[#8B7E74] leading-relaxed mb-4">
-                    Tous les robinets HYDRAO sont garantis 5 ans pièces et main d'œuvre contre tout défaut de fabrication. La garantie couvre : fuites, dysfonctionnements électroniques, défauts matériels.
+                    Tous les robinets HYDRAL sont garantis 5 ans pièces et main d'œuvre contre tout défaut de fabrication. La garantie couvre : fuites, dysfonctionnements électroniques, défauts matériels.
                   </p>
                   <p className="text-[#8B7E74] leading-relaxed mb-4">
                     <strong className="text-gray-900">Exclusions :</strong> usure normale, mauvaise installation, défaut d'entretien (détartrage), chocs, modifications non autorisées.
@@ -270,14 +270,14 @@ export function LegalPage({ navigate, type = 'mentions' }: LegalPageProps) {
                 <div>
                   <h2 className="text-2xl mb-4 text-gray-900">Article 9 - Responsabilité</h2>
                   <p className="text-[#8B7E74] leading-relaxed">
-                    HYDRAO ne peut être tenu responsable de dommages indirects (perte d'exploitation, préjudice commercial) résultant de l'utilisation ou de l'impossibilité d'utiliser le produit. Notre responsabilité est limitée au prix d'achat du produit.
+                    HYDRAL ne peut être tenu responsable de dommages indirects (perte d'exploitation, préjudice commercial) résultant de l'utilisation ou de l'impossibilité d'utiliser le produit. Notre responsabilité est limitée au prix d'achat du produit.
                   </p>
                 </div>
 
                 <div>
                   <h2 className="text-2xl mb-4 text-gray-900">Article 10 - Litiges</h2>
                   <p className="text-[#8B7E74] leading-relaxed mb-4">
-                    En cas de litige, nous vous invitons à nous contacter en priorité à contact@hydrao.fr. Nous nous engageons à trouver une solution amiable.
+                    En cas de litige, nous vous invitons à nous contacter en priorité à contact@hydral.fr. Nous nous engageons à trouver une solution amiable.
                   </p>
                   <p className="text-[#8B7E74] leading-relaxed">
                     À défaut d'accord amiable, vous pouvez recourir gratuitement à un médiateur de la consommation : [Nom du médiateur]. En dernier recours, les tribunaux de Paris sont compétents.

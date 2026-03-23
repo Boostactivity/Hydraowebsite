@@ -24,7 +24,7 @@ export function RenterSection({ className = '' }: RenterSectionProps) {
 
           <h2 className="mb-6 text-gray-900">
             40% des Français sont locataires
-            <span className="block text-[#6B1E3E]">HYDRAO est fait pour vous aussi</span>
+            <span className="block text-[#6B1E3E]">HYDRAL est fait pour vous aussi</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Installation réversible, emportable et rentable même sur 2-3 ans
@@ -45,7 +45,7 @@ export function RenterSection({ className = '' }: RenterSectionProps) {
             Démontable et emportable
           </div>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            HYDRAO ne laisse aucune trace. Vous pouvez l'emporter lors de votre déménagement et le réinstaller dans votre nouveau logement.
+            HYDRAL ne laisse aucune trace. Vous pouvez l'emporter lors de votre déménagement et le réinstaller dans votre nouveau logement.
           </p>
         </motion.div>
 
@@ -143,11 +143,11 @@ export function RenterSection({ className = '' }: RenterSectionProps) {
           </h3>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-            {/* Sans HYDRAO */}
+            {/* Sans HYDRAL */}
             <div className="bg-red-50 border-2 border-red-200 rounded-2xl p-6">
               <h4 className="text-lg font-medium text-red-900 mb-6 flex items-center gap-2">
                 <span className="text-2xl">❌</span>
-                Sans HYDRAO (3 ans)
+                Sans HYDRAL (3 ans)
               </h4>
               <div className="space-y-4 text-sm">
                 <div className="flex justify-between">
@@ -165,11 +165,11 @@ export function RenterSection({ className = '' }: RenterSectionProps) {
               </div>
             </div>
 
-            {/* Avec HYDRAO */}
+            {/* Avec HYDRAL */}
             <div className="bg-green-50 border-2 border-green-200 rounded-2xl p-6">
               <h4 className="text-lg font-medium text-green-900 mb-6 flex items-center gap-2">
                 <span className="text-2xl">✅</span>
-                Avec HYDRAO (3 ans)
+                Avec HYDRAL (3 ans)
               </h4>
               <div className="space-y-4 text-sm">
                 <div className="flex justify-between">
@@ -197,7 +197,7 @@ export function RenterSection({ className = '' }: RenterSectionProps) {
             <div className="text-5xl font-light mb-3">2 813€</div>
             <div className="text-xl mb-4">économisés sur 3 ans</div>
             <p className="text-white/90">
-              Même en changeant de logement, HYDRAO vous fait économiser <strong>75% sur 3 ans</strong>
+              Même en changeant de logement, HYDRAL vous fait économiser <strong>75% sur 3 ans</strong>
             </p>
           </div>
         </div>
@@ -218,8 +218,8 @@ export function RenterSection({ className = '' }: RenterSectionProps) {
                 Vous ne déménagez pas ? Revendez-le !
               </h3>
               <p className="text-gray-700 mb-6">
-                Si vous ne souhaitez pas emporter HYDRAO, vous pouvez le revendre d'occasion. 
-                Un robinet HYDRAO de 2 ans en bon état se revend facilement <strong>250-300€</strong>.
+                Si vous ne souhaitez pas emporter HYDRAL, vous pouvez le revendre d'occasion. 
+                Un robinet HYDRAL de 2 ans en bon état se revend facilement <strong>250-300€</strong>.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
@@ -238,7 +238,7 @@ export function RenterSection({ className = '' }: RenterSectionProps) {
               </div>
 
               <p className="text-sm text-gray-600 bg-white/60 rounded-lg p-4">
-                💡 <strong>Astuce :</strong> Certains propriétaires acceptent même de racheter HYDRAO 
+                💡 <strong>Astuce :</strong> Certains propriétaires acceptent même de racheter HYDRAL 
                 pour le laisser dans le logement et augmenter sa valeur locative.
               </p>
             </div>
@@ -256,7 +256,7 @@ export function RenterSection({ className = '' }: RenterSectionProps) {
             Locataire ne signifie pas "se priver"
           </h3>
           <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-            Profitez dès aujourd'hui du confort HYDRAO. Vous l'emporterez ou le revendrez lors de votre départ.
+            Profitez dès aujourd'hui du confort HYDRAL. Vous l'emporterez ou le revendrez lors de votre départ.
           </p>
           <button className="px-10 py-5 bg-gradient-to-r from-[#6B1E3E] to-[#8B2E4E] text-white rounded-full font-medium text-lg hover:shadow-xl transition-all inline-flex items-center gap-3">
             <Calendar className="w-5 h-5" />

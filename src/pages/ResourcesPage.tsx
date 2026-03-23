@@ -30,7 +30,7 @@ const CASE_STUDIES: CaseStudy[] = [
     location: 'Paris 8ème',
     situation: 'Restaurant gastronomique de 80 couverts utilisant 500L d\'eau filtrée par jour',
     challenge: 'Coûts élevés en eau embouteillée pour cuisine et service, impact environnemental négatif',
-    solution: '3 HYDRAO Premium installés : cuisine, bar, service',
+    solution: '3 HYDRAL Premium installés : cuisine, bar, service',
     results: [
       '€2,400 économisés par an',
       '12,000 bouteilles plastique évitées',
@@ -48,7 +48,7 @@ const CASE_STUDIES: CaseStudy[] = [
     location: 'Lyon',
     situation: 'Famille avec 3 enfants, grosse consommation d\'eau pétillante (15 packs/mois)',
     challenge: 'Budget bouteilles élevé, corvée de courses, manque de place stockage',
-    solution: 'HYDRAO Premium + abonnement Confort',
+    solution: 'HYDRAL Premium + abonnement Confort',
     results: [
       '€1,200 économisés par an',
       '5,400 bouteilles évitées',
@@ -66,7 +66,7 @@ const CASE_STUDIES: CaseStudy[] = [
     location: 'Paris La Défense',
     situation: 'Startup tech de 50 employés avec forte consommation café/thé',
     challenge: 'Machine à café médiocre, fontaine à eau basique, team insatisfait',
-    solution: 'HYDRAO Premium espace café + 2 Compact aux étages',
+    solution: 'HYDRAL Premium espace café + 2 Compact aux étages',
     results: [
       '€3,600 économisés par an',
       'Satisfaction employés +85%',
@@ -92,10 +92,10 @@ export function ResourcesPage({ navigate }: ResourcesPageProps) {
           className="text-center mb-16"
         >
           <h1 className="text-5xl font-bold text-gray-900 mb-4">
-            Centre de ressources HYDRAO
+            Centre de ressources HYDRAL
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Tout ce dont vous avez besoin pour devenir un expert HYDRAO
+            Tout ce dont vous avez besoin pour devenir un expert HYDRAL
           </p>
         </motion.div>
 
@@ -183,7 +183,7 @@ function BlogTab({ navigate }: { navigate: (page: Page) => void }) {
     >
       <BookOpen className="w-20 h-20 mx-auto mb-6 text-[#6B1E3E]" />
       <h2 className="text-3xl font-semibold text-gray-900 mb-4">
-        Blog Lifestyle HYDRAO
+        Blog Lifestyle HYDRAL
       </h2>
       <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
         Inspirations, conseils et guides pour tirer le meilleur de votre robinet 5-en-1
@@ -214,7 +214,7 @@ function CaseStudiesTab({ cases }: { cases: CaseStudy[] }) {
         Success Stories Clients
       </h2>
       <p className="text-gray-600 mb-12 text-center max-w-2xl mx-auto">
-        Découvrez comment nos clients transforment leur quotidien et économisent des milliers d'euros avec HYDRAO
+        Découvrez comment nos clients transforment leur quotidien et économisent des milliers d'euros avec HYDRAL
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -315,7 +315,7 @@ function CaseStudyDetail({ caseStudy, onBack }: { caseStudy: CaseStudy; onBack: 
               <p className="text-gray-700 leading-relaxed">{caseStudy.challenge}</p>
             </Section>
 
-            <Section title="Solution HYDRAO" icon={Award}>
+            <Section title="Solution HYDRAL" icon={Award}>
               <p className="text-gray-700 leading-relaxed mb-4">{caseStudy.solution}</p>
             </Section>
 

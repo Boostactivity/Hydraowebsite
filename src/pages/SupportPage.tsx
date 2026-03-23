@@ -254,14 +254,14 @@ export function SupportPage({ navigate }: SupportPageProps) {
               </a>
 
               <a
-                href="mailto:support@hydrao.fr"
+                href="mailto:support@hydral.fr"
                 className="p-8 bg-gradient-to-br from-[#FAF8F5] to-white rounded-3xl border border-gray-200 hover:border-[#6B1E3E]/30 hover:shadow-lg transition-all group"
               >
                 <div className="w-14 h-14 bg-[#6B1E3E]/10 rounded-2xl flex items-center justify-center mb-6">
                   <Mail className="w-7 h-7 text-[#6B1E3E]" />
                 </div>
                 <h3 className="text-xl mb-2 text-gray-900">Email</h3>
-                <p className="text-2xl text-[#6B1E3E] mb-2 group-hover:underline">support@hydrao.fr</p>
+                <p className="text-2xl text-[#6B1E3E] mb-2 group-hover:underline">support@hydral.fr</p>
                 <p className="text-sm text-[#8B7E74]">Réponse sous 24h • 7j/7</p>
               </a>
             </div>

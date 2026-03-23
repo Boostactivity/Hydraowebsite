@@ -48,7 +48,7 @@ export function AvantagesPage({ navigate }: AvantagesPageProps) {
               </p>
               <div className="space-y-6">
                 <div className="p-6 bg-[#FAF8F5] rounded-2xl border border-gray-200/50">
-                  <p className="text-lg text-gray-900 mb-2"><strong>Sans HYDRAO</strong></p>
+                  <p className="text-lg text-gray-900 mb-2"><strong>Sans HYDRAL</strong></p>
                   <ul className="space-y-2 text-[#8B7E74]">
                     <li className="flex items-start gap-2">
                       <span className="text-gray-400">•</span>
@@ -67,7 +67,7 @@ export function AvantagesPage({ navigate }: AvantagesPageProps) {
                 </div>
 
                 <div className="p-6 bg-gradient-to-br from-[#6B1E3E] to-[#6B1E3E]/90 text-white rounded-2xl">
-                  <p className="text-lg mb-2"><strong>Avec HYDRAO</strong></p>
+                  <p className="text-lg mb-2"><strong>Avec HYDRAL</strong></p>
                   <p className="text-white/90 mb-4">
                     Eau bouillante instantanée. Eau filtrée en continu. Eau pétillante à la demande. Zéro course, zéro stockage, zéro attente.
                   </p>
@@ -140,7 +140,7 @@ export function AvantagesPage({ navigate }: AvantagesPageProps) {
                   <span className="text-gray-900">255€/an</span>
                 </div>
                 <div className="flex justify-between text-sm">
-                  <span className="text-[#8B7E74]">Avec HYDRAO</span>
+                  <span className="text-[#8B7E74]">Avec HYDRAL</span>
                   <span className="text-gray-900">3€/an</span>
                 </div>
               </div>
@@ -167,7 +167,7 @@ export function AvantagesPage({ navigate }: AvantagesPageProps) {
                   <span className="text-gray-900">510€/an</span>
                 </div>
                 <div className="flex justify-between text-sm">
-                  <span className="text-[#8B7E74]">Avec HYDRAO</span>
+                  <span className="text-[#8B7E74]">Avec HYDRAL</span>
                   <span className="text-gray-900">6€/an</span>
                 </div>
               </div>
@@ -197,7 +197,7 @@ export function AvantagesPage({ navigate }: AvantagesPageProps) {
                   <span className="text-gray-900">1 020€/an</span>
                 </div>
                 <div className="flex justify-between text-sm">
-                  <span className="text-[#8B7E74]">Avec HYDRAO</span>
+                  <span className="text-[#8B7E74]">Avec HYDRAL</span>
                   <span className="text-gray-900">12€/an</span>
                 </div>
               </div>
@@ -224,7 +224,7 @@ export function AvantagesPage({ navigate }: AvantagesPageProps) {
                   <span className="text-gray-900">1 275€/an</span>
                 </div>
                 <div className="flex justify-between text-sm">
-                  <span className="text-[#8B7E74]">Avec HYDRAO</span>
+                  <span className="text-[#8B7E74]">Avec HYDRAL</span>
                   <span className="text-gray-900">15€/an</span>
                 </div>
               </div>
@@ -246,7 +246,7 @@ export function AvantagesPage({ navigate }: AvantagesPageProps) {
             <div className="p-10 bg-gradient-to-br from-[#6B1E3E] to-[#6B1E3E]/90 text-white rounded-3xl">
               <h3 className="text-2xl mb-6">Retour sur investissement</h3>
               <p className="text-lg text-white/90 mb-8">
-                HYDRAO coûte <strong>490€ TTC</strong> (prix unique). Avec une famille de 4 économisant ~1000€/an, le robinet est amorti en <strong>6 mois</strong>.
+                HYDRAL coûte <strong>490€ TTC</strong> (prix unique). Avec une famille de 4 économisant ~1000€/an, le robinet est amorti en <strong>6 mois</strong>.
               </p>
               <div className="grid grid-cols-3 gap-6 text-center">
                 <div>
@@ -303,7 +303,7 @@ export function AvantagesPage({ navigate }: AvantagesPageProps) {
                 </div>
 
                 <div className="p-6 bg-green-50 border border-green-200 rounded-2xl">
-                  <h3 className="text-lg mb-3 text-gray-900">Eau du robinet filtrée (HYDRAO)</h3>
+                  <h3 className="text-lg mb-3 text-gray-900">Eau du robinet filtrée (HYDRAL)</h3>
                   <ul className="space-y-2 text-[#8B7E74]">
                     <li className="flex items-start gap-2">
                       <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
@@ -413,7 +413,7 @@ export function AvantagesPage({ navigate }: AvantagesPageProps) {
               </div>
               <h2 className="mb-6 text-gray-900">Un geste écologique concret</h2>
               <p className="text-xl text-[#8B7E74] mb-8 leading-relaxed">
-                HYDRAO ne vous sauvera pas la planète. Mais c'est un des gestes les plus simples pour réduire votre empreinte plastique quotidienne.
+                HYDRAL ne vous sauvera pas la planète. Mais c'est un des gestes les plus simples pour réduire votre empreinte plastique quotidienne.
               </p>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">

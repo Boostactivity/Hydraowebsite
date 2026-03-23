@@ -29,7 +29,7 @@ export function SavingsPage({ navigate }: SavingsPageProps) {
               Convaincu par les chiffres ?
             </h2>
             <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-              Choisissez votre robinet HYDRAO personnalisé et commencez à économiser dès aujourd'hui.
+              Choisissez votre robinet HYDRAL personnalisé et commencez à économiser dès aujourd'hui.
             </p>
             <motion.button
               onClick={() => navigate('configurator')}
@@ -37,7 +37,7 @@ export function SavingsPage({ navigate }: SavingsPageProps) {
               whileTap={{ scale: 0.95 }}
               className="px-10 py-5 bg-white text-[#6B1E3E] rounded-full text-lg font-medium shadow-2xl hover:shadow-xl transition-all inline-flex items-center gap-3"
             >
-              Choisir mon HYDRAO
+              Choisir mon HYDRAL
               <ChevronRight className="w-5 h-5" />
             </motion.button>
           </motion.div>

@@ -359,7 +359,7 @@ export function PaymentSecurityPage({ navigate }: PaymentSecurityPageProps) {
             onClick={() => navigate('configurator')}
             className="px-8 py-4 bg-white text-[#6B1E3E] rounded-full font-semibold hover:shadow-xl transition-all text-lg"
           >
-            Choisir mon HYDRAO
+            Choisir mon HYDRAL
           </button>
         </motion.div>
       </div>
