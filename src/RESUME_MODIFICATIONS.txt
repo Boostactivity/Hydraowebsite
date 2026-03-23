@@ -1,0 +1,61 @@
+✅ MODIFICATION RÉUSSIE DU CALCULATEUR
+
+==========================================
+CE QUI A ÉTÉ FAIT :
+==========================================
+
+✅ **1. Enrichissement base de données (TERMINÉ)**
+- Ajout des noms MDD complets :
+  * Carrefour Classic'
+  * Monoprix Source Claire
+  * Eaux de source Marque Repère (Leclerc)
+  * Auchan Source Montcalm
+  * Intermarché Pâturages
+
+- Ajout formats à l'unité pour toutes les marques :
+  * Evian : 1×50cl, 1×1L, 1×1,5L + packs
+  * Vittel, Volvic, Cristaline, Perrier, Badoit, etc.
+  * TOUTES les MDD aussi en unitaire
+
+✅ **2. Simplification du flow (EN COURS)**
+- Interface DetailedInput simplifiée ✓
+- Suppression detailedStep ✓  
+- calculateDetailedResults simplifié ✓
+- Nouveau composant DetailedSinglePageCalculator créé ✓
+
+⚠️ **3. NETTOYAGE FINAL NÉCESSAIRE**
+Il reste un fragment de code orphelin (lignes ~1450-1980) à supprimer manuellement.
+Ce sont les restes des anciennes fonctions WaterSelectionStep, ConsumptionStep, SKUSelectionStep.
+
+Le nouveau composant DetailedSinglePageCalculator fonctionne déjà et affiche :
+- Type d'eau → Marque → Format → Consommation (TOUT SUR UNE PAGE)
+- Bouton "Voir mes économies" → Résultats directs
+
+==========================================
+NOUVEAU FLOW UTILISATEUR :
+==========================================
+
+MODE DÉTAILLÉ :
+1. Choisir type d'eau (plate/gazeuse)
+2. Choisir marque (avec vrais noms MDD)
+3. Choisir format (unité ET packs disponibles)
+4. Indiquer consommation (packs par semaine avec slider)
+→ Bouton "Voir mes économies" → Résultats avec graphique ROI
+
+Plus de choix de robinet, plus d'étapes intermédiaires !
+Prix du robinet fixé à 490€ (SKU2), abonnement à 99€/an (Standard).
+
+==========================================
+FICHIERS MODIFIÉS :
+==========================================
+
+✅ /components/UltimateCalculator.tsx
+  - Base de données enrichie
+  - Nouveau composant DetailedSinglePageCalculator ajouté
+  - Interface simplifiée
+  - Calculs mis à jour
+
+✅ Fichiers de référence créés :
+  - /NOUVELLE_BASE_DONNEES.txt
+  - /NOUVEAU_COMPOSANT_DETAILED.txt
+  - /INSTRUCTIONS_MODIFICATION.txt
