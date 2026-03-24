@@ -10,7 +10,7 @@ const EXTERNAL_ORIGINS = [
 ];
 
 // Pages à prefetch selon la navigation probable
-const PREFETCH_ROUTES: Record<Page, Page[]> = {
+const PREFETCH_ROUTES: Partial<Record<Page, Page[]>> = {
   'home': ['concept', 'savings', 'configurator', 'gamme'],
   'concept': ['gamme', 'configurator', 'avantages'],
   'gamme': ['product', 'configurator', 'finitions'],
@@ -24,7 +24,6 @@ const PREFETCH_ROUTES: Record<Page, Page[]> = {
   'installers': ['configurator', 'support'],
   'faq': ['support', 'configurator'],
   'subscriptions': ['configurator', 'savings'],
-  // Autres pages avec prefetch minimal
   'modules': ['configurator'],
   'finitions': ['configurator'],
   'utilisations': ['configurator'],
@@ -37,7 +36,16 @@ const PREFETCH_ROUTES: Record<Page, Page[]> = {
   'shop': ['cart'],
   'legal': ['home'],
   'objections': ['configurator'],
-  'mobile-demo': ['home']
+  'mobile-demo': ['home'],
+  'warranty': ['support', 'faq'],
+  'payment-security': ['checkout'],
+  'blog': ['home'],
+  'video-hub': ['home'],
+  'resources': ['faq', 'support'],
+  'shipping-tracking': ['support'],
+  'virtual-showroom': ['configurator'],
+  'personalization': ['configurator'],
+  'robinet-choice': ['configurator', 'gamme']
 };
 
 export function ResourceHints({ currentPage }: { currentPage: Page }) {
@@ -88,7 +96,7 @@ function prefetchRoute(page: Page) {
 
 // Preload assets critiques selon la page
 function preloadCriticalAssets(page: Page) {
-  const criticalAssets: Record<Page, string[]> = {
+  const criticalAssets: Partial<Record<Page, string[]>> = {
     'home': [
       defaultImages.faucet
     ],

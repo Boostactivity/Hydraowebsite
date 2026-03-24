@@ -2,6 +2,7 @@ import React from 'react';
 import { Page } from '../App';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { ArrowRight } from 'lucide-react';
+import { motion } from 'motion/react';
 import { productImages, defaultImages } from '../assets/products';
 
 interface InspirationPageProps {
@@ -61,32 +62,35 @@ export function InspirationPage({ navigate }: InspirationPageProps) {
       </section>
 
       {/* Cas d'usage */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl text-center mb-12">Cas d'usage quotidiens</h2>
+      <section className="py-12 sm:py-16 lg:py-20 bg-[#FAF8F5]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-center mb-12 text-gray-900">Cas d'usage quotidiens</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {useCases.map((useCase, index) => (
-              <div key={index} className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all">
-                <h3 className="text-2xl mb-3">{useCase.title}</h3>
-                <p className="text-gray-600">{useCase.desc}</p>
+              <div key={index} className="bg-white p-8 rounded-2xl border border-gray-200/50 shadow-sm hover:shadow-md transition-all">
+                <h3 className="mb-3 text-gray-900">{useCase.title}</h3>
+                <p className="text-[#8B7E74]">{useCase.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-r from-[#6B1E3E] to-[#8B2E54] text-white text-center">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl mb-6">Et vous, comment l'utiliserez-vous ?</h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto text-white/90">
+      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-[#6B1E3E] to-[#6B1E3E]/90 text-white text-center">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="mb-6">Et vous, comment l'utiliserez-vous ?</h2>
+          <p className="text-xl mb-10 max-w-2xl mx-auto text-white/90 leading-relaxed">
             Configurez votre HYDRAL et découvrez toutes ses possibilités
           </p>
-          <button 
+          <motion.button
             onClick={() => navigate('configurator')}
-            className="px-10 py-4 bg-white text-[#6B1E3E] rounded-full hover:bg-[#FAF8F5] hover:shadow-2xl hover:scale-105 transition-all inline-flex items-center gap-3"
+            className="px-12 py-5 bg-white text-[#6B1E3E] rounded-full text-lg hover:bg-[#FAF8F5] transition-colors inline-flex items-center gap-3"
+            whileHover={{ scale: 1.05, y: -3 }}
+            whileTap={{ scale: 0.98 }}
           >
-            Configurer
-          </button>
+            Configurer mon robinet
+            <ArrowRight className="w-5 h-5" />
+          </motion.button>
         </div>
       </section>
     </div>

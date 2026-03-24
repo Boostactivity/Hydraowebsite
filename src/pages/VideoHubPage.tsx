@@ -148,7 +148,7 @@ export function VideoHubPage({ navigate }: VideoHubPageProps) {
 
   return (
     <div className="min-h-screen bg-[#FAF8F5] py-20">
-      <div className="container mx-auto px-4 max-w-7xl">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -224,7 +224,7 @@ export function VideoHubPage({ navigate }: VideoHubPageProps) {
             <h2 className="text-2xl font-semibold text-gray-900">
               {selectedCategory === 'Toutes' ? 'Toutes les vidéos' : `Vidéos ${selectedCategory}`}
             </h2>
-            <span className="text-gray-600">
+            <span className="text-[#8B7E74]">
               {filteredVideos.length} vidéo{filteredVideos.length > 1 ? 's' : ''}
             </span>
           </div>
@@ -304,11 +304,11 @@ function FeaturedVideoCard({ video, onClick }: { video: VideoContent; onClick: (
           {video.title}
         </h3>
         
-        <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+        <p className="text-[#8B7E74] text-sm mb-4 line-clamp-2">
           {video.description}
         </p>
 
-        <div className="flex items-center gap-4 text-sm text-gray-500">
+        <div className="flex items-center gap-4 text-sm text-[#8B7E74]">
           <div className="flex items-center gap-1">
             <Eye className="w-4 h-4" />
             <span>{video.views.toLocaleString()}</span>
@@ -347,7 +347,7 @@ function VideoCard({ video, onClick }: { video: VideoContent; onClick: () => voi
       
       <div className="p-5">
         <div className="flex items-center gap-2 mb-2">
-          <span className="px-2 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-medium">
+          <span className="px-2 py-1 bg-[#6B1E3E]/10 text-[#6B1E3E] rounded-full text-xs font-medium">
             {video.category}
           </span>
         </div>
@@ -356,11 +356,11 @@ function VideoCard({ video, onClick }: { video: VideoContent; onClick: () => voi
           {video.title}
         </h3>
         
-        <p className="text-gray-600 text-sm mb-3 line-clamp-2">
+        <p className="text-[#8B7E74] text-sm mb-3 line-clamp-2">
           {video.description}
         </p>
 
-        <div className="flex items-center gap-3 text-xs text-gray-500">
+        <div className="flex items-center gap-3 text-xs text-[#8B7E74]">
           <div className="flex items-center gap-1">
             <Eye className="w-3.5 h-3.5" />
             <span>{video.views.toLocaleString()}</span>
@@ -378,7 +378,7 @@ function VideoCard({ video, onClick }: { video: VideoContent; onClick: () => voi
 function VideoPlayer({ video, onBack, navigate }: { video: VideoContent; onBack: () => void; navigate: (page: Page) => void }) {
   return (
     <div className="min-h-screen bg-black">
-      <div className="container mx-auto px-4 max-w-6xl py-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <button
           onClick={onBack}
           className="flex items-center gap-2 text-white/80 hover:text-white transition-colors mb-6"
@@ -413,12 +413,12 @@ function VideoPlayer({ video, onBack, navigate }: { video: VideoContent; onBack:
             <h1 className="text-3xl font-bold text-gray-900 mb-4">
               {video.title}
             </h1>
-            <p className="text-gray-600 text-lg leading-relaxed">
+            <p className="text-[#8B7E74] text-lg leading-relaxed">
               {video.description}
             </p>
           </div>
 
-          <div className="flex items-center gap-6 text-gray-600 mb-8">
+          <div className="flex items-center gap-6 text-[#8B7E74] mb-8">
             <div className="flex items-center gap-2">
               <Eye className="w-5 h-5" />
               <span>{video.views.toLocaleString()} vues</span>
@@ -438,7 +438,7 @@ function VideoPlayer({ video, onBack, navigate }: { video: VideoContent; onBack:
               <ThumbsUp className="w-5 h-5" />
               <span>J'aime</span>
             </button>
-            <button className="px-6 py-4 bg-gray-100 text-gray-700 rounded-full font-semibold hover:bg-gray-200 transition-colors">
+            <button className="px-6 py-4 bg-[#6B1E3E]/10 text-[#6B1E3E] rounded-full font-semibold hover:bg-gray-200 transition-colors">
               Partager
             </button>
           </div>

@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { Page } from '../App';
-import { SEOSchemas } from './seo/SEOSchemas';
 
 interface SEOHeadProps {
   page: Page;

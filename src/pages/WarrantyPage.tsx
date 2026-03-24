@@ -12,7 +12,7 @@ export function WarrantyPage({ navigate }: WarrantyPageProps) {
 
   return (
     <div className="min-h-screen bg-[#FAF8F5] py-20">
-      <div className="container mx-auto px-4 max-w-5xl">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

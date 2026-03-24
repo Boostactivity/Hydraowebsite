@@ -309,7 +309,7 @@ export function ConversionTunnel({ navigate }: ConversionTunnelProps) {
                     <div className={`w-6 h-6 rounded-full flex items-center justify-center text-xs transition-colors ${
                       currentSection >= step.id
                         ? 'bg-[#6B1E3E] text-white'
-                        : 'bg-gray-200 text-gray-600'
+                        : 'bg-gray-200 text-[#8B7E74]'
                     }`}>
                       {step.icon}
                     </div>
@@ -642,7 +642,7 @@ const Section1 = React.forwardRef<HTMLElement, {
                     className={`p-6 rounded-xl transition-all border-2 text-center ${
                       isSelected
                         ? 'bg-[#6B1E3E] text-white border-[#6B1E3E] shadow-lg'
-                        : 'bg-gray-50 hover:bg-[#6B1E3E]/10 text-gray-900 border-gray-200 hover:border-[#6B1E3E]/50'
+                        : 'bg-[#FAF8F5] hover:bg-[#6B1E3E]/10 text-gray-900 border-gray-200 hover:border-[#6B1E3E]/50'
                     }`}
                   >
                     <p className="font-semibold text-lg mb-2">{option.label}</p>
@@ -651,7 +651,7 @@ const Section1 = React.forwardRef<HTMLElement, {
                 );
               })}
             </div>
-            <p className="text-xs text-gray-500 text-center mt-6 leading-relaxed">
+            <p className="text-xs text-[#8B7E74] text-center mt-6 leading-relaxed">
               Estimation basée sur 1,5L/jour/personne — recommandation santé — et le prix moyen constaté en grande surface.
             </p>
           </div>
@@ -687,7 +687,7 @@ const Section1 = React.forwardRef<HTMLElement, {
                       className={`p-6 rounded-xl transition-all border-2 text-center ${
                         isSelected
                           ? 'bg-[#6B1E3E] text-white border-[#6B1E3E] shadow-lg'
-                          : 'bg-gray-50 hover:bg-[#6B1E3E]/10 border-gray-200 hover:border-[#6B1E3E]/50'
+                          : 'bg-[#FAF8F5] hover:bg-[#6B1E3E]/10 border-gray-200 hover:border-[#6B1E3E]/50'
                       }`}
                     >
                       <div className="text-4xl mb-2">{option.icon}</div>
@@ -713,7 +713,7 @@ const Section1 = React.forwardRef<HTMLElement, {
                     </button>
                   )}
                 </div>
-                <p className="text-sm text-gray-600 mb-6">Prix moyen constaté en grande surface</p>
+                <p className="text-sm text-[#8B7E74] mb-6">Prix moyen constaté en grande surface</p>
                 
                 {/* Eaux sélectionnées - Affichage avec badges */}
                 {state.selectedWaters.length > 0 && (
@@ -751,7 +751,7 @@ const Section1 = React.forwardRef<HTMLElement, {
                         className={`w-full p-4 min-h-[80px] rounded-xl text-left transition-all flex items-center justify-between border-2 ${
                           isSelected
                             ? 'bg-[#6B1E3E] text-white border-[#6B1E3E] shadow-lg cursor-default'
-                            : 'bg-gray-50 hover:bg-[#6B1E3E]/10 hover:border-[#6B1E3E]/50 border-gray-200 cursor-pointer'
+                            : 'bg-[#FAF8F5] hover:bg-[#6B1E3E]/10 hover:border-[#6B1E3E]/50 border-gray-200 cursor-pointer'
                         }`}
                       >
                         <div>
@@ -779,7 +779,7 @@ const Section1 = React.forwardRef<HTMLElement, {
                 <h3 className="text-lg font-semibold text-gray-900 mb-6">Combien en achetez-vous ?</h3>
                 <div className="space-y-6">
                   {state.selectedWaters.map((water, idx) => (
-                    <div key={idx} className="p-4 bg-gray-50 rounded-xl">
+                    <div key={idx} className="p-4 bg-[#FAF8F5] rounded-xl">
                       <p className="font-semibold text-gray-900 mb-3">{water.brand} {water.format}</p>
                       <div className="flex flex-col sm:flex-row gap-4">
                         <input
@@ -818,15 +818,15 @@ const Section1 = React.forwardRef<HTMLElement, {
             >
               <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-4 sm:mb-6">Ce que vous dépensez aujourd'hui</h3>
               <div className="text-center">
-                <p className="text-sm text-gray-600 mb-2">Dépense annuelle</p>
+                <p className="text-sm text-[#8B7E74] mb-2">Dépense annuelle</p>
                 <p className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">{state.yearlyTotal}€</p>
-                <p className="text-sm text-gray-600 mb-6">
+                <p className="text-sm text-[#8B7E74] mb-6">
                   {state.yearlyTotal < 100 && "Soit environ quelques semaines de café"}
                   {state.yearlyTotal >= 100 && state.yearlyTotal < 250 && "Soit l'équivalent d'un week-end en famille"}
                   {state.yearlyTotal >= 250 && state.yearlyTotal < 500 && "Soit presque un billet d'avion aller-retour"}
                   {state.yearlyTotal >= 500 && "Soit le prix d'un robinet Hydral — chaque année"}
                 </p>
-                <p className="text-sm text-gray-600">Sur 5 ans : <span className="font-semibold text-gray-900">{state.yearlyTotal * 5}€</span></p>
+                <p className="text-sm text-[#8B7E74]">Sur 5 ans : <span className="font-semibold text-gray-900">{state.yearlyTotal * 5}€</span></p>
               </div>
             </motion.div>
 
@@ -848,7 +848,7 @@ const Section1 = React.forwardRef<HTMLElement, {
                     <div key={robinet.sku} className="h-full flex flex-col p-6 bg-gradient-to-br from-[#FAF8F5] to-white rounded-2xl border-2 border-gray-200">
                       {/* Image du robinet */}
                       {robinet.image && (
-                        <div className="mb-4 overflow-hidden rounded-xl bg-gray-50">
+                        <div className="mb-4 overflow-hidden rounded-xl bg-[#FAF8F5]">
                           <img
                             src={robinet.image}
                             alt={robinet.name}
@@ -863,15 +863,15 @@ const Section1 = React.forwardRef<HTMLElement, {
                       </div>
                       <div className="space-y-2 text-sm flex-1">
                         <div className="flex items-center justify-between py-2 border-t border-gray-200">
-                          <span className="text-gray-600">Rentabilisé en</span>
+                          <span className="text-[#8B7E74]">Rentabilisé en</span>
                           <span className="font-semibold text-gray-900">{breakEvenMonths} mois</span>
                         </div>
                         <div className="flex items-center justify-between py-2 border-t border-gray-200">
-                          <span className="text-gray-600">Économie 1 an</span>
+                          <span className="text-[#8B7E74]">Économie 1 an</span>
                           <span className="font-semibold text-green-600">+{Math.round(savings1y)}€</span>
                         </div>
                         <div className="flex items-center justify-between py-2 border-t border-gray-200">
-                          <span className="text-gray-600">Économie 5 ans</span>
+                          <span className="text-[#8B7E74]">Économie 5 ans</span>
                           <span className="font-semibold text-green-600">+{Math.round(savings5y)}€</span>
                         </div>
                       </div>
@@ -963,7 +963,7 @@ const Section2 = React.forwardRef<HTMLElement, {
 
                 {/* Image du robinet */}
                 {robinet.image && (
-                  <div className="mb-6 overflow-hidden rounded-2xl bg-gray-50">
+                  <div className="mb-6 overflow-hidden rounded-2xl bg-[#FAF8F5]">
                     <img
                       src={robinet.image}
                       alt={robinet.name}
@@ -985,18 +985,18 @@ const Section2 = React.forwardRef<HTMLElement, {
                 {/* Économies calculées */}
                 {state.yearlyTotal && state.yearlyTotal > 0 && (
                   <div className="mb-6 p-4 bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl border border-green-200">
-                    <p className="text-sm text-gray-600 mb-2 text-center">Avec vos dépenses actuelles :</p>
+                    <p className="text-sm text-[#8B7E74] mb-2 text-center">Avec vos dépenses actuelles :</p>
                     <p className="text-center">
                       <span className="text-sm text-gray-700">Rentabilisé en </span>
                       <span className="font-bold text-green-700">{breakEvenMonths} mois</span>
                     </p>
                     <div className="flex items-center justify-center gap-4 mt-2">
                       <p className="text-center">
-                        <span className="text-xs text-gray-600">1 an : </span>
+                        <span className="text-xs text-[#8B7E74]">1 an : </span>
                         <span className="font-bold text-green-700">+{Math.round(savings1y)}€</span>
                       </p>
                       <p className="text-center">
-                        <span className="text-xs text-gray-600">5 ans : </span>
+                        <span className="text-xs text-[#8B7E74]">5 ans : </span>
                         <span className="font-bold text-green-700">+{Math.round(savings5y)}€</span>
                       </p>
                     </div>
@@ -1016,7 +1016,7 @@ const Section2 = React.forwardRef<HTMLElement, {
                           {feature.label}
                         </p>
                         {feature.desc && feature.included && (
-                          <p className="text-xs text-gray-600 mt-1">{feature.desc}</p>
+                          <p className="text-xs text-[#8B7E74] mt-1">{feature.desc}</p>
                         )}
                       </div>
                     </div>
@@ -1024,7 +1024,7 @@ const Section2 = React.forwardRef<HTMLElement, {
                 </div>
 
                 <div className="p-4 bg-[#FAF8F5] rounded-xl mb-6">
-                  <p className="text-xs text-gray-600 mb-1">👤 Idéal pour :</p>
+                  <p className="text-xs text-[#8B7E74] mb-1">👤 Idéal pour :</p>
                   <p className="text-sm text-gray-900">{robinet.idealFor}</p>
                 </div>
 
@@ -1162,7 +1162,7 @@ const Section2 = React.forwardRef<HTMLElement, {
                       </div>
                     </div>
                     <div className="pt-3 border-t border-[#6B1E3E]/10">
-                      <p className="text-xs text-gray-600 flex items-center gap-2">
+                      <p className="text-xs text-[#8B7E74] flex items-center gap-2">
                         <span className="w-1.5 h-1.5 rounded-full bg-[#6B1E3E]" />
                         Dimensions : H 40cm × L 22cm × P 12cm
                       </p>
@@ -1176,7 +1176,7 @@ const Section2 = React.forwardRef<HTMLElement, {
                       <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#8B2E5E] to-[#6B1E3E] border-2 border-white" />
                       <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#6B1E3E]/70 to-[#8B2E5E]/70 border-2 border-white" />
                     </div>
-                    <p className="text-sm text-gray-600">
+                    <p className="text-sm text-[#8B7E74]">
                       <span className="font-semibold text-gray-900">250+ familles</span> équipées en 2024
                     </p>
                   </div>
@@ -1314,7 +1314,7 @@ const Section3 = React.forwardRef<HTMLElement, {
                     </span>
                   </div>
                   {state.paymentRhythm !== 'annual' && (
-                    <p className="text-sm mt-2 text-gray-600">
+                    <p className="text-sm mt-2 text-[#8B7E74]">
                       soit {plan.price}€/an
                     </p>
                   )}
@@ -1396,7 +1396,7 @@ const Section3 = React.forwardRef<HTMLElement, {
             <p className="text-center text-[#6B1E3E] font-semibold text-lg">
               Valeur ~{PLANS[state.selectedPlan].welcomePack.value}€ offerts
             </p>
-            <p className="text-center text-sm text-gray-600 mt-4">
+            <p className="text-center text-sm text-[#8B7E74] mt-4">
               Tous vos accessoires sont personnalisables à l'étape suivante — couleurs et prénoms.
             </p>
           </motion.div>
@@ -1536,14 +1536,14 @@ const Section4 = React.forwardRef<HTMLElement, {
                                 <p className="text-sm font-medium text-gray-900">
                                   {ACCENT_COLORS.find(c => c.id === (state.itemColors[itemKey] || 'bordeaux'))?.label}
                                 </p>
-                                <p className="text-xs text-gray-500">Cliquer pour changer</p>
+                                <p className="text-xs text-[#8B7E74]">Cliquer pour changer</p>
                               </div>
                               <ChevronDown className="w-4 h-4 text-gray-400" />
                             </button>
                           ) : (
                             <div className="space-y-2">
                               <div className="flex items-center justify-between">
-                                <p className="text-sm text-gray-600">Couleur du liseré</p>
+                                <p className="text-sm text-[#8B7E74]">Couleur du liseré</p>
                                 <button
                                   onClick={() => setOpenColorPickers({ ...openColorPickers, [itemKey]: false })}
                                   className="text-xs text-[#6B1E3E] hover:text-[#6B1E3E]/80 font-medium"
@@ -1586,7 +1586,7 @@ const Section4 = React.forwardRef<HTMLElement, {
                         {/* Prénom (si customizable) */}
                         {item.customizable && (
                           <div>
-                            <p className="text-sm text-gray-600 mb-2">Ajouter un prénom (optionnel)</p>
+                            <p className="text-sm text-[#8B7E74] mb-2">Ajouter un prénom (optionnel)</p>
                             <input
                               type="text"
                               maxLength={12}
@@ -1703,14 +1703,14 @@ const Section4 = React.forwardRef<HTMLElement, {
                             <p className="text-sm font-medium text-gray-900">
                               {ACCENT_COLORS.find(c => c.id === bottle.color)?.label}
                             </p>
-                            <p className="text-xs text-gray-500">Cliquer pour changer</p>
+                            <p className="text-xs text-[#8B7E74]">Cliquer pour changer</p>
                           </div>
                           <ChevronDown className="w-4 h-4 text-gray-400" />
                         </button>
                       ) : (
                         <div className="space-y-2">
                           <div className="flex items-center justify-between">
-                            <p className="text-sm text-gray-600">Couleur du liseré</p>
+                            <p className="text-sm text-[#8B7E74]">Couleur du liseré</p>
                             <button
                               onClick={() => setOpenColorPickers({ ...openColorPickers, [`bottle-${bottle.id}`]: false })}
                               className="text-xs text-[#6B1E3E] hover:text-[#6B1E3E]/80 font-medium"
@@ -1755,7 +1755,7 @@ const Section4 = React.forwardRef<HTMLElement, {
                     {/* Prénom (si customizable) */}
                     {isCustomizable && (
                       <div>
-                        <p className="text-sm text-gray-600 mb-2">Ajouter un prénom (optionnel)</p>
+                        <p className="text-sm text-[#8B7E74] mb-2">Ajouter un prénom (optionnel)</p>
                         <input
                           type="text"
                           maxLength={12}
@@ -1874,7 +1874,7 @@ const Section4 = React.forwardRef<HTMLElement, {
           >
             Confirmer ma commande →
           </motion.button>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-sm text-gray-600">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-sm text-[#8B7E74]">
             <div className="flex items-center gap-2">
               <span>🚚</span>
               <span>Livraison sous 5–7 jours ouvrés</span>

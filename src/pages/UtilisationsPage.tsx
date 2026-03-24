@@ -217,8 +217,8 @@ export function UtilisationsPage({ navigate }: UtilisationsPageProps) {
               <div className="space-y-8">
                 <div>
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center">
-                      <Droplet className="w-6 h-6 text-blue-600" />
+                    <div className="w-12 h-12 rounded-xl bg-[#6B1E3E]/10 flex items-center justify-center">
+                      <Droplet className="w-6 h-6 text-[#6B1E3E]" />
                     </div>
                     <h4 className="text-lg text-gray-900">Eau filtrée froide</h4>
                   </div>
@@ -229,8 +229,8 @@ export function UtilisationsPage({ navigate }: UtilisationsPageProps) {
 
                 <div>
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="w-12 h-12 rounded-xl bg-purple-100 flex items-center justify-center">
-                      <Sparkles className="w-6 h-6 text-purple-600" />
+                    <div className="w-12 h-12 rounded-xl bg-[#6B1E3E]/10 flex items-center justify-center">
+                      <Sparkles className="w-6 h-6 text-[#6B1E3E]" />
                     </div>
                     <h4 className="text-lg text-gray-900">Eau pétillante</h4>
                   </div>
@@ -241,8 +241,8 @@ export function UtilisationsPage({ navigate }: UtilisationsPageProps) {
 
                 <div>
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="w-12 h-12 rounded-xl bg-red-100 flex items-center justify-center">
-                      <Flame className="w-6 h-6 text-red-600" />
+                    <div className="w-12 h-12 rounded-xl bg-[#6B1E3E]/10 flex items-center justify-center">
+                      <Flame className="w-6 h-6 text-[#6B1E3E]" />
                     </div>
                     <h4 className="text-lg text-gray-900">Eau bouillante</h4>
                   </div>

@@ -194,7 +194,7 @@ export function SupportPage({ navigate }: SupportPageProps) {
                   >
                     <button
                       onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
-                      className="w-full p-6 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
+                      className="w-full p-6 flex items-center justify-between text-left hover:bg-[#FAF8F5] transition-colors"
                     >
                       <span className="text-lg text-gray-900 pr-4">{faq.q}</span>
                       <ChevronDown

@@ -49,7 +49,7 @@ export function ObjectionsPage({ navigate }: ObjectionsPageProps) {
               <span className="block text-[#6B1E3E]">nos réponses transparentes</span>
             </h1>
 
-            <p className="text-xl text-gray-600 mb-12">
+            <p className="text-xl text-[#8B7E74] mb-12">
               Nous comprenons vos hésitations. Voici comment nous les résolvons, concrètement.
             </p>
 
@@ -119,7 +119,7 @@ export function ObjectionsPage({ navigate }: ObjectionsPageProps) {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
                 onClick={() => navigate('configurator')}
-                className="px-10 py-5 bg-white text-[#6B1E3E] rounded-full font-medium text-lg hover:bg-gray-100 transition-colors shadow-2xl"
+                className="px-10 py-5 bg-white text-[#6B1E3E] rounded-full font-medium text-lg hover:bg-[#FAF8F5] transition-colors shadow-2xl"
               >
                 Choisir mon HYDRAL
                 <ArrowRight className="inline w-5 h-5 ml-2" />

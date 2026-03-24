@@ -298,7 +298,7 @@ export default function SubscriptionPlans({
                     className={`w-full py-2.5 rounded-lg font-medium text-sm transition-all ${
                       isSelected
                         ? 'bg-[#6B1E3E] text-white'
-                        : 'bg-gray-50 text-gray-700 hover:bg-gray-100'
+                        : 'bg-[#FAF8F5] text-gray-700 hover:bg-gray-100'
                     }`}
                   >
                     {isSelected ? 'Formule sélectionnée' : 'Choisir cette formule'}
@@ -341,7 +341,7 @@ export default function SubscriptionPlans({
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.1 }}
-                      className="flex items-center gap-2 p-3 bg-gray-50 rounded-lg border border-gray-100"
+                      className="flex items-center gap-2 p-3 bg-[#FAF8F5] rounded-lg border border-gray-100"
                     >
                       <span className="text-2xl">{item.icon}</span>
                       <span className="text-gray-700 text-sm">{item.item}</span>

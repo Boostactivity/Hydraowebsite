@@ -224,7 +224,7 @@ export function TestimonialsPage({ navigate }: TestimonialsPageProps) {
                 <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
                   <div className="w-0 h-0 border-t-8 border-t-transparent border-l-12 border-l-[#6B1E3E] border-b-8 border-b-transparent ml-1"></div>
                 </div>
-                <p className="text-gray-500">Prochainement</p>
+                <p className="text-[#8B7E74]">Prochainement</p>
               </div>
             </div>
           </motion.div>

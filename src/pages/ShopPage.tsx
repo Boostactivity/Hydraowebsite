@@ -32,11 +32,12 @@ export function ShopPage({ navigate }: ShopPageProps) {
     { id: 'filter', label: 'Filtres' },
     { id: 'co2', label: 'CO₂' },
     { id: 'bottle', label: 'Bouteilles' },
+    { id: 'thermos', label: 'Thermos' },
     { id: 'accessory', label: 'Accessoires' }
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#FAF8F5]">
       {/* Hero ultra-minimaliste */}
       <section className="relative pt-24 sm:pt-32 lg:pt-40 pb-16 sm:pb-24 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -49,14 +50,14 @@ export function ShopPage({ navigate }: ShopPageProps) {
             <h1 className="mb-6">
               <span className="block text-gray-900 font-light">Boutique</span>
             </h1>
-            <p className="text-xl text-gray-600 leading-relaxed mb-8">
+            <p className="text-xl text-[#8B7E74] leading-relaxed mb-8">
               Filtres, CO₂, bouteilles et accessoires pour votre robinet HYDRAL.
             </p>
             
             {/* Mention discrète abonnements */}
-            <p className="text-sm text-gray-500">
+            <p className="text-sm text-[#8B7E74]">
               Besoin d'un abonnement ?{' '}
-              <button 
+              <button
                 onClick={() => navigate('subscriptions')}
                 className="text-[#6B1E3E] hover:underline"
               >
@@ -79,7 +80,7 @@ export function ShopPage({ navigate }: ShopPageProps) {
                 className={`px-5 py-2 rounded-full text-sm transition-all ${
                   activeCategory === cat.id
                     ? 'bg-[#6B1E3E] text-white'
-                    : 'bg-white border border-gray-200 text-gray-600 hover:border-[#6B1E3E] hover:text-[#6B1E3E]'
+                    : 'bg-white border border-gray-200 text-[#8B7E74] hover:border-[#6B1E3E] hover:text-[#6B1E3E]'
                 }`}
               >
                 {cat.label}
@@ -95,7 +96,7 @@ export function ShopPage({ navigate }: ShopPageProps) {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: idx * 0.05 }}
-                className="bg-white p-8 rounded-2xl border border-gray-200/50 hover:shadow-lg transition-all"
+                className="bg-white p-8 rounded-2xl border border-gray-200/50 shadow-sm hover:shadow-md transition-all"
               >
                 <div className="w-full aspect-square bg-gradient-to-br from-[#FAF8F5] to-[#E8D5DC]/10 rounded-xl mb-6 flex items-center justify-center overflow-hidden">
                   <img 
@@ -107,7 +108,7 @@ export function ShopPage({ navigate }: ShopPageProps) {
                 </div>
 
                 <h3 className="text-lg font-light text-gray-900 mb-2">{item.name}</h3>
-                <p className="text-sm text-gray-500 mb-6 min-h-[40px]">{item.description}</p>
+                <p className="text-sm text-[#8B7E74] mb-6 min-h-[40px]">{item.description}</p>
 
                 <div className="flex items-center justify-between mb-6">
                   <div>
@@ -135,7 +136,7 @@ export function ShopPage({ navigate }: ShopPageProps) {
 
           {filteredItems.length === 0 && (
             <div className="text-center py-12">
-              <p className="text-gray-500">Aucun produit dans cette catégorie.</p>
+              <p className="text-[#8B7E74]">Aucun produit dans cette catégorie.</p>
             </div>
           )}
         </div>
@@ -150,7 +151,7 @@ export function ShopPage({ navigate }: ShopPageProps) {
                 <Truck className="w-5 h-5 text-[#6B1E3E]" />
               </div>
               <h4 className="text-sm font-medium text-gray-900 mb-2">Livraison gratuite</h4>
-              <p className="text-xs text-gray-500">
+              <p className="text-xs text-[#8B7E74]">
                 Expédition 24-48h
               </p>
             </div>
@@ -159,7 +160,7 @@ export function ShopPage({ navigate }: ShopPageProps) {
                 <Check className="w-5 h-5 text-[#6B1E3E]" />
               </div>
               <h4 className="text-sm font-medium text-gray-900 mb-2">Retour 14 jours</h4>
-              <p className="text-xs text-gray-500">
+              <p className="text-xs text-[#8B7E74]">
                 Produits non ouverts
               </p>
             </div>
@@ -168,7 +169,7 @@ export function ShopPage({ navigate }: ShopPageProps) {
                 <Package className="w-5 h-5 text-[#6B1E3E]" />
               </div>
               <h4 className="text-sm font-medium text-gray-900 mb-2">Qualité garantie</h4>
-              <p className="text-xs text-gray-500">
+              <p className="text-xs text-[#8B7E74]">
                 Produits certifiés
               </p>
             </div>
@@ -180,7 +181,7 @@ export function ShopPage({ navigate }: ShopPageProps) {
       <section className="py-12 sm:py-16 lg:py-20 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="mb-4 text-gray-900 font-light">Des questions ?</h2>
-          <p className="text-lg text-gray-600 mb-10">
+          <p className="text-lg text-[#8B7E74] mb-10">
             Notre équipe est là pour vous aider.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

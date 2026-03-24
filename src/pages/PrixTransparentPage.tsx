@@ -155,7 +155,7 @@ export function PrixTransparentPage({ navigate }: PrixTransparentPageProps) {
                   <h3 className="text-xl text-gray-900">{item.title}</h3>
                 </div>
                 <div className="space-y-4">
-                  <div className="p-4 bg-gray-50 rounded-xl">
+                  <div className="p-4 bg-[#FAF8F5] rounded-xl">
                     <p className="text-sm text-[#8B7E74] mb-1">Modèle traditionnel :</p>
                     <p className="text-gray-700">{item.traditional}</p>
                   </div>

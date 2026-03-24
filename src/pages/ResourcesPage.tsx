@@ -84,7 +84,7 @@ export function ResourcesPage({ navigate }: ResourcesPageProps) {
 
   return (
     <div className="min-h-screen bg-[#FAF8F5] py-20">
-      <div className="container mx-auto px-4 max-w-7xl">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -114,7 +114,7 @@ export function ResourcesPage({ navigate }: ResourcesPageProps) {
               className={`flex items-center gap-2 px-6 py-3 rounded-full font-medium transition-all ${
                 activeTab === tab.id
                   ? 'bg-[#6B1E3E] text-white shadow-lg'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  : 'bg-[#FAF8F5] text-gray-700 hover:bg-[#6B1E3E]/10'
               }`}
             >
               <tab.icon className="w-5 h-5" />
@@ -161,7 +161,7 @@ function VideosTab({ navigate }: { navigate: (page: Page) => void }) {
       <h2 className="text-3xl font-semibold text-gray-900 mb-4">
         Vidéothèque complète
       </h2>
-      <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
+      <p className="text-[#8B7E74] mb-8 max-w-2xl mx-auto">
         Tutoriels d'installation, témoignages clients, comparatifs produits et bien plus encore
       </p>
       <button
@@ -185,7 +185,7 @@ function BlogTab({ navigate }: { navigate: (page: Page) => void }) {
       <h2 className="text-3xl font-semibold text-gray-900 mb-4">
         Blog Lifestyle HYDRAL
       </h2>
-      <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
+      <p className="text-[#8B7E74] mb-8 max-w-2xl mx-auto">
         Inspirations, conseils et guides pour tirer le meilleur de votre robinet 5-en-1
       </p>
       <button
@@ -213,7 +213,7 @@ function CaseStudiesTab({ cases }: { cases: CaseStudy[] }) {
       <h2 className="text-3xl font-semibold text-gray-900 mb-8 text-center">
         Success Stories Clients
       </h2>
-      <p className="text-gray-600 mb-12 text-center max-w-2xl mx-auto">
+      <p className="text-[#8B7E74] mb-12 text-center max-w-2xl mx-auto">
         Découvrez comment nos clients transforment leur quotidien et économisent des milliers d'euros avec HYDRAL
       </p>
 
@@ -240,15 +240,15 @@ function CaseStudiesTab({ cases }: { cases: CaseStudy[] }) {
             </div>
 
             <div className="p-6">
-              <div className="text-sm text-gray-600 mb-2">{caseStudy.client} • {caseStudy.location}</div>
+              <div className="text-sm text-[#8B7E74] mb-2">{caseStudy.client} • {caseStudy.location}</div>
               <h3 className="font-bold text-gray-900 mb-3 group-hover:text-[#6B1E3E] transition-colors">
                 {caseStudy.title}
               </h3>
 
               <div className="space-y-2 mb-4">
                 {caseStudy.results.slice(0, 2).map((result, i) => (
-                  <div key={i} className="flex items-start gap-2 text-sm text-gray-600">
-                    <Check className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                  <div key={i} className="flex items-start gap-2 text-sm text-[#8B7E74]">
+                    <Check className="w-4 h-4 text-[#6B1E3E] mt-0.5 flex-shrink-0" />
                     <span>{result}</span>
                   </div>
                 ))}
@@ -275,7 +275,7 @@ function CaseStudyDetail({ caseStudy, onBack }: { caseStudy: CaseStudy; onBack: 
     >
       <button
         onClick={onBack}
-        className="flex items-center gap-2 text-gray-600 hover:text-[#6B1E3E] transition-colors mb-8"
+        className="flex items-center gap-2 text-[#8B7E74] hover:text-[#6B1E3E] transition-colors mb-8"
       >
         <ArrowRight className="w-5 h-5 rotate-180" />
         <span>Retour aux success stories</span>
@@ -302,7 +302,7 @@ function CaseStudyDetail({ caseStudy, onBack }: { caseStudy: CaseStudy; onBack: 
             {caseStudy.title}
           </h1>
 
-          <div className="text-lg text-gray-600 mb-8">
+          <div className="text-lg text-[#8B7E74] mb-8">
             {caseStudy.client} • {caseStudy.location}
           </div>
 
@@ -326,7 +326,7 @@ function CaseStudyDetail({ caseStudy, onBack }: { caseStudy: CaseStudy; onBack: 
                     key={index}
                     className="flex items-start gap-3 p-4 bg-green-50 rounded-xl"
                   >
-                    <Check className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
+                    <Check className="w-5 h-5 text-[#6B1E3E] mt-0.5 flex-shrink-0" />
                     <span className="text-gray-700 font-medium">{result}</span>
                   </div>
                 ))}
@@ -364,7 +364,7 @@ function FAQTab({ navigate }: { navigate: (page: Page) => void }) {
       <h2 className="text-3xl font-semibold text-gray-900 mb-4">
         Base de connaissances FAQ
       </h2>
-      <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
+      <p className="text-[#8B7E74] mb-8 max-w-2xl mx-auto">
         50+ questions-réponses sur l'installation, l'utilisation, la maintenance et la garantie
       </p>
       <button

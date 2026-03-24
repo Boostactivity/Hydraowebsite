@@ -433,7 +433,7 @@ function GuestCheckoutSelector({ mode, setMode }: { mode: CheckoutMode; setMode:
                 Recommandé
               </span>
             </div>
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-[#8B7E74]">
               Finalisation rapide sans créer de compte. Vous pourrez en créer un après votre commande.
             </p>
           </div>
@@ -451,7 +451,7 @@ function GuestCheckoutSelector({ mode, setMode }: { mode: CheckoutMode; setMode:
           />
           <div className="flex-1">
             <div className="font-semibold text-gray-900 mb-1">Créer un compte</div>
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-[#8B7E74]">
               Suivez vos commandes, accédez à vos factures et bénéficiez d'avantages exclusifs.
             </p>
           </div>
@@ -469,7 +469,7 @@ function GuestCheckoutSelector({ mode, setMode }: { mode: CheckoutMode; setMode:
           />
           <div className="flex-1">
             <div className="font-semibold text-gray-900 mb-1">J'ai déjà un compte</div>
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-[#8B7E74]">
               Connectez-vous pour retrouver vos informations et commander plus rapidement.
             </p>
           </div>
@@ -553,12 +553,12 @@ function AddressAutocompleteSection({
                     onSelectAddress(suggestion.address, suggestion.postalCode, suggestion.city);
                     setShowSuggestions(false);
                   }}
-                  className="w-full p-3 text-left hover:bg-gray-50 transition-colors flex items-start gap-3 border-b border-gray-100 last:border-0"
+                  className="w-full p-3 text-left hover:bg-[#FAF8F5] transition-colors flex items-start gap-3 border-b border-gray-100 last:border-0"
                 >
                   <MapPin className="w-4 h-4 text-gray-400 mt-1 flex-shrink-0" />
                   <div>
                     <div className="font-medium text-gray-900">{suggestion.address}</div>
-                    <div className="text-sm text-gray-600">{suggestion.postalCode} {suggestion.city}</div>
+                    <div className="text-sm text-[#8B7E74]">{suggestion.postalCode} {suggestion.city}</div>
                   </div>
                 </button>
               ))}
@@ -612,8 +612,8 @@ function PaymentMethodsSection({ formData, setFormData }: { formData: any; setFo
       </div>
 
       {/* Payment Method Logos - Point 163 */}
-      <div className="mb-8 p-4 bg-gray-50 rounded-xl">
-        <div className="text-sm text-gray-600 mb-3 font-medium">Moyens de paiement acceptés :</div>
+      <div className="mb-8 p-4 bg-[#FAF8F5] rounded-xl">
+        <div className="text-sm text-[#8B7E74] mb-3 font-medium">Moyens de paiement acceptés :</div>
         <div className="flex flex-wrap items-center gap-4">
           {/* CB */}
           <div className="px-4 py-2 bg-white rounded-lg border border-gray-200 font-semibold text-blue-600">
@@ -674,7 +674,7 @@ function PaymentMethodsSection({ formData, setFormData }: { formData: any; setFo
           </div>
         </div>
 
-        <div className="flex items-center gap-3 text-sm text-gray-600">
+        <div className="flex items-center gap-3 text-sm text-[#8B7E74]">
           <Lock className="w-4 h-4 text-green-600" />
           <span>Cryptage SSL 256-bit</span>
           <span>•</span>

@@ -234,7 +234,7 @@ export function FAQPage({ navigate }: FAQPageProps) {
                 onClick={() => setSelectedCategory(cat.id)}
                 className={`flex items-center gap-2 px-5 py-3 rounded-full transition-all ${
                   selectedCategory === cat.id
-                    ? 'bg-[#6B1E3E] text-white shadow-lg'
+                    ? 'bg-[#6B1E3E] text-white shadow-md'
                     : 'bg-[#FAF8F5] border border-gray-200 text-gray-700 hover:border-[#6B1E3E]/30'
                 }`}
                 whileHover={{ scale: 1.05, y: -2 }}

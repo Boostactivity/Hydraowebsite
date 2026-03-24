@@ -168,7 +168,7 @@ export function SecuritePage({ navigate }: SecuritePageProps) {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Bouilloire classique */}
-            <div className="p-10 bg-gray-50 rounded-3xl border border-gray-200">
+            <div className="p-10 bg-[#FAF8F5] rounded-3xl border border-gray-200">
               <h3 className="text-2xl mb-6 text-gray-900">Bouilloire électrique</h3>
               <ul className="space-y-4 text-[#8B7E74]">
                 <li className="flex items-start gap-3">

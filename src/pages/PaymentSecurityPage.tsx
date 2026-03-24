@@ -10,7 +10,7 @@ interface PaymentSecurityPageProps {
 export function PaymentSecurityPage({ navigate }: PaymentSecurityPageProps) {
   return (
     <div className="min-h-screen bg-[#FAF8F5] py-20">
-      <div className="container mx-auto px-4 max-w-6xl">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -57,7 +57,7 @@ export function PaymentSecurityPage({ navigate }: PaymentSecurityPageProps) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="bg-white rounded-3xl p-8 shadow-lg text-center"
+              className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-md transition-shadow text-center border border-gray-200/50"
             >
               <div className={`w-16 h-16 rounded-full bg-gradient-to-br ${item.color} flex items-center justify-center mx-auto mb-4`}>
                 <item.icon className="w-8 h-8 text-white" />
@@ -65,7 +65,7 @@ export function PaymentSecurityPage({ navigate }: PaymentSecurityPageProps) {
               <h3 className="text-xl font-semibold text-gray-900 mb-2">
                 {item.title}
               </h3>
-              <p className="text-gray-600">
+              <p className="text-[#8B7E74]">
                 {item.description}
               </p>
             </motion.div>
@@ -131,7 +131,7 @@ export function PaymentSecurityPage({ navigate }: PaymentSecurityPageProps) {
                   <h3 className="font-semibold text-gray-900 mb-2">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-[#8B7E74]">
                     {item.description}
                   </p>
                 </div>
@@ -152,7 +152,7 @@ export function PaymentSecurityPage({ navigate }: PaymentSecurityPageProps) {
           </h2>
 
           <div className="bg-white rounded-3xl p-8 shadow-lg">
-            <p className="text-gray-600 text-center mb-8">
+            <p className="text-[#8B7E74] text-center mb-8">
               Nous travaillons avec les leaders mondiaux du paiement sécurisé
             </p>
 
@@ -169,7 +169,7 @@ export function PaymentSecurityPage({ navigate }: PaymentSecurityPageProps) {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="flex items-center justify-center p-6 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-colors"
+                  className="flex items-center justify-center p-6 bg-[#FAF8F5] rounded-2xl hover:bg-gray-100 transition-colors"
                 >
                   <span className="text-lg font-bold text-gray-700">
                     {partner}
@@ -197,7 +197,7 @@ export function PaymentSecurityPage({ navigate }: PaymentSecurityPageProps) {
                   <div key={index} className="text-center">
                     <CreditCard className="w-8 h-8 text-[#6B1E3E] mx-auto mb-2" />
                     <div className="font-semibold text-gray-900">{option.label}</div>
-                    <div className="text-sm text-gray-600">{option.description}</div>
+                    <div className="text-sm text-[#8B7E74]">{option.description}</div>
                   </div>
                 ))}
               </div>
@@ -259,7 +259,7 @@ export function PaymentSecurityPage({ navigate }: PaymentSecurityPageProps) {
                     <h3 className="font-semibold text-gray-900 mb-1">
                       {step.title}
                     </h3>
-                    <p className="text-sm text-gray-600 mb-2">
+                    <p className="text-sm text-[#8B7E74] mb-2">
                       {step.description}
                     </p>
                     <div className="inline-flex items-center gap-2 px-3 py-1 bg-green-100 rounded-full">
@@ -299,7 +299,7 @@ export function PaymentSecurityPage({ navigate }: PaymentSecurityPageProps) {
             ].map((cert, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center gap-2 p-4 bg-gray-50 rounded-xl"
+                className="flex flex-col items-center gap-2 p-4 bg-[#FAF8F5] rounded-xl"
               >
                 <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center">
                   <cert.icon className="w-6 h-6 text-green-600" />
@@ -332,7 +332,7 @@ export function PaymentSecurityPage({ navigate }: PaymentSecurityPageProps) {
                 <h4 className="font-semibold text-gray-900 mb-2">
                   {faq.question}
                 </h4>
-                <p className="text-gray-600 text-sm">
+                <p className="text-[#8B7E74] text-sm">
                   {faq.answer}
                 </p>
               </div>

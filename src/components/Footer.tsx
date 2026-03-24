@@ -67,7 +67,7 @@ export function Footer({ navigate }: FooterProps) {
             <h3 className="mb-4">
               Restez informé
             </h3>
-            <p className="text-gray-600 mb-8 font-light">
+            <p className="text-[#8B7E74] mb-8 font-light">
               Recevez nos dernières actualités et offres exclusives
             </p>
 
@@ -89,7 +89,7 @@ export function Footer({ navigate }: FooterProps) {
               </div>
               
               {/* RGPD Checkbox - OBLIGATOIRE */}
-              <label className="flex items-start gap-3 text-xs text-gray-600 text-left cursor-pointer group">
+              <label className="flex items-start gap-3 text-xs text-[#8B7E74] text-left cursor-pointer group">
                 <input 
                   type="checkbox" 
                   required
@@ -118,11 +118,11 @@ export function Footer({ navigate }: FooterProps) {
             <h2 className="text-2xl tracking-[0.3em] mb-6 text-gray-900 font-light">
               HYDRAL
             </h2>
-            <p className="text-gray-600 font-light leading-relaxed mb-6">
+            <p className="text-[#8B7E74] font-light leading-relaxed mb-6">
               La révolution de l'eau dans votre cuisine
             </p>
 
-            <div className="space-y-3 text-sm text-gray-600">
+            <div className="space-y-3 text-sm text-[#8B7E74]">
               <a href="tel:+33123456789" className="flex items-center gap-3 hover:text-gray-900 transition-colors">
                 <Phone className="w-4 h-4" />
                 <span>+33 (0)1 23 45 67 89</span>
@@ -149,7 +149,7 @@ export function Footer({ navigate }: FooterProps) {
                   <li key={linkIdx}>
                     <button
                       onClick={() => navigate(link.page)}
-                      className="text-sm text-gray-600 hover:text-gray-900 transition-colors font-light"
+                      className="text-sm text-[#8B7E74] hover:text-gray-900 transition-colors font-light"
                     >
                       {link.label}
                     </button>
@@ -166,7 +166,7 @@ export function Footer({ navigate }: FooterProps) {
             <motion.a
               key={idx}
               href={social.href}
-              className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-gray-600 hover:text-gray-900 hover:border-gray-900 transition-colors"
+              className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-[#8B7E74] hover:text-gray-900 hover:border-gray-900 transition-colors"
               whileHover={{ y: -2 }}
               aria-label={social.label}
             >
@@ -177,7 +177,7 @@ export function Footer({ navigate }: FooterProps) {
 
         {/* Bottom */}
         <div className="pt-8 border-t border-gray-200">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-600">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-[#8B7E74]">
             <p className="font-light">
               © {currentYear} HYDRAL. Tous droits réservés.
             </p>

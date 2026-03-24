@@ -180,7 +180,7 @@ export function BlogPage({ navigate }: BlogPageProps) {
 
   return (
     <div className="min-h-screen bg-[#FAF8F5] py-20">
-      <div className="container mx-auto px-4 max-w-7xl">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -218,7 +218,7 @@ export function BlogPage({ navigate }: BlogPageProps) {
                 className={`px-6 py-2 rounded-full font-medium transition-all ${
                   selectedCategory === cat
                     ? 'bg-[#6B1E3E] text-white shadow-lg'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                    : 'bg-[#FAF8F5] text-gray-700 hover:bg-[#6B1E3E]/10'
                 }`}
               >
                 {cat}
@@ -253,7 +253,7 @@ export function BlogPage({ navigate }: BlogPageProps) {
             <h2 className="text-2xl font-semibold text-gray-900">
               {selectedCategory === 'Tous' ? 'Tous les articles' : `Articles ${selectedCategory}`}
             </h2>
-            <span className="text-gray-600">
+            <span className="text-[#8B7E74]">
               {filteredPosts.length} article{filteredPosts.length > 1 ? 's' : ''}
             </span>
           </div>
@@ -323,10 +323,10 @@ function FeaturedPostCard({ post, onClick }: { post: BlogPost; onClick: () => vo
       
       <div className="p-6">
         <div className="flex items-center gap-3 mb-3">
-          <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-medium">
+          <span className="px-3 py-1 bg-[#6B1E3E]/10 text-[#6B1E3E] rounded-full text-xs font-medium">
             {post.category}
           </span>
-          <div className="flex items-center gap-1 text-gray-500 text-sm">
+          <div className="flex items-center gap-1 text-[#8B7E74] text-sm">
             <Clock className="w-4 h-4" />
             <span>{post.readTime} min</span>
           </div>
@@ -336,16 +336,16 @@ function FeaturedPostCard({ post, onClick }: { post: BlogPost; onClick: () => vo
           {post.title}
         </h3>
         
-        <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+        <p className="text-[#8B7E74] text-sm mb-4 line-clamp-2">
           {post.excerpt}
         </p>
 
         <div className="flex items-center justify-between pt-4 border-t border-gray-200">
           <div className="flex items-center gap-2">
             <User className="w-4 h-4 text-gray-400" />
-            <span className="text-sm text-gray-600">{post.author}</span>
+            <span className="text-sm text-[#8B7E74]">{post.author}</span>
           </div>
-          <div className="flex items-center gap-4 text-sm text-gray-500">
+          <div className="flex items-center gap-4 text-sm text-[#8B7E74]">
             <div className="flex items-center gap-1">
               <TrendingUp className="w-4 h-4" />
               <span>{post.views}</span>
@@ -377,10 +377,10 @@ function BlogPostCard({ post, onClick }: { post: BlogPost; onClick: () => void }
       
       <div className="p-6">
         <div className="flex items-center gap-3 mb-3">
-          <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-medium">
+          <span className="px-3 py-1 bg-[#6B1E3E]/10 text-[#6B1E3E] rounded-full text-xs font-medium">
             {post.category}
           </span>
-          <div className="flex items-center gap-1 text-gray-500 text-xs">
+          <div className="flex items-center gap-1 text-[#8B7E74] text-xs">
             <Clock className="w-3.5 h-3.5" />
             <span>{post.readTime} min</span>
           </div>
@@ -390,11 +390,11 @@ function BlogPostCard({ post, onClick }: { post: BlogPost; onClick: () => void }
           {post.title}
         </h3>
         
-        <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+        <p className="text-[#8B7E74] text-sm mb-4 line-clamp-2">
           {post.excerpt}
         </p>
 
-        <div className="flex items-center justify-between text-xs text-gray-500">
+        <div className="flex items-center justify-between text-xs text-[#8B7E74]">
           <span>{new Date(post.date).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long' })}</span>
           <div className="flex items-center gap-3">
             <div className="flex items-center gap-1">
@@ -415,7 +415,7 @@ function BlogPostCard({ post, onClick }: { post: BlogPost; onClick: () => void }
 function BlogPostView({ post, onBack, navigate }: { post: BlogPost; onBack: () => void; navigate: (page: Page) => void }) {
   return (
     <div className="min-h-screen bg-[#FAF8F5] py-20">
-      <div className="container mx-auto px-4 max-w-4xl">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <button
           onClick={onBack}
           className="flex items-center gap-2 text-[#8B7E74] hover:text-[#6B1E3E] transition-colors mb-8"
@@ -432,7 +432,7 @@ function BlogPostView({ post, onBack, navigate }: { post: BlogPost; onBack: () =
             <h1 className="mb-4 text-gray-900">
               {post.title}
             </h1>
-            <div className="flex items-center gap-6 text-gray-600">
+            <div className="flex items-center gap-6 text-[#8B7E74]">
               <div className="flex items-center gap-2">
                 <User className="w-5 h-5" />
                 <span>{post.author}</span>
@@ -458,7 +458,7 @@ function BlogPostView({ post, onBack, navigate }: { post: BlogPost; onBack: () =
             <p className="text-xl text-gray-700 leading-relaxed mb-6">
               {post.excerpt}
             </p>
-            <p className="text-gray-600 leading-relaxed">
+            <p className="text-[#8B7E74] leading-relaxed">
               {post.content}
             </p>
             {/* Article complet serait ici en production */}
@@ -472,7 +472,7 @@ function BlogPostView({ post, onBack, navigate }: { post: BlogPost; onBack: () =
                   <span className="font-medium">{post.likes} J'aime</span>
                 </button>
               </div>
-              <div className="text-gray-600">
+              <div className="text-[#8B7E74]">
                 {post.views} vues
               </div>
             </div>

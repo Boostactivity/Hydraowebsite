@@ -112,7 +112,7 @@ export function ShippingTrackingPage({ navigate }: TrackingPageProps) {
             >
               <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
                 <div>
-                  <div className="text-sm text-gray-600 mb-1">Numéro de commande</div>
+                  <div className="text-sm text-[#8B7E74] mb-1">Numéro de commande</div>
                   <div className="text-2xl font-bold text-[#6B1E3E]">{orderNumber}</div>
                 </div>
                 <div className="flex items-center gap-3">
@@ -120,10 +120,10 @@ export function ShippingTrackingPage({ navigate }: TrackingPageProps) {
                     ● En transit
                   </div>
                   <button className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
-                    <Download className="w-5 h-5 text-gray-600" />
+                    <Download className="w-5 h-5 text-[#8B7E74]" />
                   </button>
                   <button className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
-                    <Share2 className="w-5 h-5 text-gray-600" />
+                    <Share2 className="w-5 h-5 text-[#8B7E74]" />
                   </button>
                 </div>
               </div>
@@ -212,9 +212,9 @@ export function ShippingTrackingPage({ navigate }: TrackingPageProps) {
                   <div className="flex items-start gap-3">
                     <Truck className="w-5 h-5 text-gray-400 mt-0.5" />
                     <div>
-                      <div className="text-sm text-gray-600">Transporteur</div>
+                      <div className="text-sm text-[#8B7E74]">Transporteur</div>
                       <div className="font-semibold text-gray-900">{deliveryInfo.carrier}</div>
-                      <div className="text-sm text-gray-600 mt-1">
+                      <div className="text-sm text-[#8B7E74] mt-1">
                         N° suivi : {deliveryInfo.trackingNumber}
                       </div>
                     </div>
@@ -223,7 +223,7 @@ export function ShippingTrackingPage({ navigate }: TrackingPageProps) {
                   <div className="flex items-start gap-3">
                     <Calendar className="w-5 h-5 text-gray-400 mt-0.5" />
                     <div>
-                      <div className="text-sm text-gray-600">Livraison estimée</div>
+                      <div className="text-sm text-[#8B7E74]">Livraison estimée</div>
                       <div className="font-semibold text-gray-900">{deliveryInfo.estimatedDelivery}</div>
                     </div>
                   </div>
@@ -231,7 +231,7 @@ export function ShippingTrackingPage({ navigate }: TrackingPageProps) {
                   <div className="flex items-start gap-3">
                     <MapPin className="w-5 h-5 text-gray-400 mt-0.5" />
                     <div>
-                      <div className="text-sm text-gray-600">Adresse de livraison</div>
+                      <div className="text-sm text-[#8B7E74]">Adresse de livraison</div>
                       <div className="font-semibold text-gray-900">{deliveryInfo.address}</div>
                     </div>
                   </div>
@@ -239,9 +239,9 @@ export function ShippingTrackingPage({ navigate }: TrackingPageProps) {
                   <div className="flex items-start gap-3">
                     <Phone className="w-5 h-5 text-gray-400 mt-0.5" />
                     <div>
-                      <div className="text-sm text-gray-600">Contact</div>
+                      <div className="text-sm text-[#8B7E74]">Contact</div>
                       <div className="font-semibold text-gray-900">{deliveryInfo.recipientName}</div>
-                      <div className="text-sm text-gray-600">{deliveryInfo.recipientPhone}</div>
+                      <div className="text-sm text-[#8B7E74]">{deliveryInfo.recipientPhone}</div>
                     </div>
                   </div>
                 </div>
@@ -268,8 +268,8 @@ export function ShippingTrackingPage({ navigate }: TrackingPageProps) {
                 <div className="bg-gray-100 rounded-2xl h-64 flex items-center justify-center mb-6">
                   <div className="text-center">
                     <MapPin className="w-12 h-12 text-gray-400 mx-auto mb-2" />
-                    <p className="text-gray-600">Carte de suivi en temps réel</p>
-                    <p className="text-sm text-gray-500 mt-1">(Intégration Google Maps)</p>
+                    <p className="text-[#8B7E74]">Carte de suivi en temps réel</p>
+                    <p className="text-sm text-[#8B7E74] mt-1">(Intégration Google Maps)</p>
                   </div>
                 </div>
 
@@ -307,7 +307,7 @@ export function ShippingTrackingPage({ navigate }: TrackingPageProps) {
                   <Phone className="w-6 h-6 text-[#6B1E3E]" />
                   <div>
                     <div className="font-medium text-gray-900 text-sm">Service client</div>
-                    <div className="text-xs text-gray-600">01 23 45 67 89</div>
+                    <div className="text-xs text-[#8B7E74]">01 23 45 67 89</div>
                   </div>
                 </a>
 
@@ -318,7 +318,7 @@ export function ShippingTrackingPage({ navigate }: TrackingPageProps) {
                   <Mail className="w-6 h-6 text-[#6B1E3E]" />
                   <div>
                     <div className="font-medium text-gray-900 text-sm">FAQ Livraison</div>
-                    <div className="text-xs text-gray-600">Réponses rapides</div>
+                    <div className="text-xs text-[#8B7E74]">Réponses rapides</div>
                   </div>
                 </button>
 
@@ -326,7 +326,7 @@ export function ShippingTrackingPage({ navigate }: TrackingPageProps) {
                   <Package className="w-6 h-6 text-[#6B1E3E]" />
                   <div>
                     <div className="font-medium text-gray-900 text-sm">Modifier livraison</div>
-                    <div className="text-xs text-gray-600">Date ou adresse</div>
+                    <div className="text-xs text-[#8B7E74]">Date ou adresse</div>
                   </div>
                 </button>
               </div>

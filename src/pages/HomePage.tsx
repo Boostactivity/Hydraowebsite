@@ -22,7 +22,7 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
     >
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-gray-50/50 transition-colors"
+        className="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-[#FAF8F5]/50 transition-colors"
       >
         <span className="font-medium text-gray-900">{question}</span>
         <motion.div
@@ -95,15 +95,15 @@ export function HomePage({ navigate }: HomePageProps) {
             transition={{ delay: 0.4, duration: 0.6 }}
             className="mt-16 flex flex-wrap items-center justify-center gap-8"
           >
-            <div className="flex items-center gap-2 text-sm text-gray-600">
+            <div className="flex items-center gap-2 text-sm text-[#8B7E74]">
               <Shield className="w-4 h-4 text-[#6B1E3E]" />
               <span>Garantie 5 ans</span>
             </div>
-            <div className="flex items-center gap-2 text-sm text-gray-600">
+            <div className="flex items-center gap-2 text-sm text-[#8B7E74]">
               <Wrench className="w-4 h-4 text-[#6B1E3E]" />
               <span>Installation incluse</span>
             </div>
-            <div className="flex items-center gap-2 text-sm text-gray-600">
+            <div className="flex items-center gap-2 text-sm text-[#8B7E74]">
               <CheckCircle className="w-4 h-4 text-[#6B1E3E]" />
               <span>Livraison gratuite</span>
             </div>
@@ -114,7 +114,7 @@ export function HomePage({ navigate }: HomePageProps) {
       {/* ========================================
           TÉMOIGNAGES - Preuve Sociale
          ======================================== */}
-      <section className="py-16 bg-gradient-to-b from-white to-gray-50/50">
+      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-white to-[#FAF8F5]">
         <div className="section-container max-w-5xl mx-auto px-4 sm:px-6">
           {/* Badge rating */}
           <motion.div
@@ -152,7 +152,7 @@ export function HomePage({ navigate }: HomePageProps) {
               <p className="text-sm text-gray-700 leading-relaxed mb-4">
                 "J'aurais dû le commander bien avant. En 6 mois, j'ai économisé sur les bouteilles."
               </p>
-              <p className="text-xs text-gray-500 font-medium">
+              <p className="text-xs text-[#8B7E74] font-medium">
                 Claire M., Paris 16<sup>e</sup>
               </p>
             </motion.div>
@@ -173,7 +173,7 @@ export function HomePage({ navigate }: HomePageProps) {
               <p className="text-sm text-gray-700 leading-relaxed mb-4">
                 "Design impeccable, qualité premium. Fini les packs d'eau à porter."
               </p>
-              <p className="text-xs text-gray-500 font-medium">
+              <p className="text-xs text-[#8B7E74] font-medium">
                 Thomas L., Lyon
               </p>
             </motion.div>
@@ -194,7 +194,7 @@ export function HomePage({ navigate }: HomePageProps) {
               <p className="text-sm text-gray-700 leading-relaxed mb-4">
                 "L'eau gazeuse à volonté pour ma famille. Investissement rentabilisé rapidement."
               </p>
-              <p className="text-xs text-gray-500 font-medium">
+              <p className="text-xs text-[#8B7E74] font-medium">
                 Sophie D., Bordeaux
               </p>
             </motion.div>
@@ -232,7 +232,7 @@ export function HomePage({ navigate }: HomePageProps) {
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
-                <p className="text-sm text-gray-600 mb-2">Robinet HYDRAL (à partir de)</p>
+                <p className="text-sm text-[#8B7E74] mb-2">Robinet HYDRAL (à partir de)</p>
                 <p className="text-4xl font-bold text-gray-900 mb-4">490€</p>
                 <ul className="space-y-2 text-sm text-gray-700">
                   <li className="flex items-start gap-2">
@@ -250,7 +250,7 @@ export function HomePage({ navigate }: HomePageProps) {
                 </ul>
               </div>
               <div>
-                <p className="text-sm text-gray-600 mb-2">Abonnement (dès)</p>
+                <p className="text-sm text-[#8B7E74] mb-2">Abonnement (dès)</p>
                 <p className="text-4xl font-bold text-gray-900 mb-4">59€<span className="text-lg text-gray-600">/an</span></p>
                 <ul className="space-y-2 text-sm text-gray-700">
                   <li className="flex items-start gap-2">

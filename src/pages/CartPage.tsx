@@ -92,6 +92,7 @@ export function CartPage({ navigate }: CartPageProps) {
                       <button
                         onClick={() => removeFromCart(item.id)}
                         className="p-2 hover:bg-red-50 rounded-xl transition-colors text-red-600"
+                        aria-label={`Supprimer ${item.name} du panier`}
                       >
                         <Trash2 className="w-5 h-5" />
                       </button>
@@ -99,12 +100,12 @@ export function CartPage({ navigate }: CartPageProps) {
 
                     <div className="flex items-center justify-between">
                       <div>
-                        <p className="text-3xl text-[#6B1E3E]">{item.price}€</p>
-                        <p className="text-sm text-[#8B7E74]">TTC</p>
+                        <p className="text-3xl text-[#6B1E3E]">{item.price * item.quantity}€</p>
+                        <p className="text-sm text-[#8B7E74]">{item.quantity > 1 ? `${item.price}€ x ${item.quantity} - ` : ''}TTC</p>
                       </div>
                       <div className="text-right">
                         <p className="text-sm text-[#8B7E74] mb-1">Quantité</p>
-                        <p className="text-lg text-gray-900">×{item.quantity}</p>
+                        <p className="text-lg text-gray-900">x{item.quantity}</p>
                       </div>
                     </div>
                   </div>
@@ -208,7 +209,7 @@ export function CartPage({ navigate }: CartPageProps) {
 
               <div className="space-y-4 mb-6 pb-6 border-b border-gray-200">
                 <div className="flex justify-between text-[#8B7E74]">
-                  <span>Robinet HYDRAL</span>
+                  <span>Sous-total ({cart.length} article{cart.length > 1 ? 's' : ''})</span>
                   <span className="text-gray-900">{cartTotal}€</span>
                 </div>
                 {includeInstallation && (

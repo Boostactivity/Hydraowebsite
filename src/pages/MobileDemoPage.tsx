@@ -79,7 +79,7 @@ export function MobileDemoPage({ navigate }: MobileDemoPageProps) {
               <span className="block text-[#6B1E3E]">Optimisée & Tactile</span>
             </h1>
 
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-[#8B7E74]">
               Découvrez nos nouveaux composants mobile-first pour 70% de votre trafic
             </p>
           </motion.div>
@@ -100,7 +100,7 @@ export function MobileDemoPage({ navigate }: MobileDemoPageProps) {
               </div>
               <div>
                 <h2 className="text-gray-900">Point 122 - Vidéo Mobile Optimisée</h2>
-                <p className="text-gray-600">Lazy load, poster image, play on tap</p>
+                <p className="text-[#8B7E74]">Lazy load, poster image, play on tap</p>
               </div>
             </div>
 
@@ -143,7 +143,7 @@ export function MobileDemoPage({ navigate }: MobileDemoPageProps) {
               </div>
               <div>
                 <h2 className="text-gray-900">Point 123 - Touch Gestures</h2>
-                <p className="text-gray-600">Swipe, haptic feedback, drag & drop</p>
+                <p className="text-[#8B7E74]">Swipe, haptic feedback, drag & drop</p>
               </div>
             </div>
 
@@ -193,7 +193,7 @@ export function MobileDemoPage({ navigate }: MobileDemoPageProps) {
               </div>
               <div>
                 <h2 className="text-gray-900">Point 124 - Formulaires Mobile</h2>
-                <p className="text-gray-600">Input modes, autocomplete, validation temps réel</p>
+                <p className="text-[#8B7E74]">Input modes, autocomplete, validation temps réel</p>
               </div>
             </div>
 
@@ -286,7 +286,7 @@ export function MobileDemoPage({ navigate }: MobileDemoPageProps) {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
                 onClick={() => navigate('home')}
-                className="px-10 py-5 bg-white text-[#6B1E3E] rounded-full font-medium text-lg hover:bg-gray-100 transition-colors shadow-2xl"
+                className="px-10 py-5 bg-white text-[#6B1E3E] rounded-full font-medium text-lg hover:bg-[#FAF8F5] transition-colors shadow-2xl"
               >
                 Retour à l'accueil
                 <ArrowRight className="inline w-5 h-5 ml-2" />

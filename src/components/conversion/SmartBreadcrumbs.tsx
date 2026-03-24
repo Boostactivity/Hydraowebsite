@@ -16,7 +16,7 @@ interface SmartBreadcrumbsProps {
 }
 
 export function SmartBreadcrumbs({ currentPage, navigate, className = '' }: SmartBreadcrumbsProps) {
-  const breadcrumbMap: Record<Page, Breadcrumb[]> = {
+  const breadcrumbMap: Partial<Record<Page, Breadcrumb[]>> = {
     home: [
       { label: 'Accueil', page: 'home', icon: Home }
     ],
@@ -45,17 +45,120 @@ export function SmartBreadcrumbs({ currentPage, navigate, className = '' }: Smar
       { label: 'Accueil', page: 'home', icon: Home },
       { label: 'Sécurité & Santé', page: 'securite' }
     ],
-    installation: [
+    installers: [
       { label: 'Accueil', page: 'home', icon: Home },
-      { label: 'Installation', page: 'installation' }
+      { label: 'Installateurs', page: 'installers' }
     ],
-    guarantees: [
+    warranty: [
       { label: 'Accueil', page: 'home', icon: Home },
-      { label: 'Garanties', page: 'guarantees' }
+      { label: 'Garantie', page: 'warranty' }
     ],
     support: [
       { label: 'Accueil', page: 'home', icon: Home },
       { label: 'Support', page: 'support' }
+    ],
+    gamme: [
+      { label: 'Accueil', page: 'home', icon: Home },
+      { label: 'La Gamme', page: 'gamme' }
+    ],
+    product: [
+      { label: 'Accueil', page: 'home', icon: Home },
+      { label: 'La Gamme', page: 'gamme' },
+      { label: 'Produit', page: 'product' }
+    ],
+    modules: [
+      { label: 'Accueil', page: 'home', icon: Home },
+      { label: 'Modules', page: 'modules' }
+    ],
+    finitions: [
+      { label: 'Accueil', page: 'home', icon: Home },
+      { label: 'Finitions', page: 'finitions' }
+    ],
+    avantages: [
+      { label: 'Accueil', page: 'home', icon: Home },
+      { label: 'Avantages', page: 'avantages' }
+    ],
+    utilisations: [
+      { label: 'Accueil', page: 'home', icon: Home },
+      { label: 'Utilisations', page: 'utilisations' }
+    ],
+    cube: [
+      { label: 'Accueil', page: 'home', icon: Home },
+      { label: 'Le Cube', page: 'cube' }
+    ],
+    prix: [
+      { label: 'Accueil', page: 'home', icon: Home },
+      { label: 'Prix Transparent', page: 'prix' }
+    ],
+    faq: [
+      { label: 'Accueil', page: 'home', icon: Home },
+      { label: 'FAQ', page: 'faq' }
+    ],
+    inspiration: [
+      { label: 'Accueil', page: 'home', icon: Home },
+      { label: 'Inspiration', page: 'inspiration' }
+    ],
+    shop: [
+      { label: 'Accueil', page: 'home', icon: Home },
+      { label: 'Boutique', page: 'shop' }
+    ],
+    cart: [
+      { label: 'Accueil', page: 'home', icon: Home },
+      { label: 'Boutique', page: 'shop' },
+      { label: 'Panier', page: 'cart' }
+    ],
+    checkout: [
+      { label: 'Accueil', page: 'home', icon: Home },
+      { label: 'Panier', page: 'cart' },
+      { label: 'Paiement', page: 'checkout' }
+    ],
+    legal: [
+      { label: 'Accueil', page: 'home', icon: Home },
+      { label: 'Mentions Légales', page: 'legal' }
+    ],
+    testimonials: [
+      { label: 'Accueil', page: 'home', icon: Home },
+      { label: 'Témoignages', page: 'testimonials' }
+    ],
+    objections: [
+      { label: 'Accueil', page: 'home', icon: Home },
+      { label: 'Vos Questions', page: 'objections' }
+    ],
+    'mobile-demo': [
+      { label: 'Accueil', page: 'home', icon: Home },
+      { label: 'Démo Mobile', page: 'mobile-demo' }
+    ],
+    'payment-security': [
+      { label: 'Accueil', page: 'home', icon: Home },
+      { label: 'Paiement Sécurisé', page: 'payment-security' }
+    ],
+    blog: [
+      { label: 'Accueil', page: 'home', icon: Home },
+      { label: 'Blog', page: 'blog' }
+    ],
+    'video-hub': [
+      { label: 'Accueil', page: 'home', icon: Home },
+      { label: 'Vidéos', page: 'video-hub' }
+    ],
+    resources: [
+      { label: 'Accueil', page: 'home', icon: Home },
+      { label: 'Ressources', page: 'resources' }
+    ],
+    'shipping-tracking': [
+      { label: 'Accueil', page: 'home', icon: Home },
+      { label: 'Suivi Commande', page: 'shipping-tracking' }
+    ],
+    'virtual-showroom': [
+      { label: 'Accueil', page: 'home', icon: Home },
+      { label: 'Showroom Virtuel', page: 'virtual-showroom' }
+    ],
+    personalization: [
+      { label: 'Accueil', page: 'home', icon: Home },
+      { label: 'Personnalisation', page: 'personalization' }
+    ],
+    'robinet-choice': [
+      { label: 'Accueil', page: 'home', icon: Home },
+      { label: 'Guide de Choix', page: 'robinet-choice' }
     ]
   };
 

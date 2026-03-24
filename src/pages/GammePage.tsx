@@ -55,7 +55,7 @@ export function GammePage({ navigate }: GammePageProps) {
                 onClick={() => setSelectedStyle(filter.value)}
                 className={`px-6 py-3 rounded-full transition-all ${
                   selectedStyle === filter.value
-                    ? 'bg-[#6B1E3E] text-white shadow-lg'
+                    ? 'bg-[#6B1E3E] text-white shadow-md'
                     : 'bg-[#FAF8F5] border border-gray-200 hover:border-[#6B1E3E]/30 text-gray-700'
                 }`}
                 whileHover={{ scale: 1.05, y: -2 }}
@@ -79,7 +79,7 @@ export function GammePage({ navigate }: GammePageProps) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all border border-gray-200/50"
+                className="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-gray-200/50"
               >
                 <div className="h-80 bg-gradient-to-br from-[#F5F1ED] to-white relative overflow-hidden">
                   <ImageWithFallback

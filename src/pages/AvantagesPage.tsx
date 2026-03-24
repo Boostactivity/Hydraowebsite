@@ -130,7 +130,7 @@ export function AvantagesPage({ navigate }: AvantagesPageProps) {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="p-8 bg-white rounded-3xl border border-gray-200 shadow-lg"
+              className="p-8 bg-white rounded-3xl border border-gray-200 shadow-sm"
             >
               <h3 className="text-xl text-gray-900 mb-6">Personne seule</h3>
               
@@ -157,7 +157,7 @@ export function AvantagesPage({ navigate }: AvantagesPageProps) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="p-8 bg-white rounded-3xl border border-gray-200 shadow-lg"
+              className="p-8 bg-white rounded-3xl border border-gray-200 shadow-sm"
             >
               <h3 className="text-xl text-gray-900 mb-6">Couple</h3>
               
@@ -214,7 +214,7 @@ export function AvantagesPage({ navigate }: AvantagesPageProps) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="p-8 bg-white rounded-3xl border border-gray-200 shadow-lg"
+              className="p-8 bg-white rounded-3xl border border-gray-200 shadow-sm"
             >
               <h3 className="text-xl text-gray-900 mb-6">Famille (5+ pers)</h3>
               
