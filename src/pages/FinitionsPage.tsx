@@ -13,7 +13,7 @@ export function FinitionsPage({ navigate }: FinitionsPageProps) {
     <div className="bg-[#FAF8F5]">
       {/* Hero */}
       <section className="relative pt-24 sm:pt-32 lg:pt-40 pb-16 sm:pb-24 lg:pb-32 bg-gradient-to-br from-white via-[#FAF8F5] to-[#E8D5DC]/10">
-        <div className="max-w-5xl mx-auto px-6 lg:px-12">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -31,8 +31,8 @@ export function FinitionsPage({ navigate }: FinitionsPageProps) {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="py-12 sm:py-16 lg:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {finishes.map((finish, index) => (
               <motion.div
@@ -64,8 +64,8 @@ export function FinitionsPage({ navigate }: FinitionsPageProps) {
         </div>
       </section>
 
-      <section className="py-20 bg-[#FAF8F5]">
-        <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
+      <section className="py-12 sm:py-16 lg:py-20 bg-[#FAF8F5]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="mb-6 text-gray-900">Toutes les finitions sont compatibles</h2>
           <p className="text-xl text-[#8B7E74] mb-10 max-w-2xl mx-auto">
             Quelle que soit la finition choisie, vous bénéficiez de la même qualité premium et des 5 types d'eau.

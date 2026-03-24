@@ -12,7 +12,7 @@ export function SecuritePage({ navigate }: SecuritePageProps) {
     <div className="min-h-screen bg-[#FAF8F5]">
       {/* Hero */}
       <section className="relative pt-24 sm:pt-32 lg:pt-40 pb-16 sm:pb-24 lg:pb-32 bg-gradient-to-br from-white via-[#FAF8F5] to-[#E8D5DC]/10">
-        <div className="max-w-5xl mx-auto px-6 lg:px-12">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -31,8 +31,8 @@ export function SecuritePage({ navigate }: SecuritePageProps) {
       </section>
 
       {/* La réalité */}
-      <section className="py-24 bg-white">
-        <div className="max-w-4xl mx-auto px-6 lg:px-12">
+      <section className="py-12 sm:py-16 lg:py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -58,8 +58,8 @@ export function SecuritePage({ navigate }: SecuritePageProps) {
       </section>
 
       {/* Les 4 niveaux de sécurité */}
-      <section className="py-24 bg-gradient-to-b from-[#FAF8F5] to-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-[#FAF8F5] to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="mb-4 text-gray-900">4 niveaux de protection</h2>
             <p className="text-xl text-[#8B7E74]">Empiler les sécurités pour rendre l'accident quasi-impossible.</p>
@@ -157,8 +157,8 @@ export function SecuritePage({ navigate }: SecuritePageProps) {
       </section>
 
       {/* Comparaison bouilloire */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="py-12 sm:py-16 lg:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="mb-4 text-gray-900">Plus sûr qu'une bouilloire ?</h2>
             <p className="text-xl text-[#8B7E74] max-w-3xl mx-auto">
@@ -225,8 +225,8 @@ export function SecuritePage({ navigate }: SecuritePageProps) {
       </section>
 
       {/* Certifications */}
-      <section className="py-24 bg-gradient-to-b from-[#FAF8F5] to-white">
-        <div className="max-w-4xl mx-auto px-6 lg:px-12">
+      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-[#FAF8F5] to-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="w-16 h-16 rounded-2xl bg-[#6B1E3E]/10 flex items-center justify-center mb-8 mx-auto">
               <Shield className="w-8 h-8 text-[#6B1E3E]" />
@@ -267,8 +267,8 @@ export function SecuritePage({ navigate }: SecuritePageProps) {
       </section>
 
       {/* Conseils d'usage */}
-      <section className="py-24 bg-white">
-        <div className="max-w-4xl mx-auto px-6 lg:px-12">
+      <section className="py-12 sm:py-16 lg:py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="w-16 h-16 rounded-2xl bg-[#6B1E3E]/10 flex items-center justify-center mb-8 mx-auto">
               <Baby className="w-8 h-8 text-[#6B1E3E]" />
@@ -300,8 +300,8 @@ export function SecuritePage({ navigate }: SecuritePageProps) {
       </section>
 
       {/* CTA */}
-      <section className="py-24 bg-gradient-to-br from-[#6B1E3E] to-[#6B1E3E]/90 text-white">
-        <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
+      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-[#6B1E3E] to-[#6B1E3E]/90 text-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}

@@ -12,7 +12,7 @@ export function UtilisationsPage({ navigate }: UtilisationsPageProps) {
     <div className="min-h-screen bg-[#FAF8F5]">
       {/* Hero */}
       <section className="relative pt-24 sm:pt-32 lg:pt-40 pb-16 sm:pb-24 lg:pb-32 bg-gradient-to-br from-white via-[#FAF8F5] to-[#E8D5DC]/10">
-        <div className="max-w-5xl mx-auto px-6 lg:px-12">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -31,8 +31,8 @@ export function UtilisationsPage({ navigate }: UtilisationsPageProps) {
       </section>
 
       {/* 1. Le matin : boissons chaudes */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="py-12 sm:py-16 lg:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -92,8 +92,8 @@ export function UtilisationsPage({ navigate }: UtilisationsPageProps) {
       </section>
 
       {/* 2. Midi/soir : cuisine quotidienne */}
-      <section className="py-24 bg-gradient-to-b from-[#FAF8F5] to-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-[#FAF8F5] to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -158,8 +158,8 @@ export function UtilisationsPage({ navigate }: UtilisationsPageProps) {
       </section>
 
       {/* 3. Hydratation quotidienne */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="py-12 sm:py-16 lg:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -257,8 +257,8 @@ export function UtilisationsPage({ navigate }: UtilisationsPageProps) {
       </section>
 
       {/* 4. Biberons & jeunes enfants */}
-      <section className="py-24 bg-gradient-to-b from-[#FAF8F5] to-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-[#FAF8F5] to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -349,8 +349,8 @@ export function UtilisationsPage({ navigate }: UtilisationsPageProps) {
       </section>
 
       {/* 5. Petits usages invisibles */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="py-12 sm:py-16 lg:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="mb-6 text-gray-900">Les usages invisibles</h2>
             <p className="text-xl text-[#8B7E74] max-w-3xl mx-auto leading-relaxed">
@@ -402,8 +402,8 @@ export function UtilisationsPage({ navigate }: UtilisationsPageProps) {
       </section>
 
       {/* CTA */}
-      <section className="py-24 bg-gradient-to-br from-[#6B1E3E] to-[#6B1E3E]/90 text-white">
-        <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
+      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-[#6B1E3E] to-[#6B1E3E]/90 text-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}

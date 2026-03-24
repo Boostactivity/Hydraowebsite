@@ -12,7 +12,7 @@ export function AvantagesPage({ navigate }: AvantagesPageProps) {
     <div className="min-h-screen bg-[#FAF8F5]">
       {/* Hero */}
       <section className="relative pt-24 sm:pt-32 lg:pt-40 pb-16 sm:pb-24 lg:pb-32 bg-gradient-to-br from-white via-[#FAF8F5] to-[#E8D5DC]/10">
-        <div className="max-w-5xl mx-auto px-6 lg:px-12">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -31,8 +31,8 @@ export function AvantagesPage({ navigate }: AvantagesPageProps) {
       </section>
 
       {/* 1. Temps gagné */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="py-12 sm:py-16 lg:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -109,8 +109,8 @@ export function AvantagesPage({ navigate }: AvantagesPageProps) {
       </section>
 
       {/* 2. Argent économisé */}
-      <section className="py-24 bg-gradient-to-b from-[#FAF8F5] to-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-[#FAF8F5] to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="w-16 h-16 rounded-2xl bg-[#6B1E3E]/10 flex items-center justify-center mb-8 mx-auto">
               <Euro className="w-8 h-8 text-[#6B1E3E]" />
@@ -248,17 +248,17 @@ export function AvantagesPage({ navigate }: AvantagesPageProps) {
               <p className="text-lg text-white/90 mb-8">
                 HYDRAL coûte <strong>490€ TTC</strong> (prix unique). Avec une famille de 4 économisant ~1000€/an, le robinet est amorti en <strong>6 mois</strong>.
               </p>
-              <div className="grid grid-cols-3 gap-6 text-center">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 text-center">
                 <div>
-                  <p className="text-5xl mb-2">1 an</p>
+                  <p className="text-3xl sm:text-4xl mb-2">1 an</p>
                   <p className="text-sm text-white/70">+510€ d'économies</p>
                 </div>
                 <div>
-                  <p className="text-5xl mb-2">3 ans</p>
+                  <p className="text-3xl sm:text-4xl mb-2">3 ans</p>
                   <p className="text-sm text-white/70">+2 510€ d'économies</p>
                 </div>
                 <div>
-                  <p className="text-5xl mb-2">10 ans</p>
+                  <p className="text-3xl sm:text-4xl mb-2">10 ans</p>
                   <p className="text-sm text-white/70">+9 510€ d'économies</p>
                 </div>
               </div>
@@ -268,8 +268,8 @@ export function AvantagesPage({ navigate }: AvantagesPageProps) {
       </section>
 
       {/* 3. Qualité de l'eau */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="py-12 sm:py-16 lg:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -371,8 +371,8 @@ export function AvantagesPage({ navigate }: AvantagesPageProps) {
       </section>
 
       {/* 4. Impact écologique */}
-      <section className="py-24 bg-gradient-to-b from-[#FAF8F5] to-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-[#FAF8F5] to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -441,8 +441,8 @@ export function AvantagesPage({ navigate }: AvantagesPageProps) {
       </section>
 
       {/* 5. Confort quotidien */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="py-12 sm:py-16 lg:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="w-16 h-16 rounded-2xl bg-[#6B1E3E]/10 flex items-center justify-center mb-8 mx-auto">
               <Smile className="w-8 h-8 text-[#6B1E3E]" />
@@ -489,8 +489,8 @@ export function AvantagesPage({ navigate }: AvantagesPageProps) {
       </section>
 
       {/* CTA */}
-      <section className="py-24 bg-gradient-to-br from-[#6B1E3E] to-[#6B1E3E]/90 text-white">
-        <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
+      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-[#6B1E3E] to-[#6B1E3E]/90 text-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}

@@ -608,7 +608,7 @@ const Section1 = React.forwardRef<HTMLElement, {
 
         {/* MODE SIMPLE - TOUJOURS VISIBLE */}
         {mode === 'quick' && (
-          <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-200/50 mb-8">
+          <div className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-xl border border-gray-200/50 mb-6 sm:mb-8">
             <div className="flex items-center justify-between mb-4">
               <h3 className="text-lg font-semibold text-gray-900">Nombre de personnes dans votre foyer</h3>
               {state.yearlyTotal > 0 && (
@@ -620,7 +620,7 @@ const Section1 = React.forwardRef<HTMLElement, {
                 </button>
               )}
             </div>
-            <div className="grid grid-cols-2 sm:grid-cols-5 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 sm:gap-4">
               {[
                 { value: 1, label: '1 personne', yearly: 230, monthly: 19, liters: 547 },
                 { value: 2, label: '2 personnes', yearly: 459, monthly: 38, liters: 1094 },
@@ -661,7 +661,7 @@ const Section1 = React.forwardRef<HTMLElement, {
         {mode === 'complete' && (
           <>
             {/* Étape A - Type d'eau - TOUJOURS VISIBLE */}
-            <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-200/50 mb-8">
+            <div className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-xl border border-gray-200/50 mb-6 sm:mb-8">
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-lg font-semibold text-gray-900">Quel type d'eau achetez-vous ?</h3>
                 {state.waterType && (
@@ -700,7 +700,7 @@ const Section1 = React.forwardRef<HTMLElement, {
 
             {/* Étape B - Choix eaux */}
             {state.waterType && (
-              <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-200/50 mb-8">
+              <div className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-xl border border-gray-200/50 mb-6 sm:mb-8">
                 <div className="flex items-center justify-between mb-2">
                   <h3 className="text-lg font-semibold text-gray-900">Quelle marque achetez-vous ?</h3>
                   {state.selectedWaters.length > 0 && (
@@ -775,7 +775,7 @@ const Section1 = React.forwardRef<HTMLElement, {
 
             {/* Étape C - Quantités */}
             {state.selectedWaters.length > 0 && (
-              <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-200/50 mb-8">
+              <div className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-xl border border-gray-200/50 mb-6 sm:mb-8">
                 <h3 className="text-lg font-semibold text-gray-900 mb-6">Combien en achetez-vous ?</h3>
                 <div className="space-y-6">
                   {state.selectedWaters.map((water, idx) => (
@@ -814,12 +814,12 @@ const Section1 = React.forwardRef<HTMLElement, {
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              className="bg-white rounded-3xl p-8 shadow-xl border border-gray-200/50 mb-8"
+              className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-xl border border-gray-200/50 mb-8"
             >
-              <h3 className="text-xl font-semibold text-gray-900 mb-6">Ce que vous dépensez aujourd'hui</h3>
+              <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-4 sm:mb-6">Ce que vous dépensez aujourd'hui</h3>
               <div className="text-center">
                 <p className="text-sm text-gray-600 mb-2">Dépense annuelle</p>
-                <p className="text-6xl font-bold text-gray-900 mb-4">{state.yearlyTotal}€</p>
+                <p className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">{state.yearlyTotal}€</p>
                 <p className="text-sm text-gray-600 mb-6">
                   {state.yearlyTotal < 100 && "Soit environ quelques semaines de café"}
                   {state.yearlyTotal >= 100 && state.yearlyTotal < 250 && "Soit l'équivalent d'un week-end en famille"}
@@ -835,9 +835,9 @@ const Section1 = React.forwardRef<HTMLElement, {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="bg-white rounded-3xl p-8 shadow-xl border border-gray-200/50 mb-12"
+              className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-xl border border-gray-200/50 mb-12"
             >
-              <h3 className="text-xl font-semibold text-gray-900 mb-6">Ce que vous économiseriez avec Hydral</h3>
+              <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-4 sm:mb-6">Ce que vous économiseriez avec Hydral</h3>
               
               {/* Les 3 robinets avec économies calculées */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -1407,7 +1407,7 @@ const Section3 = React.forwardRef<HTMLElement, {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12"
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mb-12"
           >
             {[
               { icon: '✅', text: 'Résiliable à tout moment, sans frais' },

@@ -76,7 +76,7 @@ export function TooExpensiveSection({ className = '' }: TooExpensiveSectionProps
           <div className="bg-white rounded-3xl border-2 border-[#6B1E3E]/20 p-8 md:p-12 text-center shadow-xl">
             <div className="mb-6">
               <div className="text-sm text-gray-600 mb-2">HYDRAL coûte</div>
-              <div className="text-7xl md:text-8xl font-light text-[#6B1E3E] mb-4">
+              <div className="text-4xl sm:text-5xl md:text-6xl font-light text-[#6B1E3E] mb-4">
                 1.34€
               </div>
               <div className="text-2xl text-gray-700 mb-6">par jour la première année</div>
@@ -209,7 +209,7 @@ export function TooExpensiveSection({ className = '' }: TooExpensiveSectionProps
               <div className="bg-gradient-to-br from-green-50 to-emerald-50 border-2 border-green-200 rounded-2xl p-6">
                 <div className="text-center">
                   <div className="text-sm text-gray-700 mb-2">Vous économisez sur 5 ans</div>
-                  <div className="text-5xl font-light text-green-600 mb-4">
+                  <div className="text-3xl sm:text-4xl font-light text-green-600 mb-4">
                     {savings5years.toLocaleString()}€
                   </div>
                   <div className="grid grid-cols-2 gap-4 text-sm text-gray-600">

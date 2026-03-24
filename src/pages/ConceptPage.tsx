@@ -14,7 +14,7 @@ export function ConceptPage({ navigate }: ConceptPageProps) {
     <div className="bg-[#FAF8F5]">
       {/* Hero - Storytelling du problème avant la solution */}
       <section className="relative pt-24 sm:pt-32 lg:pt-40 pb-16 sm:pb-24 lg:pb-32 bg-gradient-to-br from-white via-[#FAF8F5] to-[#E8D5DC]/10">
-        <div className="max-w-5xl mx-auto px-6 lg:px-12">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -33,8 +33,8 @@ export function ConceptPage({ navigate }: ConceptPageProps) {
       </section>
 
       {/* L'incohérence actuelle */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="py-12 sm:py-16 lg:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -48,7 +48,7 @@ export function ConceptPage({ navigate }: ConceptPageProps) {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {[
               {
                 title: "On achète de l'eau",
@@ -84,8 +84,8 @@ export function ConceptPage({ navigate }: ConceptPageProps) {
       </section>
 
       {/* La solution logique */}
-      <section className="py-24 bg-gradient-to-b from-[#FAF8F5] to-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-[#FAF8F5] to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -326,8 +326,8 @@ export function ConceptPage({ navigate }: ConceptPageProps) {
       </section>
 
       {/* Système sous évier */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="py-12 sm:py-16 lg:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -378,8 +378,8 @@ export function ConceptPage({ navigate }: ConceptPageProps) {
       </section>
 
       {/* Avantages */}
-      <section className="py-24 bg-gradient-to-b from-[#FAF8F5] to-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-[#FAF8F5] to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -431,7 +431,7 @@ export function ConceptPage({ navigate }: ConceptPageProps) {
       </section>
 
       {/* CTA Final */}
-      <section className="py-24 bg-gradient-to-br from-[#6B1E3E] to-[#6B1E3E]/90 text-white relative overflow-hidden">
+      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-[#6B1E3E] to-[#6B1E3E]/90 text-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#D4AF37]/10 rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
 
@@ -440,7 +440,7 @@ export function ConceptPage({ navigate }: ConceptPageProps) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="relative max-w-4xl mx-auto px-6 lg:px-12 text-center"
+          className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
         >
           <h2 className="mb-6">
             Prêt à simplifier<span className="block">votre quotidien ?</span>

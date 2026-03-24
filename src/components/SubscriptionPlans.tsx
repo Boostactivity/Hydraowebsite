@@ -163,7 +163,7 @@ export default function SubscriptionPlans({
 
   return (
     <div className="bg-gradient-to-b from-white to-[#F5E6ED]/20 py-20">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header avec rappel économies - n'afficher que si données calculées */}
         {yearlySavings > 0 && (
           <motion.div
@@ -363,7 +363,7 @@ export default function SubscriptionPlans({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
-          className="grid grid-cols-2 lg:grid-cols-5 gap-4 mb-12"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 sm:gap-4 mb-12"
         >
           {[
             { icon: RefreshCw, text: 'Résiliable à tout moment, sans frais' },
@@ -404,7 +404,7 @@ export default function SubscriptionPlans({
               // Naviguer vers la page de personnalisation
               onPlanSelected?.(selectedPlan, rhythm);
             }}
-            className="group px-12 py-5 bg-gradient-to-r from-[#6B1E3E] to-[#8B2E5E] text-white rounded-full shadow-2xl shadow-[#6B1E3E]/30 hover:shadow-3xl hover:shadow-[#6B1E3E]/40 font-medium text-lg transition-all hover:scale-105"
+            className="group px-8 sm:px-12 py-4 sm:py-5 min-h-[48px] bg-gradient-to-r from-[#6B1E3E] to-[#8B2E5E] text-white rounded-full shadow-2xl shadow-[#6B1E3E]/30 hover:shadow-3xl hover:shadow-[#6B1E3E]/40 font-medium text-base sm:text-lg transition-all hover:scale-105"
           >
             Choisir cette formule
             <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform">→</span>

@@ -58,8 +58,8 @@ export function CartPage({ navigate }: CartPageProps) {
   }
 
   return (
-    <div className="min-h-screen bg-[#FAF8F5] py-20">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+    <div className="min-h-screen bg-[#FAF8F5] py-12 sm:py-16 lg:py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-12">
           <h1 className="mb-4 text-gray-900">Votre panier</h1>
@@ -76,7 +76,7 @@ export function CartPage({ navigate }: CartPageProps) {
                 key={item.id}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="bg-white p-8 rounded-3xl border border-gray-200/50"
+                className="bg-white p-4 sm:p-6 lg:p-8 rounded-2xl sm:rounded-3xl border border-gray-200/50"
               >
                 <div className="flex items-start gap-6">
                   <div className="w-24 h-24 bg-gradient-to-br from-[#FAF8F5] to-[#E8D5DC]/20 rounded-2xl flex-shrink-0 flex items-center justify-center">
@@ -203,7 +203,7 @@ export function CartPage({ navigate }: CartPageProps) {
 
           {/* Résumé */}
           <div className="lg:col-span-1">
-            <div className="bg-white p-8 rounded-3xl border border-gray-200/50 sticky top-24">
+            <div className="bg-white p-4 sm:p-6 lg:p-8 rounded-2xl sm:rounded-3xl border border-gray-200/50 sticky top-24">
               <h2 className="text-2xl mb-8 text-gray-900">Récapitulatif</h2>
 
               <div className="space-y-4 mb-6 pb-6 border-b border-gray-200">
@@ -231,7 +231,7 @@ export function CartPage({ navigate }: CartPageProps) {
               {/* Paiement sécurisé */}
               <motion.button
                 onClick={() => navigate('checkout')}
-                className="w-full px-8 py-5 bg-[#6B1E3E] text-white rounded-full text-lg hover:bg-[#6B1E3E]/90 transition-colors flex items-center justify-center gap-3 mb-6"
+                className="w-full px-6 sm:px-8 py-4 sm:py-5 min-h-[48px] bg-[#6B1E3E] text-white rounded-full text-base sm:text-lg hover:bg-[#6B1E3E]/90 transition-colors flex items-center justify-center gap-3 mb-6"
                 whileHover={{ scale: 1.02, y: -3 }}
                 whileTap={{ scale: 0.98 }}
               >

@@ -15,7 +15,7 @@ export function CubePage({ navigate }: CubePageProps) {
         <div className="absolute top-20 right-10 w-72 h-72 bg-[#E8D5DC]/30 rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 left-10 w-96 h-96 bg-[#D4AF37]/10 rounded-full blur-3xl"></div>
 
-        <div className="relative max-w-5xl mx-auto px-6 lg:px-12 text-center">
+        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -38,8 +38,8 @@ export function CubePage({ navigate }: CubePageProps) {
       </section>
 
       {/* Avantages CUBE */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="py-12 sm:py-16 lg:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
@@ -83,8 +83,8 @@ export function CubePage({ navigate }: CubePageProps) {
       </section>
 
       {/* Caractéristiques */}
-      <section className="py-24 bg-[#FAF8F5]">
-        <div className="max-w-5xl mx-auto px-6 lg:px-12">
+      <section className="py-12 sm:py-16 lg:py-20 bg-[#FAF8F5]">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="mb-8 text-gray-900">
@@ -122,14 +122,14 @@ export function CubePage({ navigate }: CubePageProps) {
       </section>
 
       {/* CTA */}
-      <section className="py-24 bg-gradient-to-br from-[#6B1E3E] to-[#8B2E54] text-white relative overflow-hidden">
+      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-[#6B1E3E] to-[#8B2E54] text-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#D4AF37]/10 rounded-full blur-3xl"></div>
         
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="relative max-w-4xl mx-auto px-6 lg:px-12 text-center"
+          className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
         >
           <h2 className="mb-6">
             CUBE inclus

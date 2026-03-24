@@ -21,7 +21,7 @@ export function InspirationPage({ navigate }: InspirationPageProps) {
   return (
     <div className="bg-[#FAF8F5]">
       <section className="relative pt-24 sm:pt-32 lg:pt-40 pb-16 sm:pb-24 lg:pb-32 bg-gradient-to-br from-white via-[#FAF8F5] to-[#E8D5DC]/10">
-        <div className="max-w-5xl mx-auto px-6 lg:px-12 text-center">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="mb-8">
             <span className="block text-gray-900">Inspiration</span>
             <span className="block text-[#6B1E3E]">dans votre quotidien</span>
@@ -33,8 +33,8 @@ export function InspirationPage({ navigate }: InspirationPageProps) {
       </section>
 
       {/* Galerie cuisines */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="py-12 sm:py-16 lg:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-center mb-12 text-gray-900">Cuisines équipées HYDRAL</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
             {[
@@ -61,7 +61,7 @@ export function InspirationPage({ navigate }: InspirationPageProps) {
       </section>
 
       {/* Cas d'usage */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl text-center mb-12">Cas d'usage quotidiens</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -75,7 +75,7 @@ export function InspirationPage({ navigate }: InspirationPageProps) {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-r from-[#6B1E3E] to-[#8B2E54] text-white text-center">
+      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-r from-[#6B1E3E] to-[#8B2E54] text-white text-center">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl mb-6">Et vous, comment l'utiliserez-vous ?</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto text-white/90">

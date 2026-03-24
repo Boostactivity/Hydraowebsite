@@ -331,7 +331,7 @@ export function GuidesSection() {
           <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#6B1E3E] to-[#8B2E4E] flex items-center justify-center mx-auto mb-6">
             <FileText className="w-10 h-10 text-white" />
           </div>
-          <h2 className="text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
             Guides gratuits HYDRAL
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">

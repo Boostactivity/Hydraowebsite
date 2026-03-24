@@ -81,7 +81,7 @@ export function HomePage({ navigate }: HomePageProps) {
               }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-12 py-5 bg-[#6B1E3E] text-white rounded-full text-lg font-medium shadow-xl hover:bg-[#6B1E3E]/90 transition-colors inline-flex items-center gap-2"
+              className="px-8 sm:px-12 py-4 sm:py-5 min-h-[48px] bg-[#6B1E3E] text-white rounded-full text-base sm:text-lg font-medium shadow-xl hover:bg-[#6B1E3E]/90 transition-colors inline-flex items-center gap-2"
             >
               Calculer mes économies
               <ChevronRight className="w-5 h-5" />
@@ -205,8 +205,8 @@ export function HomePage({ navigate }: HomePageProps) {
       {/* ========================================
           PRIX TRANSPARENT
          ======================================== */}
-      <section className="py-20 bg-white">
-        <div className="section-container max-w-4xl mx-auto px-4 sm:px-6">
+      <section className="py-12 sm:py-16 lg:py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -228,7 +228,7 @@ export function HomePage({ navigate }: HomePageProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-gradient-to-br from-[#6B1E3E]/5 to-[#6B1E3E]/10 rounded-3xl p-8 border border-[#6B1E3E]/20"
+            className="bg-gradient-to-br from-[#6B1E3E]/5 to-[#6B1E3E]/10 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 border border-[#6B1E3E]/20"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
@@ -275,8 +275,8 @@ export function HomePage({ navigate }: HomePageProps) {
       {/* ========================================
           FAQ
          ======================================== */}
-      <section ref={faqRef} className="py-20 bg-[#FAF8F5]">
-        <div className="section-container max-w-3xl mx-auto px-4 sm:px-6">
+      <section ref={faqRef} className="py-12 sm:py-16 lg:py-20 bg-[#FAF8F5]">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}

@@ -579,7 +579,7 @@ export function UltimateCalculator({ navigate }: UltimateCalculatorProps) {
   const monthlyBottleCost = yearlyBottleCost / 12;
 
   return (
-    <section className="relative py-20 lg:py-28 overflow-hidden bg-gradient-to-br from-[#FAF8F5] via-white to-[#F5E6ED]">
+    <section className="relative py-12 sm:py-16 lg:py-20 overflow-hidden bg-gradient-to-br from-[#FAF8F5] via-white to-[#F5E6ED]">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#6B1E3E]/20 to-transparent"></div>
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#6B1E3E]/20 to-transparent"></div>
       <div className="absolute inset-0 shadow-[inset_0_2px_8px_rgba(107,30,62,0.03),inset_0_-2px_8px_rgba(107,30,62,0.03)] pointer-events-none"></div>

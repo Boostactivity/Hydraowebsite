@@ -12,7 +12,7 @@ export function EcoresponsablePage({ navigate }: EcoresponsablePageProps) {
     <div className="min-h-screen bg-[#FAF8F5]">
       {/* Hero */}
       <section className="relative pt-24 sm:pt-32 lg:pt-40 pb-16 sm:pb-24 lg:pb-32 bg-gradient-to-br from-white via-[#FAF8F5] to-[#E8D5DC]/10">
-        <div className="max-w-5xl mx-auto px-6 lg:px-12">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -36,8 +36,8 @@ export function EcoresponsablePage({ navigate }: EcoresponsablePageProps) {
       </section>
 
       {/* Les chiffres qui font réfléchir */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="py-12 sm:py-16 lg:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="mb-6 text-gray-900">
               L'ampleur du problème
@@ -100,8 +100,8 @@ export function EcoresponsablePage({ navigate }: EcoresponsablePageProps) {
       </section>
 
       {/* Le problème du plastique */}
-      <section className="py-24 bg-gradient-to-b from-[#FAF8F5] to-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-[#FAF8F5] to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -191,7 +191,7 @@ export function EcoresponsablePage({ navigate }: EcoresponsablePageProps) {
               
               <div className="space-y-8">
                 <div>
-                  <p className="text-7xl mb-3">0</p>
+                  <p className="text-4xl sm:text-5xl lg:text-6xl mb-3">0</p>
                   <p className="text-2xl mb-3">Bouteille plastique</p>
                   <p className="text-lg text-white/80 leading-relaxed">
                     L'eau coule directement du robinet : filtrée, fraîche, pétillante si vous le souhaitez. Aucun emballage.
@@ -222,8 +222,8 @@ export function EcoresponsablePage({ navigate }: EcoresponsablePageProps) {
       </section>
 
       {/* Transport et CO₂ */}
-      <section className="py-24 bg-gradient-to-b from-[#FAF8F5] to-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-[#FAF8F5] to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="w-16 h-16 rounded-2xl bg-[#6B1E3E]/10 flex items-center justify-center mb-8 mx-auto">
               <Package className="w-8 h-8 text-[#6B1E3E]" />
@@ -299,8 +299,8 @@ export function EcoresponsablePage({ navigate }: EcoresponsablePageProps) {
       </section>
 
       {/* Consommation d'énergie */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="py-12 sm:py-16 lg:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -377,8 +377,8 @@ export function EcoresponsablePage({ navigate }: EcoresponsablePageProps) {
       </section>
 
       {/* Durabilité */}
-      <section className="py-24 bg-gradient-to-b from-[#FAF8F5] to-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-[#FAF8F5] to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="w-16 h-16 rounded-2xl bg-[#6B1E3E]/10 flex items-center justify-center mb-8 mx-auto">
               <Recycle className="w-8 h-8 text-[#6B1E3E]" />
@@ -435,8 +435,8 @@ export function EcoresponsablePage({ navigate }: EcoresponsablePageProps) {
       </section>
 
       {/* Soyons honnêtes */}
-      <section className="py-24 bg-white">
-        <div className="max-w-4xl mx-auto px-6 lg:px-12">
+      <section className="py-12 sm:py-16 lg:py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="p-12 bg-gradient-to-br from-[#6B1E3E]/5 to-white rounded-3xl border border-[#6B1E3E]/20">
             <h2 className="mb-6 text-gray-900">Soyons honnêtes</h2>
             <div className="space-y-4 text-lg text-[#8B7E74]">
@@ -455,8 +455,8 @@ export function EcoresponsablePage({ navigate }: EcoresponsablePageProps) {
       </section>
 
       {/* CTA */}
-      <section className="py-24 bg-gradient-to-br from-[#6B1E3E] to-[#6B1E3E]/90 text-white">
-        <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
+      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-[#6B1E3E] to-[#6B1E3E]/90 text-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}

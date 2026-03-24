@@ -38,7 +38,7 @@ export function RenterSection({ className = '' }: RenterSectionProps) {
           viewport={{ once: true }}
           className="bg-gradient-to-br from-white to-[#E8D5DC]/10 border-2 border-[#6B1E3E]/20 rounded-3xl p-10 mb-12 text-center"
         >
-          <div className="text-7xl font-light text-[#6B1E3E] mb-4">
+          <div className="text-4xl sm:text-5xl lg:text-6xl font-light text-[#6B1E3E] mb-4">
             100%
           </div>
           <div className="text-2xl text-gray-900 mb-3">
@@ -194,7 +194,7 @@ export function RenterSection({ className = '' }: RenterSectionProps) {
 
           {/* Résultat */}
           <div className="bg-gradient-to-r from-[#6B1E3E] to-[#8B2E4E] text-white rounded-2xl p-8 text-center">
-            <div className="text-5xl font-light mb-3">2 813€</div>
+            <div className="text-3xl sm:text-4xl font-light mb-3">2 813€</div>
             <div className="text-xl mb-4">économisés sur 3 ans</div>
             <p className="text-white/90">
               Même en changeant de logement, HYDRAL vous fait économiser <strong>75% sur 3 ans</strong>

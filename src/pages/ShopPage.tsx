@@ -39,7 +39,7 @@ export function ShopPage({ navigate }: ShopPageProps) {
     <div className="min-h-screen bg-white">
       {/* Hero ultra-minimaliste */}
       <section className="relative pt-24 sm:pt-32 lg:pt-40 pb-16 sm:pb-24 bg-white">
-        <div className="max-w-4xl mx-auto px-6 lg:px-12">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -68,8 +68,8 @@ export function ShopPage({ navigate }: ShopPageProps) {
       </section>
 
       {/* Produits à l'unité */}
-      <section className="py-20 bg-gradient-to-b from-white to-[#FAF8F5]/30">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-white to-[#FAF8F5]/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Filtres catégories */}
           <div className="flex flex-wrap gap-2 justify-center mb-16">
             {categories.map((cat) => (
@@ -122,7 +122,7 @@ export function ShopPage({ navigate }: ShopPageProps) {
 
                 <motion.button
                   onClick={() => handleAddToCart(item)}
-                  className="w-full px-6 py-3 bg-[#6B1E3E] text-white rounded-full hover:bg-[#6B1E3E]/90 transition-colors flex items-center justify-center gap-2 text-sm font-medium"
+                  className="w-full px-6 py-3 min-h-[48px] bg-[#6B1E3E] text-white rounded-full hover:bg-[#6B1E3E]/90 transition-colors flex items-center justify-center gap-2 text-sm font-medium"
                   whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -143,7 +143,7 @@ export function ShopPage({ navigate }: ShopPageProps) {
 
       {/* Info livraison - Version discrète intégrée */}
       <section className="py-16 bg-[#FAF8F5]">
-        <div className="max-w-5xl mx-auto px-6 lg:px-12">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div>
               <div className="w-10 h-10 bg-[#6B1E3E]/10 rounded-xl flex items-center justify-center mx-auto mb-3">
@@ -177,8 +177,8 @@ export function ShopPage({ navigate }: ShopPageProps) {
       </section>
 
       {/* CTA final doux */}
-      <section className="py-20 bg-white">
-        <div className="max-w-3xl mx-auto px-6 lg:px-12 text-center">
+      <section className="py-12 sm:py-16 lg:py-20 bg-white">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="mb-4 text-gray-900 font-light">Des questions ?</h2>
           <p className="text-lg text-gray-600 mb-10">
             Notre équipe est là pour vous aider.

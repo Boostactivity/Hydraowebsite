@@ -11,7 +11,7 @@ export function ModulesPage({ navigate }: ModulesPageProps) {
   return (
     <div className="bg-[#FAF8F5]">
       <section className="relative pt-24 sm:pt-32 lg:pt-40 pb-16 sm:pb-24 lg:pb-32 bg-gradient-to-br from-white via-[#FAF8F5] to-[#E8D5DC]/10">
-        <div className="max-w-5xl mx-auto px-6 lg:px-12 text-center">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="mb-8">
             <span className="block text-gray-900">Les modules sous évier</span>
             <span className="block text-[#6B1E3E]">Compacts et performants</span>
@@ -22,7 +22,7 @@ export function ModulesPage({ navigate }: ModulesPageProps) {
         </div>
       </section>
 
-      <section className="py-20">
+      <section className="py-12 sm:py-16 lg:py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto space-y-16">
             {modules.map((module, index) => (
@@ -73,7 +73,7 @@ export function ModulesPage({ navigate }: ModulesPageProps) {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-r from-[#6B1E3E] to-[#8B2E54] text-white text-center">
+      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-r from-[#6B1E3E] to-[#8B2E54] text-white text-center">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl mb-6">Configurez votre système complet</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto text-white/90">

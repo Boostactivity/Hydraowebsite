@@ -65,7 +65,7 @@ export function ProductPage({ navigate, productId }: ProductPageProps) {
     <div className="bg-[#FAF8F5] min-h-screen">
       {/* Hero avec storytelling */}
       <section className="pt-20 sm:pt-28 lg:pt-32 pb-12 sm:pb-16 lg:pb-20 bg-gradient-to-br from-white via-[#FAF8F5] to-[#E8D5DC]/10">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Image du produit */}
             <motion.div
@@ -176,8 +176,8 @@ export function ProductPage({ navigate, productId }: ProductPageProps) {
       </section>
 
       {/* Under-Sink Checker + Payment Options */}
-      <section className="py-20 bg-[#FAF8F5]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="py-12 sm:py-16 lg:py-20 bg-[#FAF8F5]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -215,7 +215,7 @@ export function ProductPage({ navigate, productId }: ProductPageProps) {
       </section>
 
       {/* CTA Final */}
-      <section className="py-20 bg-gradient-to-br from-[#6B1E3E] to-[#6B1E3E]/90 text-white relative overflow-hidden">
+      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-[#6B1E3E] to-[#6B1E3E]/90 text-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#D4AF37]/10 rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
 
@@ -224,7 +224,7 @@ export function ProductPage({ navigate, productId }: ProductPageProps) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="relative max-w-4xl mx-auto px-6 lg:px-12 text-center"
+          className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
         >
           <h2 className="mb-6">
             Prêt à configurer<span className="block">votre {product.name} ?</span>

@@ -212,7 +212,7 @@ function AppContent() {
       <SEOHead page={currentPage} productId={productId} />
       <ScrollProgress />
       <MotionConfig reducedMotion="user">
-        <div className="min-h-screen bg-[#FAF8F5] flex flex-col">
+        <div className="min-h-screen bg-[#FAF8F5] flex flex-col overflow-x-hidden">
           <Header navigate={navigate} currentPage={currentPage} />
           
           {/* Trust Badges Bar - Juste sous la navigation */}

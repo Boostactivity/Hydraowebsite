@@ -126,8 +126,8 @@ export default function RobinetChoice({ yearlySavings, onRobinetSelected }: Robi
   };
 
   return (
-    <div className="bg-gradient-to-b from-white to-[#F5E6ED]/20 py-20">
-      <div className="max-w-7xl mx-auto px-6">
+    <div className="bg-gradient-to-b from-white to-[#F5E6ED]/20 py-12 sm:py-16 lg:py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Rappel économies */}
         {savings > 0 && (

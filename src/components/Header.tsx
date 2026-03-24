@@ -60,7 +60,7 @@ export function Header({ navigate, currentPage }: HeaderProps) {
     <>
       {/* Bandeau supérieur */}
       <div className="bg-[#6B1E3E] text-white text-center py-2 text-sm">
-        <div className="max-w-7xl mx-auto px-6 flex items-center justify-center gap-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-center gap-3 sm:gap-6">
           <span className="hidden md:inline">💰 Rentabilisé en 6 mois</span>
           <span className="hidden sm:inline">•</span>
           <span>Livraison sous 5 à 7 jours</span>
@@ -76,7 +76,7 @@ export function Header({ navigate, currentPage }: HeaderProps) {
             : 'bg-white'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <motion.button
@@ -220,7 +220,7 @@ export function Header({ navigate, currentPage }: HeaderProps) {
             exit={{ opacity: 0, height: 0 }}
             className="fixed top-[calc(theme(spacing.20)+2.5rem)] left-0 right-0 bg-white border-b border-gray-200 z-40 lg:hidden overflow-hidden"
           >
-            <div className="max-w-7xl mx-auto px-6 py-6 space-y-1">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 sm:py-6 space-y-1 max-h-[calc(100vh-8rem)] overflow-y-auto">
               {/* Calculez vos économies - PRIORITÉ #1 MOBILE */}
               <motion.button
                 onClick={() => {

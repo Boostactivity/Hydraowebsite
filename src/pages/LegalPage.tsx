@@ -22,7 +22,7 @@ export function LegalPage({ navigate, type = 'mentions' }: LegalPageProps) {
     <div className="min-h-screen bg-[#FAF8F5]">
       {/* Hero */}
       <section className="relative pt-24 sm:pt-32 lg:pt-40 pb-16 sm:pb-24 lg:pb-32 bg-gradient-to-br from-white via-[#FAF8F5] to-[#E8D5DC]/10">
-        <div className="max-w-5xl mx-auto px-6 lg:px-12">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -36,8 +36,8 @@ export function LegalPage({ navigate, type = 'mentions' }: LegalPageProps) {
       </section>
 
       {/* Content */}
-      <section className="py-24 bg-white">
-        <div className="max-w-4xl mx-auto px-6 lg:px-12">
+      <section className="py-12 sm:py-16 lg:py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="prose prose-lg max-w-none">
             {type === 'mentions' && (
               <div className="space-y-12">
@@ -291,7 +291,7 @@ export function LegalPage({ navigate, type = 'mentions' }: LegalPageProps) {
 
       {/* Retour */}
       <section className="py-12 bg-[#FAF8F5]">
-        <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.button
             onClick={() => navigate('home')}
             className="px-8 py-3 border-2 border-gray-300 text-gray-700 rounded-full hover:border-[#6B1E3E] hover:text-[#6B1E3E] transition-colors"

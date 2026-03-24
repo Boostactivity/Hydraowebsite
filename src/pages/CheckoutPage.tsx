@@ -97,7 +97,7 @@ export function CheckoutPage({ navigate }: CheckoutPageProps) {
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="bg-white p-12 rounded-3xl border border-gray-200/50 text-center"
+            className="bg-white p-6 sm:p-8 lg:p-12 rounded-2xl sm:rounded-3xl border border-gray-200/50 text-center"
           >
             <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-8">
               <Check className="w-10 h-10 text-green-600" />
@@ -163,8 +163,8 @@ export function CheckoutPage({ navigate }: CheckoutPageProps) {
   }
 
   return (
-    <div className="min-h-screen bg-[#FAF8F5] py-20">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+    <div className="min-h-screen bg-[#FAF8F5] py-12 sm:py-16 lg:py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-12">
           <button
@@ -193,7 +193,7 @@ export function CheckoutPage({ navigate }: CheckoutPageProps) {
                   />
 
                   {/* Coordonnées */}
-                  <div className="bg-white p-8 rounded-3xl border border-gray-200/50">
+                  <div className="bg-white p-4 sm:p-6 lg:p-8 rounded-2xl sm:rounded-3xl border border-gray-200/50">
                     <div className="flex items-center gap-3 mb-6">
                       <User className="w-6 h-6 text-[#6B1E3E]" />
                       <h2 className="text-2xl text-gray-900">Vos coordonnées</h2>
@@ -294,7 +294,7 @@ export function CheckoutPage({ navigate }: CheckoutPageProps) {
 
                   {/* Installation */}
                   {formData.includeInstallation && (
-                    <div className="bg-white p-8 rounded-3xl border border-gray-200/50">
+                    <div className="bg-white p-4 sm:p-6 lg:p-8 rounded-2xl sm:rounded-3xl border border-gray-200/50">
                       <h2 className="text-2xl mb-6 text-gray-900">Date d'installation souhaitée</h2>
                       <input
                         type="date"
@@ -312,7 +312,7 @@ export function CheckoutPage({ navigate }: CheckoutPageProps) {
 
                   <motion.button
                     type="submit"
-                    className="w-full px-12 py-5 bg-[#6B1E3E] text-white rounded-full text-lg hover:bg-[#6B1E3E]/90 transition-colors flex items-center justify-center gap-2"
+                    className="w-full px-8 sm:px-12 py-4 sm:py-5 min-h-[48px] bg-[#6B1E3E] text-white rounded-full text-base sm:text-lg hover:bg-[#6B1E3E]/90 transition-colors flex items-center justify-center gap-2"
                     whileHover={{ scale: 1.02, y: -3 }}
                     whileTap={{ scale: 0.98 }}
                   >
@@ -327,17 +327,17 @@ export function CheckoutPage({ navigate }: CheckoutPageProps) {
                   {/* Point 163 - Payment Methods Logos */}
                   <PaymentMethodsSection formData={formData} setFormData={setFormData} />
 
-                  <div className="flex gap-4">
+                  <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                     <button
                       type="button"
                       onClick={() => setStep('info')}
-                      className="flex-1 px-8 py-4 border border-[#6B1E3E]/30 text-[#6B1E3E] rounded-full hover:border-[#6B1E3E] hover:bg-[#6B1E3E]/5 transition-colors"
+                      className="flex-1 px-6 sm:px-8 py-3 sm:py-4 min-h-[48px] border border-[#6B1E3E]/30 text-[#6B1E3E] rounded-full hover:border-[#6B1E3E] hover:bg-[#6B1E3E]/5 transition-colors"
                     >
                       Retour
                     </button>
                     <motion.button
                       type="submit"
-                      className="flex-1 px-12 py-5 bg-[#6B1E3E] text-white rounded-full text-lg hover:bg-[#6B1E3E]/90 transition-colors flex items-center justify-center gap-2"
+                      className="flex-1 px-8 sm:px-12 py-4 sm:py-5 min-h-[48px] bg-[#6B1E3E] text-white rounded-full text-base sm:text-lg hover:bg-[#6B1E3E]/90 transition-colors flex items-center justify-center gap-2"
                       whileHover={{ scale: 1.02, y: -3 }}
                       whileTap={{ scale: 0.98 }}
                     >
@@ -380,12 +380,12 @@ function CheckoutProgressBar({ currentStep }: { currentStep: 'info' | 'payment' 
   const currentIndex = steps.findIndex(s => s.id === currentStep);
 
   return (
-    <div className="bg-white rounded-2xl p-6 border border-gray-200/50">
+    <div className="bg-white rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-6 border border-gray-200/50">
       <div className="flex items-center justify-between">
         {steps.map((step, index) => (
           <React.Fragment key={step.id}>
             <div className="flex flex-col items-center flex-1">
-              <div className={`w-12 h-12 rounded-full flex items-center justify-center text-xl mb-2 transition-all ${
+              <div className={`w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 rounded-full flex items-center justify-center text-sm sm:text-base lg:text-xl mb-1 sm:mb-2 transition-all ${
                 index <= currentIndex
                   ? 'bg-[#6B1E3E] text-white scale-110'
                   : 'bg-gray-200 text-gray-400'
@@ -413,7 +413,7 @@ function CheckoutProgressBar({ currentStep }: { currentStep: 'info' | 'payment' 
 // Point 161 - Guest Checkout Selector
 function GuestCheckoutSelector({ mode, setMode }: { mode: CheckoutMode; setMode: (mode: CheckoutMode) => void }) {
   return (
-    <div className="bg-white p-8 rounded-3xl border border-gray-200/50">
+    <div className="bg-white p-4 sm:p-6 lg:p-8 rounded-2xl sm:rounded-3xl border border-gray-200/50">
       <h2 className="text-2xl mb-6 text-gray-900">Comment souhaitez-vous commander ?</h2>
       <div className="space-y-4">
         <label className={`flex items-start gap-4 p-4 rounded-xl cursor-pointer transition-all border-2 ${
@@ -512,7 +512,7 @@ function AddressAutocompleteSection({
   ];
 
   return (
-    <div className="bg-white p-8 rounded-3xl border border-gray-200/50">
+    <div className="bg-white p-4 sm:p-6 lg:p-8 rounded-2xl sm:rounded-3xl border border-gray-200/50">
       <div className="flex items-center gap-3 mb-6">
         <Truck className="w-6 h-6 text-[#6B1E3E]" />
         <h2 className="text-2xl text-gray-900">Adresse de livraison</h2>
@@ -605,7 +605,7 @@ function AddressAutocompleteSection({
 // Point 163 - Payment Methods with Logos
 function PaymentMethodsSection({ formData, setFormData }: { formData: any; setFormData: (data: any) => void }) {
   return (
-    <div className="bg-white p-8 rounded-3xl border border-gray-200/50">
+    <div className="bg-white p-4 sm:p-6 lg:p-8 rounded-2xl sm:rounded-3xl border border-gray-200/50">
       <div className="flex items-center gap-3 mb-6">
         <CreditCard className="w-6 h-6 text-[#6B1E3E]" />
         <h2 className="text-2xl text-gray-900">Paiement sécurisé</h2>

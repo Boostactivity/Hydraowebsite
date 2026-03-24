@@ -118,7 +118,7 @@ export function SinkCompatibilityChecker({ className = '' }: SinkCompatibilityCh
             {/* Schéma instructif */}
             <div className="bg-white rounded-2xl border-2 border-[#6B1E3E]/20 p-6 mb-8">
               <div className="text-center mb-4">
-                <div className="text-6xl mb-4">📏</div>
+                <div className="text-4xl sm:text-5xl mb-4">📏</div>
                 <h4 className="text-lg font-medium text-gray-900 mb-2">Comment mesurer ?</h4>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">

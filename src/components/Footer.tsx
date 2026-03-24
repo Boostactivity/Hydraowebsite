@@ -72,18 +72,18 @@ export function Footer({ navigate }: FooterProps) {
             </p>
 
             <div className="flex flex-col gap-4 max-w-md mx-auto">
-              <div className="flex gap-3">
+              <div className="flex flex-col sm:flex-row gap-3">
                 <input
                   type="email"
                   placeholder="Votre email"
-                  className="flex-1 px-6 py-3.5 bg-[#FAF8F5] border-2 border-gray-200 rounded-full text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-[#6B1E3E] transition-colors"
+                  className="flex-1 px-6 py-3.5 min-h-[48px] bg-[#FAF8F5] border-2 border-gray-200 rounded-full text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-[#6B1E3E] transition-colors"
                 />
                 <motion.button
-                  className="px-8 py-3.5 gradient-bordeaux text-white rounded-full hover:shadow-lg hover:shadow-[#6B1E3E]/20 transition-all flex items-center gap-2 font-medium"
+                  className="px-8 py-3.5 min-h-[48px] gradient-bordeaux text-white rounded-full hover:shadow-lg hover:shadow-[#6B1E3E]/20 transition-all flex items-center justify-center gap-2 font-medium"
                   whileHover={{ scale: 1.02, y: -2 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  <span className="hidden sm:inline">S'inscrire</span>
+                  <span>S'inscrire</span>
                   <ArrowRight className="w-4 h-4" />
                 </motion.button>
               </div>
@@ -111,8 +111,8 @@ export function Footer({ navigate }: FooterProps) {
       </div>
 
       {/* Main Footer */}
-      <div className="section-container py-16">
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-12 mb-16">
+      <div className="section-container py-8 sm:py-12 lg:py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 sm:gap-10 lg:gap-12 mb-12 sm:mb-16">
           {/* Logo */}
           <div className="col-span-2">
             <h2 className="text-2xl tracking-[0.3em] mb-6 text-gray-900 font-light">
@@ -182,7 +182,7 @@ export function Footer({ navigate }: FooterProps) {
               © {currentYear} HYDRAL. Tous droits réservés.
             </p>
 
-            <div className="flex gap-6 font-light">
+            <div className="flex flex-wrap gap-4 sm:gap-6 font-light justify-center md:justify-end">
               <button onClick={() => navigate('legal', { legalType: 'mentions' })} className="hover:text-gray-900 transition-colors">
                 Mentions légales
               </button>

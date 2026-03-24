@@ -91,7 +91,7 @@ export function WarrantyHeroSection({ className = '' }: WarrantyHeroSectionProps
           
           <div className="relative z-10">
             <Shield className="w-20 h-20 mx-auto mb-6 text-white" />
-            <div className="text-7xl font-light mb-4">5 ans</div>
+            <div className="text-4xl sm:text-5xl lg:text-6xl font-light mb-4">5 ans</div>
             <div className="text-2xl mb-6">de garantie pièces et main d'œuvre</div>
             <p className="text-white/90 text-lg max-w-2xl mx-auto">
               Nous assumons 100% des risques. Si un problème survient, nous le réglons. Gratuitement.
@@ -202,7 +202,7 @@ export function WarrantyHeroSection({ className = '' }: WarrantyHeroSectionProps
             viewport={{ once: true }}
             className="bg-white rounded-2xl border-2 border-gray-200 p-6 text-center"
           >
-            <div className="text-5xl font-light text-[#6B1E3E] mb-2">98.5%</div>
+            <div className="text-3xl sm:text-4xl font-light text-[#6B1E3E] mb-2">98.5%</div>
             <div className="text-sm text-gray-600">Taux de satisfaction SAV</div>
           </motion.div>
 
@@ -213,7 +213,7 @@ export function WarrantyHeroSection({ className = '' }: WarrantyHeroSectionProps
             transition={{ delay: 0.1 }}
             className="bg-white rounded-2xl border-2 border-gray-200 p-6 text-center"
           >
-            <div className="text-5xl font-light text-[#6B1E3E] mb-2">36h</div>
+            <div className="text-3xl sm:text-4xl font-light text-[#6B1E3E] mb-2">36h</div>
             <div className="text-sm text-gray-600">Délai moyen d'intervention</div>
           </motion.div>
 
@@ -224,7 +224,7 @@ export function WarrantyHeroSection({ className = '' }: WarrantyHeroSectionProps
             transition={{ delay: 0.2 }}
             className="bg-white rounded-2xl border-2 border-gray-200 p-6 text-center"
           >
-            <div className="text-5xl font-light text-[#6B1E3E] mb-2">2.3%</div>
+            <div className="text-3xl sm:text-4xl font-light text-[#6B1E3E] mb-2">2.3%</div>
             <div className="text-sm text-gray-600">Taux de panne sur 5 ans</div>
           </motion.div>
         </div>

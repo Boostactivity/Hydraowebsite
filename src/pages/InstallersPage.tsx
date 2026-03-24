@@ -20,7 +20,7 @@ export function InstallersPage({ navigate }: InstallersPageProps) {
     <div className="min-h-screen bg-[#FAF8F5]">
       {/* Hero */}
       <section className="relative pt-24 sm:pt-32 lg:pt-40 pb-16 sm:pb-24 lg:pb-32 bg-gradient-to-br from-white via-[#FAF8F5] to-[#E8D5DC]/10">
-        <div className="max-w-5xl mx-auto px-6 lg:px-12">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -43,8 +43,8 @@ export function InstallersPage({ navigate }: InstallersPageProps) {
       </section>
 
       {/* Pourquoi travailler avec nous */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="py-12 sm:py-16 lg:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="mb-6 text-gray-900">Ce que nous proposons</h2>
             <p className="text-xl text-[#8B7E74] max-w-3xl mx-auto">
@@ -143,8 +143,8 @@ export function InstallersPage({ navigate }: InstallersPageProps) {
       </section>
 
       {/* Ce qu'on attend de vous */}
-      <section className="py-24 bg-gradient-to-b from-[#FAF8F5] to-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-[#FAF8F5] to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="mb-6 text-gray-900">Ce qu'on attend de vous</h2>
             <p className="text-xl text-[#8B7E74] max-w-3xl mx-auto">
@@ -209,8 +209,8 @@ export function InstallersPage({ navigate }: InstallersPageProps) {
       </section>
 
       {/* Formulaire de candidature */}
-      <section className="py-24 bg-white">
-        <div className="max-w-4xl mx-auto px-6 lg:px-12">
+      <section className="py-12 sm:py-16 lg:py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="mb-6 text-gray-900">Candidature</h2>
             <p className="text-xl text-[#8B7E74]">
@@ -407,8 +407,8 @@ export function InstallersPage({ navigate }: InstallersPageProps) {
       </section>
 
       {/* Contact direct */}
-      <section className="py-24 bg-gradient-to-b from-[#FAF8F5] to-white">
-        <div className="max-w-4xl mx-auto px-6 lg:px-12">
+      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-[#FAF8F5] to-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="mb-6 text-gray-900">Des questions avant de candidater ?</h2>
             <p className="text-xl text-[#8B7E74]">

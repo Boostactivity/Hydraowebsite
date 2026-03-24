@@ -104,7 +104,7 @@ export function SupportPage({ navigate }: SupportPageProps) {
     <div className="min-h-screen bg-[#FAF8F5]">
       {/* Hero */}
       <section className="relative pt-24 sm:pt-32 lg:pt-40 pb-16 sm:pb-24 lg:pb-32 bg-gradient-to-br from-white via-[#FAF8F5] to-[#E8D5DC]/10">
-        <div className="max-w-5xl mx-auto px-6 lg:px-12">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -123,8 +123,8 @@ export function SupportPage({ navigate }: SupportPageProps) {
       </section>
 
       {/* Catégories */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="py-12 sm:py-16 lg:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {categories.map((cat, idx) => (
               <motion.button
@@ -171,9 +171,9 @@ export function SupportPage({ navigate }: SupportPageProps) {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="py-24 bg-gradient-to-b from-[#FAF8F5] to-white overflow-hidden"
+            className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-[#FAF8F5] to-white overflow-hidden"
           >
-            <div className="max-w-4xl mx-auto px-6 lg:px-12">
+            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-12">
                 <h2 className="mb-4 text-gray-900">
                   {categories.find(c => c.id === selectedCategory)?.title}
@@ -230,9 +230,9 @@ export function SupportPage({ navigate }: SupportPageProps) {
         <motion.section
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          className="py-24 bg-white"
+          className="py-12 sm:py-16 lg:py-20 bg-white"
         >
-          <div className="max-w-4xl mx-auto px-6 lg:px-12">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="mb-4 text-gray-900">Contactez notre support technique</h2>
               <p className="text-xl text-[#8B7E74]">
@@ -288,8 +288,8 @@ export function SupportPage({ navigate }: SupportPageProps) {
       )}
 
       {/* Toujours pas de réponse ? */}
-      <section className="py-24 bg-gradient-to-br from-[#6B1E3E] to-[#6B1E3E]/90 text-white">
-        <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
+      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-[#6B1E3E] to-[#6B1E3E]/90 text-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
