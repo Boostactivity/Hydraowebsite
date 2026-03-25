@@ -952,18 +952,27 @@ const Section1 = React.forwardRef<HTMLElement, {
                         <p className="text-2xl font-bold text-[#6B1E3E] my-2">{robinet.price}€</p>
                       </div>
                       <div className="space-y-2 text-sm flex-1">
-                        <div className="flex items-center justify-between py-2 border-t border-gray-200">
-                          <span className="text-[#8B7E74]">Rentabilisé en</span>
-                          <span className="font-semibold text-gray-900">{breakEvenMonths < 100 ? `${breakEvenMonths} mois` : '—'}</span>
-                        </div>
-                        <div className="flex items-center justify-between py-2 border-t border-gray-200">
-                          <span className="text-[#8B7E74]">Vous économisez</span>
-                          <span className="font-semibold text-green-600">{Math.round(yearlySavings)}€/an</span>
-                        </div>
-                        <div className="flex items-center justify-between py-2 border-t border-gray-200">
-                          <span className="text-[#8B7E74]">Économie sur 5 ans</span>
-                          <span className="font-semibold text-green-600">+{Math.round(savings5y)}€</span>
-                        </div>
+                        {yearlySavings > 0 ? (
+                          <>
+                            <div className="flex items-center justify-between py-2 border-t border-gray-200">
+                              <span className="text-[#8B7E74]">Rentabilisé en</span>
+                              <span className="font-semibold text-gray-900">{breakEvenMonths < 100 ? `${breakEvenMonths} mois` : '—'}</span>
+                            </div>
+                            <div className="flex items-center justify-between py-2 border-t border-gray-200">
+                              <span className="text-[#8B7E74]">Vous économisez</span>
+                              <span className="font-semibold text-green-600">{Math.round(yearlySavings)}€/an</span>
+                            </div>
+                            <div className="flex items-center justify-between py-2 border-t border-gray-200">
+                              <span className="text-[#8B7E74]">Économie sur 5 ans</span>
+                              <span className="font-semibold text-green-600">+{Math.round(savings5y)}€</span>
+                            </div>
+                          </>
+                        ) : (
+                          <div className="py-3 border-t border-gray-200 text-center">
+                            <p className="text-[#8B7E74] text-xs">Votre consommation actuelle est déjà très économique.</p>
+                            <p className="text-[#6B1E3E] text-xs font-medium mt-1">HYDRAL reste un choix santé et pratique.</p>
+                          </div>
+                        )}
                       </div>
                     </div>
                   );
@@ -1005,9 +1014,16 @@ const Section1 = React.forwardRef<HTMLElement, {
                   );
                 })}
               </div>
-              <p className="text-xs text-[#8B7E74] text-center mt-4">
-                Après la période de rentabilisation, chaque euro est une économie nette
-              </p>
+              {calculateSavings(490, 99).yearlySavings <= 0 && (
+                <p className="text-xs text-[#8B7E74] text-center mt-4">
+                  Votre consommation est déjà économique. HYDRAL apporte confort, santé et zéro plastique.
+                </p>
+              )}
+              {calculateSavings(490, 99).yearlySavings > 0 && (
+                <p className="text-xs text-[#8B7E74] text-center mt-4">
+                  Après la période de rentabilisation, chaque euro est une économie nette
+                </p>
+              )}
             </motion.div>
 
             {/* Transition */}
@@ -1113,7 +1129,7 @@ const Section2 = React.forwardRef<HTMLElement, {
                 </div>
 
                 {/* Économies calculées */}
-                {state.yearlyTotal && state.yearlyTotal > 0 && (
+                {state.yearlyTotal && state.yearlyTotal > 0 && yearlySavings > 0 && (
                   <div className="mb-6 p-4 bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl border border-green-200">
                     <p className="text-sm text-[#8B7E74] mb-2 text-center">Avec vos dépenses actuelles :</p>
                     <p className="text-center">
@@ -1130,6 +1146,16 @@ const Section2 = React.forwardRef<HTMLElement, {
                         <span className="font-bold text-green-700">+{Math.round(savings5y)}€</span>
                       </p>
                     </div>
+                  </div>
+                )}
+                {state.yearlyTotal && state.yearlyTotal > 0 && yearlySavings <= 0 && (
+                  <div className="mb-6 p-4 bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl border border-gray-200">
+                    <p className="text-sm text-[#8B7E74] text-center">
+                      Votre consommation actuelle est déjà très économique.
+                    </p>
+                    <p className="text-xs text-[#6B1E3E] font-medium text-center mt-1">
+                      HYDRAL reste un choix santé (0 microplastique) et pratique au quotidien.
+                    </p>
                   </div>
                 )}
 

@@ -20,14 +20,12 @@ export function HomePage({ navigate }: HomePageProps) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <p className="text-sm sm:text-base font-medium tracking-widest uppercase text-[#6B1E3E] mb-4">
-              L'eau sous toutes ses formes
-            </p>
-
-            <h1 className="mb-4">
-              <span className="block text-gray-900">Le robinet 5-en-1</span>
-              <span className="block text-[#6B1E3E]">qui remplace vos bouteilles.</span>
+            <h1 className="mb-3">
+              <span className="block text-[#6B1E3E]">L'eau sous toutes ses formes.</span>
             </h1>
+            <p className="text-xl sm:text-2xl font-light text-gray-900 mb-4">
+              Le robinet 5-en-1 qui remplace vos bouteilles.
+            </p>
 
             <p className="text-lg sm:text-xl text-[#8B7E74] mb-8 max-w-2xl mx-auto">
               Eau filtrée, bouillante, gazeuse, froide et mitigeur classique. Un seul robinet au quotidien, plus besoin de bouteilles.

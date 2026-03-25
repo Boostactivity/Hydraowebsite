@@ -681,33 +681,61 @@ function SimpleResultsView({ results, simpleInput, navigate, handleRecalculate, 
         <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 mb-6 border border-[#6B1E3E]/20">
           <div className="flex items-center gap-3 mb-6">
             <PiggyBank className="w-8 h-8 text-[#6B1E3E]" />
-            <h4 className="text-xl font-medium text-[#6B1E3E]">ÉCONOMIES</h4>
+            <h4 className="text-xl font-medium text-[#6B1E3E]">
+              {results.withHydro.yearlySavings > 0 ? 'ÉCONOMIES' : 'BILAN'}
+            </h4>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-            <div>
-              <div className="text-sm text-gray-600 mb-2">Économies annuelles</div>
-              <div className="text-4xl font-light text-[#6B1E3E]">{formatCurrency(results.withHydro.yearlySavings)}</div>
-              <div className="text-sm text-gray-500 mt-1">= {formatCurrency(results.withHydro.yearlySavings / 12)} chaque mois</div>
+          {results.withHydro.yearlySavings > 0 ? (
+            <>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                <div>
+                  <div className="text-sm text-gray-600 mb-2">Économies annuelles</div>
+                  <div className="text-4xl font-light text-[#6B1E3E]">{formatCurrency(results.withHydro.yearlySavings)}</div>
+                  <div className="text-sm text-gray-500 mt-1">= {formatCurrency(results.withHydro.yearlySavings / 12)} chaque mois</div>
+                </div>
+                <div>
+                  <div className="text-sm text-gray-600 mb-2">Économies sur 5 ans</div>
+                  <div className="text-4xl font-light text-[#6B1E3E]">{formatCurrency(results.withHydro.savings5Years)}</div>
+                  <div className="text-sm text-gray-500 mt-1">{results.withHydro.savings5Years > 0 ? 'Rentabilité garantie' : 'Investissement initial amorti'}</div>
+                </div>
+                <div>
+                  <div className="text-sm text-gray-600 mb-2">Rentabilisé en</div>
+                  <div className="text-4xl font-light text-[#6B1E3E]">{results.withHydro.breakEvenMonths < 100 ? results.withHydro.breakEvenMonths.toFixed(1) : '—'}</div>
+                  <div className="text-sm text-gray-500 mt-1">mois</div>
+                </div>
+              </div>
+              <div className="flex items-center gap-2 px-4 py-3 bg-green-50 border border-green-200 rounded-xl">
+                <TrendingUp className="w-5 h-5 text-green-600" />
+                <span className="text-sm text-green-700">
+                  Chaque mois SANS HYDRAL = <strong>{formatCurrency(results.current.monthlyBottleCost)} en bouteilles</strong>
+                </span>
+              </div>
+            </>
+          ) : (
+            <div className="text-center py-4">
+              <p className="text-lg text-gray-700 mb-3">
+                Votre consommation en bouteilles est déjà très économique ({formatCurrency(results.current.yearlyBottleCost)}/an).
+              </p>
+              <p className="text-sm text-[#8B7E74] mb-4">
+                HYDRAL ne vous fera pas économiser sur le prix de l'eau, mais il vous apporte bien d'autres avantages :
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div className="p-3 bg-[#6B1E3E]/5 rounded-xl">
+                  <p className="text-sm font-medium text-[#6B1E3E]">0 microplastique</p>
+                  <p className="text-xs text-gray-600">Eau filtrée 5 étapes</p>
+                </div>
+                <div className="p-3 bg-[#6B1E3E]/5 rounded-xl">
+                  <p className="text-sm font-medium text-[#6B1E3E]">0 bouteille plastique</p>
+                  <p className="text-xs text-gray-600">Geste écologique</p>
+                </div>
+                <div className="p-3 bg-[#6B1E3E]/5 rounded-xl">
+                  <p className="text-sm font-medium text-[#6B1E3E]">Eau bouillante en 3s</p>
+                  <p className="text-xs text-gray-600">Confort au quotidien</p>
+                </div>
+              </div>
             </div>
-            <div>
-              <div className="text-sm text-gray-600 mb-2">Économies sur 5 ans</div>
-              <div className="text-4xl font-light text-[#6B1E3E]">{formatCurrency(results.withHydro.savings5Years)}</div>
-              <div className="text-sm text-gray-500 mt-1">Rentabilité garantie</div>
-            </div>
-            <div>
-              <div className="text-sm text-gray-600 mb-2">Rentabilisé en</div>
-              <div className="text-4xl font-light text-[#6B1E3E]">{results.withHydro.breakEvenMonths < 100 ? results.withHydro.breakEvenMonths.toFixed(1) : '—'}</div>
-              <div className="text-sm text-gray-500 mt-1">mois seulement</div>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-2 px-4 py-3 bg-green-50 border border-green-200 rounded-xl">
-            <TrendingUp className="w-5 h-5 text-green-600" />
-            <span className="text-sm text-green-700">
-              Chaque mois SANS HYDRAL = <strong>{formatCurrency(results.current.monthlyBottleCost)} perdus</strong>
-            </span>
-          </div>
+          )}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -1216,6 +1244,18 @@ function DetailedResultsView({
           </h3>
         </div>
 
+        {results.withHydro.yearlySavings <= 0 && (
+          <div className="p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-[#6B1E3E]/20 mb-8 text-center">
+            <p className="text-lg text-gray-700 mb-2">
+              Votre consommation est déjà très économique ({formatCurrency(results.current.yearlyBottleCost)}/an).
+            </p>
+            <p className="text-sm text-[#8B7E74]">
+              HYDRAL ne vous fera pas économiser sur le prix de l'eau, mais vous apporte confort, santé (0 microplastique) et zéro plastique au quotidien.
+            </p>
+          </div>
+        )}
+
+        {results.withHydro.yearlySavings > 0 && (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           <div className="p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-[#6B1E3E]/20">
             <div className="text-sm text-gray-600 mb-2">Économies annuelles</div>
@@ -1233,6 +1273,7 @@ function DetailedResultsView({
             <div className="text-sm text-gray-500">mois seulement</div>
           </div>
         </div>
+        )}
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="p-6 bg-white/60 backdrop-blur-sm rounded-xl border border-[#6B1E3E]/10">
