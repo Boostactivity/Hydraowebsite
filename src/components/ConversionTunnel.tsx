@@ -980,9 +980,8 @@ const Section1 = React.forwardRef<HTMLElement, {
                             </div>
                           </>
                         ) : (
-                          <div className="py-3 border-t border-gray-200 text-center">
-                            <p className="text-[#8B7E74] text-xs">Votre consommation actuelle est déjà très économique.</p>
-                            <p className="text-[#6B1E3E] text-xs font-medium mt-1">HYDRAL reste un choix santé et pratique.</p>
+                          <div className="py-2 border-t border-gray-200 text-center">
+                            <p className="text-[#8B7E74] text-xs leading-relaxed">Pas un choix financier pour vous, mais un choix de qualité de vie.</p>
                           </div>
                         )}
                       </div>
@@ -992,51 +991,110 @@ const Section1 = React.forwardRef<HTMLElement, {
               </div>
             </motion.div>
 
-            {/* Break-even simple visual */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-xl border border-gray-200/50 mb-8 mt-8"
-            >
-              <h4 className="text-lg font-semibold text-gray-900 mb-6 text-center">Quand commencez-vous à économiser ?</h4>
-              <div className="space-y-4">
-                {ROBINETS.map((robinet) => {
-                  const { breakEvenMonths, yearlySavings } = calculateSavings(robinet.price, 59);
-                  const progress = breakEvenMonths < 100 ? Math.min((breakEvenMonths / 24) * 100, 100) : 100;
-                  return (
-                    <div key={robinet.sku} className="flex items-center gap-4">
-                      <div className="w-24 text-sm font-medium text-gray-700 flex-shrink-0">{robinet.name}</div>
-                      <div className="flex-1 relative">
-                        <div className="h-8 bg-gray-100 rounded-full overflow-hidden">
-                          <div
-                            className="h-full bg-gradient-to-r from-[#6B1E3E]/80 to-[#6B1E3E] rounded-full flex items-center justify-end pr-3 transition-all duration-700"
-                            style={{ width: `${progress}%` }}
-                          >
-                            <span className="text-xs text-white font-semibold whitespace-nowrap">
-                              {breakEvenMonths < 100 ? `${breakEvenMonths} mois` : '—'}
-                            </span>
+            {/* Si rentable : break-even visuel */}
+            {calculateSavings(490, 59).yearlySavings > 0 && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+                className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-xl border border-gray-200/50 mb-8 mt-8"
+              >
+                <h4 className="text-lg font-semibold text-gray-900 mb-6 text-center">Quand commencez-vous à économiser ?</h4>
+                <div className="space-y-4">
+                  {ROBINETS.map((robinet) => {
+                    const { breakEvenMonths, yearlySavings: ys } = calculateSavings(robinet.price, 59);
+                    const progress = breakEvenMonths < 100 ? Math.min((breakEvenMonths / 24) * 100, 100) : 100;
+                    return (
+                      <div key={robinet.sku} className="flex items-center gap-4">
+                        <div className="w-24 text-sm font-medium text-gray-700 flex-shrink-0">{robinet.name}</div>
+                        <div className="flex-1 relative">
+                          <div className="h-8 bg-gray-100 rounded-full overflow-hidden">
+                            <div
+                              className="h-full bg-gradient-to-r from-[#6B1E3E]/80 to-[#6B1E3E] rounded-full flex items-center justify-end pr-3 transition-all duration-700"
+                              style={{ width: `${progress}%` }}
+                            >
+                              <span className="text-xs text-white font-semibold whitespace-nowrap">
+                                {breakEvenMonths < 100 ? `${breakEvenMonths} mois` : '—'}
+                              </span>
+                            </div>
                           </div>
                         </div>
+                        <div className="w-20 text-right text-sm font-semibold text-green-600 flex-shrink-0">
+                          {ys > 0 ? `+${Math.round(ys)}€/an` : '—'}
+                        </div>
                       </div>
-                      <div className="w-20 text-right text-sm font-semibold text-green-600 flex-shrink-0">
-                        {yearlySavings > 0 ? `+${Math.round(yearlySavings)}€/an` : '—'}
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-              {calculateSavings(490, 59).yearlySavings <= 0 && (
-                <p className="text-xs text-[#8B7E74] text-center mt-4">
-                  Votre consommation est déjà économique. HYDRAL apporte confort, santé et zéro plastique.
-                </p>
-              )}
-              {calculateSavings(490, 59).yearlySavings > 0 && (
+                    );
+                  })}
+                </div>
                 <p className="text-xs text-[#8B7E74] text-center mt-4">
                   Après la période de rentabilisation, chaque euro est une économie nette
                 </p>
-              )}
-            </motion.div>
+              </motion.div>
+            )}
+
+            {/* Si PAS rentable : arguments de conviction */}
+            {calculateSavings(490, 59).yearlySavings <= 0 && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+                className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-xl border border-gray-200/50 mb-8 mt-8"
+              >
+                <h4 className="text-lg font-semibold text-gray-900 mb-2 text-center">
+                  Vous faites déjà attention à votre budget eau.
+                </h4>
+                <p className="text-sm text-[#8B7E74] text-center mb-8">
+                  HYDRAL n'est pas un choix financier pour vous. Mais saviez-vous que l'eau en bouteille pose d'autres problèmes ?
+                </p>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-6">
+                  {/* Microplastiques */}
+                  <div className="p-5 rounded-2xl bg-gradient-to-br from-red-50 to-orange-50 border border-red-100">
+                    <p className="text-2xl font-bold text-gray-900 mb-1">240 000</p>
+                    <p className="text-sm font-medium text-gray-900 mb-2">particules de microplastique par litre d'eau en bouteille</p>
+                    <p className="text-xs text-gray-600 leading-relaxed">
+                      Étude PNAS 2024 — Columbia University. Même les eaux premier prix contiennent des nano et microplastiques issus du contenant. La filtration HYDRAL les élimine.
+                    </p>
+                  </div>
+
+                  {/* Porter les packs */}
+                  <div className="p-5 rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-100">
+                    <p className="text-2xl font-bold text-gray-900 mb-1">9 kg</p>
+                    <p className="text-sm font-medium text-gray-900 mb-2">le poids d'un pack de 6 bouteilles d'1,5L</p>
+                    <p className="text-xs text-gray-600 leading-relaxed">
+                      Courses, coffre, escaliers... Avec HYDRAL, votre eau sort directement du robinet. Filtrée, à la bonne température, sans effort.
+                    </p>
+                  </div>
+
+                  {/* Plastique */}
+                  <div className="p-5 rounded-2xl bg-gradient-to-br from-green-50 to-emerald-50 border border-green-100">
+                    <p className="text-2xl font-bold text-gray-900 mb-1">73%</p>
+                    <p className="text-sm font-medium text-gray-900 mb-2">des bouteilles plastique ne sont pas recyclées en France</p>
+                    <p className="text-xs text-gray-600 leading-relaxed">
+                      Chaque bouteille met 450 ans à se décomposer. Avec HYDRAL, votre foyer élimine des centaines de bouteilles par an.
+                    </p>
+                  </div>
+
+                  {/* Bouillante */}
+                  <div className="p-5 rounded-2xl bg-gradient-to-br from-amber-50 to-yellow-50 border border-amber-100">
+                    <p className="text-2xl font-bold text-gray-900 mb-1">3 secondes</p>
+                    <p className="text-sm font-medium text-gray-900 mb-2">pour de l'eau bouillante au robinet</p>
+                    <p className="text-xs text-gray-600 leading-relaxed">
+                      Thé, café, biberon, pâtes, riz... Plus de bouilloire à attendre, plus de casserole à chauffer. Un confort qu'on ne quitte plus une fois qu'on l'a goûté.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="text-center p-4 bg-[#6B1E3E]/5 rounded-xl border border-[#6B1E3E]/10">
+                  <p className="text-sm text-gray-700">
+                    <span className="font-medium text-[#6B1E3E]">L'eau que vous buvez est plus importante que son prix.</span>
+                  </p>
+                  <p className="text-xs text-[#8B7E74] mt-1">
+                    À partir de 490€ une fois, puis 59€/an pour les filtres. Garantie 3 ans.
+                  </p>
+                </div>
+              </motion.div>
+            )}
 
             {/* Transition */}
             <motion.div
@@ -1161,12 +1219,12 @@ const Section2 = React.forwardRef<HTMLElement, {
                   </div>
                 )}
                 {state.yearlyTotal && state.yearlyTotal > 0 && yearlySavings <= 0 && (
-                  <div className="mb-6 p-4 bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl border border-gray-200">
-                    <p className="text-sm text-[#8B7E74] text-center">
-                      Votre consommation actuelle est déjà très économique.
+                  <div className="mb-6 p-4 bg-gradient-to-br from-[#FAF8F5] to-white rounded-xl border border-[#6B1E3E]/10">
+                    <p className="text-sm text-gray-700 text-center mb-2">
+                      Ce modèle n'est pas un choix financier pour vous.
                     </p>
-                    <p className="text-xs text-[#6B1E3E] font-medium text-center mt-1">
-                      HYDRAL reste un choix santé (0 microplastique) et pratique au quotidien.
+                    <p className="text-xs text-[#8B7E74] text-center leading-relaxed">
+                      Mais il élimine les microplastiques de votre eau, supprime des centaines de bouteilles par an, et vous offre eau bouillante et gazeuse à la demande.
                     </p>
                   </div>
                 )}

@@ -713,27 +713,38 @@ function SimpleResultsView({ results, simpleInput, navigate, handleRecalculate, 
               </div>
             </>
           ) : (
-            <div className="text-center py-4">
-              <p className="text-lg text-gray-700 mb-3">
-                Votre consommation en bouteilles est déjà très économique ({formatCurrency(results.current.yearlyBottleCost)}/an).
+            <div className="py-4">
+              <p className="text-lg text-gray-700 mb-2 text-center">
+                Vous faites déjà attention à votre budget eau.
               </p>
-              <p className="text-sm text-[#8B7E74] mb-4">
-                HYDRAL ne vous fera pas économiser sur le prix de l'eau, mais il vous apporte bien d'autres avantages :
+              <p className="text-sm text-[#8B7E74] text-center mb-6">
+                HYDRAL n'est pas un choix financier pour vous. Mais saviez-vous que même l'eau premier prix pose d'autres problèmes ?
               </p>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <div className="p-3 bg-[#6B1E3E]/5 rounded-xl">
-                  <p className="text-sm font-medium text-[#6B1E3E]">0 microplastique</p>
-                  <p className="text-xs text-gray-600">Eau filtrée 5 étapes</p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="p-4 bg-gradient-to-br from-red-50 to-orange-50 rounded-xl border border-red-100">
+                  <p className="text-xl font-bold text-gray-900 mb-1">240 000</p>
+                  <p className="text-sm font-medium text-gray-900">microplastiques par litre</p>
+                  <p className="text-xs text-gray-600 mt-1">Même les eaux premier prix. La filtration HYDRAL les élimine.</p>
                 </div>
-                <div className="p-3 bg-[#6B1E3E]/5 rounded-xl">
-                  <p className="text-sm font-medium text-[#6B1E3E]">0 bouteille plastique</p>
-                  <p className="text-xs text-gray-600">Geste écologique</p>
+                <div className="p-4 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl border border-blue-100">
+                  <p className="text-xl font-bold text-gray-900 mb-1">9 kg</p>
+                  <p className="text-sm font-medium text-gray-900">par pack à porter</p>
+                  <p className="text-xs text-gray-600 mt-1">Courses, coffre, escaliers... Avec HYDRAL, l'eau sort du robinet.</p>
                 </div>
-                <div className="p-3 bg-[#6B1E3E]/5 rounded-xl">
-                  <p className="text-sm font-medium text-[#6B1E3E]">Eau bouillante en 3s</p>
-                  <p className="text-xs text-gray-600">Confort au quotidien</p>
+                <div className="p-4 bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl border border-green-100">
+                  <p className="text-xl font-bold text-gray-900 mb-1">73%</p>
+                  <p className="text-sm font-medium text-gray-900">non recyclé</p>
+                  <p className="text-xs text-gray-600 mt-1">Des bouteilles plastique en France. 450 ans pour se décomposer.</p>
+                </div>
+                <div className="p-4 bg-gradient-to-br from-amber-50 to-yellow-50 rounded-xl border border-amber-100">
+                  <p className="text-xl font-bold text-gray-900 mb-1">3 secondes</p>
+                  <p className="text-sm font-medium text-gray-900">eau bouillante</p>
+                  <p className="text-xs text-gray-600 mt-1">Thé, café, biberon, pâtes... Fini la bouilloire.</p>
                 </div>
               </div>
+              <p className="text-center text-sm text-gray-700 mt-4">
+                <span className="font-medium text-[#6B1E3E]">L'eau que vous buvez est plus importante que son prix.</span>
+              </p>
             </div>
           )}
         </div>
