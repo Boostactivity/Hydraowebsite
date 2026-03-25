@@ -58,8 +58,8 @@ export function HomePage({ navigate }: HomePageProps) {
       {/* ========================================
           HERO - Ultra minimaliste
          ======================================== */}
-      <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 relative overflow-hidden bg-gradient-to-b from-white to-[#FAF8F5]">
-        <div className="max-w-4xl mx-auto text-center pt-20 sm:pt-28 lg:pt-32 pb-12 sm:pb-16 lg:pb-20">
+      <section className="min-h-[70vh] flex items-center justify-center px-4 sm:px-6 relative overflow-hidden bg-gradient-to-b from-white to-[#FAF8F5]">
+        <div className="max-w-4xl mx-auto text-center pt-16 sm:pt-20 lg:pt-24 pb-8 sm:pb-12 lg:pb-14">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -70,7 +70,7 @@ export function HomePage({ navigate }: HomePageProps) {
               <span className="block text-[#6B1E3E]">qui remplace vos bouteilles.</span>
             </h1>
             
-            <p className="text-lg sm:text-xl text-[#8B7E74] mb-12 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-[#8B7E74] mb-8 max-w-2xl mx-auto">
               Eau filtrée, bouillante, gazeuse, froide. Un robinet premium à 490€ pour économiser jusqu'à 1000€/an.
             </p>
 
@@ -93,7 +93,7 @@ export function HomePage({ navigate }: HomePageProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
-            className="mt-16 flex flex-wrap items-center justify-center gap-8"
+            className="mt-10 flex flex-wrap items-center justify-center gap-8"
           >
             <div className="flex items-center gap-2 text-sm text-[#8B7E74]">
               <Shield className="w-4 h-4 text-[#6B1E3E]" />
@@ -114,7 +114,7 @@ export function HomePage({ navigate }: HomePageProps) {
       {/* ========================================
           TÉMOIGNAGES - Preuve Sociale
          ======================================== */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-white to-[#FAF8F5]">
+      <section className="py-8 sm:py-10 lg:py-12 bg-gradient-to-b from-white to-[#FAF8F5]">
         <div className="section-container max-w-5xl mx-auto px-4 sm:px-6">
           {/* Badge rating */}
           <motion.div
@@ -122,7 +122,7 @@ export function HomePage({ navigate }: HomePageProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-12"
+            className="text-center mb-8"
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 rounded-full shadow-sm">
               <div className="flex gap-0.5">
@@ -205,14 +205,14 @@ export function HomePage({ navigate }: HomePageProps) {
       {/* ========================================
           PRIX TRANSPARENT
          ======================================== */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-white">
+      <section className="py-8 sm:py-10 lg:py-12 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-12"
+            className="text-center mb-8"
           >
             <h2 className="mb-4">
               <span className="block text-gray-900">Prix transparent.</span>
@@ -275,14 +275,14 @@ export function HomePage({ navigate }: HomePageProps) {
       {/* ========================================
           FAQ
          ======================================== */}
-      <section ref={faqRef} className="py-12 sm:py-16 lg:py-20 bg-[#FAF8F5]">
+      <section ref={faqRef} className="py-8 sm:py-10 lg:py-12 bg-[#FAF8F5]">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-12"
+            className="text-center mb-8"
           >
             <h2 className="mb-4 text-gray-900">Questions fréquentes</h2>
             <p className="text-lg text-[#8B7E74]">

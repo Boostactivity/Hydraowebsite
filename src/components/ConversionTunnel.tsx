@@ -207,7 +207,25 @@ export function ConversionTunnel({ navigate }: ConversionTunnelProps) {
   });
 
   const [currentSection, setCurrentSection] = useState(0);
-  
+
+  // Persist state in sessionStorage
+  useEffect(() => {
+    if (state.selectedWaters.length > 0 || state.selectedSKU || state.selectedPlan) {
+      sessionStorage.setItem('hydral-tunnel', JSON.stringify(state));
+    }
+  }, [state]);
+
+  // Restore state on mount
+  useEffect(() => {
+    const saved = sessionStorage.getItem('hydral-tunnel');
+    if (saved) {
+      try {
+        const parsed = JSON.parse(saved);
+        setState(parsed);
+      } catch {}
+    }
+  }, []);
+
   // Refs pour chaque section
   const section0Ref = useRef<HTMLElement>(null);
   const section1Ref = useRef<HTMLElement>(null);
@@ -226,7 +244,7 @@ export function ConversionTunnel({ navigate }: ConversionTunnelProps) {
           }
         });
       },
-      { threshold: 0.5 }
+      { threshold: 0.3, rootMargin: '-10% 0px -10% 0px' }
     );
 
     [section0Ref, section1Ref, section2Ref, section3Ref, section4Ref].forEach((ref) => {
@@ -407,7 +425,7 @@ const Section0 = React.forwardRef<HTMLElement, { onStart: () => void }>(
       <section
         ref={ref}
         data-section="0"
-        className="min-h-screen flex items-center justify-center px-4 sm:px-6 pt-32 pb-20"
+        className="min-h-[70vh] flex items-center justify-center px-4 sm:px-6 pt-24 pb-12"
       >
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -468,6 +486,7 @@ const Section1 = React.forwardRef<HTMLElement, {
   onNext: () => void;
 }>(({ state, setState, calculateSavings, onNext }, ref) => {
   const [mode, setMode] = useState<'complete' | 'quick'>('complete');
+  const [waterSearch, setWaterSearch] = useState('');
 
   // Ajout eau - Mémoïsé
   const addWater = useCallback((water: WaterData) => {
@@ -523,17 +542,26 @@ const Section1 = React.forwardRef<HTMLElement, {
 
   // Filtrage eaux selon type - Mémoïsé
   const getWaters = useMemo(() => {
-    if (!state.waterType) return [];
-    if (state.waterType === 'still') return WATER_DATABASE.filter(w => w.type === 'still');
-    if (state.waterType === 'sparkling') return WATER_DATABASE.filter(w => w.type === 'sparkling');
-    return WATER_DATABASE;
-  }, [state.waterType]);
+    let waters: WaterData[] = [];
+    if (!state.waterType) return waters;
+    if (state.waterType === 'still') waters = WATER_DATABASE.filter(w => w.type === 'still');
+    else if (state.waterType === 'sparkling') waters = WATER_DATABASE.filter(w => w.type === 'sparkling');
+    else waters = [...WATER_DATABASE];
+
+    if (waterSearch.trim()) {
+      const q = waterSearch.toLowerCase();
+      waters = waters.filter(w =>
+        w.brand.toLowerCase().includes(q) || w.format.toLowerCase().includes(q)
+      );
+    }
+    return waters;
+  }, [state.waterType, waterSearch]);
 
   return (
     <section
       ref={ref}
       data-section="1"
-      className="min-h-screen flex items-center justify-center px-4 sm:px-6 pt-8 pb-4"
+      className="min-h-[60vh] flex items-center justify-center px-4 sm:px-6 pt-8 pb-4"
     >
       <motion.div
         initial={{ opacity: 0, y: 50 }}
@@ -693,7 +721,16 @@ const Section1 = React.forwardRef<HTMLElement, {
                     </button>
                   )}
                 </div>
-                <p className="text-sm text-[#8B7E74] mb-6">Prix moyen constaté en grande surface</p>
+                <div className="flex items-center gap-3 mb-4">
+                  <p className="text-sm text-[#8B7E74]">Prix moyen constaté en grande surface</p>
+                </div>
+                <input
+                  type="text"
+                  placeholder="Rechercher une marque ou un format..."
+                  value={waterSearch}
+                  onChange={(e) => setWaterSearch(e.target.value)}
+                  className="w-full px-4 py-3 mb-4 rounded-xl border-2 border-gray-200 focus:border-[#6B1E3E] focus:outline-none text-sm"
+                />
                 
                 {/* Eaux sélectionnées - Affichage avec badges */}
                 {state.selectedWaters.length > 0 && (
@@ -861,6 +898,45 @@ const Section1 = React.forwardRef<HTMLElement, {
               </div>
             </motion.div>
 
+            {/* Break-even simple visual */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-xl border border-gray-200/50 mb-8 mt-8"
+            >
+              <h4 className="text-lg font-semibold text-gray-900 mb-6 text-center">Quand commencez-vous à économiser ?</h4>
+              <div className="space-y-4">
+                {ROBINETS.map((robinet) => {
+                  const { breakEvenMonths, yearlySavings } = calculateSavings(robinet.price, 99);
+                  const progress = breakEvenMonths < 100 ? Math.min((breakEvenMonths / 24) * 100, 100) : 100;
+                  return (
+                    <div key={robinet.sku} className="flex items-center gap-4">
+                      <div className="w-24 text-sm font-medium text-gray-700 flex-shrink-0">{robinet.name}</div>
+                      <div className="flex-1 relative">
+                        <div className="h-8 bg-gray-100 rounded-full overflow-hidden">
+                          <div
+                            className="h-full bg-gradient-to-r from-[#6B1E3E]/80 to-[#6B1E3E] rounded-full flex items-center justify-end pr-3 transition-all duration-700"
+                            style={{ width: `${progress}%` }}
+                          >
+                            <span className="text-xs text-white font-semibold whitespace-nowrap">
+                              {breakEvenMonths < 100 ? `${breakEvenMonths} mois` : '—'}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="w-20 text-right text-sm font-semibold text-green-600 flex-shrink-0">
+                        {yearlySavings > 0 ? `+${Math.round(yearlySavings)}€/an` : '—'}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+              <p className="text-xs text-[#8B7E74] text-center mt-4">
+                Après la période de rentabilisation, chaque euro est une économie nette
+              </p>
+            </motion.div>
+
             {/* Transition */}
             <motion.div
               initial={{ opacity: 0 }}
@@ -896,7 +972,7 @@ const Section2 = React.forwardRef<HTMLElement, {
     <section
       ref={ref}
       data-section="2"
-      className="min-h-screen flex items-center justify-center px-4 sm:px-6 py-20"
+      className="min-h-[60vh] flex items-center justify-center px-4 sm:px-6 py-12"
     >
       <motion.div
         initial={{ opacity: 0, y: 50 }}
@@ -958,8 +1034,9 @@ const Section2 = React.forwardRef<HTMLElement, {
                   <p className="text-sm text-[#8B7E74]">{robinet.tagline}</p>
                 </div>
 
-                <div className="mb-6">
-                  <p className="text-3xl font-bold text-gray-900 text-center">{robinet.price}€</p>
+                <div className="mb-6 text-center">
+                  <p className="text-3xl font-bold text-gray-900">{robinet.price}€</p>
+                  <p className="text-xs text-[#6B1E3E] mt-1 font-medium">Livraison offerte</p>
                 </div>
 
                 {/* Économies calculées */}
@@ -1003,9 +1080,21 @@ const Section2 = React.forwardRef<HTMLElement, {
                   ))}
                 </div>
 
-                <div className="p-4 bg-[#FAF8F5] rounded-xl mb-6">
-                  <p className="text-xs text-[#8B7E74] mb-1">👤 Idéal pour :</p>
+                <div className="p-4 bg-[#FAF8F5] rounded-xl mb-4">
+                  <p className="text-xs text-[#8B7E74] mb-1">Idéal pour :</p>
                   <p className="text-sm text-gray-900">{robinet.idealFor}</p>
+                </div>
+                <div className="p-3 bg-white rounded-xl border border-gray-100 mb-6">
+                  <div className="flex gap-0.5 mb-1">
+                    {[...Array(5)].map((_, i) => (
+                      <div key={i} className="w-3 h-3 rounded-full bg-amber-400" />
+                    ))}
+                  </div>
+                  <p className="text-xs text-gray-600 italic leading-relaxed">
+                    {robinet.sku === 'pure' && '"Parfait pour le thé et la cuisine. Simple et efficace." — Claire, Paris'}
+                    {robinet.sku === 'spark' && '"Fini les packs de Perrier ! Toute la famille adore." — Marc, Famille de 4, Nantes'}
+                    {robinet.sku === 'one' && '"Le meilleur investissement cuisine qu\'on ait fait. On a tout en un." — Sophie, Lyon'}
+                  </p>
                 </div>
 
                 <div className="mt-auto">
@@ -1208,7 +1297,7 @@ const Section3 = React.forwardRef<HTMLElement, {
     <section
       ref={ref}
       data-section="3"
-      className="min-h-screen flex items-center justify-center px-4 sm:px-6 py-20"
+      className="min-h-[60vh] flex items-center justify-center px-4 sm:px-6 py-12"
     >
       <motion.div
         initial={{ opacity: 0, y: 50 }}
@@ -1467,7 +1556,7 @@ const Section4 = React.forwardRef<HTMLElement, {
     <section
       ref={ref}
       data-section="4"
-      className="min-h-screen flex items-center justify-center px-4 sm:px-6 py-20 pb-32"
+      className="min-h-[60vh] flex items-center justify-center px-4 sm:px-6 py-12 pb-32"
     >
       <motion.div
         initial={{ opacity: 0, y: 50 }}
