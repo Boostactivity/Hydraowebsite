@@ -487,16 +487,44 @@ const Section1 = React.forwardRef<HTMLElement, {
 }>(({ state, setState, calculateSavings, onNext }, ref) => {
   const [mode, setMode] = useState<'complete' | 'quick'>('complete');
   const [waterSearch, setWaterSearch] = useState('');
+  const [selectedBrand, setSelectedBrand] = useState<string | null>(null);
 
-  // Ajout eau - Mémoïsé
+  // Marques uniques pour le type d'eau sélectionné
+  const uniqueBrands = useMemo(() => {
+    if (!state.waterType) return [];
+    let waters = WATER_DATABASE;
+    if (state.waterType === 'still') waters = waters.filter(w => w.type === 'still');
+    else if (state.waterType === 'sparkling') waters = waters.filter(w => w.type === 'sparkling');
+
+    const brandMap = new Map<string, { brand: string; minPrice: number; type: string }>();
+    waters.forEach(w => {
+      if (!brandMap.has(w.brand) || w.packPrice < brandMap.get(w.brand)!.minPrice) {
+        brandMap.set(w.brand, { brand: w.brand, minPrice: w.packPrice, type: w.type });
+      }
+    });
+
+    const brands = Array.from(brandMap.values());
+    if (waterSearch.trim()) {
+      const q = waterSearch.toLowerCase();
+      return brands.filter(b => b.brand.toLowerCase().includes(q));
+    }
+    return brands.sort((a, b) => a.brand.localeCompare(b.brand));
+  }, [state.waterType, waterSearch]);
+
+  // Formats disponibles pour la marque sélectionnée
+  const availableFormats = useMemo(() => {
+    if (!selectedBrand) return [];
+    return WATER_DATABASE.filter(w => w.brand === selectedBrand);
+  }, [selectedBrand]);
+
+  // Ajout eau avec format choisi
   const addWater = useCallback((water: WaterData) => {
     setState(prev => {
-      // Vérifier si déjà présente
       const exists = prev.selectedWaters.find(
         w => w.brand === water.brand && w.format === water.format
       );
       if (exists) return prev;
-      
+
       const newWater: SelectedWater = {
         ...water,
         quantity: 1,
@@ -504,14 +532,13 @@ const Section1 = React.forwardRef<HTMLElement, {
       };
       return { ...prev, selectedWaters: [...prev.selectedWaters, newWater] };
     });
+    setSelectedBrand(null);
   }, [setState]);
 
-  // Supprimer une eau - Mémoïsé
+  // Supprimer une eau
   const removeWater = useCallback((index: number) => {
     setState(prev => {
       const updated = prev.selectedWaters.filter((_, i) => i !== index);
-      
-      // Recalculer total
       if (updated.length > 0) {
         const yearlyTotal = updated.reduce((sum, w) => {
           const perWeek = w.period === 'week' ? w.quantity : w.quantity / 4.33;
@@ -524,38 +551,18 @@ const Section1 = React.forwardRef<HTMLElement, {
     });
   }, [setState]);
 
-  // Update quantité - Mémoïsé
+  // Update quantité
   const updateQuantity = useCallback((index: number, quantity: number, period: 'week' | 'month') => {
     setState(prev => {
       const updated = [...prev.selectedWaters];
       updated[index] = { ...updated[index], quantity, period };
-      
-      // Recalcul total
       const yearlyTotal = updated.reduce((sum, w) => {
         const perWeek = w.period === 'week' ? w.quantity : w.quantity / 4.33;
         return sum + (perWeek * 52 * w.packPrice);
       }, 0);
-      
       return { ...prev, selectedWaters: updated, yearlyTotal: Math.round(yearlyTotal), monthlyTotal: Math.round(yearlyTotal / 12) };
     });
   }, [setState]);
-
-  // Filtrage eaux selon type - Mémoïsé
-  const getWaters = useMemo(() => {
-    let waters: WaterData[] = [];
-    if (!state.waterType) return waters;
-    if (state.waterType === 'still') waters = WATER_DATABASE.filter(w => w.type === 'still');
-    else if (state.waterType === 'sparkling') waters = WATER_DATABASE.filter(w => w.type === 'sparkling');
-    else waters = [...WATER_DATABASE];
-
-    if (waterSearch.trim()) {
-      const q = waterSearch.toLowerCase();
-      waters = waters.filter(w =>
-        w.brand.toLowerCase().includes(q) || w.format.toLowerCase().includes(q)
-      );
-    }
-    return waters;
-  }, [state.waterType, waterSearch]);
 
   return (
     <section
@@ -706,47 +713,45 @@ const Section1 = React.forwardRef<HTMLElement, {
               </div>
             </div>
 
-            {/* Étape B - Choix eaux */}
+            {/* Étape B - Choix marque */}
             {state.waterType && (
               <div className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-xl border border-gray-200/50 mb-6 sm:mb-8">
                 <div className="flex items-center justify-between mb-2">
-                  <h3 className="text-lg font-semibold text-gray-900">Quelle marque achetez-vous ?</h3>
-                  {state.selectedWaters.length > 0 && (
-                    <button
-                      onClick={() => setState({ ...state, selectedWaters: [], yearlyTotal: 0, monthlyTotal: 0 })}
-                      className="text-sm text-red-600 hover:text-red-700 font-medium flex items-center gap-1"
-                    >
-                      <X className="w-4 h-4" />
-                      Tout effacer
-                    </button>
-                  )}
+                  <h3 className="text-lg font-semibold text-gray-900">
+                    {!selectedBrand ? 'Quelle marque achetez-vous ?' : `${selectedBrand} — choisissez le format`}
+                  </h3>
+                  <div className="flex items-center gap-3">
+                    {selectedBrand && (
+                      <button
+                        onClick={() => setSelectedBrand(null)}
+                        className="text-sm text-[#6B1E3E] hover:text-[#6B1E3E]/80 font-medium"
+                      >
+                        ← Autres marques
+                      </button>
+                    )}
+                    {state.selectedWaters.length > 0 && !selectedBrand && (
+                      <button
+                        onClick={() => setState({ ...state, selectedWaters: [], yearlyTotal: 0, monthlyTotal: 0 })}
+                        className="text-sm text-red-600 hover:text-red-700 font-medium flex items-center gap-1"
+                      >
+                        <X className="w-4 h-4" />
+                        Tout effacer
+                      </button>
+                    )}
+                  </div>
                 </div>
-                <div className="flex items-center gap-3 mb-4">
-                  <p className="text-sm text-[#8B7E74]">Prix moyen constaté en grande surface</p>
-                </div>
-                <input
-                  type="text"
-                  placeholder="Rechercher une marque ou un format..."
-                  value={waterSearch}
-                  onChange={(e) => setWaterSearch(e.target.value)}
-                  className="w-full px-4 py-3 mb-4 rounded-xl border-2 border-gray-200 focus:border-[#6B1E3E] focus:outline-none text-sm"
-                />
-                
-                {/* Eaux sélectionnées - Affichage avec badges */}
-                {state.selectedWaters.length > 0 && (
-                  <div className="mb-6 p-4 bg-[#6B1E3E]/5 rounded-xl border border-[#6B1E3E]/20">
-                    <p className="text-xs font-medium text-[#6B1E3E] mb-3">Sélectionnées ({state.selectedWaters.length})</p>
+                <p className="text-sm text-[#8B7E74] mb-4">Prix moyen constaté en grande surface</p>
+
+                {/* Eaux déjà sélectionnées */}
+                {state.selectedWaters.length > 0 && !selectedBrand && (
+                  <div className="mb-4 p-3 bg-[#6B1E3E]/5 rounded-xl border border-[#6B1E3E]/20">
+                    <p className="text-xs font-medium text-[#6B1E3E] mb-2">Vos eaux ({state.selectedWaters.length})</p>
                     <div className="flex flex-wrap gap-2">
                       {state.selectedWaters.map((water, idx) => (
-                        <div
-                          key={idx}
-                          className="inline-flex items-center gap-2 px-3 py-1.5 bg-white rounded-full border border-[#6B1E3E]/30 text-sm"
-                        >
+                        <div key={idx} className="inline-flex items-center gap-2 px-3 py-1.5 bg-white rounded-full border border-[#6B1E3E]/30 text-sm">
                           <span className="text-gray-900 font-medium">{water.brand}</span>
-                          <button
-                            onClick={() => removeWater(idx)}
-                            className="text-red-500 hover:text-red-700 transition-colors"
-                          >
+                          <span className="text-[#8B7E74]">{water.format}</span>
+                          <button onClick={() => removeWater(idx)} className="text-red-500 hover:text-red-700">
                             <X className="w-3.5 h-3.5" />
                           </button>
                         </div>
@@ -754,39 +759,86 @@ const Section1 = React.forwardRef<HTMLElement, {
                     </div>
                   </div>
                 )}
-                
-                <div className="space-y-3 max-h-96 overflow-y-auto">
-                  {getWaters.map((water, idx) => {
-                    const isSelected = state.selectedWaters.some(
-                      w => w.brand === water.brand && w.format === water.format
-                    );
-                    return (
-                      <button
-                        key={idx}
-                        onClick={() => addWater(water)}
-                        disabled={isSelected}
-                        className={`w-full p-4 min-h-[80px] rounded-xl text-left transition-all flex items-center justify-between border-2 ${
-                          isSelected
-                            ? 'bg-[#6B1E3E] text-white border-[#6B1E3E] shadow-lg cursor-default'
-                            : 'bg-[#FAF8F5] hover:bg-[#6B1E3E]/10 hover:border-[#6B1E3E]/50 border-gray-200 cursor-pointer'
-                        }`}
-                      >
-                        <div>
-                          <p className="font-semibold">{water.brand}</p>
-                          <p className={`text-sm ${isSelected ? 'opacity-90' : 'opacity-70'}`}>
-                            {water.format}
-                          </p>
-                        </div>
-                        <div className="text-right">
-                          <p className="text-2xl font-bold">{water.packPrice.toFixed(2)}€</p>
-                          <p className={`text-xs ${isSelected ? 'opacity-90' : 'opacity-70'}`}>
-                            {water.pricePerLiter.toFixed(2)}€/L
-                          </p>
-                        </div>
-                      </button>
-                    );
-                  })}
-                </div>
+
+                {/* Vue marques (pas de marque sélectionnée) */}
+                {!selectedBrand && (
+                  <>
+                    <input
+                      type="text"
+                      placeholder="Rechercher une marque..."
+                      value={waterSearch}
+                      onChange={(e) => setWaterSearch(e.target.value)}
+                      className="w-full px-4 py-3 mb-4 rounded-xl border-2 border-gray-200 focus:border-[#6B1E3E] focus:outline-none text-sm"
+                    />
+                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 max-h-80 overflow-y-auto">
+                      {uniqueBrands.map((item) => {
+                        const alreadyAdded = state.selectedWaters.some(w => w.brand === item.brand);
+                        return (
+                          <button
+                            key={item.brand}
+                            onClick={() => { setSelectedBrand(item.brand); setWaterSearch(''); }}
+                            className={`p-4 rounded-xl border-2 text-center transition-all ${
+                              alreadyAdded
+                                ? 'bg-[#6B1E3E]/5 border-[#6B1E3E]/30'
+                                : 'bg-[#FAF8F5] border-gray-200 hover:border-[#6B1E3E]/50 hover:bg-[#6B1E3E]/10'
+                            }`}
+                          >
+                            <p className="font-semibold text-sm text-gray-900">{item.brand}</p>
+                            <p className="text-xs text-[#8B7E74] mt-1">dès {item.minPrice.toFixed(2)}€</p>
+                            {alreadyAdded && <p className="text-xs text-[#6B1E3E] mt-1 font-medium">Ajoutée</p>}
+                          </button>
+                        );
+                      })}
+                    </div>
+                    {state.selectedWaters.length > 0 && (
+                      <p className="text-xs text-[#8B7E74] text-center mt-4">
+                        Vous pouvez ajouter plusieurs marques
+                      </p>
+                    )}
+                  </>
+                )}
+
+                {/* Vue formats (marque sélectionnée) */}
+                {selectedBrand && (
+                  <div className="space-y-3">
+                    {availableFormats.map((water, idx) => {
+                      const isSelected = state.selectedWaters.some(
+                        w => w.brand === water.brand && w.format === water.format
+                      );
+                      const isPack = water.format.startsWith('6') || water.format.startsWith('8');
+                      return (
+                        <button
+                          key={idx}
+                          onClick={() => !isSelected && addWater(water)}
+                          disabled={isSelected}
+                          className={`w-full p-4 rounded-xl text-left transition-all flex items-center justify-between border-2 ${
+                            isSelected
+                              ? 'bg-[#6B1E3E] text-white border-[#6B1E3E] shadow-lg cursor-default'
+                              : 'bg-[#FAF8F5] hover:bg-[#6B1E3E]/10 hover:border-[#6B1E3E]/50 border-gray-200 cursor-pointer'
+                          }`}
+                        >
+                          <div className="flex items-center gap-3">
+                            <div className={`px-2 py-1 rounded-lg text-xs font-medium ${
+                              isSelected ? 'bg-white/20 text-white' : 'bg-white text-[#6B1E3E] border border-[#6B1E3E]/20'
+                            }`}>
+                              {isPack ? 'Pack' : 'Unité'}
+                            </div>
+                            <div>
+                              <p className="font-semibold">{water.format}</p>
+                              <p className={`text-xs ${isSelected ? 'opacity-90' : 'text-[#8B7E74]'}`}>
+                                {water.pricePerLiter.toFixed(2)}€/litre
+                              </p>
+                            </div>
+                          </div>
+                          <div className="text-right">
+                            <p className="text-xl font-bold">{water.packPrice.toFixed(2)}€</p>
+                            {isSelected && <p className="text-xs opacity-90">Ajouté</p>}
+                          </div>
+                        </button>
+                      );
+                    })}
+                  </div>
+                )}
               </div>
             )}
 
