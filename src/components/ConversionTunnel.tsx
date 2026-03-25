@@ -906,17 +906,26 @@ const Section1 = React.forwardRef<HTMLElement, {
               animate={{ opacity: 1, y: 0 }}
               className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-xl border border-gray-200/50 mb-8"
             >
-              <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-4 sm:mb-6">Ce que vous dépensez aujourd'hui</h3>
+              <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-4 sm:mb-6">Ce que vous dépensez aujourd'hui en bouteilles</h3>
               <div className="text-center">
-                <p className="text-sm text-[#8B7E74] mb-2">Dépense annuelle</p>
-                <p className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">{state.yearlyTotal}€</p>
-                <p className="text-sm text-[#8B7E74] mb-6">
-                  {state.yearlyTotal < 100 && "Soit environ quelques semaines de café"}
-                  {state.yearlyTotal >= 100 && state.yearlyTotal < 250 && "Soit l'équivalent d'un week-end en famille"}
-                  {state.yearlyTotal >= 250 && state.yearlyTotal < 500 && "Soit presque un billet d'avion aller-retour"}
-                  {state.yearlyTotal >= 500 && "Soit le prix d'un robinet Hydral — chaque année"}
-                </p>
-                <p className="text-sm text-[#8B7E74]">Sur 5 ans : <span className="font-semibold text-gray-900">{state.yearlyTotal * 5}€</span></p>
+                <p className="text-sm text-[#8B7E74] mb-2">Dépense annuelle en eau embouteillée</p>
+                <p className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">{state.yearlyTotal}€<span className="text-lg text-gray-600">/an</span></p>
+                {state.yearlyTotal >= 100 && (
+                  <p className="text-sm text-[#8B7E74] mb-4">
+                    {state.yearlyTotal >= 100 && state.yearlyTotal < 250 && "Soit l'équivalent d'un week-end en famille chaque année"}
+                    {state.yearlyTotal >= 250 && state.yearlyTotal < 500 && "Soit presque un billet d'avion chaque année"}
+                    {state.yearlyTotal >= 500 && "Soit plus que le prix d'un robinet HYDRAL — chaque année"}
+                  </p>
+                )}
+                <div className="flex items-center justify-center gap-6 text-sm text-[#8B7E74]">
+                  <span>Sur 5 ans : <span className="font-semibold text-gray-900">{state.yearlyTotal * 5}€</span></span>
+                  <span>Sur 10 ans : <span className="font-semibold text-gray-900">{state.yearlyTotal * 10}€</span></span>
+                </div>
+                {state.yearlyTotal < 100 && (
+                  <p className="text-xs text-[#8B7E74] mt-4 bg-gray-50 rounded-lg p-3">
+                    Votre consommation est déjà économique. HYDRAL ne sera pas un choix financier mais un choix de confort et de santé (eau filtrée, zéro plastique, bouillante instantanée).
+                  </p>
+                )}
               </div>
             </motion.div>
 
@@ -927,12 +936,15 @@ const Section1 = React.forwardRef<HTMLElement, {
               transition={{ delay: 0.2 }}
               className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-xl border border-gray-200/50 mb-12"
             >
-              <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-4 sm:mb-6">Ce que vous économiseriez avec Hydral</h3>
-              
+              <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2 sm:mb-3">Ce que vous économiseriez avec Hydral</h3>
+              <p className="text-xs text-[#8B7E74] mb-6">
+                Robinet = achat unique. Abonnement filtres dès 59€/an (remplace vos achats d'eau en bouteille).
+              </p>
+
               {/* Les 3 robinets avec économies calculées */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {ROBINETS.map((robinet) => {
-                  const { savings5y, breakEvenMonths, yearlySavings } = calculateSavings(robinet.price, 99);
+                  const { savings5y, breakEvenMonths, yearlySavings } = calculateSavings(robinet.price, 59);
                   const Icon = robinet.icon;
                   return (
                     <div key={robinet.sku} className="h-full flex flex-col p-6 bg-gradient-to-br from-[#FAF8F5] to-white rounded-2xl border-2 border-gray-200">
@@ -990,7 +1002,7 @@ const Section1 = React.forwardRef<HTMLElement, {
               <h4 className="text-lg font-semibold text-gray-900 mb-6 text-center">Quand commencez-vous à économiser ?</h4>
               <div className="space-y-4">
                 {ROBINETS.map((robinet) => {
-                  const { breakEvenMonths, yearlySavings } = calculateSavings(robinet.price, 99);
+                  const { breakEvenMonths, yearlySavings } = calculateSavings(robinet.price, 59);
                   const progress = breakEvenMonths < 100 ? Math.min((breakEvenMonths / 24) * 100, 100) : 100;
                   return (
                     <div key={robinet.sku} className="flex items-center gap-4">
@@ -1014,12 +1026,12 @@ const Section1 = React.forwardRef<HTMLElement, {
                   );
                 })}
               </div>
-              {calculateSavings(490, 99).yearlySavings <= 0 && (
+              {calculateSavings(490, 59).yearlySavings <= 0 && (
                 <p className="text-xs text-[#8B7E74] text-center mt-4">
                   Votre consommation est déjà économique. HYDRAL apporte confort, santé et zéro plastique.
                 </p>
               )}
-              {calculateSavings(490, 99).yearlySavings > 0 && (
+              {calculateSavings(490, 59).yearlySavings > 0 && (
                 <p className="text-xs text-[#8B7E74] text-center mt-4">
                   Après la période de rentabilisation, chaque euro est une économie nette
                 </p>
@@ -1080,7 +1092,7 @@ const Section2 = React.forwardRef<HTMLElement, {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
           {ROBINETS.map((robinet, idx) => {
             const Icon = robinet.icon;
-            const { savings5y, breakEvenMonths, yearlySavings } = calculateSavings(robinet.price, 99);
+            const { savings5y, breakEvenMonths, yearlySavings } = calculateSavings(robinet.price, 59);
 
             return (
               <motion.div
