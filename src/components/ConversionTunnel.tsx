@@ -1225,7 +1225,7 @@ const Section2 = React.forwardRef<HTMLElement, {
                   </div>
                 )}
 
-                <div className="space-y-3 mb-8">
+                <div className="space-y-3 mb-8 flex-1">
                   {robinet.features.map((feature, i) => (
                     <div key={i} className="flex items-start gap-3">
                       {feature.included ? (
@@ -1245,24 +1245,23 @@ const Section2 = React.forwardRef<HTMLElement, {
                   ))}
                 </div>
 
-                <div className="p-4 bg-[#FAF8F5] rounded-xl mb-4">
-                  <p className="text-xs text-[#8B7E74] mb-1">Idéal pour :</p>
-                  <p className="text-sm text-gray-900">{robinet.idealFor}</p>
-                </div>
-                <div className="p-3 bg-white rounded-xl border border-gray-100 mb-6">
-                  <div className="flex gap-0.5 mb-1">
-                    {[...Array(5)].map((_, i) => (
-                      <div key={i} className="w-3 h-3 rounded-full bg-amber-400" />
-                    ))}
-                  </div>
-                  <p className="text-xs text-gray-600 italic leading-relaxed">
-                    {robinet.sku === 'pure' && '"Parfait pour le thé et la cuisine. Simple et efficace." — Claire, Paris'}
-                    {robinet.sku === 'spark' && '"Fini les packs de Perrier ! Toute la famille adore." — Marc, Famille de 4, Nantes'}
-                    {robinet.sku === 'one' && '"Le meilleur investissement cuisine qu\'on ait fait. On a tout en un." — Sophie, Lyon'}
-                  </p>
-                </div>
-
                 <div className="mt-auto">
+                  <div className="p-4 bg-[#FAF8F5] rounded-xl mb-4">
+                    <p className="text-xs text-[#8B7E74] mb-1">Idéal pour :</p>
+                    <p className="text-sm text-gray-900">{robinet.idealFor}</p>
+                  </div>
+                  <div className="p-3 bg-white rounded-xl border border-gray-100 mb-6">
+                    <div className="flex gap-0.5 mb-1">
+                      {[...Array(5)].map((_, i) => (
+                        <div key={i} className="w-3 h-3 rounded-full bg-amber-400" />
+                      ))}
+                    </div>
+                    <p className="text-xs text-gray-600 italic leading-relaxed">
+                      {robinet.sku === 'pure' && '"Parfait pour le thé et la cuisine. Simple et efficace." — Claire, Paris'}
+                      {robinet.sku === 'spark' && '"Fini les packs de Perrier ! Toute la famille adore." — Marc, Famille de 4, Nantes'}
+                      {robinet.sku === 'one' && '"Le meilleur investissement cuisine qu\'on ait fait. On a tout en un." — Sophie, Lyon'}
+                    </p>
+                  </div>
                   <button
                     onClick={() => {
                       setState({ ...state, selectedSKU: robinet.sku });

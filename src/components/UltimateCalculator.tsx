@@ -1087,7 +1087,7 @@ function DetailedCalculator({
               <motion.button
                 key={sku.value}
                 onClick={() => setDetailedInput((prev: any) => ({ ...prev, selectedSKU: sku.value }))}
-                className={`relative p-6 rounded-2xl border-2 transition-all text-left ${detailedInput.selectedSKU === sku.value ? 'border-[#6B1E3E] bg-white shadow-2xl scale-105' : 'border-gray-200 bg-white/50 hover:border-[#6B1E3E]/30 hover:shadow-lg'}`}
+                className={`relative p-6 rounded-2xl border-2 transition-all text-left flex flex-col ${detailedInput.selectedSKU === sku.value ? 'border-[#6B1E3E] bg-white shadow-2xl scale-105' : 'border-gray-200 bg-white/50 hover:border-[#6B1E3E]/30 hover:shadow-lg'}`}
                 whileHover={{ y: -4 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -1099,7 +1099,7 @@ function DetailedCalculator({
                 <div className="text-3xl font-light text-[#6B1E3E] mb-2">{formatCurrency(sku.price)}</div>
                 <div className="font-medium text-gray-900 mb-3">{sku.label.split(' - ')[1]}</div>
                 <p className="text-sm text-gray-600 mb-4">{sku.description}</p>
-                <div className="space-y-2">
+                <div className="space-y-2 flex-1">
                   {sku.features.map((feature: string, idx: number) => (
                     <div key={idx} className="flex items-center gap-2 text-sm text-gray-700">
                       <CheckCircle2 className="w-4 h-4 text-green-600 flex-shrink-0" />
@@ -1109,7 +1109,7 @@ function DetailedCalculator({
                 </div>
 
                 {detailedInput.selectedSKU === sku.value && yearlyBottleCost > 0 && (
-                  <div className="mt-4 pt-4 border-t border-[#6B1E3E]/20">
+                  <div className="mt-auto pt-4 border-t border-[#6B1E3E]/20">
                     <div className="text-sm text-gray-600">Économie estimée :</div>
                     <div className="text-lg font-medium text-green-600">
                       {formatCurrency(yearlyBottleCost - getSubscriptionPrice(detailedInput.householdSize || 2))}/an
