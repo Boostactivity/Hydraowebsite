@@ -243,14 +243,19 @@ export function ConversionTunnel({ navigate }: ConversionTunnelProps) {
   // Calculs économies - Mémoïsés pour performances
   const calculateSavings = useCallback((robinetPrice: number, subscriptionYearly: number = 99) => {
     const yearlyBottle = state.yearlyTotal || 0;
-    const year1Total = robinetPrice + subscriptionYearly;
-    const savings1y = yearlyBottle - subscriptionYearly;
-    const totalBottle5y = yearlyBottle * 5;
-    const totalHydral5y = year1Total + (subscriptionYearly * 4);
-    const savings5y = totalBottle5y - totalHydral5y;
-    const breakEvenMonths = Math.ceil(robinetPrice / (yearlyBottle / 12));
-    
-    return { savings1y, savings5y, breakEvenMonths };
+    // Économie annuelle réelle = ce qu'on dépensait - l'abonnement
+    const savingsPerYear = yearlyBottle - subscriptionYearly;
+    // Économie année 1 = économie annuelle - prix du robinet (peut être négatif)
+    const savings1y = savingsPerYear - robinetPrice;
+    // Économies sur 5 ans = (économie annuelle × 5) - prix robinet
+    const savings5y = (savingsPerYear * 5) - robinetPrice;
+    // Break-even = prix robinet / économie mensuelle nette (en tenant compte de l'abo)
+    const monthlySavings = savingsPerYear / 12;
+    const breakEvenMonths = monthlySavings > 0 ? Math.ceil(robinetPrice / monthlySavings) : 999;
+    // Économie annuelle récurrente (à partir de l'année 2)
+    const yearlySavings = savingsPerYear;
+
+    return { savings1y, savings5y, breakEvenMonths, yearlySavings };
   }, [state.yearlyTotal]);
 
   const selectedRobinet = useMemo(() => 
@@ -336,13 +341,9 @@ export function ConversionTunnel({ navigate }: ConversionTunnelProps) {
           animate={{ opacity: 1 }}
           onClick={() => {
             setState({
-              ...state,
               selectedWaters: [],
-              selectedSKU: null,
-              selectedPlan: null,
-              paymentRhythm: 'monthly',
-              glasses: 0,
-              tritanBottles: 0,
+              selectedColoris: 'chrome-brillant',
+              paymentRhythm: 'annual',
               yearlyTotal: 0,
               monthlyTotal: 0,
               itemColors: {},
@@ -463,7 +464,7 @@ const Section0 = React.forwardRef<HTMLElement, { onStart: () => void }>(
 const Section1 = React.forwardRef<HTMLElement, {
   state: ConversionState;
   setState: React.Dispatch<React.SetStateAction<ConversionState>>;
-  calculateSavings: (robinetPrice: number, subscriptionYearly?: number) => { savings5y: number; breakEvenMonths: number };
+  calculateSavings: (robinetPrice: number, subscriptionYearly?: number) => { savings1y: number; savings5y: number; breakEvenMonths: number; yearlySavings: number };
   onNext: () => void;
 }>(({ state, setState, calculateSavings, onNext }, ref) => {
   const [mode, setMode] = useState<'complete' | 'quick'>('complete');
@@ -599,12 +600,13 @@ const Section1 = React.forwardRef<HTMLElement, {
               )}
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 sm:gap-4">
+              {/* 1,5L/jour/personne × prix moyen 0,42€/L (moyenne pondérée toutes marques/enseignes) */}
               {[
-                { value: 1, label: '1 personne', yearly: 230, monthly: 19, liters: 547 },
-                { value: 2, label: '2 personnes', yearly: 459, monthly: 38, liters: 1094 },
-                { value: 3, label: '3 personnes', yearly: 689, monthly: 57, liters: 1641 },
-                { value: 4, label: '4 personnes', yearly: 919, monthly: 77, liters: 2188 },
-                { value: 5, label: '5 personnes', yearly: 1149, monthly: 96, liters: 2735 }
+                { value: 1, label: '1 personne', yearly: 230, monthly: 19 },
+                { value: 2, label: '2 personnes', yearly: 460, monthly: 38 },
+                { value: 3, label: '3 personnes', yearly: 690, monthly: 58 },
+                { value: 4, label: '4 personnes', yearly: 920, monthly: 77 },
+                { value: 5, label: '5+ personnes', yearly: 1150, monthly: 96 }
               ].map((option) => {
                 const isSelected = state.yearlyTotal === option.yearly && state.monthlyTotal === option.monthly;
                 return (
@@ -820,7 +822,7 @@ const Section1 = React.forwardRef<HTMLElement, {
               {/* Les 3 robinets avec économies calculées */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {ROBINETS.map((robinet) => {
-                  const { savings1y, savings5y, breakEvenMonths } = calculateSavings(robinet.price, 99);
+                  const { savings5y, breakEvenMonths, yearlySavings } = calculateSavings(robinet.price, 99);
                   const Icon = robinet.icon;
                   return (
                     <div key={robinet.sku} className="h-full flex flex-col p-6 bg-gradient-to-br from-[#FAF8F5] to-white rounded-2xl border-2 border-gray-200">
@@ -842,14 +844,14 @@ const Section1 = React.forwardRef<HTMLElement, {
                       <div className="space-y-2 text-sm flex-1">
                         <div className="flex items-center justify-between py-2 border-t border-gray-200">
                           <span className="text-[#8B7E74]">Rentabilisé en</span>
-                          <span className="font-semibold text-gray-900">{breakEvenMonths} mois</span>
+                          <span className="font-semibold text-gray-900">{breakEvenMonths < 100 ? `${breakEvenMonths} mois` : '—'}</span>
                         </div>
                         <div className="flex items-center justify-between py-2 border-t border-gray-200">
-                          <span className="text-[#8B7E74]">Économie 1 an</span>
-                          <span className="font-semibold text-green-600">+{Math.round(savings1y)}€</span>
+                          <span className="text-[#8B7E74]">Vous économisez</span>
+                          <span className="font-semibold text-green-600">{Math.round(yearlySavings)}€/an</span>
                         </div>
                         <div className="flex items-center justify-between py-2 border-t border-gray-200">
-                          <span className="text-[#8B7E74]">Économie 5 ans</span>
+                          <span className="text-[#8B7E74]">Économie sur 5 ans</span>
                           <span className="font-semibold text-green-600">+{Math.round(savings5y)}€</span>
                         </div>
                       </div>
@@ -887,7 +889,7 @@ const Section1 = React.forwardRef<HTMLElement, {
 const Section2 = React.forwardRef<HTMLElement, {
   state: ConversionState;
   setState: React.Dispatch<React.SetStateAction<ConversionState>>;
-  calculateSavings: (robinetPrice: number, subscriptionYearly?: number) => { savings5y: number; breakEvenMonths: number };
+  calculateSavings: (robinetPrice: number, subscriptionYearly?: number) => { savings1y: number; savings5y: number; breakEvenMonths: number; yearlySavings: number };
   onNext: () => void;
 }>(({ state, setState, calculateSavings, onNext }, ref) => {
   return (
@@ -913,8 +915,8 @@ const Section2 = React.forwardRef<HTMLElement, {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
           {ROBINETS.map((robinet, idx) => {
             const Icon = robinet.icon;
-            const { savings1y, savings5y, breakEvenMonths } = calculateSavings(robinet.price, 99);
-            
+            const { savings5y, breakEvenMonths, yearlySavings } = calculateSavings(robinet.price, 99);
+
             return (
               <motion.div
                 key={robinet.sku}
@@ -966,15 +968,15 @@ const Section2 = React.forwardRef<HTMLElement, {
                     <p className="text-sm text-[#8B7E74] mb-2 text-center">Avec vos dépenses actuelles :</p>
                     <p className="text-center">
                       <span className="text-sm text-gray-700">Rentabilisé en </span>
-                      <span className="font-bold text-green-700">{breakEvenMonths} mois</span>
+                      <span className="font-bold text-green-700">{breakEvenMonths < 100 ? `${breakEvenMonths} mois` : '—'}</span>
                     </p>
                     <div className="flex items-center justify-center gap-4 mt-2">
                       <p className="text-center">
-                        <span className="text-xs text-[#8B7E74]">1 an : </span>
-                        <span className="font-bold text-green-700">+{Math.round(savings1y)}€</span>
+                        <span className="text-xs text-[#8B7E74]">Vous économisez </span>
+                        <span className="font-bold text-green-700">{Math.round(yearlySavings)}€/an</span>
                       </p>
                       <p className="text-center">
-                        <span className="text-xs text-[#8B7E74]">5 ans : </span>
+                        <span className="text-xs text-[#8B7E74]">Sur 5 ans : </span>
                         <span className="font-bold text-green-700">+{Math.round(savings5y)}€</span>
                       </p>
                     </div>
