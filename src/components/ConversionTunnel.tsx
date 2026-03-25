@@ -57,31 +57,9 @@ interface ConversionState {
   extraBottles: ExtraBottle[];
 }
 
-// Base de données eaux complète - moyennes multi-enseignes
-const WATER_DATABASE: WaterData[] = [
-  // Eaux plates
-  { brand: 'MDD enseigne', format: '6×1,5L', packPrice: 0.82, pricePerLiter: 0.09, type: 'still' },
-  { brand: 'Cristaline', format: '6×1,5L', packPrice: 1.33, pricePerLiter: 0.15, type: 'still' },
-  { brand: 'Mont Roucous', format: '6×1L', packPrice: 3.29, pricePerLiter: 0.55, type: 'still' },
-  { brand: 'Vittel', format: '6×1L', packPrice: 3.35, pricePerLiter: 0.56, type: 'still' },
-  { brand: 'Vittel', format: '6×1,5L', packPrice: 3.97, pricePerLiter: 0.44, type: 'still' },
-  { brand: 'Volvic', format: '6×1L', packPrice: 3.95, pricePerLiter: 0.66, type: 'still' },
-  { brand: 'Volvic', format: '6×1,5L', packPrice: 4.02, pricePerLiter: 0.45, type: 'still' },
-  { brand: 'Evian', format: '6×50cl', packPrice: 3.09, pricePerLiter: 0.52, type: 'still' },
-  { brand: 'Evian', format: '6×1L', packPrice: 3.62, pricePerLiter: 0.60, type: 'still' },
-  { brand: 'Evian', format: '6×1,5L', packPrice: 4.43, pricePerLiter: 0.49, type: 'still' },
-  { brand: 'Wattwiller', format: '6×1,5L', packPrice: 4.45, pricePerLiter: 0.49, type: 'still' },
-  
-  // Eaux gazeuses
-  { brand: 'Cristaline pétillante', format: '6×1,5L', packPrice: 1.99, pricePerLiter: 0.22, type: 'sparkling' },
-  { brand: 'Salvetat', format: '6×1,15L', packPrice: 3.49, pricePerLiter: 0.51, type: 'sparkling' },
-  { brand: 'Badoit', format: '6×50cl', packPrice: 3.76, pricePerLiter: 0.63, type: 'sparkling' },
-  { brand: 'Perrier', format: '8×20cl', packPrice: 4.45, pricePerLiter: 0.56, type: 'sparkling' },
-  { brand: 'San Pellegrino', format: '6×1L', packPrice: 5.09, pricePerLiter: 0.85, type: 'sparkling' },
-  { brand: 'Perrier', format: '6×1L', packPrice: 5.54, pricePerLiter: 0.92, type: 'sparkling' },
-  { brand: 'Badoit', format: '6×1L', packPrice: 5.69, pricePerLiter: 0.95, type: 'sparkling' },
-  { brand: 'Perrier', format: '6×1,5L', packPrice: 6.89, pricePerLiter: 0.77, type: 'sparkling' },
-];
+// Base de données eaux - importée depuis la DB centralisée
+import { getWaterListForTunnel } from '../data/waterDatabase';
+const WATER_DATABASE: WaterData[] = getWaterListForTunnel();
 
 const ROBINETS = [
   {

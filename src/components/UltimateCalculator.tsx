@@ -20,6 +20,12 @@ import {
   Package
 } from 'lucide-react';
 import { Page } from '../App';
+import {
+  getUniqueMarques,
+  getFormatsForMarque,
+  getMicroplasticsPerBottle,
+  type AggregatedWater
+} from '../data/waterDatabase';
 
 interface UltimateCalculatorProps {
   navigate: (page: Page) => void;
@@ -31,149 +37,6 @@ type HouseholdType = 'solo' | 'couple' | 'family' | 'family-plus';
 type Priority = 'savings' | 'health' | 'environment' | 'time';
 type SKUType = 'sku2' | 'sku1' | 'sku3';
 
-// ==================== BASE DE DONNÉES EAU (Prix moyens 2025/2026 tous commercants confondus) ====================
-interface WaterProduct {
-  marque: string;
-  format: string;
-  prixMoyen: number;
-  prixMin: number;
-  prixMax: number;
-  bottlesPerPack: number;
-  litersPerBottle: number;
-  type: 'plate' | 'gazeuse';
-}
-
-const waterDatabase: WaterProduct[] = [
-  // ===== EAU PLATE =====
-
-  // --- MDD / Premiers prix ---
-  { marque: "Cristaline", format: "1×1,5L", prixMoyen: 0.24, prixMin: 0.22, prixMax: 0.27, bottlesPerPack: 1, litersPerBottle: 1.5, type: 'plate' },
-  { marque: "Cristaline", format: "6×1,5L", prixMoyen: 1.32, prixMin: 1.19, prixMax: 1.45, bottlesPerPack: 6, litersPerBottle: 1.5, type: 'plate' },
-  { marque: "Cristaline", format: "6×50cl", prixMoyen: 0.89, prixMin: 0.79, prixMax: 0.99, bottlesPerPack: 6, litersPerBottle: 0.5, type: 'plate' },
-  { marque: "Marque distributeur", format: "6×1,5L", prixMoyen: 0.82, prixMin: 0.69, prixMax: 0.99, bottlesPerPack: 6, litersPerBottle: 1.5, type: 'plate' },
-  { marque: "Marque distributeur", format: "1×1,5L", prixMoyen: 0.17, prixMin: 0.14, prixMax: 0.21, bottlesPerPack: 1, litersPerBottle: 1.5, type: 'plate' },
-
-  // --- Evian ---
-  { marque: "Evian", format: "6×50cl", prixMoyen: 3.10, prixMin: 2.89, prixMax: 3.29, bottlesPerPack: 6, litersPerBottle: 0.5, type: 'plate' },
-  { marque: "Evian", format: "1×1L", prixMoyen: 0.76, prixMin: 0.69, prixMax: 0.85, bottlesPerPack: 1, litersPerBottle: 1, type: 'plate' },
-  { marque: "Evian", format: "6×1L", prixMoyen: 3.60, prixMin: 3.39, prixMax: 3.79, bottlesPerPack: 6, litersPerBottle: 1, type: 'plate' },
-  { marque: "Evian", format: "1×1,5L", prixMoyen: 0.95, prixMin: 0.85, prixMax: 1.05, bottlesPerPack: 1, litersPerBottle: 1.5, type: 'plate' },
-  { marque: "Evian", format: "6×1,5L", prixMoyen: 4.40, prixMin: 4.09, prixMax: 4.69, bottlesPerPack: 6, litersPerBottle: 1.5, type: 'plate' },
-
-  // --- Vittel ---
-  { marque: "Vittel", format: "1×1L", prixMoyen: 0.67, prixMin: 0.59, prixMax: 0.75, bottlesPerPack: 1, litersPerBottle: 1, type: 'plate' },
-  { marque: "Vittel", format: "6×1L", prixMoyen: 3.35, prixMin: 3.09, prixMax: 3.59, bottlesPerPack: 6, litersPerBottle: 1, type: 'plate' },
-  { marque: "Vittel", format: "1×1,5L", prixMoyen: 0.80, prixMin: 0.72, prixMax: 0.89, bottlesPerPack: 1, litersPerBottle: 1.5, type: 'plate' },
-  { marque: "Vittel", format: "6×1,5L", prixMoyen: 3.90, prixMin: 3.59, prixMax: 4.19, bottlesPerPack: 6, litersPerBottle: 1.5, type: 'plate' },
-
-  // --- Volvic ---
-  { marque: "Volvic", format: "1×1L", prixMoyen: 0.79, prixMin: 0.69, prixMax: 0.89, bottlesPerPack: 1, litersPerBottle: 1, type: 'plate' },
-  { marque: "Volvic", format: "6×1L", prixMoyen: 3.95, prixMin: 3.69, prixMax: 4.19, bottlesPerPack: 6, litersPerBottle: 1, type: 'plate' },
-  { marque: "Volvic", format: "1×1,5L", prixMoyen: 0.85, prixMin: 0.75, prixMax: 0.95, bottlesPerPack: 1, litersPerBottle: 1.5, type: 'plate' },
-  { marque: "Volvic", format: "6×1,5L", prixMoyen: 4.00, prixMin: 3.79, prixMax: 4.25, bottlesPerPack: 6, litersPerBottle: 1.5, type: 'plate' },
-
-  // --- Contrex ---
-  { marque: "Contrex", format: "1×1L", prixMoyen: 0.72, prixMin: 0.65, prixMax: 0.82, bottlesPerPack: 1, litersPerBottle: 1, type: 'plate' },
-  { marque: "Contrex", format: "6×1L", prixMoyen: 3.50, prixMin: 3.19, prixMax: 3.79, bottlesPerPack: 6, litersPerBottle: 1, type: 'plate' },
-  { marque: "Contrex", format: "1×1,5L", prixMoyen: 0.85, prixMin: 0.75, prixMax: 0.95, bottlesPerPack: 1, litersPerBottle: 1.5, type: 'plate' },
-  { marque: "Contrex", format: "6×1,5L", prixMoyen: 4.20, prixMin: 3.89, prixMax: 4.49, bottlesPerPack: 6, litersPerBottle: 1.5, type: 'plate' },
-
-  // --- Hépar ---
-  { marque: "Hépar", format: "1×1L", prixMoyen: 0.92, prixMin: 0.82, prixMax: 1.05, bottlesPerPack: 1, litersPerBottle: 1, type: 'plate' },
-  { marque: "Hépar", format: "6×1L", prixMoyen: 5.20, prixMin: 4.79, prixMax: 5.59, bottlesPerPack: 6, litersPerBottle: 1, type: 'plate' },
-
-  // --- Mont Roucous ---
-  { marque: "Mont Roucous", format: "1×1L", prixMoyen: 0.62, prixMin: 0.55, prixMax: 0.69, bottlesPerPack: 1, litersPerBottle: 1, type: 'plate' },
-  { marque: "Mont Roucous", format: "6×1L", prixMoyen: 3.30, prixMin: 2.99, prixMax: 3.59, bottlesPerPack: 6, litersPerBottle: 1, type: 'plate' },
-  { marque: "Mont Roucous", format: "6×1,5L", prixMoyen: 4.10, prixMin: 3.79, prixMax: 4.39, bottlesPerPack: 6, litersPerBottle: 1.5, type: 'plate' },
-
-  // --- Thonon ---
-  { marque: "Thonon", format: "6×1,5L", prixMoyen: 2.70, prixMin: 2.39, prixMax: 2.99, bottlesPerPack: 6, litersPerBottle: 1.5, type: 'plate' },
-  { marque: "Thonon", format: "1×1,5L", prixMoyen: 0.50, prixMin: 0.42, prixMax: 0.59, bottlesPerPack: 1, litersPerBottle: 1.5, type: 'plate' },
-
-  // --- Courmayeur ---
-  { marque: "Courmayeur", format: "6×1,5L", prixMoyen: 4.50, prixMin: 4.09, prixMax: 4.89, bottlesPerPack: 6, litersPerBottle: 1.5, type: 'plate' },
-  { marque: "Courmayeur", format: "1×1,5L", prixMoyen: 0.89, prixMin: 0.79, prixMax: 0.99, bottlesPerPack: 1, litersPerBottle: 1.5, type: 'plate' },
-
-  // --- Wattwiller ---
-  { marque: "Wattwiller", format: "6×1,5L", prixMoyen: 4.45, prixMin: 4.09, prixMax: 4.79, bottlesPerPack: 6, litersPerBottle: 1.5, type: 'plate' },
-  { marque: "Wattwiller", format: "1×1,5L", prixMoyen: 0.90, prixMin: 0.79, prixMax: 0.99, bottlesPerPack: 1, litersPerBottle: 1.5, type: 'plate' },
-
-  // --- Spa Reine ---
-  { marque: "Spa Reine", format: "6×1,5L", prixMoyen: 4.30, prixMin: 3.99, prixMax: 4.59, bottlesPerPack: 6, litersPerBottle: 1.5, type: 'plate' },
-
-  // ===== EAU GAZEUSE =====
-
-  // --- Perrier ---
-  { marque: "Perrier", format: "6×50cl", prixMoyen: 3.80, prixMin: 3.49, prixMax: 4.09, bottlesPerPack: 6, litersPerBottle: 0.5, type: 'gazeuse' },
-  { marque: "Perrier", format: "1×1L", prixMoyen: 1.12, prixMin: 0.99, prixMax: 1.25, bottlesPerPack: 1, litersPerBottle: 1, type: 'gazeuse' },
-  { marque: "Perrier", format: "6×1L", prixMoyen: 5.50, prixMin: 5.09, prixMax: 5.89, bottlesPerPack: 6, litersPerBottle: 1, type: 'gazeuse' },
-
-  // --- Perrier Fines Bulles ---
-  { marque: "Perrier Fines Bulles", format: "6×1L", prixMoyen: 5.20, prixMin: 4.79, prixMax: 5.59, bottlesPerPack: 6, litersPerBottle: 1, type: 'gazeuse' },
-
-  // --- Badoit ---
-  { marque: "Badoit", format: "6×50cl", prixMoyen: 3.85, prixMin: 3.59, prixMax: 4.09, bottlesPerPack: 6, litersPerBottle: 0.5, type: 'gazeuse' },
-  { marque: "Badoit", format: "1×1L", prixMoyen: 1.15, prixMin: 1.05, prixMax: 1.29, bottlesPerPack: 1, litersPerBottle: 1, type: 'gazeuse' },
-  { marque: "Badoit", format: "6×1L", prixMoyen: 5.70, prixMin: 5.29, prixMax: 5.99, bottlesPerPack: 6, litersPerBottle: 1, type: 'gazeuse' },
-
-  // --- San Pellegrino ---
-  { marque: "San Pellegrino", format: "1×1L", prixMoyen: 1.05, prixMin: 0.95, prixMax: 1.15, bottlesPerPack: 1, litersPerBottle: 1, type: 'gazeuse' },
-  { marque: "San Pellegrino", format: "6×1L", prixMoyen: 5.10, prixMin: 4.69, prixMax: 5.49, bottlesPerPack: 6, litersPerBottle: 1, type: 'gazeuse' },
-  { marque: "San Pellegrino", format: "6×50cl", prixMoyen: 3.60, prixMin: 3.29, prixMax: 3.89, bottlesPerPack: 6, litersPerBottle: 0.5, type: 'gazeuse' },
-
-  // --- Salvetat ---
-  { marque: "Salvetat", format: "6×1,15L", prixMoyen: 3.50, prixMin: 3.19, prixMax: 3.79, bottlesPerPack: 6, litersPerBottle: 1.15, type: 'gazeuse' },
-  { marque: "Salvetat", format: "1×1,15L", prixMoyen: 0.65, prixMin: 0.55, prixMax: 0.75, bottlesPerPack: 1, litersPerBottle: 1.15, type: 'gazeuse' },
-
-  // --- Vichy Célestins ---
-  { marque: "Vichy Célestins", format: "6×1,15L", prixMoyen: 5.00, prixMin: 4.59, prixMax: 5.39, bottlesPerPack: 6, litersPerBottle: 1.15, type: 'gazeuse' },
-  { marque: "Vichy Célestins", format: "1×1,15L", prixMoyen: 0.95, prixMin: 0.85, prixMax: 1.09, bottlesPerPack: 1, litersPerBottle: 1.15, type: 'gazeuse' },
-
-  // --- St-Yorre ---
-  { marque: "St-Yorre", format: "6×1,15L", prixMoyen: 4.80, prixMin: 4.39, prixMax: 5.19, bottlesPerPack: 6, litersPerBottle: 1.15, type: 'gazeuse' },
-  { marque: "St-Yorre", format: "1×1,15L", prixMoyen: 0.90, prixMin: 0.79, prixMax: 1.05, bottlesPerPack: 1, litersPerBottle: 1.15, type: 'gazeuse' },
-
-  // --- Quézac ---
-  { marque: "Quézac", format: "6×1,15L", prixMoyen: 3.80, prixMin: 3.49, prixMax: 4.09, bottlesPerPack: 6, litersPerBottle: 1.15, type: 'gazeuse' },
-  { marque: "Quézac", format: "1×1,15L", prixMoyen: 0.72, prixMin: 0.65, prixMax: 0.82, bottlesPerPack: 1, litersPerBottle: 1.15, type: 'gazeuse' },
-
-  // --- Rozana ---
-  { marque: "Rozana", format: "6×1L", prixMoyen: 4.50, prixMin: 4.09, prixMax: 4.89, bottlesPerPack: 6, litersPerBottle: 1, type: 'gazeuse' },
-  { marque: "Rozana", format: "1×1L", prixMoyen: 0.85, prixMin: 0.75, prixMax: 0.95, bottlesPerPack: 1, litersPerBottle: 1, type: 'gazeuse' },
-
-  // --- Cristaline pétillante ---
-  { marque: "Cristaline pétillante", format: "6×1,5L", prixMoyen: 1.90, prixMin: 1.69, prixMax: 2.15, bottlesPerPack: 6, litersPerBottle: 1.5, type: 'gazeuse' },
-  { marque: "Cristaline pétillante", format: "1×1,5L", prixMoyen: 0.38, prixMin: 0.32, prixMax: 0.45, bottlesPerPack: 1, litersPerBottle: 1.5, type: 'gazeuse' },
-
-  // --- Vernière ---
-  { marque: "Vernière", format: "6×1,15L", prixMoyen: 3.20, prixMin: 2.89, prixMax: 3.49, bottlesPerPack: 6, litersPerBottle: 1.15, type: 'gazeuse' },
-
-  // --- Ogeu ---
-  { marque: "Ogeu", format: "6×1L", prixMoyen: 3.90, prixMin: 3.59, prixMax: 4.19, bottlesPerPack: 6, litersPerBottle: 1, type: 'gazeuse' },
-
-  // --- MDD gazeuse ---
-  { marque: "MDD pétillante", format: "6×1,5L", prixMoyen: 1.50, prixMin: 1.19, prixMax: 1.79, bottlesPerPack: 6, litersPerBottle: 1.5, type: 'gazeuse' },
-];
-
-// ==================== FONCTIONS UTILITAIRES ====================
-function getUniqueMarques(waterType: 'plate' | 'gazeuse'): string[] {
-  const marques = new Set<string>();
-  waterDatabase
-    .filter(p => p.type === waterType)
-    .forEach(p => marques.add(p.marque));
-  return Array.from(marques).sort();
-}
-
-function getFormatsForMarque(marque: string): WaterProduct[] {
-  return waterDatabase.filter(p => p.marque === marque);
-}
-
-// Microplastiques adaptés au volume (240 000 particules par litre - étude PNAS 2024)
-function getMicroplasticsPerBottle(litersPerBottle: number): number {
-  return Math.round(240000 * litersPerBottle);
-}
-
 // ==================== INTERFACES ====================
 interface SimpleInput {
   household: HouseholdType;
@@ -184,7 +47,7 @@ interface SimpleInput {
 interface DetailedInput {
   waterType: 'plate' | 'gazeuse' | null;
   selectedBrand: string | null;
-  selectedProduct: WaterProduct | null;
+  selectedProduct: AggregatedWater | null;
   packsPerWeek: number;
   selectedSKU: SKUType | null;
   householdSize: number;
@@ -1100,6 +963,11 @@ function DetailedCalculator({
                     </div>
                     <div className="text-sm text-gray-600">Prix moyen : {formatCurrency(product.prixMoyen)}</div>
                     <div className="text-xs text-gray-500 mt-1">{formatCurrency(product.prixMin)} - {formatCurrency(product.prixMax)}</div>
+                    {product.enseignes && product.enseignes.length > 0 && (
+                      <div className="text-xs text-gray-400 mt-1">
+                        {product.enseignes.join(', ')}
+                      </div>
+                    )}
                   </div>
                 </div>
               </motion.button>
