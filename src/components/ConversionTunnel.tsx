@@ -259,21 +259,16 @@ export function ConversionTunnel({ navigate }: ConversionTunnelProps) {
   };
 
   // Calculs économies - Mémoïsés pour performances
-  const calculateSavings = useCallback((robinetPrice: number, subscriptionYearly: number = 99) => {
+  const calculateSavings = useCallback((robinetPrice: number, subscriptionYearly: number = 59) => {
     const yearlyBottle = state.yearlyTotal || 0;
-    // Économie annuelle réelle = ce qu'on dépensait - l'abonnement
     const savingsPerYear = yearlyBottle - subscriptionYearly;
-    // Économie année 1 = économie annuelle - prix du robinet (peut être négatif)
     const savings1y = savingsPerYear - robinetPrice;
-    // Économies sur 5 ans = (économie annuelle × 5) - prix robinet
     const savings5y = (savingsPerYear * 5) - robinetPrice;
-    // Break-even = prix robinet / économie mensuelle nette (en tenant compte de l'abo)
     const monthlySavings = savingsPerYear / 12;
     const breakEvenMonths = monthlySavings > 0 ? Math.ceil(robinetPrice / monthlySavings) : 999;
-    // Économie annuelle récurrente (à partir de l'année 2)
     const yearlySavings = savingsPerYear;
 
-    return { savings1y, savings5y, breakEvenMonths, yearlySavings };
+    return { savings1y, savings5y, breakEvenMonths, yearlySavings, subscriptionYearly };
   }, [state.yearlyTotal]);
 
   const selectedRobinet = useMemo(() => 
@@ -503,7 +498,7 @@ const Section0 = React.forwardRef<HTMLElement, { onStart: () => void }>(
 const Section1 = React.forwardRef<HTMLElement, {
   state: ConversionState;
   setState: React.Dispatch<React.SetStateAction<ConversionState>>;
-  calculateSavings: (robinetPrice: number, subscriptionYearly?: number) => { savings1y: number; savings5y: number; breakEvenMonths: number; yearlySavings: number };
+  calculateSavings: (robinetPrice: number, subscriptionYearly?: number) => { savings1y: number; savings5y: number; breakEvenMonths: number; yearlySavings: number; subscriptionYearly: number };
   onNext: () => void;
 }>(({ state, setState, calculateSavings, onNext }, ref) => {
   const [mode, setMode] = useState<'complete' | 'quick'>('complete');
@@ -938,13 +933,14 @@ const Section1 = React.forwardRef<HTMLElement, {
             >
               <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2 sm:mb-3">Ce que vous économiseriez avec Hydral</h3>
               <p className="text-xs text-[#8B7E74] mb-6">
-                Robinet = achat unique. Abonnement filtres dès 59€/an (remplace vos achats d'eau en bouteille).
+                Robinet = achat unique. Abonnement filtres dès 49€/an (remplace vos achats d'eau en bouteille).
               </p>
 
               {/* Les 3 robinets avec économies calculées */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {ROBINETS.map((robinet) => {
-                  const { savings5y, breakEvenMonths, yearlySavings } = calculateSavings(robinet.price, 59);
+                  const subYearly = robinet.hasCO2 ? 59 : 49;
+                  const { savings5y, breakEvenMonths, yearlySavings } = calculateSavings(robinet.price, subYearly);
                   const Icon = robinet.icon;
                   return (
                     <div key={robinet.sku} className="h-full flex flex-col p-6 bg-gradient-to-br from-[#FAF8F5] to-white rounded-2xl border-2 border-gray-200">
@@ -961,7 +957,7 @@ const Section1 = React.forwardRef<HTMLElement, {
                       <div className="text-center mb-4">
                         <Icon className="w-10 h-10 text-[#6B1E3E] mx-auto mb-2" />
                         <h4 className="font-semibold text-gray-900 min-h-[2.5rem] flex items-center justify-center">{robinet.name}</h4>
-                        <p className="text-2xl font-bold text-[#6B1E3E] my-2">{robinet.price}€</p>
+                        <p className="text-2xl font-bold text-[#6B1E3E] my-2">{robinet.price}€ <span className="text-sm font-normal text-[#8B7E74]">+ {subYearly}€/an</span></p>
                       </div>
                       <div className="space-y-2 text-sm flex-1">
                         {yearlySavings > 0 ? (
@@ -992,7 +988,7 @@ const Section1 = React.forwardRef<HTMLElement, {
             </motion.div>
 
             {/* Si rentable : break-even visuel */}
-            {calculateSavings(490, 59).yearlySavings > 0 && (
+            {calculateSavings(490, 49).yearlySavings > 0 && (
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -1002,7 +998,7 @@ const Section1 = React.forwardRef<HTMLElement, {
                 <h4 className="text-lg font-semibold text-gray-900 mb-6 text-center">Quand commencez-vous à économiser ?</h4>
                 <div className="space-y-4">
                   {ROBINETS.map((robinet) => {
-                    const { breakEvenMonths, yearlySavings: ys } = calculateSavings(robinet.price, 59);
+                    const { breakEvenMonths, yearlySavings: ys } = calculateSavings(robinet.price, robinet.hasCO2 ? 59 : 49);
                     const progress = breakEvenMonths < 100 ? Math.min((breakEvenMonths / 24) * 100, 100) : 100;
                     return (
                       <div key={robinet.sku} className="flex items-center gap-4">
@@ -1033,7 +1029,7 @@ const Section1 = React.forwardRef<HTMLElement, {
             )}
 
             {/* Si PAS rentable : arguments de conviction */}
-            {calculateSavings(490, 59).yearlySavings <= 0 && (
+            {calculateSavings(490, 49).yearlySavings <= 0 && (
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -1124,7 +1120,7 @@ const Section1 = React.forwardRef<HTMLElement, {
 const Section2 = React.forwardRef<HTMLElement, {
   state: ConversionState;
   setState: React.Dispatch<React.SetStateAction<ConversionState>>;
-  calculateSavings: (robinetPrice: number, subscriptionYearly?: number) => { savings1y: number; savings5y: number; breakEvenMonths: number; yearlySavings: number };
+  calculateSavings: (robinetPrice: number, subscriptionYearly?: number) => { savings1y: number; savings5y: number; breakEvenMonths: number; yearlySavings: number; subscriptionYearly: number };
   onNext: () => void;
 }>(({ state, setState, calculateSavings, onNext }, ref) => {
   return (
@@ -1150,7 +1146,7 @@ const Section2 = React.forwardRef<HTMLElement, {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
           {ROBINETS.map((robinet, idx) => {
             const Icon = robinet.icon;
-            const { savings5y, breakEvenMonths, yearlySavings } = calculateSavings(robinet.price, 59);
+            const { savings5y, breakEvenMonths, yearlySavings } = calculateSavings(robinet.price, robinet.hasCO2 ? 59 : 49);
 
             return (
               <motion.div
