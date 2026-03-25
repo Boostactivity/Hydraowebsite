@@ -202,7 +202,7 @@ export function PrixTransparentPage({ navigate }: PrixTransparentPageProps) {
                   'Module de refroidissement (optionnel)',
                   'Système CO₂ pour eau pétillante (optionnel)',
                   'Guide d\'installation complet',
-                  'Garantie 5 ans pièces et main d\'œuvre',
+                  'Garantie 3 ans pièces et main d\'œuvre',
                   'Support technique à vie'
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
@@ -279,7 +279,7 @@ export function PrixTransparentPage({ navigate }: PrixTransparentPageProps) {
               },
               {
                 icon: <Shield className="w-12 h-12 text-[#6B1E3E]" />,
-                title: "Garantie 5 ans",
+                title: "Garantie 3 ans",
                 desc: "Pièces et main d'œuvre. Extensible à 10 ans. Pas de petites lignes."
               },
               {

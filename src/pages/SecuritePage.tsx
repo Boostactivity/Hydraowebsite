@@ -257,7 +257,7 @@ export function SecuritePage({ navigate }: SecuritePageProps) {
               </p>
             </div>
             <div className="p-8 bg-white rounded-3xl border border-gray-200/50">
-              <h3 className="text-xl mb-4 text-gray-900">Garantie 5 ans</h3>
+              <h3 className="text-xl mb-4 text-gray-900">Garantie 3 ans</h3>
               <p className="text-[#8B7E74]">
                 Couverture complète sur tous les défauts de fabrication, fuites, dysfonctionnements électroniques.
               </p>

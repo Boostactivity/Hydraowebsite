@@ -24,7 +24,7 @@ export function TrustBadges({ variant = 'full', className = '' }: TrustBadgesPro
     },
     {
       icon: Award,
-      title: 'Garantie 5 ans',
+      title: 'Garantie 3 ans',
       description: 'Pièces & main d\'œuvre',
       color: 'text-[#6B1E3E]',
       bgColor: 'bg-[#E8D5DC]/30'

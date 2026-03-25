@@ -418,61 +418,82 @@ export function ConversionTunnel({ navigate }: ConversionTunnelProps) {
   );
 }
 
-// SECTION 0 - INTRO
+// SECTION 0 - TRANSITION RAPIDE VERS LE TUNNEL
 const Section0 = React.forwardRef<HTMLElement, { onStart: () => void }>(
   ({ onStart }, ref) => {
     return (
       <section
         ref={ref}
         data-section="0"
-        className="min-h-[70vh] flex items-center justify-center px-4 sm:px-6 pt-24 pb-12"
+        className="px-4 sm:px-6 py-12 sm:py-16"
       >
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="max-w-5xl mx-auto text-center"
-        >
-          <h1 className="mb-6">
-            <span className="block text-gray-900">Arrêtez de payer</span>
-            <span className="block text-[#6B1E3E]">pour de l'eau en bouteille.</span>
-          </h1>
-          <p className="text-lg sm:text-xl text-[#8B7E74] mb-12 sm:mb-16 max-w-3xl mx-auto">
-            En 3 minutes, calculez vos économies, choisissez votre robinet et recevez votre pack personnalisé.
-          </p>
-
-          {/* Les 4 étapes */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12">
-            {[
-              { icon: '💧', title: 'Vos économies', desc: 'Calculez ce que vous dépensez vraiment' },
-              { icon: '🚿', title: 'Votre robinet', desc: 'Choisissez Pure, Spark ou One' },
-              { icon: '📦', title: 'Votre formule', desc: 'Abonnement transparent, zéro surprise' },
-              { icon: '✨', title: 'Votre pack', desc: 'Personnalisez vos accessoires' }
-            ].map((step, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: idx * 0.1 + 0.3 }}
-                className="p-6 bg-white rounded-2xl border border-gray-200/50 shadow-sm"
-              >
-                <div className="text-4xl mb-4">{step.icon}</div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">{step.title}</h3>
-                <p className="text-sm text-[#8B7E74]">{step.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-
-          <motion.button
-            onClick={onStart}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-12 py-5 bg-[#6B1E3E] text-white rounded-full text-lg font-medium shadow-xl hover:bg-[#6B1E3E]/90 transition-colors inline-flex items-center gap-2"
+        <div className="max-w-5xl mx-auto">
+          {/* Accroche + CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-10"
           >
-            Commencer
-            <ChevronDown className="w-5 h-5" />
-          </motion.button>
-        </motion.div>
+            <h2 className="mb-3">
+              <span className="text-gray-900">Combien vous coûtent </span>
+              <span className="text-[#6B1E3E]">vos bouteilles ?</span>
+            </h2>
+            <p className="text-lg text-[#8B7E74] max-w-2xl mx-auto mb-8">
+              En 3 minutes : calculez vos économies, choisissez votre robinet, recevez votre pack personnalisé.
+            </p>
+
+            {/* Mini étapes horizontales */}
+            <div className="flex flex-wrap justify-center gap-3 mb-8">
+              {[
+                { num: '1', label: 'Vos économies' },
+                { num: '2', label: 'Votre robinet' },
+                { num: '3', label: 'Votre formule' },
+                { num: '4', label: 'Votre pack' }
+              ].map((step, idx) => (
+                <div key={idx} className="flex items-center gap-2">
+                  <div className="w-7 h-7 rounded-full bg-[#6B1E3E] text-white flex items-center justify-center text-xs font-bold">
+                    {step.num}
+                  </div>
+                  <span className="text-sm text-gray-700 font-medium">{step.label}</span>
+                  {idx < 3 && <span className="text-gray-300 ml-1 hidden sm:inline">—</span>}
+                </div>
+              ))}
+            </div>
+
+            <motion.button
+              onClick={onStart}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-10 py-4 bg-[#6B1E3E] text-white rounded-full text-lg font-medium shadow-xl hover:bg-[#6B1E3E]/90 transition-colors inline-flex items-center gap-2"
+            >
+              C'est parti
+              <ChevronDown className="w-5 h-5" />
+            </motion.button>
+          </motion.div>
+
+          {/* Social proof compact */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-[#8B7E74]"
+          >
+            <div className="flex items-center gap-2">
+              <div className="flex gap-0.5">
+                {[...Array(5)].map((_, i) => (
+                  <div key={i} className="w-3 h-3 rounded-full bg-amber-400" />
+                ))}
+              </div>
+              <span>5/5 — Nos premiers testeurs</span>
+            </div>
+            <span className="hidden sm:inline text-gray-300">|</span>
+            <span>Rentabilisé en quelques mois</span>
+            <span className="hidden sm:inline text-gray-300">|</span>
+            <span>Sans engagement</span>
+          </motion.div>
+        </div>
       </section>
     );
   }
@@ -1244,7 +1265,7 @@ const Section2 = React.forwardRef<HTMLElement, {
                   {/* Badge premium */}
                   <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#6B1E3E]/10 to-[#6B1E3E]/5 border border-[#6B1E3E]/20 rounded-full">
                     <Check className="w-4 h-4 text-[#6B1E3E]" />
-                    <span className="text-sm font-medium text-gray-900">Qualité premium garantie 5 ans</span>
+                    <span className="text-sm font-medium text-gray-900">Qualité premium garantie 3 ans</span>
                   </div>
 
                   {/* Avantages finition */}
@@ -1264,7 +1285,7 @@ const Section2 = React.forwardRef<HTMLElement, {
                       </li>
                       <li className="flex items-start gap-3">
                         <Check className="w-4 h-4 text-[#6B1E3E] flex-shrink-0 mt-0.5" />
-                        <span>Garantie constructeur 5 ans sur toutes les finitions</span>
+                        <span>Garantie constructeur 3 ans sur toutes les finitions</span>
                       </li>
                     </ul>
                   </div>
@@ -1276,9 +1297,9 @@ const Section2 = React.forwardRef<HTMLElement, {
                         <Wrench className="w-5 h-5 text-[#6B1E3E]" />
                       </div>
                       <div>
-                        <h4 className="font-semibold text-gray-900 mb-1">Installation clé en main incluse</h4>
+                        <h4 className="font-semibold text-gray-900 mb-1">Installation simple</h4>
                         <p className="text-sm text-gray-700">
-                          Un plombier agréé HYDRAL installe votre robinet en ~2h. Guide technique détaillé fourni.
+                          Se monte facilement par un bricoleur ou un professionnel. Guide technique détaillé fourni.
                         </p>
                       </div>
                     </div>

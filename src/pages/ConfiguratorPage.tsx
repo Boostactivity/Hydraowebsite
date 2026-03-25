@@ -23,7 +23,7 @@ const hydroModels = [
     features: [
       'Eau filtrée pure (chlore éliminé)',
       'Eau bouillante 100°C instantanée',
-      'Installation incluse',
+      'Installation facile',
       'Économies immédiates'
     ],
     waterTypes: ['Eau filtrée', 'Eau bouillante'],
@@ -394,7 +394,7 @@ export function ConfiguratorPage({ navigate }: ConfiguratorPageProps) {
                     {/* Badge premium */}
                     <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#6B1E3E]/10 to-[#6B1E3E]/5 border border-[#6B1E3E]/20 rounded-full">
                       <Check className="w-4 h-4 text-[#6B1E3E]" />
-                      <span className="text-sm font-medium text-gray-900">Qualité premium garantie 5 ans</span>
+                      <span className="text-sm font-medium text-gray-900">Qualité premium garantie 3 ans</span>
                     </div>
 
                     {/* Avantages finition */}
@@ -414,7 +414,7 @@ export function ConfiguratorPage({ navigate }: ConfiguratorPageProps) {
                         </li>
                         <li className="flex items-start gap-3">
                           <Check className="w-4 h-4 text-[#6B1E3E] flex-shrink-0 mt-0.5" />
-                          <span>Garantie constructeur 5 ans sur toutes les finitions</span>
+                          <span>Garantie constructeur 3 ans sur toutes les finitions</span>
                         </li>
                       </ul>
                     </div>

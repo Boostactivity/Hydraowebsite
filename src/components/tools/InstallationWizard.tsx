@@ -152,7 +152,7 @@ export function InstallationWizard({ onComplete, onClose }: InstallationWizardPr
           'Test fonctionnel',
           'Garantie 2 ans'
         ],
-        warning: 'Installation incluse dans tous nos packs.'
+        warning: 'Installation facile dans tous nos packs.'
       };
     }
   };

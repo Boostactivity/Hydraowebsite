@@ -301,9 +301,9 @@ function getSEOData(page: Page, productId?: string): SEOData {
     },
     warranty: {
       title: `Garantie 5 Ans ${BRAND_NAME} - SAV Français, Pièces & Main d'Oeuvre`,
-      description: 'Garantie constructeur 5 ans HYDRAL : pièces et main d\'oeuvre, SAV français réactif, technicien à domicile. Tranquillité totale.',
+      description: 'Garantie constructeur 3 ans HYDRAL : pièces et main d\'oeuvre, SAV français réactif, technicien à domicile. Tranquillité totale.',
       canonical: `${BASE_URL}/garantie`,
-      keywords: ['garantie HYDRAL', 'SAV robinet', 'garantie 5 ans', 'service après-vente'],
+      keywords: ['garantie HYDRAL', 'SAV robinet', 'garantie 3 ans', 'service après-vente'],
       ogType: 'article'
     },
     'payment-security': {

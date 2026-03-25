@@ -133,7 +133,7 @@ export function ObjectionsPage({ navigate }: ObjectionsPageProps) {
             </div>
 
             <p className="text-sm text-white/80 mt-8">
-              ✅ Satisfait ou remboursé 30 jours · ✅ Garantie 5 ans · ✅ Installation incluse
+              ✅ Satisfait ou remboursé 30 jours · ✅ Garantie 3 ans · ✅ Installation facile
             </p>
           </motion.div>
         </div>

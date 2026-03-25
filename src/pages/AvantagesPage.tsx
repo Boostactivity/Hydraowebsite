@@ -431,7 +431,7 @@ export function AvantagesPage({ navigate }: AvantagesPageProps) {
                 <div className="flex items-start gap-3">
                   <Check className="w-6 h-6 text-[#6B1E3E] flex-shrink-0 mt-1" />
                   <p className="text-[#8B7E74]">
-                    <strong className="text-gray-900">Produit durable :</strong> Garantie 5 ans, pièces détachées disponibles 10 ans. Pas d'obsolescence programmée.
+                    <strong className="text-gray-900">Produit durable :</strong> Garantie 3 ans, pièces détachées disponibles 10 ans. Pas d'obsolescence programmée.
                   </p>
                 </div>
               </div>

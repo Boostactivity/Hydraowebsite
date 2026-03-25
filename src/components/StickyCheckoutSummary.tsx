@@ -177,7 +177,7 @@ export function StickyCheckoutSummary({
                   <span>Paiement sécurisé</span>
                 </div>
                 <span>•</span>
-                <span>Garantie 5 ans</span>
+                <span>Garantie 3 ans</span>
               </div>
             </div>
           </div>

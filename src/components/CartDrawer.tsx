@@ -148,7 +148,7 @@ export function CartDrawer({ isOpen, onClose, navigate }: CartDrawerProps) {
                 <div className="grid grid-cols-3 gap-2 mb-4">
                   <div className="flex flex-col items-center text-center p-2">
                     <Shield className="w-5 h-5 text-[#6B1E3E] mb-1" />
-                    <span className="text-xs text-gray-600">Garantie 5 ans</span>
+                    <span className="text-xs text-gray-600">Garantie 3 ans</span>
                   </div>
                   <div className="flex flex-col items-center text-center p-2">
                     <Truck className="w-5 h-5 text-[#6B1E3E] mb-1" />

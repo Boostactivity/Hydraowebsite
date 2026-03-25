@@ -258,7 +258,7 @@ export function CartPage({ navigate }: CartPageProps) {
                   <div className="w-8 h-8 bg-[#6B1E3E]/10 rounded-lg flex items-center justify-center flex-shrink-0">
                     <Shield className="w-4 h-4 text-[#6B1E3E]" />
                   </div>
-                  <span>Garantie 5 ans</span>
+                  <span>Garantie 3 ans</span>
                 </div>
               </div>
             </div>
@@ -288,7 +288,7 @@ export function CartPage({ navigate }: CartPageProps) {
             </div>
             <div className="flex items-start gap-2">
               <Check className="w-4 h-4 text-[#6B1E3E] flex-shrink-0 mt-0.5" />
-              <span>Garantie 5 ans pièces & main d'œuvre</span>
+              <span>Garantie 3 ans pièces & main d'œuvre</span>
             </div>
             <div className="flex items-start gap-2">
               <Check className="w-4 h-4 text-[#6B1E3E] flex-shrink-0 mt-0.5" />

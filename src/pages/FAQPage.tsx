@@ -78,7 +78,7 @@ const faqData: FAQItem[] = [
   {
     category: 'Prix',
     question: "Y a-t-il des frais cachés ?",
-    answer: "Non. À partir de 490€ pour le Pure (eau filtrée + bouillante), 890€ pour le Spark (+ gazeuse + froide), 990€ pour le One (toutes les eaux). Toutes les finitions sont incluses dans le prix. Ce qui est EN PLUS (optionnel) : installation par professionnel (prix à définir selon région), extension de garantie à 10 ans (prix à définir), formule d'entretien annuelle (59-139€/an selon usage). Garantie 5 ans incluse sur tous les modèles. Tout est transparent. Zéro surprise."
+    answer: "Non. À partir de 490€ pour le Pure (eau filtrée + bouillante), 890€ pour le Spark (+ gazeuse + froide), 990€ pour le One (toutes les eaux). Toutes les finitions sont incluses dans le prix. Ce qui est EN PLUS (optionnel) : installation par professionnel (prix à définir selon région), extension de garantie à 10 ans (prix à définir), formule d'entretien annuelle (59-139€/an selon usage). Garantie 3 ans incluse sur tous les modèles. Tout est transparent. Zéro surprise."
   },
   {
     category: 'Prix',
@@ -105,7 +105,7 @@ const faqData: FAQItem[] = [
   {
     category: 'Entretien',
     question: "Le détartrage est-il nécessaire ?",
-    answer: "Oui, 1 fois par an si vous êtes en zone calcaire (>25°f). Le boiler accumule du calcaire, comme une bouilloire classique. Le détartrage prend 30 minutes (vidange + produit détartrant + rinçage). Vous pouvez le faire vous-même (tuto vidéo fourni) ou via un technicien partenaire (inclus dans les formules Famille et au-dessus). Si vous ne le faites jamais, le boiler perd en efficacité et peut tomber en panne (mais c'est couvert par la garantie 5 ans)."
+    answer: "Oui, 1 fois par an si vous êtes en zone calcaire (>25°f). Le boiler accumule du calcaire, comme une bouilloire classique. Le détartrage prend 30 minutes (vidange + produit détartrant + rinçage). Vous pouvez le faire vous-même (tuto vidéo fourni) ou via un technicien partenaire (inclus dans les formules Famille et au-dessus). Si vous ne le faites jamais, le boiler perd en efficacité et peut tomber en panne (mais c'est couvert par la garantie 3 ans)."
   },
   {
     category: 'Entretien',
@@ -140,7 +140,7 @@ const faqData: FAQItem[] = [
   // Garantie & SAV
   {
     category: 'Garantie',
-    question: "La garantie 5 ans couvre-t-elle vraiment tout ?",
+    question: "La garantie 3 ans couvre-t-elle vraiment tout ?",
     answer: "Presque. Elle couvre tous les défauts de fabrication, les pannes électroniques, les fuites, les dysfonctionnements des modules (boiler, chiller, filtre). Elle ne couvre PAS : l'usure normale (joints, cartouches), les dommages causés par un mauvais usage (choc, gel, détartrage non fait pendant 3 ans), les dégâts des eaux si mauvaise installation. C'est une garantie sérieuse, pas marketing. Si le robinet tombe en panne dans les 5 ans sans faute de votre part, on le répare ou on le remplace. Point."
   },
   {
