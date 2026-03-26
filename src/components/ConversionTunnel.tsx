@@ -1119,10 +1119,13 @@ const Section3 = React.forwardRef<HTMLElement, {
         transition={{ duration: 0.6 }}
         className="max-w-7xl mx-auto w-full"
       >
-        <h2 className="text-center mb-4">
+        <h2 className="text-center mb-3">
           <span className="block text-gray-900">Zéro surprise.</span>
           <span className="block text-[#6B1E3E]">Voici exactement ce que vous payez.</span>
         </h2>
+        <p className="text-center text-sm text-[#8B7E74] mb-8">
+          Sans engagement — résiliable à tout moment, sans frais.
+        </p>
 
         {/* Toggle rythme */}
         <div className="flex justify-center gap-3 mb-12 flex-wrap">
