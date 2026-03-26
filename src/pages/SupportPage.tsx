@@ -23,7 +23,7 @@ export function SupportPage({ navigate }: SupportPageProps) {
       id: 'installation',
       icon: Wrench,
       title: 'Installation',
-      desc: 'Préparer l\'installation, trouver un installateur',
+      desc: 'Préparer l\'installation, guide d\'installation',
       faqs: [
         {
           q: 'Comment préparer mon installation ?',

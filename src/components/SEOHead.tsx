@@ -199,8 +199,8 @@ function getSEOData(page: Page, productId?: string): SEOData {
       ogType: 'product'
     },
     prix: {
-      title: `Prix Transparent ${BRAND_NAME} - 490€ TTC + Abonnement 59-139€/an`,
-      description: 'Prix transparent HYDRAL : robinet 490€ TTC, abonnements consommables de 59€ à 139€/an. TCO complet détaillé, comparaison avec bouteilles, calcul économies réelles.',
+      title: `Prix Transparent ${BRAND_NAME} - 490€ TTC + Abonnement 59-119€/an`,
+      description: 'Prix transparent HYDRAL : robinet 490€ TTC, abonnements consommables de 59€ à 119€/an. TCO complet détaillé, comparaison avec bouteilles, calcul économies réelles.',
       canonical: `${BASE_URL}/prix`,
       keywords: ['prix HYDRAL', '490 euros', 'abonnement robinet', 'coût total', 'TCO robinet', 'prix transparent', 'économies robinet'],
       ogType: 'article'
@@ -256,8 +256,8 @@ function getSEOData(page: Page, productId?: string): SEOData {
       ogType: 'website'
     },
     subscriptions: {
-      title: `Abonnements ${BRAND_NAME} - Filtres et CO₂ dès 59€/an | 4 Formules`,
-      description: 'Abonnements HYDRAL : Filtre Only 59€/an, Standard 99€/an, Plus 119€/an, Plus+ 139€/an. Livraison automatique filtres et CO₂, sans engagement, cadeaux inclus.',
+      title: `Abonnements ${BRAND_NAME} - Filtres et CO₂ dès 59€/an | 3 Formules`,
+      description: 'Abonnements HYDRAL : Filtre Only 59€/an, Standard 99€/an, Plus 119€/an. Livraison automatique filtres et CO₂, sans engagement, cadeaux inclus.',
       canonical: `${BASE_URL}/abonnements`,
       keywords: ['abonnements HYDRAL', 'abonnement filtre', 'abonnement CO2', '59 euros par an', 'consommables robinet', 'livraison automatique'],
       ogType: 'website',
@@ -471,7 +471,7 @@ function getFAQSchema() {
         name: 'Quel est le prix du robinet HYDRAL ?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Le robinet HYDRAL coûte 490€ TTC, avec des abonnements consommables de 59€ à 139€ par an selon vos besoins.'
+          text: 'Le robinet HYDRAL coûte 490€ TTC, avec des abonnements consommables de 59€ à 119€ par an selon vos besoins.'
         }
       },
       {
@@ -526,13 +526,6 @@ function getSubscriptionSchema() {
         priceCurrency: 'EUR',
         billingDuration: 'P1Y'
       },
-      {
-        '@type': 'Offer',
-        name: 'Plus+',
-        price: '139',
-        priceCurrency: 'EUR',
-        billingDuration: 'P1Y'
-      }
     ]
   };
 }

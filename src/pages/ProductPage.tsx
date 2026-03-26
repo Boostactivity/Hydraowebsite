@@ -126,7 +126,7 @@ export function ProductPage({ navigate, productId }: ProductPageProps) {
                   <span className="text-4xl sm:text-5xl lg:text-6xl text-gray-900">{BASE_PRICE}€</span>
                   <span className="text-xl text-[#8B7E74]">TTC</span>
                 </div>
-                <p className="text-sm text-[#8B7E74]">Installation et garantie 3 ans incluses</p>
+                <p className="text-sm text-[#8B7E74]">Garantie 3 ans incluse. Installation simple.</p>
               </div>
 
               {/* Idéal pour */}

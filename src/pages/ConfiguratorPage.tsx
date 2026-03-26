@@ -120,18 +120,6 @@ const welcomePacks = {
       { id: 'thermos', type: 'Thermos', qty: 1, canCustomize: true, canName: true }
     ]
   },
-  'plus-plus': {
-    name: 'Premium',
-    value: 120, // Même contenu que Plus
-    items: [
-      { id: 'glass-1l-4', type: 'Verre 1L', qty: 4, canCustomize: true, canName: false },
-      { id: 'tritan-1l-4', type: 'Tritan 1L', qty: 4, canCustomize: true, canName: true },
-      { id: 'tritan-50cl-4', type: 'Tritan 50cl', qty: 4, canCustomize: true, canName: true },
-      { id: 'carafe-open-3', type: 'Carafe ouverte', qty: 1, canCustomize: true, canName: false },
-      { id: 'carafe-sealed-2', type: 'Carafe hermétique', qty: 1, canCustomize: true, canName: false },
-      { id: 'thermos-2', type: 'Thermos', qty: 1, canCustomize: true, canName: true }
-    ]
-  }
 };
 
 interface ItemCustomization {

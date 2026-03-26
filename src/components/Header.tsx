@@ -287,7 +287,7 @@ export function Header({ navigate, currentPage }: HeaderProps) {
                 transition={{ delay: (menuStructure.decouvrir.sections.reduce((acc, section) => acc + section.items.length, 0) + 2) * 0.03 }}
               >
                 <div className="font-medium text-gray-900">Prix & Abonnements</div>
-                <div className="text-xs text-gray-500">490€ + 59-139€/an sans engagement</div>
+                <div className="text-xs text-gray-500">490€ + 59-119€/an sans engagement</div>
               </motion.button>
 
               {/* Boutique */}

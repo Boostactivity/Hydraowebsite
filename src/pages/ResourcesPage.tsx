@@ -48,7 +48,7 @@ const CASE_STUDIES: CaseStudy[] = [
     location: 'Lyon',
     situation: 'Famille avec 3 enfants, grosse consommation d\'eau pétillante (15 packs/mois)',
     challenge: 'Budget bouteilles élevé, corvée de courses, manque de place stockage',
-    solution: 'HYDRAL Premium + abonnement Confort',
+    solution: 'HYDRAL Premium + abonnement Standard',
     results: [
       '€1,200 économisés par an',
       '5,400 bouteilles évitées',

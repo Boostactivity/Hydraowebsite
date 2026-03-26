@@ -195,7 +195,8 @@ export function UltimateCalculator({ navigate }: UltimateCalculatorProps) {
     const monthlySavings = monthlyBottleCost - (subscriptionYearly / 12);
     const yearlySavings = yearlyBottleCost - subscriptionYearly;
     const savings5Years = (yearlyBottleCost * 5) - (hydroPrice + (subscriptionYearly * 5));
-    const breakEvenMonths = monthlySavings > 0 ? hydroPrice / monthlySavings : 999;
+    const rawBreakEven = monthlySavings > 0 ? Math.ceil(hydroPrice / monthlySavings) : 999;
+    const breakEvenMonths = rawBreakEven > 60 ? 999 : rawBreakEven;
 
     const microplasticsPerBottle = getMicroplasticsPerBottle(avgLitersPerBottle);
     const yearlyMicroplastics = yearlyBottles * microplasticsPerBottle;
@@ -243,7 +244,8 @@ export function UltimateCalculator({ navigate }: UltimateCalculatorProps) {
     const monthlySavings = monthlyBottleCost - (subscriptionYearly / 12);
     const yearlySavings = yearlyBottleCost - subscriptionYearly;
     const savings5Years = (yearlyBottleCost * 5) - (hydroPrice + (subscriptionYearly * 5));
-    const breakEvenMonths = monthlySavings > 0 ? hydroPrice / monthlySavings : 999;
+    const rawBreakEven = monthlySavings > 0 ? Math.ceil(hydroPrice / monthlySavings) : 999;
+    const breakEvenMonths = rawBreakEven > 60 ? 999 : rawBreakEven;
 
     const microplasticsPerBottle = getMicroplasticsPerBottle(product.litersPerBottle);
     const yearlyMicroplastics = yearlyBottles * microplasticsPerBottle;

@@ -38,7 +38,7 @@ export function HYDRALFAQSchema() {
   const faqs: FAQItem[] = [
     {
       question: 'Combien coûte le robinet HYDRAL 5-en-1 ?',
-      answer: 'Le robinet HYDRAL 5-en-1 est proposé à 490€ TTC, avec des abonnements optionnels de 59€ à 139€ par an pour les consommables (filtres, CO2). Installation simple, réalisable par un bricoleur ou un professionnel.'
+      answer: 'Le robinet HYDRAL 5-en-1 est proposé à 490€ TTC, avec des abonnements optionnels de 59€ à 119€ par an pour les consommables (filtres, CO2). Installation simple, réalisable par un bricoleur ou un professionnel.'
     },
     {
       question: 'Quelles sont les 5 fonctions du robinet HYDRAL ?',

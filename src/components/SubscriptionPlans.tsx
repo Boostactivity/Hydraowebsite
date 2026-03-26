@@ -40,7 +40,7 @@ const PLANS_CONTENT = {
     for: '1–2 personnes',
     usage: 'Modéré',
     filters: 2,
-    co2: 4,
+    co2: 0,
     delivery: 'Incluse',
     value: 40
   },
@@ -48,8 +48,8 @@ const PLANS_CONTENT = {
     name: 'Standard',
     for: '3–4 personnes',
     usage: 'Régulier',
-    filters: 4,
-    co2: 8,
+    filters: 2,
+    co2: 6,
     delivery: 'Prioritaire',
     value: 75
   },
@@ -57,8 +57,8 @@ const PLANS_CONTENT = {
     name: 'Plus',
     for: '5+ personnes',
     usage: 'Intensif',
-    filters: 6,
-    co2: 12,
+    filters: 2,
+    co2: 8,
     delivery: 'Express',
     value: 120
   }

@@ -78,7 +78,7 @@ const faqData: FAQItem[] = [
   {
     category: 'Prix',
     question: "Y a-t-il des frais cachés ?",
-    answer: "Non. À partir de 490€ pour le Pure (eau filtrée + bouillante), 890€ pour le Spark (+ gazeuse + froide), 990€ pour le One (toutes les eaux). Toutes les finitions sont incluses dans le prix. Ce qui est EN PLUS (optionnel) : installation par un professionnel de votre choix (non incluse), extension de garantie à 10 ans (prix à définir), formule d'entretien annuelle (59-139€/an selon usage). Garantie 3 ans incluse sur tous les modèles. Tout est transparent. Zéro surprise."
+    answer: "Non. À partir de 490€ pour le Pure (eau filtrée + bouillante), 890€ pour le Spark (+ gazeuse + froide), 990€ pour le One (toutes les eaux). Toutes les finitions sont incluses dans le prix. Ce qui est EN PLUS (optionnel) : installation par un professionnel de votre choix (non incluse), extension de garantie à 10 ans (prix à définir), formule d'entretien annuelle (59-119€/an selon usage). Garantie 3 ans incluse sur tous les modèles. Tout est transparent. Zéro surprise."
   },
   {
     category: 'Prix',
@@ -105,7 +105,7 @@ const faqData: FAQItem[] = [
   {
     category: 'Entretien',
     question: "Le détartrage est-il nécessaire ?",
-    answer: "Oui, 1 fois par an si vous êtes en zone calcaire (>25°f). Le boiler accumule du calcaire, comme une bouilloire classique. Le détartrage prend 30 minutes (vidange + produit détartrant + rinçage). Vous pouvez le faire vous-même (tuto vidéo fourni) ou via un technicien partenaire (inclus dans les formules Famille et au-dessus). Si vous ne le faites jamais, le boiler perd en efficacité et peut tomber en panne (mais c'est couvert par la garantie 3 ans)."
+    answer: "Oui, 1 fois par an si vous êtes en zone calcaire (>25°f). Le boiler accumule du calcaire, comme une bouilloire classique. Le détartrage prend 30 minutes (vidange + produit détartrant + rinçage). Vous pouvez le faire vous-même (tuto vidéo fourni) ou via un technicien partenaire (inclus dans les formules Standard et Plus). Si vous ne le faites jamais, le boiler perd en efficacité et peut tomber en panne (mais c'est couvert par la garantie 3 ans)."
   },
   {
     category: 'Entretien',
