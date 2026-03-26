@@ -396,7 +396,7 @@ export function EcoresponsablePage({ navigate }: EcoresponsablePageProps) {
               viewport={{ once: true }}
               className="p-8 bg-white rounded-3xl border border-gray-200/50"
             >
-              <p className="text-4xl text-[#6B1E3E] mb-4">5 ans</p>
+              <p className="text-4xl text-[#6B1E3E] mb-4">3 ans</p>
               <p className="text-xl text-gray-900 mb-2">Garantie complète</p>
               <p className="text-[#8B7E74]">
                 Tous les défauts de fabrication, fuites, pannes électroniques couverts.

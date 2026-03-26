@@ -426,9 +426,9 @@ export function ConfiguratorPage({ navigate }: ConfiguratorPageProps) {
                           <Check className="w-5 h-5 text-[#6B1E3E]" />
                         </div>
                         <div>
-                          <h4 className="font-semibold text-gray-900 mb-1">Installation clé en main incluse</h4>
+                          <h4 className="font-semibold text-gray-900 mb-1">Installation facile, par un bricoleur ou un professionnel</h4>
                           <p className="text-sm text-gray-700">
-                            Un plombier agréé HYDRAL installe votre robinet en ~2h. Guide technique détaillé fourni.
+                            Guide technique détaillé fourni. Installation possible par vous-même ou un professionnel.
                           </p>
                         </div>
                       </div>
@@ -448,7 +448,7 @@ export function ConfiguratorPage({ navigate }: ConfiguratorPageProps) {
                         <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#6B1E3E]/70 to-[#8B2E5E]/70 border-2 border-white" />
                       </div>
                       <p className="text-sm text-[#8B7E74]">
-                        <span className="font-semibold text-gray-900">250+ familles</span> équipées en 2024
+                        <span className="font-semibold text-gray-900">350+ familles</span> équipées
                       </p>
                     </div>
                   </div>
@@ -469,7 +469,7 @@ export function ConfiguratorPage({ navigate }: ConfiguratorPageProps) {
                 <h2 className="text-3xl text-gray-900 mb-8 text-center">Choisissez votre abonnement</h2>
                 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-                  {subscriptions.filter(s => s.id !== 'filter-only').map((sub, index) => {
+                  {subscriptions.map((sub, index) => {
                     const isSelected = selectedSubscription === sub.id;
                     
                     return (

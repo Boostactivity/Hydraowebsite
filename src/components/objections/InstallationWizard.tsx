@@ -387,7 +387,7 @@ export function InstallationWizard({ className = '', onComplete }: InstallationW
             </div>
             <div className="flex items-center gap-2">
               <Check className="w-5 h-5 text-green-600" />
-              <span>Garantie 5 ans</span>
+              <span>Garantie 3 ans</span>
             </div>
           </div>
         )}

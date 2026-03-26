@@ -4,7 +4,7 @@ import { Instagram, Facebook, Twitter, Youtube, Mail, Phone, MapPin, ArrowRight 
 import { motion } from 'motion/react';
 
 interface FooterProps {
-  navigate: (page: Page, params?: { legalType: 'mentions' | 'confidentialite' | 'cgv' }) => void;
+  navigate: (page: Page, params?: { legalType: 'mentions' | 'privacy' | 'cgv' }) => void;
 }
 
 export function Footer({ navigate }: FooterProps) {
@@ -52,10 +52,10 @@ export function Footer({ navigate }: FooterProps) {
   ];
 
   const socialLinks = [
-    { icon: Instagram, label: 'Instagram', href: '#' },
-    { icon: Facebook, label: 'Facebook', href: '#' },
-    { icon: Twitter, label: 'Twitter', href: '#' },
-    { icon: Youtube, label: 'YouTube', href: '#' }
+    { icon: Instagram, label: 'Instagram', href: 'https://instagram.com/hydral.fr' },
+    { icon: Facebook, label: 'Facebook', href: 'https://facebook.com/hydral.fr' },
+    { icon: Twitter, label: 'Twitter', href: 'https://x.com/hydral_fr' },
+    { icon: Youtube, label: 'YouTube', href: 'https://youtube.com/@hydral' }
   ];
 
   return (
@@ -98,7 +98,7 @@ export function Footer({ navigate }: FooterProps) {
                 <span className="leading-relaxed">
                   J'accepte de recevoir des emails marketing de HYDRAL et confirme avoir lu la{' '}
                   <button 
-                    onClick={() => navigate('legal', { legalType: 'confidentialite' })}
+                    onClick={() => navigate('legal', { legalType: 'privacy' })}
                     className="underline hover:text-[#6B1E3E] transition-colors"
                   >
                     politique de confidentialité
@@ -186,7 +186,7 @@ export function Footer({ navigate }: FooterProps) {
               <button onClick={() => navigate('legal', { legalType: 'mentions' })} className="hover:text-gray-900 transition-colors">
                 Mentions légales
               </button>
-              <button onClick={() => navigate('legal', { legalType: 'confidentialite' })} className="hover:text-gray-900 transition-colors">
+              <button onClick={() => navigate('legal', { legalType: 'privacy' })} className="hover:text-gray-900 transition-colors">
                 Confidentialité
               </button>
               <button onClick={() => navigate('legal', { legalType: 'cgv' })} className="hover:text-gray-900 transition-colors">

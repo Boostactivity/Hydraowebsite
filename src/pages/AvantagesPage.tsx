@@ -21,7 +21,7 @@ export function AvantagesPage({ navigate }: AvantagesPageProps) {
           >
             <h1 className="mb-8">
               <span className="block text-gray-900">Ce que vous gagnez vraiment</span>
-              <span className="block text-[#6B1E3E]">Concrètement. Mesurablment.</span>
+              <span className="block text-[#6B1E3E]">Concrètement. Mesurablement.</span>
             </h1>
             <p className="text-xl text-[#8B7E74] leading-relaxed max-w-3xl mx-auto">
               Pas de promesses marketing. Juste les bénéfices réels, quantifiés, que nos clients constatent après quelques semaines d'usage.

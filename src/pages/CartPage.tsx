@@ -135,7 +135,7 @@ export function CartPage({ navigate }: CartPageProps) {
                     {includeInstallation && <Check className="w-4 h-4 text-white" />}
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl text-gray-900 mb-2">Installation professionnelle</h3>
+                    <h3 className="text-xl text-gray-900 mb-2">Installation par un professionnel (optionnel)</h3>
                     <p className="text-[#8B7E74] mb-4 leading-relaxed">
                       Un installateur agréé HYDRAL intervient chez vous sous 7-10 jours. Installation complète en 2-3h (raccordement, boiler, tests).
                     </p>
@@ -252,7 +252,7 @@ export function CartPage({ navigate }: CartPageProps) {
                   <div className="w-8 h-8 bg-[#6B1E3E]/10 rounded-lg flex items-center justify-center flex-shrink-0">
                     <Truck className="w-4 h-4 text-[#6B1E3E]" />
                   </div>
-                  <span>Livraison 5-7 jours</span>
+                  <span>Livraison 5 à 7 jours ouvrés</span>
                 </div>
                 <div className="flex items-center gap-3 text-sm text-[#8B7E74]">
                   <div className="w-8 h-8 bg-[#6B1E3E]/10 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -296,7 +296,7 @@ export function CartPage({ navigate }: CartPageProps) {
             </div>
             <div className="flex items-start gap-2">
               <Check className="w-4 h-4 text-[#6B1E3E] flex-shrink-0 mt-0.5" />
-              <span>Livraison offerte (5-7 jours)</span>
+              <span>Livraison offerte (5 à 7 jours ouvrés)</span>
             </div>
           </div>
           <div className="mt-6 pt-6 border-t border-gray-200">

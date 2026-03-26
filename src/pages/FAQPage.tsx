@@ -141,12 +141,12 @@ const faqData: FAQItem[] = [
   {
     category: 'Garantie',
     question: "La garantie 3 ans couvre-t-elle vraiment tout ?",
-    answer: "Presque. Elle couvre tous les défauts de fabrication, les pannes électroniques, les fuites, les dysfonctionnements des modules (boiler, chiller, filtre). Elle ne couvre PAS : l'usure normale (joints, cartouches), les dommages causés par un mauvais usage (choc, gel, détartrage non fait pendant 3 ans), les dégâts des eaux si mauvaise installation. C'est une garantie sérieuse, pas marketing. Si le robinet tombe en panne dans les 5 ans sans faute de votre part, on le répare ou on le remplace. Point."
+    answer: "Presque. Elle couvre tous les défauts de fabrication, les pannes électroniques, les fuites, les dysfonctionnements des modules (boiler, chiller, filtre). Elle ne couvre PAS : l'usure normale (joints, cartouches), les dommages causés par un mauvais usage (choc, gel, détartrage non fait pendant 3 ans), les dégâts des eaux si mauvaise installation. C'est une garantie sérieuse, pas marketing. Si le robinet tombe en panne dans les 3 ans sans faute de votre part, on le répare ou on le remplace. Point."
   },
   {
     category: 'Garantie',
-    question: "Que se passe-t-il si une pièce tombe en panne après 5 ans ?",
-    answer: "Vous la rachetez. Prix pièces détachées public (pas de secret) : cartouche céramique 35€, boiler 180€, carte électronique 90€, filtre 35€. La plupart des pièces se changent facilement (tuto vidéo). Si vous prenez l'extension de garantie 10 ans (+99€), vous êtes couvert 5 ans de plus. Statistiquement, 85% des pannes surviennent dans les 3 premières années (défaut de fabrication). Après 5 ans, le robinet est rodé."
+    question: "Que se passe-t-il si une pièce tombe en panne après 3 ans ?",
+    answer: "Vous la rachetez. Prix pièces détachées public (pas de secret) : cartouche céramique 35€, boiler 180€, carte électronique 90€, filtre 35€. La plupart des pièces se changent facilement (tuto vidéo). Si vous prenez l'extension de garantie (+99€), vous êtes couvert 3 ans de plus. Statistiquement, 85% des pannes surviennent dans les 3 premières années (défaut de fabrication). Après 3 ans, le robinet est rodé."
   },
   {
     category: 'Garantie',

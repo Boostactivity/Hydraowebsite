@@ -45,7 +45,7 @@ const VIDEOS: VideoContent[] = [
   },
   {
     id: '3',
-    title: 'HYDRAL vs robinets premium : comparatif détaillé 2024',
+    title: 'HYDRAL vs robinets premium : comparatif détaillé 2026',
     description: 'Analyse objective du marché des robinets 5-en-1. Prix, fonctionnalités, économies, design. On teste tout pour vous.',
     thumbnail: 'https://images.unsplash.com/photo-1560185127-6a7e3e5b9f09?w=800&h=500&fit=crop',
     duration: '12:17',

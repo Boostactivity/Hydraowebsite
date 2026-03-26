@@ -65,7 +65,7 @@ const GUIDES: Guide[] = [
   {
     id: 'kitchen-design',
     title: 'Guide design cuisine moderne',
-    description: 'Inspirations, tendances 2024 et conseils d\'architectes pour intégrer HYDRAL dans votre cuisine de rêve.',
+    description: 'Inspirations, tendances 2026 et conseils d\'architectes pour intégrer HYDRAL dans votre cuisine de rêve.',
     pages: 32,
     downloadCount: 2134,
     image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=500&fit=crop',

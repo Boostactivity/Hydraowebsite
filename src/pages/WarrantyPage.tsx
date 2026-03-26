@@ -43,7 +43,7 @@ export function WarrantyPage({ navigate }: WarrantyPageProps) {
               <div className="w-16 h-16 rounded-full bg-[#6B1E3E]/10 flex items-center justify-center mx-auto mb-4">
                 <Shield className="w-8 h-8 text-[#6B1E3E]" />
               </div>
-              <h3 className="text-2xl mb-2 text-gray-900">5 ans</h3>
+              <h3 className="text-2xl mb-2 text-gray-900">3 ans</h3>
               <p className="text-[#8B7E74] font-light">Garantie constructeur</p>
             </div>
 
@@ -296,7 +296,7 @@ function FAQItem({
 const warrantyFaqs = [
   {
     question: 'La garantie est-elle automatique ?',
-    answer: 'Oui, la garantie de 5 ans est automatiquement activée dès l\'achat. Conservez votre facture comme preuve d\'achat.'
+    answer: 'Oui, la garantie de 3 ans est automatiquement activée dès l\'achat. Conservez votre facture comme preuve d\'achat.'
   },
   {
     question: 'Que faire en cas de problème ?',

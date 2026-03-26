@@ -21,7 +21,7 @@ interface CartContextType {
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
-const CART_STORAGE_KEY = 'hydrao_cart';
+const CART_STORAGE_KEY = 'hydral_cart';
 
 export function CartProvider({ children }: { children: ReactNode }) {
   // Initialize from localStorage if available

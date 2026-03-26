@@ -1410,7 +1410,7 @@ const Section2 = React.forwardRef<HTMLElement, {
                       <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#6B1E3E]/70 to-[#8B2E5E]/70 border-2 border-white" />
                     </div>
                     <p className="text-sm text-[#8B7E74]">
-                      <span className="font-semibold text-gray-900">250+ familles</span> équipées en 2024
+                      <span className="font-semibold text-gray-900">350+ familles</span> équipées
                     </p>
                   </div>
                 </div>

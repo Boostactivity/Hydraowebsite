@@ -30,7 +30,7 @@ export function LegalPage({ navigate, type = 'mentions' }: LegalPageProps) {
             className="text-center"
           >
             <h1 className="mb-8 text-gray-900">{getTitle()}</h1>
-            <p className="text-xl text-[#8B7E74]">Dernière mise à jour : 15 décembre 2024</p>
+            <p className="text-xl text-[#8B7E74]">Dernière mise à jour : 15 mars 2026</p>
           </motion.div>
         </div>
       </section>
@@ -247,13 +247,13 @@ export function LegalPage({ navigate, type = 'mentions' }: LegalPageProps) {
                 <div>
                   <h2 className="text-2xl mb-4 text-gray-900">Article 7 - Garantie</h2>
                   <p className="text-[#8B7E74] leading-relaxed mb-4">
-                    Tous les robinets HYDRAL sont garantis 5 ans pièces et main d'œuvre contre tout défaut de fabrication. La garantie couvre : fuites, dysfonctionnements électroniques, défauts matériels.
+                    Tous les robinets HYDRAL sont garantis 3 ans pièces et main d'œuvre contre tout défaut de fabrication. La garantie couvre : fuites, dysfonctionnements électroniques, défauts matériels.
                   </p>
                   <p className="text-[#8B7E74] leading-relaxed mb-4">
                     <strong className="text-gray-900">Exclusions :</strong> usure normale, mauvaise installation, défaut d'entretien (détartrage), chocs, modifications non autorisées.
                   </p>
                   <p className="text-[#8B7E74] leading-relaxed">
-                    Garantie légale de conformité (2 ans) et garantie des vices cachés également applicables.
+                    Garantie légale de conformité et garantie des vices cachés également applicables.
                   </p>
                 </div>
 

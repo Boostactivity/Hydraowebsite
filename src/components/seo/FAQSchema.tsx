@@ -66,7 +66,7 @@ export function HYDRALFAQSchema() {
     },
     {
       question: 'Le robinet HYDRAL est-il garanti ?',
-      answer: 'Oui, le robinet HYDRAL bénéficie d\'une garantie complète : 5 ans sur le robinet et l\'électronique, 2 ans sur les consommables (filtres, CO2). Garantie satisfait ou remboursé 30 jours. SAV français réactif sous 24h.'
+      answer: 'Oui, le robinet HYDRAL bénéficie d\'une garantie complète : 3 ans sur le robinet et l\'électronique. Garantie satisfait ou remboursé 30 jours. SAV français réactif sous 24h.'
     },
     {
       question: 'Le robinet HYDRAL consomme-t-il beaucoup d\'électricité ?',

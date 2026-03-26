@@ -121,8 +121,8 @@ export function ProductPage({ navigate, productId }: ProductPageProps) {
 
               {/* Prix */}
               <div className="mb-10 p-8 bg-white border border-gray-200/60 rounded-2xl">
-                <p className="text-sm text-[#8B7E74] mb-2">À partir de</p>
                 <div className="flex items-baseline gap-2 mb-3">
+                  <span className="text-lg text-[#8B7E74]">À partir de</span>
                   <span className="text-4xl sm:text-5xl lg:text-6xl text-gray-900">{BASE_PRICE}€</span>
                   <span className="text-xl text-[#8B7E74]">TTC</span>
                 </div>

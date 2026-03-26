@@ -152,7 +152,7 @@ export function ShopPage({ navigate }: ShopPageProps) {
               </div>
               <h4 className="text-sm font-medium text-gray-900 mb-2">Livraison gratuite</h4>
               <p className="text-xs text-[#8B7E74]">
-                Expédition 24-48h
+                Livraison sous 5 à 7 jours ouvrés
               </p>
             </div>
             <div>

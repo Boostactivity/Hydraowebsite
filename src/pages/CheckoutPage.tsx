@@ -117,7 +117,7 @@ export function CheckoutPage({ navigate }: CheckoutPageProps) {
                 </div>
                 <div className="flex justify-between">
                   <span>Livraison estimée :</span>
-                  <span className="text-gray-900">3-5 jours ouvrés</span>
+                  <span className="text-gray-900">5 à 7 jours ouvrés</span>
                 </div>
                 {formData.includeInstallation && (
                   <div className="flex justify-between">
@@ -342,7 +342,7 @@ export function CheckoutPage({ navigate }: CheckoutPageProps) {
                       whileTap={{ scale: 0.98 }}
                     >
                       <Lock className="w-5 h-5" />
-                      <span>Valider le paiement</span>
+                      <span>Finaliser ma commande</span>
                     </motion.button>
                   </div>
                 </div>
@@ -593,7 +593,7 @@ function AddressAutocompleteSection({
           <div className="flex items-start gap-2">
             <Check className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
             <div className="text-sm text-green-900">
-              <strong>Livraison gratuite</strong> sur toute la France métropolitaine • Délai: 3-5 jours ouvrés
+              <strong>Livraison gratuite</strong> sur toute la France métropolitaine • Délai: 5 à 7 jours ouvrés
             </div>
           </div>
         </div>
@@ -633,37 +633,16 @@ function PaymentMethodsSection({ formData, setFormData }: { formData: any; setFo
           </div>
           {/* Apple Pay */}
           <div className="px-4 py-2 bg-black rounded-lg text-white font-semibold">
-             Pay
+            Apple Pay
           </div>
         </div>
       </div>
 
       <div className="space-y-6">
-        <div>
-          <label className="block text-sm text-[#8B7E74] mb-2">Numéro de carte</label>
-          <input
-            type="text"
-            placeholder="XXXX XXXX XXXX XXXX"
-            className="w-full px-4 py-3 bg-white border border-gray-300 rounded-xl focus:outline-none focus:border-[#6B1E3E] transition-colors"
-          />
-        </div>
-        <div className="grid grid-cols-2 gap-6">
-          <div>
-            <label className="block text-sm text-[#8B7E74] mb-2">Date d'expiration</label>
-            <input
-              type="text"
-              placeholder="MM/AA"
-              className="w-full px-4 py-3 bg-white border border-gray-300 rounded-xl focus:outline-none focus:border-[#6B1E3E] transition-colors"
-            />
-          </div>
-          <div>
-            <label className="block text-sm text-[#8B7E74] mb-2">CVV</label>
-            <input
-              type="text"
-              placeholder="XXX"
-              className="w-full px-4 py-3 bg-white border border-gray-300 rounded-xl focus:outline-none focus:border-[#6B1E3E] transition-colors"
-            />
-          </div>
+        <div className="p-6 bg-gray-50 rounded-2xl border-2 border-dashed border-gray-300 text-center">
+          <p className="text-lg font-medium text-gray-900 mb-2">Paiement sécurisé</p>
+          <p className="text-sm text-gray-600 mb-4">Le paiement en ligne sera bientôt disponible. En attendant, finalisez votre commande et nous vous contacterons pour le règlement.</p>
+          <p className="text-xs text-gray-500">Paiement par carte bancaire, virement ou en 3x sans frais.</p>
         </div>
 
         <div className="p-4 bg-[#FAF8F5] rounded-2xl flex items-start gap-3">

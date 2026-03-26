@@ -300,7 +300,7 @@ function getSEOData(page: Page, productId?: string): SEOData {
       ogType: 'website'
     },
     warranty: {
-      title: `Garantie 5 Ans ${BRAND_NAME} - SAV Français, Pièces & Main d'Oeuvre`,
+      title: `Garantie 3 Ans ${BRAND_NAME} - SAV Français, Pièces & Main d'Oeuvre`,
       description: 'Garantie constructeur 3 ans HYDRAL : pièces et main d\'oeuvre, SAV français réactif, technicien à domicile. Tranquillité totale.',
       canonical: `${BASE_URL}/garantie`,
       keywords: ['garantie HYDRAL', 'SAV robinet', 'garantie 3 ans', 'service après-vente'],
@@ -569,7 +569,7 @@ function getReviewsSchema() {
           '@type': 'Person',
           name: 'Sophie M.'
         },
-        datePublished: '2024-11-15',
+        datePublished: '2026-01-15',
         reviewRating: {
           '@type': 'Rating',
           ratingValue: '5',
@@ -583,7 +583,7 @@ function getReviewsSchema() {
           '@type': 'Person',
           name: 'Thomas D.'
         },
-        datePublished: '2024-10-22',
+        datePublished: '2026-02-22',
         reviewRating: {
           '@type': 'Rating',
           ratingValue: '5',
@@ -597,7 +597,7 @@ function getReviewsSchema() {
           '@type': 'Person',
           name: 'Claire R.'
         },
-        datePublished: '2024-12-05',
+        datePublished: '2026-03-05',
         reviewRating: {
           '@type': 'Rating',
           ratingValue: '5',

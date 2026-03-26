@@ -26,7 +26,7 @@ export function ShippingTrackingPage({ navigate }: TrackingPageProps) {
       id: '1',
       label: 'Commande confirmée',
       description: 'Votre commande a été reçue et validée',
-      date: '20 déc. 2024, 14:30',
+      date: '20 mars 2026, 14:30',
       completed: true,
       current: false
     },
@@ -34,7 +34,7 @@ export function ShippingTrackingPage({ navigate }: TrackingPageProps) {
       id: '2',
       label: 'En préparation',
       description: 'Votre HYDRAL est en cours de préparation dans notre entrepôt',
-      date: '20 déc. 2024, 16:00',
+      date: '20 mars 2026, 16:00',
       completed: true,
       current: false
     },
@@ -42,7 +42,7 @@ export function ShippingTrackingPage({ navigate }: TrackingPageProps) {
       id: '3',
       label: 'Expédié',
       description: 'Votre colis a été remis au transporteur Chronopost',
-      date: '21 déc. 2024, 09:15',
+      date: '21 mars 2026, 09:15',
       completed: true,
       current: true
     },
@@ -50,7 +50,7 @@ export function ShippingTrackingPage({ navigate }: TrackingPageProps) {
       id: '4',
       label: 'En transit',
       description: 'Votre colis est en route vers vous',
-      date: 'Estimation: 22 déc. 2024',
+      date: 'Estimation: 22 mars 2026',
       completed: false,
       current: false
     },
@@ -58,7 +58,7 @@ export function ShippingTrackingPage({ navigate }: TrackingPageProps) {
       id: '5',
       label: 'En cours de livraison',
       description: 'Le livreur est en route pour vous livrer',
-      date: 'Estimation: 23 déc. 2024',
+      date: 'Estimation: 23 mars 2026',
       completed: false,
       current: false
     },
@@ -75,7 +75,7 @@ export function ShippingTrackingPage({ navigate }: TrackingPageProps) {
   const deliveryInfo = {
     carrier: 'Chronopost',
     trackingNumber: 'CHR123456789FR',
-    estimatedDelivery: '23 décembre 2024',
+    estimatedDelivery: '23 mars 2026',
     address: '123 Avenue des Champs-Élysées, 75008 Paris',
     recipientName: 'Sophie Martin',
     recipientPhone: '06 12 34 56 78'

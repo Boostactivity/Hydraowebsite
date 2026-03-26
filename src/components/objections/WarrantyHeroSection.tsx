@@ -12,8 +12,8 @@ export function WarrantyHeroSection({ className = '' }: WarrantyHeroSectionProps
   const warrantyFeatures = [
     {
       icon: Shield,
-      title: '5 ans pièces et main d\'œuvre',
-      description: 'Couverture intégrale pendant 5 ans',
+      title: '3 ans pièces et main d\'œuvre',
+      description: 'Couverture intégrale pendant 3 ans',
       details: ['Toutes les pièces incluses', 'Main d\'œuvre gratuite', 'Déplacement technicien inclus']
     },
     {
@@ -43,7 +43,7 @@ export function WarrantyHeroSection({ className = '' }: WarrantyHeroSectionProps
     },
     {
       question: 'Combien coûte une intervention après garantie ?',
-      answer: 'Après 5 ans : déplacement 50€ + pièces au prix coûtant. Mais 95% des appareils fonctionnent sans problème après 5 ans.'
+      answer: 'Après 3 ans : déplacement 50€ + pièces au prix coûtant. Mais 95% des appareils fonctionnent sans problème après 3 ans.'
     },
     {
       question: 'Puis-je prolonger la garantie ?',
@@ -75,7 +75,7 @@ export function WarrantyHeroSection({ className = '' }: WarrantyHeroSectionProps
             <span className="block text-[#6B1E3E]">du marché</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            5 ans de tranquillité absolue, SAV réactif et pièces disponibles 10 ans
+            3 ans de tranquillité absolue, SAV réactif et pièces disponibles 10 ans
           </p>
         </motion.div>
 
@@ -91,7 +91,7 @@ export function WarrantyHeroSection({ className = '' }: WarrantyHeroSectionProps
           
           <div className="relative z-10">
             <Shield className="w-20 h-20 mx-auto mb-6 text-white" />
-            <div className="text-4xl sm:text-5xl lg:text-6xl font-light mb-4">5 ans</div>
+            <div className="text-4xl sm:text-5xl lg:text-6xl font-light mb-4">3 ans</div>
             <div className="text-2xl mb-6">de garantie pièces et main d'œuvre</div>
             <p className="text-white/90 text-lg max-w-2xl mx-auto">
               Nous assumons 100% des risques. Si un problème survient, nous le réglons. Gratuitement.
@@ -225,7 +225,7 @@ export function WarrantyHeroSection({ className = '' }: WarrantyHeroSectionProps
             className="bg-white rounded-2xl border-2 border-gray-200 p-6 text-center"
           >
             <div className="text-3xl sm:text-4xl font-light text-[#6B1E3E] mb-2">2.3%</div>
-            <div className="text-sm text-gray-600">Taux de panne sur 5 ans</div>
+            <div className="text-sm text-gray-600">Taux de panne sur 3 ans</div>
           </motion.div>
         </div>
 

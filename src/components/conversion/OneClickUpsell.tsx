@@ -69,7 +69,7 @@ export function OneClickUpsell({
     },
     {
       id: 'protection-plan',
-      name: 'Protection Premium 5 ans',
+      name: 'Protection Premium 3 ans',
       description: 'Sérénité totale avec garantie étendue',
       price: 149,
       savings: 'Rempl. gratuit en cas de panne',
@@ -272,7 +272,7 @@ export function OneClickUpsell({
                 <ul className="space-y-2 text-sm text-gray-700">
                   <li className="flex items-center gap-2">
                     <Check className="w-4 h-4 text-blue-600" />
-                    Prix bloqués : Évitez les hausses tarifaires 2024
+                    Prix bloqués : Évitez les hausses tarifaires
                   </li>
                   <li className="flex items-center gap-2">
                     <Check className="w-4 h-4 text-blue-600" />

@@ -87,7 +87,7 @@ export function SupportPage({ navigate }: SupportPageProps) {
         },
         {
           q: 'Quelle est la garantie ?',
-          a: '2 ans sur l\'ensemble du système contre les défauts de fabrication. Pièces détachées disponibles pendant toute la durée de vie du produit.'
+          a: '3 ans sur l\'ensemble du système contre les défauts de fabrication. Pièces détachées disponibles pendant toute la durée de vie du produit.'
         }
       ]
     },

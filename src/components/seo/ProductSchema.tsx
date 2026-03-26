@@ -127,19 +127,19 @@ export function HYDRALProductSchema() {
       reviews={[
         {
           author: 'Sophie Martin',
-          datePublished: '2024-12-15',
+          datePublished: '2026-03-15',
           reviewBody: 'Révolutionnaire ! Plus besoin d\'acheter de l\'eau en bouteille. L\'eau pétillante est parfaite et l\'eau chaude instantanée me fait gagner un temps fou.',
           reviewRating: 5
         },
         {
           author: 'Marc Dubois',
-          datePublished: '2024-12-10',
+          datePublished: '2026-03-10',
           reviewBody: 'Installation facile et design magnifique. La qualité de l\'eau filtrée est excellente. Rentabilisé en moins d\'un an.',
           reviewRating: 5
         },
         {
           author: 'Claire Rousseau',
-          datePublished: '2024-12-05',
+          datePublished: '2026-03-05',
           reviewBody: 'Produit premium qui tient ses promesses. L\'application mobile est pratique. Petit bémol sur le prix mais l\'investissement vaut le coup.',
           reviewRating: 4
         }

@@ -114,7 +114,7 @@ export function InstallationWizard({ onComplete, onClose }: InstallationWizardPr
           'Visite technique (30 min)',
           'Installation complète (2h)',
           'Test et formation à l\'utilisation',
-          'Garantie installation 2 ans'
+          'Garantie installation 3 ans'
         ],
         warning: urgency === 'urgent' 
           ? 'Installation possible sous 48-72h selon disponibilité.' 
@@ -133,8 +133,8 @@ export function InstallationWizard({ onComplete, onClose }: InstallationWizardPr
           'Vérification complète de compatibilité',
           'Installation premium avec finitions soignées',
           'Formation complète à toutes les fonctionnalités',
-          'Suivi SAV prioritaire 5 ans',
-          'Garantie installation + pièces 5 ans'
+          'Suivi SAV prioritaire 3 ans',
+          'Garantie installation + pièces 3 ans'
         ],
         warning: 'Idéal pour une tranquillité totale et un accompagnement personnalisé.'
       };
@@ -150,7 +150,7 @@ export function InstallationWizard({ onComplete, onClose }: InstallationWizardPr
           'Prise de rendez-vous installateur',
           'Installation complète',
           'Test fonctionnel',
-          'Garantie 2 ans'
+          'Garantie 3 ans'
         ],
         warning: 'Installation facile dans tous nos packs.'
       };
