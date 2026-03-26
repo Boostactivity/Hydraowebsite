@@ -39,7 +39,7 @@ export function WarrantyHeroSection({ className = '' }: WarrantyHeroSectionProps
   const faqs = [
     {
       question: 'Que faire en cas de panne ?',
-      answer: 'Appelez notre SAV au 01 XX XX XX XX. Un technicien vous guidera par téléphone pour un diagnostic. Si besoin, rendez-vous sous 48h à votre domicile.'
+      answer: 'Appelez notre SAV au +33 6 60 96 85 16. Un technicien vous guidera par téléphone pour un diagnostic. Si besoin, rendez-vous sous 48h à votre domicile.'
     },
     {
       question: 'Combien coûte une intervention après garantie ?',

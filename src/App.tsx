@@ -180,7 +180,7 @@ function AppContent() {
             case 'objections':
               return <ObjectionsPage key="objections" navigate={navigate} />;
             case 'mobile-demo':
-              return <MobileDemoPage key="mobile-demo" navigate={navigate} />;
+              return <HomePage key="home" navigate={navigate} />;
             case 'warranty':
               return <WarrantyPage key="warranty" navigate={navigate} />;
             case 'payment-security':

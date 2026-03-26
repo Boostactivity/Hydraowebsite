@@ -127,10 +127,10 @@ function getSEOData(page: Page, productId?: string): SEOData {
       structuredData: getArticleSchema('Le Concept HYDRAL', 'Découvrez comment HYDRAL transforme votre expérience en cuisine')
     },
     gamme: {
-      title: `Gamme ${BRAND_NAME} - 5 Modèles de Robinets Premium | FLEX, SQUARE, FUSION`,
-      description: 'Découvrez nos 5 modèles de robinets HYDRAL : FLEX extractible, SQUARE moderne, FUSION minimaliste, CLASSIC intemporel, PRO professionnel. Design premium pour tous les styles.',
+      title: `Gamme ${BRAND_NAME} - 3 Modèles de Robinets Premium | Pure, Spark, One`,
+      description: 'Découvrez nos 3 modèles de robinets HYDRAL : Pure (490€), Spark (890€), One (990€). De l\'essentiel au tout-en-un, trouvez le robinet premium qui vous correspond.',
       canonical: `${BASE_URL}/gamme`,
-      keywords: ['gamme HYDRAL', 'modèles robinets', 'robinet FLEX', 'robinet SQUARE', 'robinet design', 'choix robinet'],
+      keywords: ['gamme HYDRAL', 'modèles robinets', 'HYDRAL Pure', 'HYDRAL Spark', 'HYDRAL One', 'choix robinet'],
       ogType: 'website',
       structuredData: getProductCollectionSchema()
     },
@@ -383,7 +383,7 @@ function getOrganizationSchema() {
     },
     contactPoint: {
       '@type': 'ContactPoint',
-      telephone: '+33 1 76 34 00 00',
+      telephone: '+33 6 60 96 85 16',
       contactType: 'customer service',
       availableLanguage: ['French'],
       areaServed: 'FR'

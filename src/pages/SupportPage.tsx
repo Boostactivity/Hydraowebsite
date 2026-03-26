@@ -242,14 +242,14 @@ export function SupportPage({ navigate }: SupportPageProps) {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <a
-                href="tel:0123456789"
+                href="tel:+33660968516"
                 className="p-8 bg-gradient-to-br from-[#FAF8F5] to-white rounded-3xl border border-gray-200 hover:border-[#6B1E3E]/30 hover:shadow-lg transition-all group"
               >
                 <div className="w-14 h-14 bg-[#6B1E3E]/10 rounded-2xl flex items-center justify-center mb-6">
                   <Phone className="w-7 h-7 text-[#6B1E3E]" />
                 </div>
                 <h3 className="text-xl mb-2 text-gray-900">Téléphone</h3>
-                <p className="text-2xl text-[#6B1E3E] mb-2 group-hover:underline">01 XX XX XX XX</p>
+                <p className="text-2xl text-[#6B1E3E] mb-2 group-hover:underline">+33 6 60 96 85 16</p>
                 <p className="text-sm text-[#8B7E74]">Lun-Dim 9h-20h • Appel non surtaxé</p>
               </a>
 
@@ -279,7 +279,7 @@ export function SupportPage({ navigate }: SupportPageProps) {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-[#6B1E3E] font-bold">•</span>
-                  <span>Indiquez le modèle de votre robinet (FLEX, SQUARE, FUSION...)</span>
+                  <span>Indiquez le modèle de votre robinet (Pure, Spark, One)</span>
                 </li>
               </ul>
             </div>

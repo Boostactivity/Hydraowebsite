@@ -207,7 +207,7 @@ export function InstallersPage({ navigate }: InstallersPageProps) {
                 <Phone className="w-6 h-6 text-[#6B1E3E]" />
               </div>
               <p className="text-sm text-[#8B7E74] mb-2">Assistance téléphonique</p>
-              <p className="text-lg text-gray-900">01 XX XX XX XX</p>
+              <p className="text-lg text-gray-900">+33 6 60 96 85 16</p>
             </div>
 
             <div className="p-8 bg-white rounded-3xl border border-gray-200/50 text-center">

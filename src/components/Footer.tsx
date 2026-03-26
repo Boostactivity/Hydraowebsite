@@ -14,7 +14,7 @@ export function Footer({ navigate }: FooterProps) {
     {
       title: 'Produits',
       links: [
-        { label: '5 modèles', page: 'gamme' as Page },
+        { label: '3 modèles', page: 'gamme' as Page },
         { label: 'Finitions', page: 'finitions' as Page },
         { label: 'CUBE eau pétillante', page: 'cube' as Page },
         { label: 'Modules', page: 'modules' as Page },
@@ -123,9 +123,9 @@ export function Footer({ navigate }: FooterProps) {
             </p>
 
             <div className="space-y-3 text-sm text-[#8B7E74]">
-              <a href="tel:+33123456789" className="flex items-center gap-3 hover:text-gray-900 transition-colors">
+              <a href="tel:+33660968516" className="flex items-center gap-3 hover:text-gray-900 transition-colors">
                 <Phone className="w-4 h-4" />
-                <span>+33 (0)1 23 45 67 89</span>
+                <span>+33 6 60 96 85 16</span>
               </a>
               <a href="mailto:contact@hydral.fr" className="flex items-center gap-3 hover:text-gray-900 transition-colors">
                 <Mail className="w-4 h-4" />
@@ -133,7 +133,7 @@ export function Footer({ navigate }: FooterProps) {
               </a>
               <div className="flex items-center gap-3">
                 <MapPin className="w-4 h-4" />
-                <span>Paris, France</span>
+                <span>1 Square Maurice Thorez, 93200 Saint-Denis</span>
               </div>
             </div>
           </div>

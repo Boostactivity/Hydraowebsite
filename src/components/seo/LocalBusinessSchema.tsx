@@ -28,12 +28,12 @@ interface LocalBusinessSchemaProps {
 export function LocalBusinessSchema({
   name = 'HYDRAL France',
   description = 'Robinets intelligents 5-en-1 haut de gamme : eau filtrée, pétillante, bouillante. Livraison partout en France.',
-  telephone = '+33 1 76 34 00 00',
+  telephone = '+33 6 60 96 85 16',
   email = 'contact@hydral.fr',
   address = {
-    streetAddress: '123 Avenue des Champs-Élysées',
-    addressLocality: 'Paris',
-    postalCode: '75008',
+    streetAddress: '1 Square Maurice Thorez',
+    addressLocality: 'Saint-Denis',
+    postalCode: '93200',
     addressCountry: 'FR'
   },
   geo = {
@@ -151,12 +151,12 @@ export function OrganizationSchema() {
     founders: [
       {
         '@type': 'Person',
-        name: 'Gabriel Della-Monica'
+        name: 'Adel MAGHRABI'
       }
     ],
     contactPoint: {
       '@type': 'ContactPoint',
-      telephone: '+33 1 76 34 00 00',
+      telephone: '+33 6 60 96 85 16',
       contactType: 'Customer Service',
       email: 'contact@hydral.fr',
       areaServed: 'FR',
@@ -170,9 +170,9 @@ export function OrganizationSchema() {
     ],
     address: {
       '@type': 'PostalAddress',
-      streetAddress: '123 Avenue des Champs-Élysées',
-      addressLocality: 'Paris',
-      postalCode: '75008',
+      streetAddress: '1 Square Maurice Thorez',
+      addressLocality: 'Saint-Denis',
+      postalCode: '93200',
       addressCountry: 'FR'
     }
   };

@@ -301,13 +301,13 @@ export function ShippingTrackingPage({ navigate }: TrackingPageProps) {
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <a
-                  href="tel:+33123456789"
+                  href="tel:+33660968516"
                   className="flex items-center gap-3 p-4 bg-white rounded-2xl hover:shadow-md transition-shadow"
                 >
                   <Phone className="w-6 h-6 text-[#6B1E3E]" />
                   <div>
                     <div className="font-medium text-gray-900 text-sm">Service client</div>
-                    <div className="text-xs text-[#8B7E74]">01 23 45 67 89</div>
+                    <div className="text-xs text-[#8B7E74]">+33 6 60 96 85 16</div>
                   </div>
                 </a>
 

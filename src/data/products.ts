@@ -40,84 +40,52 @@ export interface FaucetModel {
 
 export const faucetModels: FaucetModel[] = [
   {
-    id: 'flex',
-    name: 'FLEX',
-    description: 'Le robinet tout-en-un avec bec extractible flexible pour une utilisation optimale',
-    shortDesc: 'Bec extractible et flexible',
+    id: 'pure',
+    name: 'HYDRAL Pure',
+    description: 'L\'essentiel premium. Eau filtrée et bouillante instantanée pour simplifier votre quotidien sans compromis.',
+    shortDesc: 'L\'essentiel premium — 490€',
     features: [
-      'Bec extractible 360°',
-      'Douchette intégrée',
-      'Hauteur ajustable',
-      'Design ergonomique',
-      '5 types d\'eau'
+      'Eau filtrée haute qualité',
+      'Eau bouillante 100°C instantanée',
+      'Sécurité enfant intégrée',
+      'Design épuré et élégant',
+      'Garantie 3 ans'
     ],
-    finishes: ['chrome', 'brushed', 'black-matt', 'gold'],
-    image: 'faucet-flex',
+    finishes: ['chrome', 'brushed', 'black-matt', 'white-matt', 'gold', 'copper', 'champagne', 'gunmetal'],
+    image: 'faucet-pure',
     style: 'modern'
   },
   {
-    id: 'square',
-    name: 'SQUARE',
-    description: 'Design carré et moderne, pour les cuisines contemporaines exigeantes',
-    shortDesc: 'Design carré moderne',
+    id: 'spark',
+    name: 'HYDRAL Spark',
+    description: 'Le préféré des familles. Eau filtrée, gazeuse et froide : fini les bouteilles, bonjour la liberté.',
+    shortDesc: 'Le préféré des familles — 890€',
     features: [
-      'Lignes carrées épurées',
-      'Bec haut fixe',
-      'Commande tactile',
-      'Style architectural',
-      '5 types d\'eau'
+      'Eau filtrée haute qualité',
+      'Eau gazeuse à la demande',
+      'Eau froide réfrigérée 4-8°C',
+      'Système CO₂ intégré',
+      'Garantie 3 ans'
     ],
-    finishes: ['chrome', 'brushed', 'black-matt', 'white-matt', 'gunmetal'],
-    image: 'faucet-square',
+    finishes: ['chrome', 'brushed', 'black-matt', 'white-matt', 'gold', 'copper', 'champagne', 'gunmetal'],
+    image: 'faucet-spark',
     style: 'modern'
   },
   {
-    id: 'fusion',
-    name: 'FUSION',
-    description: 'Lignes épurées et minimalistes pour une intégration parfaite dans tous les styles',
-    shortDesc: 'Lignes épurées minimalistes',
+    id: 'one',
+    name: 'HYDRAL One',
+    description: 'Le tout-en-un. Eau filtrée, bouillante, gazeuse et froide. Tout ce dont votre cuisine a besoin, en un seul robinet.',
+    shortDesc: 'Le tout-en-un — 990€',
     features: [
-      'Design minimaliste',
-      'Bec arrondi',
-      'Finition ultra-lisse',
-      'Compact et élégant',
-      '5 types d\'eau'
+      'Eau filtrée haute qualité',
+      'Eau bouillante 100°C instantanée',
+      'Eau gazeuse à la demande',
+      'Eau froide réfrigérée 4-8°C',
+      'Garantie 3 ans'
     ],
-    finishes: ['chrome', 'brushed', 'black-matt', 'white-matt', 'champagne'],
-    image: 'faucet-fusion',
-    style: 'minimalist'
-  },
-  {
-    id: 'classic',
-    name: 'CLASSIC',
-    description: 'Style intemporel et élégant, le mariage parfait entre tradition et innovation',
-    shortDesc: 'Style intemporel élégant',
-    features: [
-      'Design classique raffiné',
-      'Bec col de cygne',
-      'Poignées traditionnelles',
-      'Élégance intemporelle',
-      '5 types d\'eau'
-    ],
-    finishes: ['chrome', 'brushed', 'gold', 'copper'],
-    image: 'faucet-classic',
-    style: 'classic'
-  },
-  {
-    id: 'pro',
-    name: 'PRO',
-    description: 'Inspiré des cuisines professionnelles, robuste et ultra-fonctionnel',
-    shortDesc: 'Style professionnel robuste',
-    features: [
-      'Style cuisine pro',
-      'Bec extra-haut',
-      'Ressort apparent',
-      'Douchette puissante',
-      '5 types d\'eau'
-    ],
-    finishes: ['chrome', 'brushed', 'black-matt', 'gunmetal'],
-    image: 'faucet-pro',
-    style: 'industrial'
+    finishes: ['chrome', 'brushed', 'black-matt', 'white-matt', 'gold', 'copper', 'champagne', 'gunmetal'],
+    image: 'faucet-one',
+    style: 'modern'
   }
 ];
 

@@ -60,8 +60,8 @@ const faqData: FAQItem[] = [
   },
   {
     category: 'Technique',
-    question: "Quelle est la différence entre les 5 modèles de robinets ?",
-    answer: "La technologie est identique. Les 5 types d'eau sont les mêmes sur tous les modèles. Ce qui change : le design (moderne, minimaliste, classique, industriel), la hauteur du bec, la présence ou non d'une douchette extractible. FLEX = bec extractible pour flexibilité. SQUARE = lignes carrées, bec fixe haut. FUSION = ultra-compact et épuré. CLASSIC = col de cygne élégant. PRO = inspiré des cuisines de restaurant, très robuste. Choisissez selon votre cuisine et votre usage, pas selon les fonctionnalités (elles sont identiques)."
+    question: "Quelle est la différence entre les 3 modèles HYDRAL ?",
+    answer: "Le design du robinet est identique sur les 3 modèles. Ce qui change, ce sont les types d'eau disponibles. Pure (490€) = eau filtrée + bouillante instantanée. Spark (890€) = eau filtrée + gazeuse + froide réfrigérée. One (990€) = tout-en-un avec eau filtrée + bouillante + gazeuse + froide. Choisissez selon vos besoins : si vous voulez l'essentiel, prenez le Pure. Si vous êtes une famille qui boit beaucoup d'eau gazeuse, le Spark. Si vous voulez tout, le One."
   },
   {
     category: 'Technique',
@@ -128,6 +128,18 @@ const faqData: FAQItem[] = [
     category: 'Sécurité',
     question: "Le système est-il certifié pour un usage alimentaire ?",
     answer: "Oui. Certifications CE et ACS (Attestation de Conformité Sanitaire, obligatoire en France pour tout contact eau potable). Tous les matériaux en contact avec l'eau sont de qualité alimentaire (laiton sans plomb, joints silicone food-grade, filtre certifié NSF). Contrôles qualité stricts à chaque lot. Nous ne prenons aucun risque sur ce point."
+  },
+
+  // Consommation
+  {
+    category: 'Technique',
+    question: "Combien ça consomme en électricité ?",
+    answer: "Très peu. Le boiler consomme environ 1500W uniquement au moment de chauffer l'eau, puis reste en veille à moins de 5W. En usage normal, comptez 3 à 5€/mois d'électricité, soit moins qu'une bouilloire utilisée quotidiennement."
+  },
+  {
+    category: 'Prix',
+    question: "L'eau gazeuse, ça coûte cher en CO2 ?",
+    answer: "Une cartouche CO2 de 425g permet de gazéifier environ 50 litres d'eau. Avec l'abonnement Standard (6 cartouches/an = 300L de gazeuse), c'est largement suffisant pour une famille. Bien moins cher que les bouteilles de Perrier ou Badoit."
   },
 
   // Comparaison & Concurrence
@@ -333,10 +345,10 @@ export function FAQPage({ navigate }: FAQPageProps) {
                 Envoyer un email
               </a>
               <a
-                href="tel:+33123456789"
+                href="tel:+33660968516"
                 className="px-8 py-4 bg-white border-2 border-[#6B1E3E]/30 text-[#6B1E3E] rounded-full hover:border-[#6B1E3E] hover:bg-[#6B1E3E]/5 transition-colors"
               >
-                Appeler le 01 23 45 67 89
+                Appeler le +33 6 60 96 85 16
               </a>
             </div>
           </motion.div>

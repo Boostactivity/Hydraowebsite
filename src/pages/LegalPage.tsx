@@ -47,10 +47,10 @@ export function LegalPage({ navigate, type = 'mentions' }: LegalPageProps) {
                     <p className="text-[#8B7E74] leading-relaxed mb-0">
                       <strong className="text-gray-900">HYDRAL SAS</strong><br />
                       Capital social : 500 000€<br />
-                      SIRET : XXX XXX XXX XXXXX<br />
-                      RCS Paris<br />
-                      Siège social : XX rue de [Adresse], 75XXX Paris<br />
-                      Téléphone : 01 XX XX XX XX<br />
+                      SIRET : 850 973 686 00049<br />
+                      RCS Bobigny<br />
+                      Siège social : 1 Square Maurice Thorez, 93200 Saint-Denis<br />
+                      Téléphone : +33 6 60 96 85 16<br />
                       Email : contact@hydral.fr
                     </p>
                   </div>
@@ -58,16 +58,16 @@ export function LegalPage({ navigate, type = 'mentions' }: LegalPageProps) {
 
                 <div>
                   <h2 className="text-2xl mb-4 text-gray-900">Directeur de publication</h2>
-                  <p className="text-[#8B7E74]">M. [Nom], Président</p>
+                  <p className="text-[#8B7E74]">M. Adel MAGHRABI, Président</p>
                 </div>
 
                 <div>
                   <h2 className="text-2xl mb-4 text-gray-900">Hébergement</h2>
                   <div className="p-6 bg-[#FAF8F5] rounded-2xl border border-gray-200">
                     <p className="text-[#8B7E74] leading-relaxed mb-0">
-                      [Hébergeur]<br />
-                      [Adresse]<br />
-                      Tél : [Numéro]
+                      Hostinger International Ltd<br />
+                      61 Lordou Vironos Street, 6023 Larnaca, Chypre<br />
+                      Tél : hostinger.fr
                     </p>
                   </div>
                 </div>
@@ -81,7 +81,7 @@ export function LegalPage({ navigate, type = 'mentions' }: LegalPageProps) {
 
                 <div>
                   <h2 className="text-2xl mb-4 text-gray-900">TVA intracommunautaire</h2>
-                  <p className="text-[#8B7E74]">FR XX XXX XXX XXX</p>
+                  <p className="text-[#8B7E74]">TVA : En cours d'obtention</p>
                 </div>
               </div>
             )}
@@ -170,7 +170,7 @@ export function LegalPage({ navigate, type = 'mentions' }: LegalPageProps) {
                   <h2 className="text-2xl mb-4 text-gray-900">Cookies analytiques (optionnels)</h2>
                   <p className="text-[#8B7E74] mb-4">Nous utilisons des cookies analytiques pour comprendre comment vous utilisez notre site (pages visitées, durée, parcours). Ces données sont anonymisées.</p>
                   <p className="text-[#8B7E74]">
-                    Outils utilisés : [Google Analytics / Matomo / Plausible...]
+                    Outils utilisés : Google Analytics
                   </p>
                 </div>
 
@@ -280,7 +280,7 @@ export function LegalPage({ navigate, type = 'mentions' }: LegalPageProps) {
                     En cas de litige, nous vous invitons à nous contacter en priorité à contact@hydral.fr. Nous nous engageons à trouver une solution amiable.
                   </p>
                   <p className="text-[#8B7E74] leading-relaxed">
-                    À défaut d'accord amiable, vous pouvez recourir gratuitement à un médiateur de la consommation : [Nom du médiateur]. En dernier recours, les tribunaux de Paris sont compétents.
+                    À défaut d'accord amiable, vous pouvez recourir gratuitement à un médiateur de la consommation : Médiateur de la consommation (à désigner). En dernier recours, les tribunaux de Paris sont compétents.
                   </p>
                 </div>
               </div>

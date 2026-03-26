@@ -11,8 +11,6 @@ const modelImages = [
   productImages['chrome'].faucet,
   productImages['black-matt'].faucet,
   productImages['brushed'].faucet,
-  productImages['gold'].faucet,
-  productImages['gunmetal'].faucet,
 ];
 
 interface GammePageProps {
@@ -38,11 +36,11 @@ export function GammePage({ navigate }: GammePageProps) {
             className="text-center"
           >
             <h1 className="mb-8">
-              <span className="block text-gray-900">5 modèles</span>
+              <span className="block text-gray-900">3 modèles</span>
               <span className="block text-[#6B1E3E]">Un seul choix : le vôtre</span>
             </h1>
             <p className="text-xl text-[#8B7E74] leading-relaxed max-w-3xl mx-auto">
-              Chaque modèle est pensé pour un usage, un style, une cuisine. Tous offrent les 5 types d'eau. La différence, c'est vous.
+              Chaque modèle est pensé pour un usage et un budget. De l'essentiel au tout-en-un, trouvez le HYDRAL qui vous correspond.
             </p>
           </motion.div>
         </div>
@@ -54,10 +52,6 @@ export function GammePage({ navigate }: GammePageProps) {
           <div className="flex flex-wrap gap-3 justify-center">
             {[
               { value: 'all', label: 'Tous les modèles' },
-              { value: 'modern', label: 'Moderne' },
-              { value: 'minimalist', label: 'Minimaliste' },
-              { value: 'classic', label: 'Classique' },
-              { value: 'industrial', label: 'Professionnel' }
             ].map(filter => (
               <motion.button
                 key={filter.value}
