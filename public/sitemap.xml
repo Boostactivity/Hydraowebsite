@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://hydral.fr/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://hydral.fr/concept</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://hydral.fr/gamme</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://hydral.fr/produit</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://hydral.fr/avantages</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://hydral.fr/prix</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://hydral.fr/calculateur</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://hydral.fr/faq</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hydral.fr/blog</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://hydral.fr/boutique</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://hydral.fr/abonnements</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://hydral.fr/temoignages</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://hydral.fr/garantie</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://hydral.fr/ecoresponsable</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hydral.fr/securite</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://hydral.fr/configurateur</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://hydral.fr/mentions-legales</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://hydral.fr/support</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://hydral.fr/ressources</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+</urlset>

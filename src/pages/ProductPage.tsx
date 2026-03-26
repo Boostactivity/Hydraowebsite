@@ -80,7 +80,7 @@ export function ProductPage({ navigate, productId }: ProductPageProps) {
                 <div className="relative aspect-square bg-gradient-to-br from-[#F5F1ED] to-white rounded-3xl overflow-hidden shadow-2xl border border-gray-200">
                   <ImageWithFallback
                     src={(productImages[selectedFinish as keyof typeof productImages] || defaultImages).faucet}
-                    alt={product.name}
+                    alt={`HYDRAL ${product.name} finition ${selectedFinish} — robinet multifonction cuisine 5-en-1`}
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -92,7 +92,7 @@ export function ProductPage({ navigate, productId }: ProductPageProps) {
                   <div key={view} className="aspect-square bg-white rounded-xl border border-gray-200 overflow-hidden hover:border-[#6B1E3E]/40 transition-all cursor-pointer">
                     <ImageWithFallback
                       src={(productImages[selectedFinish as keyof typeof productImages] || defaultImages)[view]}
-                      alt={`${product.name} - ${view}`}
+                      alt={`HYDRAL ${product.name} ${view === 'faucet' ? 'vue principale' : view === 'sparkling' ? 'eau gazeuse filtrée' : 'eau bouillante instantanée'} — robinet 5-en-1`}
                       className="w-full h-full object-cover"
                     />
                   </div>

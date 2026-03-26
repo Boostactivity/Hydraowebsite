@@ -101,7 +101,7 @@ export function ShopPage({ navigate }: ShopPageProps) {
                 <div className="w-full aspect-square bg-gradient-to-br from-[#FAF8F5] to-[#E8D5DC]/10 rounded-xl mb-6 flex items-center justify-center overflow-hidden">
                   <img 
                     src={item.image} 
-                    alt={item.name}
+                    alt={`${item.name} — accessoire robinet HYDRAL ${item.category === 'filter' ? 'filtre eau robinet' : item.category === 'co2' ? 'recharge CO2 eau gazeuse' : 'accessoire cuisine'}`}
                     className="w-full h-full object-cover"
                     loading="lazy"
                   />

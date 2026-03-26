@@ -62,7 +62,7 @@ export function GammePage({ navigate }: GammePageProps) {
                 <div className="h-80 bg-gradient-to-br from-[#F5F1ED] to-white relative overflow-hidden">
                   <ImageWithFallback
                     src={modelImages[index % modelImages.length]}
-                    alt={model.name}
+                    alt={`Robinet HYDRAL ${model.name} — robinet 5-en-1 eau bouillante gazeuse filtrée`}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute top-6 left-6 px-4 py-2 bg-[#6B1E3E] text-white rounded-full shadow-lg">

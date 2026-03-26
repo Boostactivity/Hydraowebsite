@@ -36,141 +36,141 @@ const FAUCET_IMAGES: Record<string, Record<string, ProductImage[]>> = {
     'noir-mat': [
       { 
         id: 'front-noir', 
-        alt: 'Robinet Pure en noir mat - Vue de face', 
+        alt: 'Robinet HYDRAL Pure finition noir mat — robinet 5-en-1 eau bouillante gazeuse filtrée vue de face', 
         url: mattBlackImage 
       },
       { 
         id: 'detail-noir', 
-        alt: 'Robinet Pure en noir mat - Eau chaude', 
+        alt: 'Robinet HYDRAL Pure finition noir mat — eau bouillante instantanée robinet cuisine', 
         url: mattBlackImage2
       },
       { 
         id: 'context-noir', 
-        alt: 'Robinet Pure en noir mat - En contexte', 
+        alt: 'Robinet HYDRAL Pure noir mat en contexte cuisine — robinet multifonction design', 
         url: mattBlackImage3 
       }
     ],
     'chrome-brillant': [
       { 
         id: 'front-chrome', 
-        alt: 'Robinet Pure en chrome brillant - Vue de face', 
+        alt: 'Robinet HYDRAL Pure finition chrome brillant — robinet 5-en-1 eau bouillante gazeuse filtrée', 
         url: chromeBrillantImage 
       },
       { 
         id: 'detail-chrome', 
-        alt: 'Robinet Pure en chrome brillant - Détail', 
+        alt: 'Robinet HYDRAL Pure chrome brillant — détail finition robinet multifonction cuisine', 
         url: chromeBrillantImage2 
       },
       { 
         id: 'context-chrome', 
-        alt: 'Robinet Pure en chrome brillant - En contexte', 
+        alt: 'Robinet HYDRAL Pure chrome brillant en contexte cuisine — robinet eau bouillante instantanée', 
         url: chromeBrillantImage3 
       }
     ],
     'nickel-brosse': [
       { 
         id: 'front-nickel', 
-        alt: 'Robinet Pure en nickel brossé - Vue de face', 
+        alt: 'Robinet HYDRAL Pure finition nickel brossé — robinet 5-en-1 eau filtrée gazeuse bouillante', 
         url: nickelBrosseImage 
       },
       { 
         id: 'detail-nickel', 
-        alt: 'Robinet Pure en nickel brossé - Détail', 
+        alt: 'Robinet HYDRAL Pure nickel brossé — détail finition robinet multifonction', 
         url: nickelBrosseImage2 
       },
       { 
         id: 'context-nickel', 
-        alt: 'Robinet Pure en nickel brossé - En contexte', 
+        alt: 'Robinet HYDRAL Pure nickel brossé en contexte cuisine — robinet eau gazeuse filtrée', 
         url: nickelBrosseImage3 
       }
     ],
     'or-brosse': [
       { 
         id: 'front-or', 
-        alt: 'Robinet Pure en or brossé - Eau gazeuse citron', 
+        alt: 'Robinet HYDRAL Pure finition or brossé — eau gazeuse citron robinet 5-en-1', 
         url: orBrosseImage 
       },
       { 
         id: 'detail-or', 
-        alt: 'Robinet Pure en or brossé - Eau chaude thé', 
+        alt: 'Robinet HYDRAL Pure or brossé — eau bouillante instantanée thé en 3 secondes', 
         url: orBrosseImage2 
       },
       { 
         id: 'context-or', 
-        alt: 'Robinet Pure en or brossé - En contexte', 
+        alt: 'Robinet HYDRAL Pure or brossé en contexte cuisine — robinet multifonction design premium', 
         url: orBrosseImage3 
       }
     ],
     'gris-metallise': [
       { 
         id: 'front-gris', 
-        alt: 'Robinet Pure en gris métallisé - Eau gazeuse citron', 
+        alt: 'Robinet HYDRAL Pure finition gris métallisé — eau gazeuse filtrée robinet cuisine', 
         url: grisMetalliseImage 
       },
       { 
         id: 'detail-gris', 
-        alt: 'Robinet Pure en gris métallisé - Eau chaude thé', 
+        alt: 'Robinet HYDRAL Pure gris métallisé — eau bouillante instantanée robinet 5-en-1', 
         url: grisMetalliseImage2 
       },
       { 
         id: 'context-gris', 
-        alt: 'Robinet Pure en gris métallisé - En contexte', 
+        alt: 'Robinet HYDRAL Pure gris métallisé en contexte cuisine — robinet eau filtrée design', 
         url: grisMetalliseImage3 
       }
     ]
   },
   'spark': {
     'noir-mat': [
-      { id: 'front-noir', alt: 'Robinet Spark en noir mat - Vue de face', url: mattBlackImage },
-      { id: 'detail-noir', alt: 'Robinet Spark en noir mat - Eau chaude', url: mattBlackImage2 },
-      { id: 'context-noir', alt: 'Robinet Spark en noir mat - En contexte', url: mattBlackImage3 }
+      { id: 'front-noir', alt: 'Robinet HYDRAL Spark finition noir mat — robinet 5-en-1 eau gazeuse filtrée bouillante', url: mattBlackImage },
+      { id: 'detail-noir', alt: 'Robinet HYDRAL Spark noir mat — eau bouillante instantanée robinet multifonction', url: mattBlackImage2 },
+      { id: 'context-noir', alt: 'Robinet HYDRAL Spark noir mat en contexte cuisine — robinet eau gazeuse design', url: mattBlackImage3 }
     ],
     'chrome-brillant': [
-      { id: 'front-chrome', alt: 'Robinet Spark en chrome brillant - Eau gazeuse citron', url: chromeBrillantImage },
-      { id: 'detail-chrome', alt: 'Robinet Spark en chrome brillant - Eau chaude thé', url: chromeBrillantImage2 },
-      { id: 'context-chrome', alt: 'Robinet Spark en chrome brillant - En contexte', url: chromeBrillantImage3 }
+      { id: 'front-chrome', alt: 'Robinet HYDRAL Spark chrome brillant — eau gazeuse citron robinet 5-en-1', url: chromeBrillantImage },
+      { id: 'detail-chrome', alt: 'Robinet HYDRAL Spark chrome brillant — eau bouillante instantanée thé robinet cuisine', url: chromeBrillantImage2 },
+      { id: 'context-chrome', alt: 'Robinet HYDRAL Spark chrome brillant en contexte cuisine — robinet multifonction premium', url: chromeBrillantImage3 }
     ],
     'nickel-brosse': [
-      { id: 'front-nickel', alt: 'Robinet Spark en nickel brossé - Eau gazeuse citron', url: nickelBrosseImage },
-      { id: 'detail-nickel', alt: 'Robinet Spark en nickel brossé - Eau chaude thé', url: nickelBrosseImage2 },
-      { id: 'context-nickel', alt: 'Robinet Spark en nickel brossé - En contexte cuisine', url: nickelBrosseImage3 }
+      { id: 'front-nickel', alt: 'Robinet HYDRAL Spark nickel brossé — eau gazeuse filtrée robinet cuisine', url: nickelBrosseImage },
+      { id: 'detail-nickel', alt: 'Robinet HYDRAL Spark nickel brossé — eau bouillante instantanée robinet 5-en-1', url: nickelBrosseImage2 },
+      { id: 'context-nickel', alt: 'Robinet HYDRAL Spark nickel brossé en contexte cuisine — robinet eau gazeuse design', url: nickelBrosseImage3 }
     ],
     'or-brosse': [
-      { id: 'front-or', alt: 'Robinet Spark en or brossé - Eau gazeuse citron', url: orBrosseImage },
-      { id: 'detail-or', alt: 'Robinet Spark en or brossé - Eau chaude thé', url: orBrosseImage2 },
-      { id: 'context-or', alt: 'Robinet Spark en or brossé - En contexte', url: orBrosseImage3 }
+      { id: 'front-or', alt: 'Robinet HYDRAL Spark or brossé — eau gazeuse citron robinet multifonction', url: orBrosseImage },
+      { id: 'detail-or', alt: 'Robinet HYDRAL Spark or brossé — eau bouillante thé robinet cuisine premium', url: orBrosseImage2 },
+      { id: 'context-or', alt: 'Robinet HYDRAL Spark or brossé en contexte cuisine — robinet 5-en-1 design', url: orBrosseImage3 }
     ],
     'gris-metallise': [
-      { id: 'front-gris', alt: 'Robinet Spark en gris métallisé - Eau gazeuse citron', url: grisMetalliseImage },
-      { id: 'detail-gris', alt: 'Robinet Spark en gris métallisé - Eau chaude thé', url: grisMetalliseImage2 },
-      { id: 'context-gris', alt: 'Robinet Spark en gris métallisé - En contexte', url: grisMetalliseImage3 }
+      { id: 'front-gris', alt: 'Robinet HYDRAL Spark gris métallisé — eau gazeuse filtrée robinet 5-en-1', url: grisMetalliseImage },
+      { id: 'detail-gris', alt: 'Robinet HYDRAL Spark gris métallisé — eau bouillante instantanée robinet cuisine', url: grisMetalliseImage2 },
+      { id: 'context-gris', alt: 'Robinet HYDRAL Spark gris métallisé en contexte cuisine — robinet multifonction', url: grisMetalliseImage3 }
     ]
   },
   'one': {
     'noir-mat': [
-      { id: 'front-noir', alt: 'Robinet One en noir mat - Vue de face', url: mattBlackImage },
-      { id: 'detail-noir', alt: 'Robinet One en noir mat - Eau chaude', url: mattBlackImage2 },
-      { id: 'context-noir', alt: 'Robinet One en noir mat - En contexte', url: mattBlackImage3 }
+      { id: 'front-noir', alt: 'Robinet HYDRAL One finition noir mat — robinet 5-en-1 tout-en-un eau bouillante gazeuse filtrée', url: mattBlackImage },
+      { id: 'detail-noir', alt: 'Robinet HYDRAL One noir mat — eau bouillante instantanée robinet multifonction cuisine', url: mattBlackImage2 },
+      { id: 'context-noir', alt: 'Robinet HYDRAL One noir mat en contexte cuisine — robinet tout-en-un design', url: mattBlackImage3 }
     ],
     'chrome-brillant': [
-      { id: 'front-chrome', alt: 'Robinet One en chrome brillant - Eau gazeuse citron', url: chromeBrillantImage },
-      { id: 'detail-chrome', alt: 'Robinet One en chrome brillant - Eau chaude thé', url: chromeBrillantImage2 },
-      { id: 'context-chrome', alt: 'Robinet One en chrome brillant - En contexte', url: chromeBrillantImage3 }
+      { id: 'front-chrome', alt: 'Robinet HYDRAL One chrome brillant — eau gazeuse citron robinet 5-en-1 cuisine', url: chromeBrillantImage },
+      { id: 'detail-chrome', alt: 'Robinet HYDRAL One chrome brillant — eau bouillante thé en 3 secondes robinet cuisine', url: chromeBrillantImage2 },
+      { id: 'context-chrome', alt: 'Robinet HYDRAL One chrome brillant en contexte cuisine — robinet tout-en-un premium', url: chromeBrillantImage3 }
     ],
     'nickel-brosse': [
-      { id: 'front-nickel', alt: 'Robinet One en nickel brossé - Eau gazeuse citron', url: nickelBrosseImage },
-      { id: 'detail-nickel', alt: 'Robinet One en nickel brossé - Eau chaude thé', url: nickelBrosseImage2 },
-      { id: 'context-nickel', alt: 'Robinet One en nickel brossé - En contexte cuisine', url: nickelBrosseImage3 }
+      { id: 'front-nickel', alt: 'Robinet HYDRAL One nickel brossé — eau gazeuse filtrée robinet multifonction', url: nickelBrosseImage },
+      { id: 'detail-nickel', alt: 'Robinet HYDRAL One nickel brossé — eau bouillante instantanée robinet 5-en-1', url: nickelBrosseImage2 },
+      { id: 'context-nickel', alt: 'Robinet HYDRAL One nickel brossé en contexte cuisine — robinet eau gazeuse filtrée design', url: nickelBrosseImage3 }
     ],
     'or-brosse': [
-      { id: 'front-or', alt: 'Robinet One en or brossé - Eau gazeuse citron', url: orBrosseImage },
-      { id: 'detail-or', alt: 'Robinet One en or brossé - Eau chaude thé', url: orBrosseImage2 },
-      { id: 'context-or', alt: 'Robinet One en or brossé - En contexte', url: orBrosseImage3 }
+      { id: 'front-or', alt: 'Robinet HYDRAL One or brossé — eau gazeuse citron robinet tout-en-un cuisine', url: orBrosseImage },
+      { id: 'detail-or', alt: 'Robinet HYDRAL One or brossé — eau bouillante thé robinet multifonction premium', url: orBrosseImage2 },
+      { id: 'context-or', alt: 'Robinet HYDRAL One or brossé en contexte cuisine — robinet 5-en-1 design premium', url: orBrosseImage3 }
     ],
     'gris-metallise': [
-      { id: 'front-gris', alt: 'Robinet One en gris métallisé - Eau gazeuse citron', url: grisMetalliseImage },
-      { id: 'detail-gris', alt: 'Robinet One en gris métallisé - Eau chaude thé', url: grisMetalliseImage2 },
-      { id: 'context-gris', alt: 'Robinet One en gris métallisé - En contexte', url: grisMetalliseImage3 }
+      { id: 'front-gris', alt: 'Robinet HYDRAL One gris métallisé — eau gazeuse filtrée robinet cuisine 5-en-1', url: grisMetalliseImage },
+      { id: 'detail-gris', alt: 'Robinet HYDRAL One gris métallisé — eau bouillante instantanée robinet tout-en-un', url: grisMetalliseImage2 },
+      { id: 'context-gris', alt: 'Robinet HYDRAL One gris métallisé en contexte cuisine — robinet multifonction design', url: grisMetalliseImage3 }
     ]
   }
 };

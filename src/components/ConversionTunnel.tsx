@@ -936,7 +936,7 @@ const Section2 = React.forwardRef<HTMLElement, {
 
                 {/* BIG image */}
                 <div className="relative bg-[#FAF8F5] overflow-hidden">
-                  <img src={robinet.image} alt={robinet.name} className="w-full h-52 sm:h-60 object-cover" />
+                  <img src={robinet.image} alt={`Robinet HYDRAL ${robinet.name} — robinet 5-en-1 eau bouillante gazeuse filtrée`} className="w-full h-52 sm:h-60 object-cover" />
                 </div>
 
                 {/* Content - compact */}

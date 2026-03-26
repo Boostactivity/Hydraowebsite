@@ -14,6 +14,7 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-helmet": "*",
+    "react-router-dom": "^7.13.2",
     "recharts": "^2.15.2"
   },
   "devDependencies": {

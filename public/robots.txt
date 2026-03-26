@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Sitemap: https://hydral.fr/sitemap.xml
+
+Disallow: /panier
+Disallow: /commande
+Disallow: /suivi-livraison
