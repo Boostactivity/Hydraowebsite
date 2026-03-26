@@ -911,7 +911,8 @@ const Section2 = React.forwardRef<HTMLElement, {
         {/* Robinet Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
           {ROBINETS.map((robinet, idx) => {
-            const { breakEvenMonths, yearlySavings } = calculateSavings(robinet.price, robinet.hasCO2 ? 99 : 59);
+            const subYearly = robinet.hasCO2 ? 99 : 59;
+            const { breakEvenMonths, yearlySavings } = calculateSavings(robinet.price, subYearly);
 
             return (
               <motion.div
@@ -958,7 +959,13 @@ const Section2 = React.forwardRef<HTMLElement, {
                   {/* Savings if available */}
                   {state.yearlyTotal && state.yearlyTotal > 0 && yearlySavings > 0 && (
                     <div className="p-2.5 bg-[#6B1E3E]/5 rounded-lg mb-4 text-center">
-                      <span className="text-xs text-[#6B1E3E]">Rentabilisé en <strong>{breakEvenMonths < 100 ? `${breakEvenMonths} mois` : '—'}</strong> • Économie <strong>{Math.round(yearlySavings)}€/an</strong></span>
+                      <p className="text-xs text-[#6B1E3E]">
+                        Rentabilisé en <strong>{breakEvenMonths < 100 ? `${breakEvenMonths} mois` : '—'}</strong>
+                      </p>
+                      <p className="text-xs text-[#6B1E3E] mt-0.5">
+                        puis <strong>{Math.round(yearlySavings / 12)}€/mois</strong> d'économies
+                      </p>
+                      <p className="text-[10px] text-[#8B7E74] mt-1">abo {robinet.hasCO2 ? 'filtres + CO₂' : 'filtres'} : {subYearly}€/an</p>
                     </div>
                   )}
                   {state.yearlyTotal && state.yearlyTotal > 0 && yearlySavings <= 0 && (
