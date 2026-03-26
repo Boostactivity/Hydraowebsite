@@ -198,7 +198,7 @@ function AppContent() {
             case 'personalization':
               return <PersonalizationPage key="personalization" navigate={navigate} />;
             case 'robinet-choice':
-              return <RobinetChoicePage key="robinet-choice" navigate={navigate} />;
+              return <HomePage key="home" navigate={navigate} />;
             default:
               return <HomePage key="home-default" navigate={navigate} />;
           }

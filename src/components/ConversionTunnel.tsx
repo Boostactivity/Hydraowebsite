@@ -872,7 +872,7 @@ const Section2 = React.forwardRef<HTMLElement, {
     <section
       ref={ref}
       data-section="2"
-      className="min-h-[60vh] flex items-center justify-center px-4 sm:px-6 py-12 transition-colors duration-500"
+      className="px-4 sm:px-6 py-12 transition-colors duration-500"
       style={{
         background: state.selectedColoris === 'or-brosse' ? 'linear-gradient(to bottom, #FAF8F5, #FBF5E8)' :
           state.selectedColoris === 'noir-mat' ? 'linear-gradient(to bottom, #FAF8F5, #F0EEEC)' :
@@ -885,19 +885,19 @@ const Section2 = React.forwardRef<HTMLElement, {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="max-w-7xl mx-auto w-full"
+        className="max-w-5xl mx-auto w-full"
       >
         <h2 className="text-center mb-4">
           <span className="block text-gray-900">Choisissez votre robinet</span>
         </h2>
-        <p className="text-center text-lg sm:text-xl text-[#8B7E74] mb-12">
+        <p className="text-center text-lg sm:text-xl text-[#8B7E74] mb-10">
           Le bon robinet pour le bon foyer
         </p>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+        {/* Robinet Cards Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
           {ROBINETS.map((robinet, idx) => {
-            const Icon = robinet.icon;
-            const { savings5y, breakEvenMonths, yearlySavings } = calculateSavings(robinet.price, 59);
+            const { breakEvenMonths, yearlySavings } = calculateSavings(robinet.price, 59);
 
             return (
               <motion.div
@@ -906,117 +906,56 @@ const Section2 = React.forwardRef<HTMLElement, {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className={`relative rounded-3xl p-8 border-2 transition-all flex flex-col min-h-[650px] ${
-                  robinet.recommended
-                    ? 'border-[#6B1E3E] bg-white shadow-2xl'
-                    : 'border-gray-200 bg-white hover:border-[#6B1E3E]/30 hover:shadow-xl'
-                } ${state.selectedSKU === robinet.sku ? 'ring-4 ring-[#6B1E3E]/20' : ''}`}
+                className={`relative bg-white rounded-2xl border-2 transition-all overflow-hidden flex flex-col ${
+                  state.selectedSKU === robinet.sku
+                    ? 'ring-2 ring-[#6B1E3E]/20 border-[#6B1E3E] shadow-xl'
+                    : 'border-gray-200 hover:border-[#6B1E3E]/30 hover:shadow-lg'
+                }`}
               >
-                {robinet.recommended && !robinet.popular && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-6 py-2 bg-[#6B1E3E] text-white text-sm rounded-full shadow-lg">
-                    Le plus complet
-                  </div>
-                )}
-                {robinet.popular && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-6 py-2 bg-[#6B1E3E] text-white text-sm rounded-full shadow-lg">
-                    Le plus choisi
+                {/* Badge for recommended */}
+                {robinet.recommended && (
+                  <div className="absolute top-3 right-3 z-10 px-3 py-1 bg-[#6B1E3E] text-white text-xs font-medium rounded-full">
+                    Le tout-en-un
                   </div>
                 )}
 
-                {/* Image du robinet */}
-                {robinet.image && (
-                  <div className="mb-6 overflow-hidden rounded-2xl bg-[#FAF8F5]">
-                    <img
-                      src={robinet.image}
-                      alt={robinet.name}
-                      className="w-full h-56 sm:h-64 object-cover"
-                    />
-                  </div>
-                )}
-
-                <div className="text-center mb-6">
-                  <h3 className="text-2xl mb-2 text-gray-900">{robinet.name}</h3>
-                  <p className="text-sm text-[#8B7E74]">{robinet.tagline}</p>
+                {/* BIG image */}
+                <div className="relative bg-[#FAF8F5] overflow-hidden">
+                  <img src={robinet.image} alt={robinet.name} className="w-full h-52 sm:h-60 object-cover" />
                 </div>
 
-                <div className="mb-6 text-center">
-                  <p className="text-3xl font-bold text-gray-900">{robinet.price}€</p>
-                  <p className="text-xs text-[#6B1E3E] mt-1 font-medium">Livraison offerte</p>
-                </div>
+                {/* Content - compact */}
+                <div className="p-5 flex flex-col flex-1">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-1">{robinet.name}</h3>
+                  <p className="text-sm text-[#8B7E74] mb-3">{robinet.tagline}</p>
+                  <p className="text-2xl font-bold text-[#6B1E3E] mb-4">{robinet.price}€</p>
 
-                {/* Économies calculées */}
-                {state.yearlyTotal && state.yearlyTotal > 0 && yearlySavings > 0 && (
-                  <div className="mb-6 p-4 bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl border border-green-200">
-                    <p className="text-sm text-[#8B7E74] mb-2 text-center">Avec vos dépenses actuelles :</p>
-                    <p className="text-center">
-                      <span className="text-sm text-gray-700">Rentabilisé en </span>
-                      <span className="font-bold text-green-700">{breakEvenMonths < 100 ? `${breakEvenMonths} mois` : '—'}</span>
-                    </p>
-                    <div className="flex items-center justify-center gap-4 mt-2">
-                      <p className="text-center">
-                        <span className="text-xs text-[#8B7E74]">Vous économisez </span>
-                        <span className="font-bold text-green-700">{Math.round(yearlySavings)}€/an</span>
-                      </p>
-                      <p className="text-center">
-                        <span className="text-xs text-[#8B7E74]">Sur 5 ans : </span>
-                        <span className="font-bold text-green-700">+{Math.round(savings5y)}€</span>
-                      </p>
-                    </div>
-                  </div>
-                )}
-                {state.yearlyTotal && state.yearlyTotal > 0 && yearlySavings <= 0 && (
-                  <div className="mb-6 p-4 bg-gradient-to-br from-[#FAF8F5] to-white rounded-xl border border-[#6B1E3E]/10">
-                    <p className="text-sm text-gray-700 text-center mb-2">
-                      Ce modèle n'est pas un choix financier pour vous.
-                    </p>
-                    <p className="text-xs text-[#8B7E74] text-center leading-relaxed">
-                      Mais il élimine les microplastiques de votre eau, supprime des centaines de bouteilles par an, et vous offre eau bouillante et gazeuse à la demande.
-                    </p>
-                  </div>
-                )}
-
-                <div className="space-y-3 mb-8 flex-1">
-                  {robinet.features.map((feature, i) => (
-                    <div key={i} className="flex items-start gap-3">
-                      {feature.included ? (
-                        <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                      ) : (
-                        <X className="w-5 h-5 text-gray-300 flex-shrink-0 mt-0.5" />
-                      )}
-                      <div>
-                        <p className={`text-sm font-medium ${feature.included ? 'text-gray-900' : 'text-gray-400'}`}>
-                          {feature.label}
-                        </p>
-                        {feature.desc && feature.included && (
-                          <p className="text-xs text-[#8B7E74] mt-1">{feature.desc}</p>
-                        )}
+                  {/* Compact features - just checkmarks */}
+                  <div className="grid grid-cols-2 gap-2 mb-4 flex-1">
+                    {robinet.features.map((f, i) => (
+                      <div key={i} className={`flex items-center gap-1.5 text-xs ${f.included ? 'text-gray-700' : 'text-gray-300'}`}>
+                        {f.included ? <Check className="w-3.5 h-3.5 text-green-600 flex-shrink-0" /> : <X className="w-3.5 h-3.5 flex-shrink-0" />}
+                        <span>{f.label}</span>
                       </div>
-                    </div>
-                  ))}
-                </div>
+                    ))}
+                  </div>
 
-                <div className="mt-auto">
-                  <div className="p-4 bg-[#FAF8F5] rounded-xl mb-4">
-                    <p className="text-xs text-[#8B7E74] mb-1">Idéal pour :</p>
-                    <p className="text-sm text-gray-900">{robinet.idealFor}</p>
-                  </div>
-                  <div className="p-3 bg-white rounded-xl border border-gray-100 mb-6">
-                    <div className="flex gap-0.5 mb-1">
-                      {[...Array(5)].map((_, i) => (
-                        <div key={i} className="w-3 h-3 rounded-full bg-amber-400" />
-                      ))}
+                  {/* Savings if available */}
+                  {state.yearlyTotal && state.yearlyTotal > 0 && yearlySavings > 0 && (
+                    <div className="p-2.5 bg-green-50 rounded-lg mb-4 text-center">
+                      <span className="text-xs text-green-700">Rentabilisé en <strong>{breakEvenMonths < 100 ? `${breakEvenMonths} mois` : '—'}</strong> • Économie <strong>{Math.round(yearlySavings)}€/an</strong></span>
                     </div>
-                    <p className="text-xs text-gray-600 italic leading-relaxed">
-                      {robinet.sku === 'pure' && '"Parfait pour le thé et la cuisine. Simple et efficace." — Claire, Paris'}
-                      {robinet.sku === 'spark' && '"Fini les packs de Perrier ! Toute la famille adore." — Marc, Famille de 4, Nantes'}
-                      {robinet.sku === 'one' && '"Le meilleur investissement cuisine qu\'on ait fait. On a tout en un." — Sophie, Lyon'}
-                    </p>
-                  </div>
+                  )}
+                  {state.yearlyTotal && state.yearlyTotal > 0 && yearlySavings <= 0 && (
+                    <div className="p-2.5 bg-[#FAF8F5] rounded-lg mb-4 text-center">
+                      <span className="text-xs text-[#8B7E74]">Choix confort et santé</span>
+                    </div>
+                  )}
+
+                  {/* CTA */}
                   <button
-                    onClick={() => {
-                      setState({ ...state, selectedSKU: robinet.sku });
-                    }}
-                    className={`w-full py-4 rounded-full font-medium transition-all ${
+                    onClick={() => setState({ ...state, selectedSKU: robinet.sku })}
+                    className={`w-full py-3 rounded-full font-medium text-sm transition-all ${
                       state.selectedSKU === robinet.sku
                         ? 'bg-[#6B1E3E] text-white shadow-lg'
                         : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
@@ -1030,182 +969,98 @@ const Section2 = React.forwardRef<HTMLElement, {
           })}
         </div>
 
-        {/* Section Coloris et Images - Toujours visible */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="mt-16 mb-12"
-        >
-          <div className="bg-gradient-to-br from-white via-[#FAF8F5]/30 to-white rounded-3xl p-10 shadow-2xl border border-gray-100/50">
-            <div className="max-w-6xl mx-auto">
-              {/* Titre marketing avec badge */}
-              <div className="text-center mb-10">
-                {state.selectedSKU && (
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.4 }}
-                    className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#6B1E3E]/10 border border-[#6B1E3E]/20 rounded-full text-sm text-[#6B1E3E] font-medium mb-4"
-                  >
-                    <Sparkles className="w-4 h-4" />
-                    Votre sélection
-                  </motion.div>
-                )}
-                <h3 className="text-3xl text-gray-900 mb-3">
-                  {state.selectedSKU 
-                    ? `${ROBINETS.find(r => r.sku === state.selectedSKU)?.name}`
-                    : '15 combinaisons possibles'}
-                </h3>
-                <p className="text-lg text-[#8B7E74]">
-                  {state.selectedSKU 
-                    ? 'Choisissez votre finition — 5 coloris exclusifs'
-                    : '3 modèles × 5 finitions haut de gamme'}
-                </p>
-              </div>
-
-              {/* Sélecteur de finition — compact */}
-              <div className="mb-10">
-                <p className="text-sm font-medium text-gray-700 mb-3">Choisissez votre finition</p>
-                <div className="flex flex-wrap gap-2">
-                  {ROBINET_COLORIS.map((coloris) => {
-                    const isSelected = state.selectedColoris === coloris.id;
-                    const gradientMap: Record<string, string> = {
-                      'chrome-brillant': 'linear-gradient(135deg, #E8E8E8, #B0B0B0, #F5F5F5)',
-                      'noir-mat': 'linear-gradient(135deg, #2A2A2A, #1A1A1A, #333)',
-                      'nickel-brosse': 'linear-gradient(135deg, #C0B8A8, #A89888, #D0C8B8)',
-                      'or-brosse': 'linear-gradient(135deg, #D4A843, #C49833, #E4B853)',
-                      'gris-metallise': 'linear-gradient(135deg, #5A5A5A, #4A4A4A, #6A6A6A)',
-                    };
-                    return (
-                      <button
-                        key={coloris.id}
-                        onClick={() => setState({ ...state, selectedColoris: coloris.id })}
-                        className={`flex items-center gap-2.5 px-3 py-2 rounded-full transition-all ${
-                          isSelected
-                            ? 'ring-2 ring-[#6B1E3E] bg-white shadow-md'
-                            : 'bg-white/60 border border-gray-200 hover:border-[#6B1E3E]/30 hover:shadow-sm'
-                        }`}
-                      >
-                        <div
-                          className="w-6 h-6 rounded-full shadow-sm flex-shrink-0"
-                          style={{ background: gradientMap[coloris.id] || gradientMap['gris-metallise'] }}
-                        />
-                        <span className={`text-xs font-medium whitespace-nowrap ${isSelected ? 'text-[#6B1E3E]' : 'text-gray-600'}`}>
-                          {coloris.name}
-                        </span>
-                        {isSelected && <Check className="w-3.5 h-3.5 text-[#6B1E3E] flex-shrink-0" />}
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
-
-              {/* Galerie d'images + Informations côte à côte */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
-                {/* Galerie avec effet premium */}
-                <motion.div
-                  key={`${state.selectedSKU || 'pure'}-${state.selectedColoris}`}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5 }}
-                  className="relative"
-                >
-                  <div className="absolute -inset-4 bg-gradient-to-br from-[#6B1E3E]/5 to-transparent rounded-3xl blur-2xl" />
-                  <div className="relative">
-                    <ProductImageGallery
-                      productName={state.selectedSKU ? ROBINETS.find(r => r.sku === state.selectedSKU)?.name || '' : 'Pure'}
-                      colorName={ROBINET_COLORIS.find(c => c.id === state.selectedColoris)?.name || 'Chrome'}
-                      modelSKU={state.selectedSKU || 'pure'}
-                      colorId={state.selectedColoris}
-                    />
-                  </div>
-                </motion.div>
-
-                {/* Informations avec USP */}
-                <div className="space-y-5">
-                  {/* Badge premium */}
-                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#6B1E3E]/10 to-[#6B1E3E]/5 border border-[#6B1E3E]/20 rounded-full">
-                    <Check className="w-4 h-4 text-[#6B1E3E]" />
-                    <span className="text-sm font-medium text-gray-900">Qualité premium garantie 3 ans</span>
-                  </div>
-
-                  {/* Avantages finition */}
-                  <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
-                    <h4 className="font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                      <Sparkles className="w-5 h-5 text-[#6B1E3E]" />
-                      Finition {ROBINET_COLORIS.find(c => c.id === state.selectedColoris)?.name}
-                    </h4>
-                    <ul className="space-y-3 text-sm text-gray-700">
-                      <li className="flex items-start gap-3">
-                        <Check className="w-4 h-4 text-[#6B1E3E] flex-shrink-0 mt-0.5" />
-                        <span>Revêtement anti-traces PVD — reste impeccable sans effort</span>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <Check className="w-4 h-4 text-[#6B1E3E] flex-shrink-0 mt-0.5" />
-                        <span>Résistance extrême aux rayures, corrosion et oxydation</span>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <Check className="w-4 h-4 text-[#6B1E3E] flex-shrink-0 mt-0.5" />
-                        <span>Garantie constructeur 3 ans sur toutes les finitions</span>
-                      </li>
-                    </ul>
-                  </div>
-
-                  {/* Installation */}
-                  <div className="bg-gradient-to-br from-[#6B1E3E]/5 to-[#6B1E3E]/10 rounded-2xl p-6 border border-[#6B1E3E]/20">
-                    <div className="flex items-start gap-3 mb-3">
-                      <div className="w-10 h-10 rounded-full bg-[#6B1E3E]/10 flex items-center justify-center flex-shrink-0">
-                        <Wrench className="w-5 h-5 text-[#6B1E3E]" />
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-gray-900 mb-1">Installation simple</h4>
-                        <p className="text-sm text-gray-700">
-                          Se monte facilement par un bricoleur ou un professionnel. Guide technique détaillé fourni.
-                        </p>
-                      </div>
-                    </div>
-                    <div className="pt-3 border-t border-[#6B1E3E]/10">
-                      <p className="text-xs text-[#8B7E74] flex items-center gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#6B1E3E]" />
-                        Dimensions : H 40cm × L 22cm × P 12cm
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Social proof subtil */}
-                  <div className="flex items-center gap-4 pt-2">
-                    <div className="flex -space-x-2">
-                      <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#6B1E3E] to-[#8B2E5E] border-2 border-white" />
-                      <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#8B2E5E] to-[#6B1E3E] border-2 border-white" />
-                      <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#6B1E3E]/70 to-[#8B2E5E]/70 border-2 border-white" />
-                    </div>
-                    <p className="text-sm text-[#8B7E74]">
-                      <span className="font-semibold text-gray-900">Nos clients</span> témoignent
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </motion.div>
-
+        {/* Coloris + Gallery Section - only when robinet selected */}
         {state.selectedSKU && (
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="text-center"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="mt-12 bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-gray-100"
           >
-            <p className="text-lg text-[#8B7E74] mb-6">
-              Parfait. Choisissons ensemble votre formule d'abonnement ↓
-            </p>
-            <button
-              onClick={onNext}
-              className="text-[#6B1E3E] hover:text-[#6B1E3E]/80 transition-colors animate-bounce"
+            {/* Title */}
+            <div className="text-center mb-6">
+              <h3 className="text-2xl text-gray-900 mb-1">
+                {ROBINETS.find(r => r.sku === state.selectedSKU)?.name}
+              </h3>
+              <p className="text-sm text-[#8B7E74]">
+                {ROBINET_COLORIS.find(c => c.id === state.selectedColoris)?.name || 'Chrome'}
+              </p>
+            </div>
+
+            {/* FULL WIDTH image */}
+            <motion.div
+              key={`${state.selectedSKU}-${state.selectedColoris}`}
+              initial={{ opacity: 0, scale: 0.98 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.4 }}
+              className="relative mb-6 rounded-2xl overflow-hidden bg-[#FAF8F5]"
             >
-              <ChevronDown className="w-8 h-8 mx-auto" />
-            </button>
+              <ProductImageGallery
+                productName={ROBINETS.find(r => r.sku === state.selectedSKU)?.name || ''}
+                colorName={ROBINET_COLORIS.find(c => c.id === state.selectedColoris)?.name || 'Chrome'}
+                modelSKU={state.selectedSKU || 'pure'}
+                colorId={state.selectedColoris}
+              />
+            </motion.div>
+
+            {/* Compact coloris pills */}
+            <div className="mb-6">
+              <p className="text-sm font-medium text-gray-700 mb-3">Choisissez votre finition</p>
+              <div className="flex flex-wrap gap-2">
+                {ROBINET_COLORIS.map((coloris) => {
+                  const isSelected = state.selectedColoris === coloris.id;
+                  const gradientMap: Record<string, string> = {
+                    'chrome-brillant': 'linear-gradient(135deg, #E8E8E8, #B0B0B0, #F5F5F5)',
+                    'noir-mat': 'linear-gradient(135deg, #2A2A2A, #1A1A1A, #333)',
+                    'nickel-brosse': 'linear-gradient(135deg, #C0B8A8, #A89888, #D0C8B8)',
+                    'or-brosse': 'linear-gradient(135deg, #D4A843, #C49833, #E4B853)',
+                    'gris-metallise': 'linear-gradient(135deg, #5A5A5A, #4A4A4A, #6A6A6A)',
+                  };
+                  return (
+                    <button
+                      key={coloris.id}
+                      onClick={() => setState({ ...state, selectedColoris: coloris.id })}
+                      className={`flex items-center gap-2.5 px-3 py-2 rounded-full transition-all ${
+                        isSelected
+                          ? 'ring-2 ring-[#6B1E3E] bg-white shadow-md'
+                          : 'bg-white/60 border border-gray-200 hover:border-[#6B1E3E]/30 hover:shadow-sm'
+                      }`}
+                    >
+                      <div
+                        className="w-6 h-6 rounded-full shadow-sm flex-shrink-0"
+                        style={{ background: gradientMap[coloris.id] || gradientMap['gris-metallise'] }}
+                      />
+                      <span className={`text-xs font-medium whitespace-nowrap ${isSelected ? 'text-[#6B1E3E]' : 'text-gray-600'}`}>
+                        {coloris.name}
+                      </span>
+                      {isSelected && <Check className="w-3.5 h-3.5 text-[#6B1E3E] flex-shrink-0" />}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Key info line */}
+            <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-[#8B7E74] mb-6">
+              <span className="font-semibold text-gray-900">
+                {ROBINETS.find(r => r.sku === state.selectedSKU)?.price}€
+              </span>
+              <span>•</span>
+              <span>Garantie 3 ans</span>
+              <span>•</span>
+              <span>Livraison offerte</span>
+            </div>
+
+            {/* CTA to next */}
+            <div className="text-center">
+              <p className="text-sm text-[#8B7E74] mb-4">Choisissons maintenant votre formule d'abonnement</p>
+              <button
+                onClick={onNext}
+                className="text-[#6B1E3E] hover:text-[#6B1E3E]/80 transition-colors animate-bounce"
+              >
+                <ChevronDown className="w-8 h-8 mx-auto" />
+              </button>
+            </div>
           </motion.div>
         )}
       </motion.div>
