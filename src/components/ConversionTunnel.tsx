@@ -965,7 +965,7 @@ const Section2 = React.forwardRef<HTMLElement, {
                       <p className="text-xs text-[#6B1E3E] mt-0.5">
                         puis <strong>{Math.round(yearlySavings)}€/an</strong> d'économies
                       </p>
-                      <p className="text-[10px] text-[#8B7E74] mt-1">abo {robinet.hasCO2 ? 'filtres + CO₂' : 'filtres'} : {subYearly}€/an</p>
+                      <p className="text-[10px] text-[#8B7E74] mt-1">abo {robinet.hasCO2 ? 'filtres + CO₂' : 'filtres'} : {subYearly}€/an — sans engagement</p>
                     </div>
                   )}
                   {state.yearlyTotal && state.yearlyTotal > 0 && yearlySavings <= 0 && (
