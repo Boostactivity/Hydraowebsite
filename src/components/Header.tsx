@@ -108,7 +108,13 @@ export function Header({ navigate, currentPage }: HeaderProps) {
 
               {/* 2. Choisissez votre HYDRAL */}
               <button
-                onClick={() => navigate('configurator')}
+                onClick={() => {
+                  navigate('home');
+                  setTimeout(() => {
+                    const section2 = document.querySelector('[data-section="2"]');
+                    section2?.scrollIntoView({ behavior: 'smooth' });
+                  }, 300);
+                }}
                 className="px-4 py-2 text-sm font-medium text-[#6B1E3E] hover:text-[#6B1E3E]/80 transition-colors"
               >
                 Choisissez votre HYDRAL
@@ -241,8 +247,12 @@ export function Header({ navigate, currentPage }: HeaderProps) {
               {/* Configurator CTA */}
               <motion.button
                 onClick={() => {
-                  navigate('configurator');
+                  navigate('home');
                   setMobileMenuOpen(false);
+                  setTimeout(() => {
+                    const section2 = document.querySelector('[data-section="2"]');
+                    section2?.scrollIntoView({ behavior: 'smooth' });
+                  }, 300);
                 }}
                 className="w-full text-left px-4 py-3 rounded-xl bg-[#6B1E3E]/10 border border-[#6B1E3E]/20"
                 initial={{ opacity: 0, x: -20 }}

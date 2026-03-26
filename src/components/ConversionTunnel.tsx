@@ -650,7 +650,7 @@ const Section1 = React.forwardRef<HTMLElement, {
                 {/* Savings summary */}
                 <div className="text-center mb-6">
                   <p className="text-sm text-[#8B7E74] mb-1">Avec le robinet le plus accessible</p>
-                  <p className="text-3xl sm:text-4xl font-bold text-green-600 mb-1">
+                  <p className="text-3xl sm:text-4xl font-bold text-[#6B1E3E] mb-1">
                     {Math.round(savingsPure.yearlySavings)}€/an
                   </p>
                   <p className="text-sm text-gray-600">d'économies</p>
@@ -673,9 +673,9 @@ const Section1 = React.forwardRef<HTMLElement, {
                 </div>
 
                 {/* 5-year projection */}
-                <div className="text-center mb-6 p-3 bg-green-50 rounded-xl">
+                <div className="text-center mb-6 p-3 bg-[#6B1E3E]/5 rounded-xl">
                   <p className="text-sm text-gray-700">
-                    Sur 5 ans : <span className="font-bold text-green-600">+{Math.round(savingsPure.savings5y)}€</span> d'économies nettes
+                    Sur 5 ans : <span className="font-bold text-[#6B1E3E]">+{Math.round(savingsPure.savings5y)}€</span> d'économies nettes
                   </p>
                 </div>
 
@@ -688,7 +688,7 @@ const Section1 = React.forwardRef<HTMLElement, {
                   ].map((r) => (
                     <div key={r.name} className="text-center p-3 bg-[#FAF8F5] rounded-xl">
                       <p className="text-xs font-medium text-gray-500 mb-1">{r.name}</p>
-                      <p className={`text-sm font-bold ${r.savings.yearlySavings > 0 ? 'text-green-600' : 'text-gray-400'}`}>
+                      <p className={`text-sm font-bold ${r.savings.yearlySavings > 0 ? 'text-[#6B1E3E]' : 'text-gray-400'}`}>
                         {r.savings.yearlySavings > 0 ? `${Math.round(r.savings.yearlySavings)}€/an` : '--'}
                       </p>
                     </div>
@@ -716,7 +716,7 @@ const Section1 = React.forwardRef<HTMLElement, {
                     <p className="text-xs font-medium text-gray-900 mb-1">le poids d'un pack de 6 bouteilles</p>
                     <p className="text-xs text-gray-600">Fini les courses lourdes. Votre eau sort du robinet, filtrée et fraîche.</p>
                   </div>
-                  <div className="p-4 rounded-xl bg-gradient-to-br from-green-50 to-emerald-50 border border-green-100">
+                  <div className="p-4 rounded-xl bg-gradient-to-br from-[#6B1E3E]/5 to-[#6B1E3E]/10 border border-[#6B1E3E]/10">
                     <p className="text-xl font-bold text-gray-900 mb-1">73%</p>
                     <p className="text-xs font-medium text-gray-900 mb-1">des bouteilles non recyclées en France</p>
                     <p className="text-xs text-gray-600">450 ans pour se décomposer. HYDRAL élimine des centaines de bouteilles/an.</p>
@@ -949,7 +949,7 @@ const Section2 = React.forwardRef<HTMLElement, {
                   <div className="grid grid-cols-2 gap-2 mb-4 flex-1">
                     {robinet.features.map((f, i) => (
                       <div key={i} className={`flex items-center gap-1.5 text-xs ${f.included ? 'text-gray-700' : 'text-gray-300'}`}>
-                        {f.included ? <Check className="w-3.5 h-3.5 text-green-600 flex-shrink-0" /> : <X className="w-3.5 h-3.5 flex-shrink-0" />}
+                        {f.included ? <Check className="w-3.5 h-3.5 text-[#6B1E3E] flex-shrink-0" /> : <X className="w-3.5 h-3.5 flex-shrink-0" />}
                         <span>{f.label}</span>
                       </div>
                     ))}
@@ -957,8 +957,8 @@ const Section2 = React.forwardRef<HTMLElement, {
 
                   {/* Savings if available */}
                   {state.yearlyTotal && state.yearlyTotal > 0 && yearlySavings > 0 && (
-                    <div className="p-2.5 bg-green-50 rounded-lg mb-4 text-center">
-                      <span className="text-xs text-green-700">Rentabilisé en <strong>{breakEvenMonths < 100 ? `${breakEvenMonths} mois` : '—'}</strong> • Économie <strong>{Math.round(yearlySavings)}€/an</strong></span>
+                    <div className="p-2.5 bg-[#6B1E3E]/5 rounded-lg mb-4 text-center">
+                      <span className="text-xs text-[#6B1E3E]">Rentabilisé en <strong>{breakEvenMonths < 100 ? `${breakEvenMonths} mois` : '—'}</strong> • Économie <strong>{Math.round(yearlySavings)}€/an</strong></span>
                     </div>
                   )}
                   {state.yearlyTotal && state.yearlyTotal > 0 && yearlySavings <= 0 && (

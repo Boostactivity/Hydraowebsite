@@ -669,9 +669,9 @@ function SimpleResultsView({ results, simpleInput, navigate, handleRecalculate, 
                   <div className="text-sm text-gray-500 mt-1">mois</div>
                 </div>
               </div>
-              <div className="flex items-center gap-2 px-4 py-3 bg-green-50 border border-green-200 rounded-xl">
-                <TrendingUp className="w-5 h-5 text-green-600" />
-                <span className="text-sm text-green-700">
+              <div className="flex items-center gap-2 px-4 py-3 bg-[#6B1E3E]/5 border border-[#6B1E3E]/20 rounded-xl">
+                <TrendingUp className="w-5 h-5 text-[#6B1E3E]" />
+                <span className="text-sm text-[#6B1E3E]">
                   Chaque mois SANS HYDRAL = <strong>{formatCurrency(results.current.monthlyBottleCost)} en bouteilles</strong>
                 </span>
               </div>
@@ -695,7 +695,7 @@ function SimpleResultsView({ results, simpleInput, navigate, handleRecalculate, 
                   <p className="text-sm font-medium text-gray-900">par pack à porter</p>
                   <p className="text-xs text-gray-600 mt-1">Courses, coffre, escaliers... Avec HYDRAL, l'eau sort du robinet.</p>
                 </div>
-                <div className="p-4 bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl border border-green-100">
+                <div className="p-4 bg-gradient-to-br from-[#6B1E3E]/5 to-[#6B1E3E]/10 rounded-xl border border-[#6B1E3E]/10">
                   <p className="text-xl font-bold text-gray-900 mb-1">73%</p>
                   <p className="text-sm font-medium text-gray-900">non recyclé</p>
                   <p className="text-xs text-gray-600 mt-1">Des bouteilles plastique en France. 450 ans pour se décomposer.</p>
@@ -745,7 +745,7 @@ function SimpleResultsView({ results, simpleInput, navigate, handleRecalculate, 
               </div>
               <div className="text-gray-600">{formatNumber(results.current.yearlyBottles)} bouteilles évitées</div>
               <div className="flex items-center gap-2 text-gray-600">
-                <TreePine className="w-4 h-4 text-green-600" />
+                <TreePine className="w-4 h-4 text-[#6B1E3E]" />
                 <span>= {results.withHydro.treesEquivalent} arbres plantés</span>
               </div>
             </div>
@@ -1042,7 +1042,7 @@ function DetailedCalculator({
           <label className="block text-sm font-medium text-gray-700 mb-4">5. Choisissez votre robinet HYDRAL</label>
 
           {yearlyBottleCost > 0 && (
-            <div className="mb-6 p-4 bg-gradient-to-r from-green-50 to-blue-50 border border-green-200 rounded-xl">
+            <div className="mb-6 p-4 bg-gradient-to-r from-[#6B1E3E]/5 to-blue-50 border border-[#6B1E3E]/20 rounded-xl">
               <div className="flex items-center justify-between flex-wrap gap-4">
                 <div>
                   <div className="text-sm text-gray-600 mb-1">Votre dépense actuelle :</div>
@@ -1072,7 +1072,7 @@ function DetailedCalculator({
                 <div className="space-y-2 flex-1">
                   {sku.features.map((feature: string, idx: number) => (
                     <div key={idx} className="flex items-center gap-2 text-sm text-gray-700">
-                      <CheckCircle2 className="w-4 h-4 text-green-600 flex-shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 text-[#6B1E3E] flex-shrink-0" />
                       <span>{feature}</span>
                     </div>
                   ))}
@@ -1081,7 +1081,7 @@ function DetailedCalculator({
                 {detailedInput.selectedSKU === sku.value && yearlyBottleCost > 0 && (
                   <div className="mt-auto pt-4 border-t border-[#6B1E3E]/20">
                     <div className="text-sm text-gray-600">Économie estimée :</div>
-                    <div className="text-lg font-medium text-green-600">
+                    <div className="text-lg font-medium text-[#6B1E3E]">
                       {formatCurrency(yearlyBottleCost - getSubscriptionPrice(detailedInput.householdSize || 2))}/an
                     </div>
                   </div>
@@ -1282,7 +1282,7 @@ function DetailedResultsView({
                 <div className="text-gray-600">plastique non produit/an</div>
               </div>
               <div className="flex items-center gap-2 text-gray-600">
-                <TreePine className="w-4 h-4 text-green-600" />
+                <TreePine className="w-4 h-4 text-[#6B1E3E]" />
                 <span>= {results.withHydro.treesEquivalent} arbres plantés</span>
               </div>
             </div>
