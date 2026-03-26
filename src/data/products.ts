@@ -246,16 +246,16 @@ export const subscriptions: Subscription[] = [
     priceYear: 99,
     priceMonth: 8.25,
     priceQuarter: 24.75,
-    filters: 4,
-    co2: 8,
+    filters: 2,
+    co2: 6,
     gift: 'small',
     features: [
-      '4 filtres premium par an',
-      '8 cartouches CO₂',
-      'Livraison prioritaire',
-      'Check-up technique offert',
-      'Rappels automatiques'
-    ]
+      '2 filtres par an',
+      '6 cartouches CO₂',
+      'Livraison automatique',
+      'Sans engagement'
+    ],
+    popular: true
   },
   {
     id: 'plus',
@@ -263,33 +263,14 @@ export const subscriptions: Subscription[] = [
     priceYear: 119,
     priceMonth: 9.92,
     priceQuarter: 29.75,
-    filters: 6,
-    co2: 12,
+    filters: 2,
+    co2: 8,
     gift: 'medium',
     features: [
-      '6 filtres premium par an',
-      '12 cartouches CO₂',
-      'Livraison express',
-      '2 check-ups offerts',
-      'Pièces d\'usure à prix réduit'
-    ],
-    popular: true
-  },
-  {
-    id: 'plus-plus',
-    name: 'Premium',
-    priceYear: 139,
-    priceMonth: 11.58,
-    priceQuarter: 34.75,
-    filters: 6,
-    co2: 12,
-    gift: 'large',
-    features: [
-      '6 filtres premium par an',
-      '12 cartouches CO₂',
-      'Livraison express',
-      '2 check-ups offerts',
-      'Pièces d\'usure à prix réduit'
+      '2 filtres par an',
+      '8 cartouches CO₂',
+      'Livraison automatique',
+      'Sans engagement'
     ]
   }
 ];

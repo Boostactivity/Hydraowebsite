@@ -121,7 +121,7 @@ const PLANS = {
     priceQuarterly: 14.75,
     description: '1–2 personnes',
     filters: 2,
-    co2: 4,
+    co2: 0,
     delivery: 'Incluse',
     welcomePack: {
       items: [
@@ -138,9 +138,9 @@ const PLANS = {
     priceMonthly: 8.25,
     priceQuarterly: 24.75,
     description: '3–4 personnes',
-    filters: 4,
-    co2: 8,
-    delivery: 'Prioritaire',
+    filters: 2,
+    co2: 6,
+    delivery: 'Incluse',
     popular: true,
     welcomePack: {
       items: [
@@ -158,9 +158,9 @@ const PLANS = {
     priceMonthly: 9.92,
     priceQuarterly: 29.75,
     description: '5+ personnes',
-    filters: 6,
-    co2: 12,
-    delivery: 'Express',
+    filters: 2,
+    co2: 8,
+    delivery: 'Incluse',
     welcomePack: {
       items: [
         { id: 'verre-1l-1', name: 'Bouteille en verre 1L', qty: 4 },
