@@ -32,7 +32,13 @@ export function SavingsPage({ navigate }: SavingsPageProps) {
               Choisissez votre robinet HYDRAL personnalisé et commencez à économiser dès aujourd'hui.
             </p>
             <motion.button
-              onClick={() => navigate('configurator')}
+              onClick={() => {
+              navigate('home');
+              setTimeout(() => {
+                const section2 = document.querySelector('[data-section="2"]');
+                section2?.scrollIntoView({ behavior: 'smooth' });
+              }, 300);
+            }}
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
               className="px-10 py-5 bg-white text-[#6B1E3E] rounded-full text-lg font-medium shadow-2xl hover:shadow-xl transition-all inline-flex items-center gap-3"

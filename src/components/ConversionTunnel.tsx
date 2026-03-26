@@ -297,7 +297,15 @@ export function ConversionTunnel({ navigate }: ConversionTunnelProps) {
         state={state}
         setState={setState}
         calculateSavings={calculateSavings}
-        onNext={() => scrollToSection(section2Ref)}
+        onNext={() => {
+          // Auto-select model based on water type
+          if (!state.selectedSKU) {
+            if (state.selectedWaters.some(w => w.type === 'sparkling') || state.waterType === 'sparkling' || state.waterType === 'both') {
+              setState(prev => ({ ...prev, selectedSKU: 'one' }));
+            }
+          }
+          scrollToSection(section2Ref);
+        }}
       />
 
       {/* SECTION 2 - CHOIX ROBINET */}
@@ -888,10 +896,16 @@ const Section2 = React.forwardRef<HTMLElement, {
         className="max-w-5xl mx-auto w-full"
       >
         <h2 className="text-center mb-4">
-          <span className="block text-gray-900">Choisissez votre robinet</span>
+          <span className="block text-gray-900">
+            {state.yearlyTotal && state.yearlyTotal > 0 && (state.yearlyTotal - 59) > 0
+              ? 'Vous pouvez économiser. Quel modèle choisissez-vous ?'
+              : 'Choisissez votre robinet'}
+          </span>
         </h2>
-        <p className="text-center text-lg sm:text-xl text-[#8B7E74] mb-10">
-          Le bon robinet pour le bon foyer
+        <p className="text-center text-lg sm:text-xl text-[#8B7E74] mb-12">
+          {state.yearlyTotal && state.yearlyTotal > 0 && (state.yearlyTotal - 59) > 0
+            ? `Avec vos ${state.yearlyTotal}€/an en bouteilles, voici vos options.`
+            : 'Le bon robinet pour le bon foyer'}
         </p>
 
         {/* Robinet Cards Grid */}
@@ -928,7 +942,8 @@ const Section2 = React.forwardRef<HTMLElement, {
                 <div className="p-5 flex flex-col flex-1">
                   <h3 className="text-xl font-semibold text-gray-900 mb-1">{robinet.name}</h3>
                   <p className="text-sm text-[#8B7E74] mb-3">{robinet.tagline}</p>
-                  <p className="text-2xl font-bold text-[#6B1E3E] mb-4">{robinet.price}€</p>
+                  <p className="text-2xl font-bold text-[#6B1E3E] mb-1">{robinet.price}€</p>
+                  <p className="text-xs text-[#8B7E74] mt-0.5 mb-4">soit {(robinet.price / 365).toFixed(2)}€/jour la 1ère année</p>
 
                   {/* Compact features - just checkmarks */}
                   <div className="grid grid-cols-2 gap-2 mb-4 flex-1">

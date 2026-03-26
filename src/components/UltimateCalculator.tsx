@@ -824,7 +824,13 @@ function SimpleResultsView({ results, simpleInput, navigate, handleRecalculate, 
 
       <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center items-center">
         <motion.button
-          onClick={() => navigate('robinet-choice')}
+          onClick={() => {
+            navigate('home');
+            setTimeout(() => {
+              const section2 = document.querySelector('[data-section="2"]');
+              section2?.scrollIntoView({ behavior: 'smooth' });
+            }, 300);
+          }}
           className="group px-10 py-5 gradient-bordeaux text-white rounded-full shadow-xl shadow-[#6B1E3E]/25 hover:shadow-2xl hover:shadow-[#6B1E3E]/35 font-medium text-lg"
           whileHover={{ scale: 1.02, y: -2 }}
           whileTap={{ scale: 0.98 }}
@@ -1317,7 +1323,13 @@ function DetailedResultsView({
       {/* CTA */}
       <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
         <motion.button
-          onClick={() => navigate('robinet-choice')}
+          onClick={() => {
+            navigate('home');
+            setTimeout(() => {
+              const section2 = document.querySelector('[data-section="2"]');
+              section2?.scrollIntoView({ behavior: 'smooth' });
+            }, 300);
+          }}
           className="group px-10 py-5 gradient-bordeaux text-white rounded-full shadow-xl shadow-[#6B1E3E]/25 hover:shadow-2xl hover:shadow-[#6B1E3E]/35 font-medium text-lg"
           whileHover={{ scale: 1.02, y: -2 }}
           whileTap={{ scale: 0.98 }}
