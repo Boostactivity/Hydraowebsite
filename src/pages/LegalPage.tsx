@@ -49,7 +49,7 @@ export function LegalPage({ navigate, type = 'mentions' }: LegalPageProps) {
                       Capital social : 500 000€<br />
                       SIRET : 850 973 686 00049<br />
                       RCS Bobigny<br />
-                      Siège social : 1 Square Maurice Thorez, 93200 Saint-Denis<br />
+                      Siège social : 12 Avenue du President Wilson, 93200 Saint-Denis<br />
                       Téléphone : +33 6 60 96 85 16<br />
                       Email : contact@hydral.fr
                     </p>

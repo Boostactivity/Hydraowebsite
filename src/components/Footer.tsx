@@ -133,7 +133,7 @@ export function Footer({ navigate }: FooterProps) {
               </a>
               <div className="flex items-center gap-3">
                 <MapPin className="w-4 h-4" />
-                <span>1 Square Maurice Thorez, 93200 Saint-Denis</span>
+                <span>12 Avenue du President Wilson, 93200 Saint-Denis</span>
               </div>
             </div>
           </div>

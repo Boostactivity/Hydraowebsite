@@ -31,7 +31,7 @@ export function LocalBusinessSchema({
   telephone = '+33 6 60 96 85 16',
   email = 'contact@hydral.fr',
   address = {
-    streetAddress: '1 Square Maurice Thorez',
+    streetAddress: '12 Avenue du President Wilson',
     addressLocality: 'Saint-Denis',
     postalCode: '93200',
     addressCountry: 'FR'
@@ -170,7 +170,7 @@ export function OrganizationSchema() {
     ],
     address: {
       '@type': 'PostalAddress',
-      streetAddress: '1 Square Maurice Thorez',
+      streetAddress: '12 Avenue du President Wilson',
       addressLocality: 'Saint-Denis',
       postalCode: '93200',
       addressCountry: 'FR'
