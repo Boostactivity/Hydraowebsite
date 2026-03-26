@@ -883,7 +883,7 @@ function DetailedCalculator({
   const marques = detailedInput.waterType ? getUniqueMarques(detailedInput.waterType) : [];
   const formats = detailedInput.selectedBrand ? getFormatsForMarque(detailedInput.selectedBrand) : [];
 
-  // Filter SKU options: if plate, hide gazeux-only SKU1
+  // Filter SKU options: if plate, hide Spark (requires CO2)
   const filteredSKUs = detailedInput.waterType === 'plate'
     ? skuOptions.filter((s: any) => s.value !== 'spark')
     : skuOptions;

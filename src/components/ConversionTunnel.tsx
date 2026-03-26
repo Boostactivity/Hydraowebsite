@@ -553,8 +553,8 @@ const Section1 = React.forwardRef<HTMLElement, {
 
   // Live savings calculation
   const savingsPure = useMemo(() => calculateSavings(490, 59), [effectiveYearly, calculateSavings]);
-  const savingsSpark = useMemo(() => calculateSavings(890, 59), [effectiveYearly, calculateSavings]);
-  const savingsOne = useMemo(() => calculateSavings(990, 59), [effectiveYearly, calculateSavings]);
+  const savingsSpark = useMemo(() => calculateSavings(890, 99), [effectiveYearly, calculateSavings]);
+  const savingsOne = useMemo(() => calculateSavings(990, 99), [effectiveYearly, calculateSavings]);
 
   return (
     <section
@@ -897,7 +897,7 @@ const Section2 = React.forwardRef<HTMLElement, {
         {/* Robinet Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
           {ROBINETS.map((robinet, idx) => {
-            const { breakEvenMonths, yearlySavings } = calculateSavings(robinet.price, 59);
+            const { breakEvenMonths, yearlySavings } = calculateSavings(robinet.price, robinet.hasCO2 ? 99 : 59);
 
             return (
               <motion.div

@@ -257,7 +257,7 @@ function getSEOData(page: Page, productId?: string): SEOData {
     },
     subscriptions: {
       title: `Abonnements ${BRAND_NAME} - Filtres et CO₂ dès 59€/an | 3 Formules`,
-      description: 'Abonnements HYDRAL : Filtre Only 59€/an, Standard 99€/an, Plus 119€/an. Livraison automatique filtres et CO₂, sans engagement, cadeaux inclus.',
+      description: 'Abonnements HYDRAL : Essentiel 59€/an, Standard 99€/an, Plus 119€/an. Livraison automatique filtres et CO₂, sans engagement, cadeaux inclus.',
       canonical: `${BASE_URL}/abonnements`,
       keywords: ['abonnements HYDRAL', 'abonnement filtre', 'abonnement CO2', '59 euros par an', 'consommables robinet', 'livraison automatique'],
       ogType: 'website',

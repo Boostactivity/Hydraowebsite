@@ -193,8 +193,8 @@ export interface Subscription {
 
 export const subscriptions: Subscription[] = [
   {
-    id: 'filter-only',
-    name: 'Filtre Only',
+    id: 'essentiel',
+    name: 'Essentiel',
     priceYear: 59,
     priceMonth: 4.92,
     priceQuarter: 14.75,

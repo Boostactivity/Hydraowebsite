@@ -76,7 +76,7 @@ export default function Personalization({ onComplete }: PersonalizationProps) {
   // Récupérer les données du tunnel
   const [selectedPlan, setSelectedPlan] = useState<PlanType>('standard');
   const [selectedRhythm, setSelectedRhythm] = useState<PaymentRhythm>('annual');
-  const [selectedSKU, setSelectedSKU] = useState<string>('SKU2');
+  const [selectedSKU, setSelectedSKU] = useState<string>('spark');
   
   // État de personnalisation : { "itemId-index": { color, name } }
   const [customizations, setCustomizations] = useState<Record<string, ItemCustomization>>({});
@@ -93,7 +93,7 @@ export default function Personalization({ onComplete }: PersonalizationProps) {
       
       if (calcData) {
         const parsed = JSON.parse(calcData);
-        setSelectedSKU(parsed.selectedSKU || 'SKU2');
+        setSelectedSKU(parsed.selectedSKU || 'spark');
       }
       
       if (planData) {

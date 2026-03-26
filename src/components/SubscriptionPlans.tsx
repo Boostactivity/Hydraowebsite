@@ -5,7 +5,7 @@ import { CheckCircle2, Check, Package, Sparkles, Shield, Clock, RefreshCw, Lock 
 // Types
 type PaymentRhythm = 'monthly' | 'quarterly' | 'annual';
 type PlanType = 'essential' | 'standard' | 'plus';
-type SKUType = 'SKU1' | 'SKU2' | 'SKU3' | 'sku1' | 'sku2' | 'sku3';
+type SKUType = 'pure' | 'spark' | 'one' | 'SKU1' | 'SKU2' | 'SKU3' | 'sku1' | 'sku2' | 'sku3';
 
 interface SubscriptionPlansProps {
   selectedSKU?: SKUType;
@@ -110,7 +110,7 @@ export default function SubscriptionPlans({
   }, []);
 
   // Utiliser les données du calculateur si disponibles, sinon les props par défaut
-  const selectedSKU = calculatorData?.selectedSKU || propSKU || 'SKU2';
+  const selectedSKU = calculatorData?.selectedSKU || propSKU || 'spark';
   const yearlySavings = calculatorData?.yearlySavings || propYearlySavings || 0;
   const householdSize = calculatorData?.householdSize || propHouseholdSize || 2;
   
@@ -126,7 +126,7 @@ export default function SubscriptionPlans({
   const [showWelcomePack, setShowWelcomePack] = useState(true);
 
   // Vérifier si le SKU a la fonction CO₂
-  const hasCO2 = selectedSKU && ['spark', 'one', 'sku1', 'sku3'].includes(selectedSKU.toLowerCase());
+  const hasCO2 = selectedSKU && ['spark', 'one'].includes(selectedSKU.toLowerCase());
 
   const formatPrice = (amount: number) => {
     return new Intl.NumberFormat('fr-FR', {

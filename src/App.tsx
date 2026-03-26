@@ -43,7 +43,6 @@ const LegalPage = lazy(() => import('./pages/LegalPage').then(m => ({ default: m
 const TestimonialsPage = lazy(() => import('./pages/TestimonialsPage').then(m => ({ default: m.TestimonialsPage })));
 const SavingsPage = lazy(() => import('./pages/SavingsPage').then(m => ({ default: m.SavingsPage })));
 const ObjectionsPage = lazy(() => import('./pages/ObjectionsPage').then(m => ({ default: m.ObjectionsPage })));
-const MobileDemoPage = lazy(() => import('./pages/MobileDemoPage').then(m => ({ default: m.MobileDemoPage })));
 const WarrantyPage = lazy(() => import('./pages/WarrantyPage').then(m => ({ default: m.WarrantyPage })));
 const PaymentSecurityPage = lazy(() => import('./pages/PaymentSecurityPage').then(m => ({ default: m.PaymentSecurityPage })));
 const BlogPage = lazy(() => import('./pages/BlogPage').then(m => ({ default: m.BlogPage })));
@@ -52,7 +51,6 @@ const ResourcesPage = lazy(() => import('./pages/ResourcesPage').then(m => ({ de
 const ShippingTrackingPage = lazy(() => import('./pages/ShippingTrackingPage').then(m => ({ default: m.ShippingTrackingPage })));
 const VirtualShowroomPage = lazy(() => import('./pages/VirtualShowroomPage').then(m => ({ default: m.VirtualShowroom })));
 const PersonalizationPage = lazy(() => import('./pages/PersonalizationPage').then(m => ({ default: m.PersonalizationPage })));
-const RobinetChoicePage = lazy(() => import('./pages/RobinetChoicePage').then(m => ({ default: m.RobinetChoicePage })));
 
 export type Page = 
   | 'home'
