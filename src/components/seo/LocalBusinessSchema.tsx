@@ -27,7 +27,7 @@ interface LocalBusinessSchemaProps {
 
 export function LocalBusinessSchema({
   name = 'HYDRAL France',
-  description = 'Robinets intelligents 5-en-1 haut de gamme : eau filtrée, pétillante, bouillante. Livraison partout en France.',
+  description = 'Robinet multifonction cuisine 5-en-1 : eau bouillante instantanée, gazeuse, filtrée. Alternative Quooker dès 490€. Livraison offerte France.',
   telephone = '+33 6 60 96 85 16',
   email = 'contact@hydral.fr',
   address = {
@@ -44,7 +44,7 @@ export function LocalBusinessSchema({
     'Mo-Fr 09:00-18:00',
     'Sa 10:00-17:00'
   ],
-  priceRange = '€€€',
+  priceRange = '€€',
   rating = {
     value: 4.9,
     count: 47
@@ -146,7 +146,7 @@ export function OrganizationSchema() {
     legalName: 'HYDRAL SAS',
     url: 'https://hydral.fr',
     logo: 'https://hydral.fr/logo.png',
-    description: 'Leader français des robinets intelligents 5-en-1 pour une cuisine moderne, écologique et économique.',
+    description: 'Robinet multifonction cuisine 5-en-1 HYDRAL : eau bouillante, gazeuse, filtrée. Alternative Quooker dès 490€. Leader français du robinet eau bouillante.',
     foundingDate: '2019',
     founders: [
       {

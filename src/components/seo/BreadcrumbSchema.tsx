@@ -42,16 +42,16 @@ export function AutoBreadcrumbSchema({ currentPage }: { currentPage: Page }) {
     ],
     'concept': [
       { name: 'Accueil', url: baseUrl },
-      { name: 'Le Concept', url: `${baseUrl}/concept` }
+      { name: 'Robinet 5-en-1 : le concept', url: `${baseUrl}/concept` }
     ],
     'gamme': [
       { name: 'Accueil', url: baseUrl },
-      { name: 'La Gamme', url: `${baseUrl}/gamme` }
+      { name: 'Robinets multifonction cuisine', url: `${baseUrl}/gamme` }
     ],
     'product': [
       { name: 'Accueil', url: baseUrl },
-      { name: 'La Gamme', url: `${baseUrl}/gamme` },
-      { name: 'Robinet 5-en-1', url: `${baseUrl}/produit` }
+      { name: 'Robinets multifonction cuisine', url: `${baseUrl}/gamme` },
+      { name: 'Robinet eau bouillante 5-en-1', url: `${baseUrl}/produit` }
     ],
     'modules': [
       { name: 'Accueil', url: baseUrl },
@@ -67,7 +67,7 @@ export function AutoBreadcrumbSchema({ currentPage }: { currentPage: Page }) {
     ],
     'avantages': [
       { name: 'Accueil', url: baseUrl },
-      { name: 'Avantages', url: `${baseUrl}/avantages` }
+      { name: 'Avantages robinet 5-en-1', url: `${baseUrl}/avantages` }
     ],
     'utilisations': [
       { name: 'Accueil', url: baseUrl },
@@ -75,11 +75,11 @@ export function AutoBreadcrumbSchema({ currentPage }: { currentPage: Page }) {
     ],
     'securite': [
       { name: 'Accueil', url: baseUrl },
-      { name: 'Sécurité', url: `${baseUrl}/securite` }
+      { name: 'Sécurité robinet eau bouillante', url: `${baseUrl}/securite` }
     ],
     'ecoresponsable': [
       { name: 'Accueil', url: baseUrl },
-      { name: 'Éco-responsable', url: `${baseUrl}/ecoresponsable` }
+      { name: 'Robinet écologique zéro plastique', url: `${baseUrl}/ecoresponsable` }
     ],
     'cube': [
       { name: 'Accueil', url: baseUrl },
@@ -87,7 +87,7 @@ export function AutoBreadcrumbSchema({ currentPage }: { currentPage: Page }) {
     ],
     'prix': [
       { name: 'Accueil', url: baseUrl },
-      { name: 'Prix Transparent', url: `${baseUrl}/prix` }
+      { name: 'Prix robinet eau bouillante', url: `${baseUrl}/prix` }
     ],
     'inspiration': [
       { name: 'Accueil', url: baseUrl },
@@ -122,7 +122,7 @@ export function AutoBreadcrumbSchema({ currentPage }: { currentPage: Page }) {
     ],
     'faq': [
       { name: 'Accueil', url: baseUrl },
-      { name: 'FAQ', url: `${baseUrl}/faq` }
+      { name: 'FAQ robinet 5-en-1', url: `${baseUrl}/faq` }
     ],
     'legal': [
       { name: 'Accueil', url: baseUrl },
@@ -130,11 +130,11 @@ export function AutoBreadcrumbSchema({ currentPage }: { currentPage: Page }) {
     ],
     'testimonials': [
       { name: 'Accueil', url: baseUrl },
-      { name: 'Témoignages', url: `${baseUrl}/avis` }
+      { name: 'Avis robinet multifonction cuisine', url: `${baseUrl}/avis` }
     ],
     'savings': [
       { name: 'Accueil', url: baseUrl },
-      { name: 'Calculateur d\'Économies', url: `${baseUrl}/economies` }
+      { name: 'Calculateur économies eau en bouteille', url: `${baseUrl}/economies` }
     ],
     'objections': [
       { name: 'Accueil', url: baseUrl },
@@ -154,7 +154,7 @@ export function AutoBreadcrumbSchema({ currentPage }: { currentPage: Page }) {
     ],
     'blog': [
       { name: 'Accueil', url: baseUrl },
-      { name: 'Blog', url: `${baseUrl}/blog` }
+      { name: 'Blog eau filtrée et microplastiques', url: `${baseUrl}/blog` }
     ],
     'video-hub': [
       { name: 'Accueil', url: baseUrl },

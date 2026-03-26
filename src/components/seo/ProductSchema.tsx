@@ -109,15 +109,15 @@ export function ProductSchema({
 export function HYDRALProductSchema() {
   return (
     <ProductSchema
-      name="HYDRAL Robinet 5-en-1"
-      description="Robinet intelligent haut de gamme 5-en-1 : eau filtrée, pétillante, bouillante, froide et chaude. Installation simple, design premium, économies garanties."
+      name="HYDRAL Robinet Multifonction Cuisine 5-en-1 — Eau Bouillante, Gazeuse, Filtrée"
+      description="Robinet multifonction cuisine 5-en-1 HYDRAL : eau bouillante instantanée, gazeuse, filtrée, chaude et froide. Alternative Quooker dès 490€, jusqu'à 3x moins cher. Robinet eau bouillante et gazeuse premium pour cuisine."
       image={chromeFaucet}
       price={490}
       priceCurrency="EUR"
       availability="InStock"
       condition="NewCondition"
       brand="HYDRAL"
-      sku="HYDRAL-5EN1-001"
+      sku="HYDRAL-5EN1-PURE"
       rating={{
         value: 4.9,
         count: 47,
@@ -128,19 +128,19 @@ export function HYDRALProductSchema() {
         {
           author: 'Sophie Martin',
           datePublished: '2026-03-15',
-          reviewBody: 'Révolutionnaire ! Plus besoin d\'acheter de l\'eau en bouteille. L\'eau pétillante est parfaite et l\'eau chaude instantanée me fait gagner un temps fou.',
+          reviewBody: 'Meilleure alternative au Quooker ! Robinet eau bouillante instantanée parfait. Plus besoin d\'acheter de l\'eau en bouteille. L\'eau gazeuse est excellente et le prix imbattable à 490€.',
           reviewRating: 5
         },
         {
           author: 'Marc Dubois',
           datePublished: '2026-03-10',
-          reviewBody: 'Installation facile et design magnifique. La qualité de l\'eau filtrée est excellente. Rentabilisé en moins d\'un an.',
+          reviewBody: 'Robinet multifonction cuisine top qualité. Installation facile du robinet 5-en-1, eau filtrée impeccable. Rentabilisé en moins d\'un an vs eau en bouteille.',
           reviewRating: 5
         },
         {
           author: 'Claire Rousseau',
           datePublished: '2026-03-05',
-          reviewBody: 'Produit premium qui tient ses promesses. Le design est élégant et la qualité premium. Petit bémol sur le prix mais l\'investissement vaut le coup.',
+          reviewBody: 'Robinet eau bouillante et gazeuse au top. Design élégant, qualité premium. Vraie alternative Quooker à un prix raisonnable. Je recommande ce robinet 5-en-1.',
           reviewRating: 4
         }
       ]}

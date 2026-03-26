@@ -37,44 +37,44 @@ export function FAQSchema({ faqs }: FAQSchemaProps) {
 export function HYDRALFAQSchema() {
   const faqs: FAQItem[] = [
     {
-      question: 'Combien coûte le robinet HYDRAL 5-en-1 ?',
-      answer: 'Le robinet HYDRAL 5-en-1 est proposé à 490€ TTC, avec des abonnements optionnels de 59€ à 119€ par an pour les consommables (filtres, CO2). Installation simple, réalisable par un bricoleur ou un professionnel.'
+      question: 'Combien coûte un robinet 5-en-1 ?',
+      answer: 'Le robinet 5-en-1 HYDRAL est disponible à partir de 490€ TTC (modèle Pure). Le Spark avec eau gazeuse est à 890€ et le One tout-en-un à 990€. Les abonnements consommables (filtres, CO2) vont de 59€ à 119€/an. C\'est jusqu\'à 3 fois moins cher qu\'un Quooker (1500€ à 3500€).'
+    },
+    {
+      question: 'Quelle est la meilleure alternative au Quooker ?',
+      answer: 'HYDRAL est la meilleure alternative au Quooker en France. Robinet multifonction cuisine 5-en-1 avec eau bouillante instantanée, gazeuse, filtrée, chaude et froide dès 490€ contre 1500€ à 3500€ pour un Quooker. Même qualité premium, design européen, 3x moins cher.'
+    },
+    {
+      question: 'Comment fonctionne un robinet eau bouillante ?',
+      answer: 'Le robinet eau bouillante HYDRAL intègre un boiler compact sous l\'évier qui maintient 3L d\'eau à 100°C en permanence. L\'eau bouillante instantanée est disponible via une poignée de sécurité à double action. Consommation : seulement 15€/an en électricité grâce à l\'isolation thermique haute performance.'
+    },
+    {
+      question: 'Est-ce que l\'eau du robinet filtrée est meilleure que l\'eau en bouteille ?',
+      answer: 'Oui. L\'eau en bouteille contient jusqu\'à 240 000 particules de microplastiques par litre, un danger pour la santé. L\'eau filtrée HYDRAL élimine 99,9% des impuretés (chlore, métaux lourds, pesticides, microplastiques) sans les risques du plastique. Plus sûre, plus économique et plus écologique que l\'eau en bouteille.'
     },
     {
       question: 'Quelles sont les 5 fonctions du robinet HYDRAL ?',
-      answer: 'Le robinet HYDRAL 5-en-1 offre : (1) Eau filtrée froide ultra-pure (99.9% impuretés éliminées), (2) Eau pétillante avec 3 niveaux de gazéification, (3) Eau bouillante instantanée à 100°C, (4) Eau froide du réseau, et (5) Eau chaude standard mitigée.'
+      answer: 'Le robinet multifonction cuisine HYDRAL 5-en-1 offre : (1) Eau bouillante instantanée à 100°C, (2) Eau gazeuse avec 3 niveaux de gazéification, (3) Eau filtrée froide ultra-pure, (4) Eau froide du réseau, et (5) Eau chaude mitigée. Un seul robinet qui remplace bouilloire, eau en bouteille et machine à eau gazeuse.'
     },
     {
-      question: 'Combien puis-je économiser avec HYDRAL ?',
-      answer: 'Les utilisateurs HYDRAL économisent en moyenne 300€ à 1 000€ par an en éliminant l\'achat d\'eau en bouteille, café en capsules, et bouilloire électrique. Le retour sur investissement est généralement atteint en 6 à 12 mois selon la taille du foyer.'
+      question: 'Comment filtrer l\'eau du robinet efficacement ?',
+      answer: 'Le système de filtration HYDRAL 5 étapes élimine 99,9% des impuretés : chlore, métaux lourds (plomb, mercure), pesticides, microplastiques, bactéries et mauvais goûts. Certifié NSF/ANSI 42, 53 et 401. Filtres à changer tous les 6 mois avec abonnement livraison automatique.'
     },
     {
-      question: 'L\'installation est-elle compliquée ?',
-      answer: 'Non, l\'installation HYDRAL est simple : 80% des clients l\'installent eux-mêmes en environ 1h grâce à notre guide vidéo étape par étape. Un professionnel peut aussi le faire si vous préférez.'
+      question: 'Le robinet eau bouillante est-il sécurisé avec des enfants ?',
+      answer: 'Oui, le robinet HYDRAL dispose d\'un verrouillage enfant intégré : double action poussée + rotation impossible à actionner par un enfant. Protection anti-brûlure sur le corps du robinet, isolation thermique, normes CE et NF. Sécurité maximale pour toute la famille.'
     },
     {
-      question: 'Le robinet HYDRAL est-il compatible avec ma cuisine ?',
-      answer: 'Oui, le robinet HYDRAL s\'adapte à 95% des cuisines. Il nécessite : un évier avec trou standard (35-40mm), une arrivée d\'eau froide, une prise électrique 230V à proximité, et 30cm d\'espace sous l\'évier pour le cube de filtration.'
+      question: 'Combien puis-je économiser avec un robinet 5-en-1 ?',
+      answer: 'Les utilisateurs HYDRAL économisent 300€ à 1 000€/an en éliminant l\'eau en bouteille, les capsules café et la bouilloire. Un foyer de 4 personnes dépensant 50€/mois en eau en bouteille économise 600€/an. Retour sur investissement en 6 à 12 mois.'
     },
     {
-      question: 'Quelle est la qualité de l\'eau filtrée HYDRAL ?',
-      answer: 'Le système de filtration HYDRAL 5 étapes élimine 99.9% des impuretés : chlore, métaux lourds (plomb, mercure), pesticides, microplastiques, bactéries et mauvais goûts. Certifié NSF/ANSI 42, 53 et 401. Tests de qualité disponibles sur notre site.'
+      question: 'L\'installation du robinet 5-en-1 est-elle compliquée ?',
+      answer: 'Non, l\'installation prend environ 1h. 80% des clients installent le robinet HYDRAL eux-mêmes grâce au guide vidéo. Il faut : un évier avec trou standard 35-40mm, une arrivée d\'eau froide, une prise 230V et 30cm sous l\'évier pour le cube.'
     },
     {
-      question: 'À quelle fréquence faut-il changer les filtres ?',
-      answer: 'Les filtres HYDRAL se changent tous les 6 mois (ou 2500L) pour une performance optimale. L\'application mobile vous alerte automatiquement. Le remplacement prend 2 minutes sans outils. Abonnement disponible avec livraison automatique.'
-    },
-    {
-      question: 'Le robinet HYDRAL est-il garanti ?',
-      answer: 'Oui, le robinet HYDRAL bénéficie d\'une garantie complète : 3 ans sur le robinet et l\'électronique. Garantie satisfait ou remboursé 30 jours. SAV français réactif sous 24h.'
-    },
-    {
-      question: 'Le robinet HYDRAL consomme-t-il beaucoup d\'électricité ?',
-      answer: 'Non, le robinet HYDRAL est très économe : consommation moyenne de 15€/an en électricité grâce à l\'isolation thermique haute performance et au mode veille intelligent. 10x plus économique qu\'une bouilloire électrique classique.'
-    },
-    {
-      question: 'Est-ce que le robinet HYDRAL est écologique ?',
-      answer: 'Oui, extrêmement : éliminez 2000 bouteilles plastique par an, réduisez votre empreinte carbone de 85%, économisez 15000L d\'eau par an. Le cube de filtration est recyclable à 95%. Certifié Carbon Neutral.'
+      question: 'Quels sont les avantages de l\'eau bouillante instantanée ?',
+      answer: 'L\'eau bouillante instantanée permet de gagner 10 à 15 minutes par jour : thé et café prêts en secondes, cuisson accélérée, préparation biberon immédiate, stérilisation rapide. Plus besoin d\'attendre la bouilloire. Consommation électrique 10x inférieure à une bouilloire classique.'
     }
   ];
 

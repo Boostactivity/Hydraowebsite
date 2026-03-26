@@ -111,34 +111,34 @@ function updateStructuredData(data: any) {
 function getSEOData(page: Page, productId?: string): SEOData {
   const seoPages: Record<Page, SEOData> = {
     home: {
-      title: `${BRAND_NAME} - Robinet 5-en-1 Premium | Eau Bouillante, Filtrée, Pétillante`,
-      description: 'Découvrez HYDRAL, le robinet 5-en-1 haut de gamme à 490€. Eau bouillante instantanée, filtrée, pétillante, chaude et froide. Transformez votre cuisine avec la technologie européenne premium.',
+      title: `HYDRAL — Robinet 5-en-1 Eau Bouillante, Gazeuse, Filtrée | Alternative Quooker dès 490€`,
+      description: 'Robinet multifonction cuisine : eau bouillante instantanée, gazeuse, filtrée et froide. Le robinet 5-en-1 premium dès 490€. Alternative Quooker 3x moins cher. Livraison offerte France.',
       canonical: `${BASE_URL}/`,
-      keywords: ['robinet 5 en 1', 'robinet eau bouillante', 'robinet premium', 'eau pétillante robinet', 'HYDRAL', 'robinet cuisine', 'eau filtrée', 'robinet intelligent'],
+      keywords: ['robinet eau bouillante', 'robinet 5 en 1', 'robinet eau gazeuse cuisine', 'alternative quooker', 'quooker pas cher', 'robinet multifonction cuisine', 'robinet eau filtrée', 'robinet eau bouillante instantanée', 'robinet cuisine multifonction 5 en 1', 'HYDRAL', 'robinet type quooker moins cher', 'meilleur robinet multifonction cuisine 2026'],
       ogType: 'website',
       structuredData: getOrganizationSchema()
     },
     concept: {
-      title: `Le Concept ${BRAND_NAME} - 5 Types d'Eau en Un Seul Robinet`,
-      description: 'Le robinet HYDRAL révolutionne votre cuisine : eau bouillante 100°C, froide filtrée, pétillante, chaude et froide en un seul point. Design européen premium.',
+      title: `Comment fonctionne le robinet HYDRAL 5-en-1 | Eau bouillante, gazeuse, filtrée`,
+      description: 'Découvrez le fonctionnement du robinet eau bouillante instantanée HYDRAL. Eau gazeuse cuisine, eau filtrée et eau froide en un seul robinet multifonction 5-en-1. Technologie premium dès 490€.',
       canonical: `${BASE_URL}/concept`,
-      keywords: ['concept HYDRAL', 'robinet multifonction', '5 types eau', 'innovation cuisine', 'technologie robinet'],
+      keywords: ['robinet eau bouillante instantanée', 'robinet eau gazeuse cuisine', 'robinet multifonction cuisine', 'robinet 5 en 1', 'comment fonctionne robinet eau bouillante', 'eau bouillante instantanée avantages', 'robinet eau gazeuse et bouillante'],
       ogType: 'article',
-      structuredData: getArticleSchema('Le Concept HYDRAL', 'Découvrez comment HYDRAL transforme votre expérience en cuisine')
+      structuredData: getArticleSchema('Comment fonctionne le robinet HYDRAL 5-en-1', 'Robinet eau bouillante instantanée, gazeuse et filtrée : découvrez le fonctionnement du robinet multifonction HYDRAL')
     },
     gamme: {
-      title: `Gamme ${BRAND_NAME} - 3 Modèles de Robinets Premium | Pure, Spark, One`,
-      description: 'Découvrez nos 3 modèles de robinets HYDRAL : Pure (490€), Spark (890€), One (990€). De l\'essentiel au tout-en-un, trouvez le robinet premium qui vous correspond.',
+      title: `Nos robinets multifonction : Pure, Spark, One | HYDRAL dès 490€`,
+      description: 'Comparez nos 3 robinets 5-en-1 : Pure (490€), Spark (890€), One (990€). Robinet multifonction cuisine avec eau bouillante, gazeuse et filtrée. Prix transparent, livraison offerte.',
       canonical: `${BASE_URL}/gamme`,
-      keywords: ['gamme HYDRAL', 'modèles robinets', 'HYDRAL Pure', 'HYDRAL Spark', 'HYDRAL One', 'choix robinet'],
+      keywords: ['robinet 5 en 1 prix', 'robinet multifonction cuisine', 'robinet eau bouillante prix', 'combien coûte un robinet 5 en 1', 'HYDRAL Pure', 'HYDRAL Spark', 'HYDRAL One', 'alternative quooker', 'robinet eau bouillante gazeuse filtrée cuisine'],
       ogType: 'website',
       structuredData: getProductCollectionSchema()
     },
     product: {
-      title: `Robinet ${BRAND_NAME} ${productId?.toUpperCase()} - à partir de 490€ TTC | 5 Types d'Eau`,
-      description: `Robinet ${productId?.toUpperCase()} HYDRAL : design premium, 5 types d'eau (bouillante, filtrée, pétillante, chaude, froide). Prix transparent à partir de 490€ TTC avec abonnement consommables dès 59€/an.`,
+      title: `Robinet HYDRAL ${productId?.toUpperCase()} — Eau bouillante gazeuse filtrée | À partir de 490€ TTC`,
+      description: `Robinet multifonction ${productId?.toUpperCase()} HYDRAL : eau bouillante instantanée, gazeuse, filtrée, chaude et froide. Robinet 5-en-1 premium dès 490€ TTC. Alternative Quooker jusqu'à 3x moins cher. Livraison offerte.`,
       canonical: `${BASE_URL}/produit/${productId}`,
-      keywords: [`robinet ${productId}`, 'HYDRAL', 'robinet premium', 'eau bouillante', 'prix robinet', '490 euros'],
+      keywords: ['robinet eau bouillante', 'robinet 5 en 1', 'robinet eau gazeuse cuisine', 'robinet multifonction cuisine', 'alternative quooker', `HYDRAL ${productId}`, 'robinet eau filtrée', 'robinet eau bouillante gazeuse filtrée cuisine'],
       ogType: 'product',
       structuredData: getProductSchema(productId || '')
     },
@@ -164,10 +164,10 @@ function getSEOData(page: Page, productId?: string): SEOData {
       ogType: 'website'
     },
     avantages: {
-      title: `Avantages ${BRAND_NAME} - Économies, Confort, Écologie, Santé`,
-      description: 'Les avantages du robinet HYDRAL : économies jusqu\'à 1 000€/an, gain de place, écologie (fin des bouteilles plastique), eau purifiée, confort au quotidien.',
+      title: `Pourquoi choisir un robinet 5-en-1 ? Économies, santé, écologie | HYDRAL`,
+      description: 'Alternative Quooker dès 490€ : économies jusqu\'à 1 000€/an, eau filtrée sans microplastiques, zéro bouteille plastique. Découvrez les avantages du robinet eau filtrée multifonction HYDRAL.',
       canonical: `${BASE_URL}/avantages`,
-      keywords: ['avantages robinet', 'économies eau', 'robinet écologique', 'eau purifiée', 'confort cuisine', 'fin bouteilles plastique'],
+      keywords: ['alternative quooker', 'robinet eau filtrée', 'robinet 5 en 1', 'microplastique eau bouteille danger', 'eau du robinet vs eau en bouteille', 'robinet multifonction cuisine', 'avis robinet multifonction cuisine', 'filtrer eau du robinet'],
       ogType: 'article'
     },
     utilisations: {
@@ -178,17 +178,17 @@ function getSEOData(page: Page, productId?: string): SEOData {
       ogType: 'article'
     },
     securite: {
-      title: `Sécurité ${BRAND_NAME} - Protection Brûlures, Sécurité Enfants, Normes CE`,
-      description: 'Sécurité maximale HYDRAL : protection anti-brûlure, sécurité enfants intégrée, normes CE et NF, détection de fuite, isolation thermique. Tranquillité garantie.',
+      title: `Sécurité robinet eau bouillante | Verrouillage enfant HYDRAL`,
+      description: 'Sécurité maximale du robinet eau bouillante HYDRAL : verrouillage enfant intégré, protection anti-brûlure, normes CE et NF, détection de fuite. Robinet 5-en-1 sécurisé pour toute la famille.',
       canonical: `${BASE_URL}/securite`,
-      keywords: ['sécurité robinet', 'protection anti-brûlure', 'sécurité enfants', 'normes CE', 'robinet sécurisé', 'protection eau bouillante'],
+      keywords: ['sécurité robinet eau bouillante', 'verrouillage enfant robinet', 'protection anti-brûlure', 'robinet eau bouillante', 'normes CE robinet', 'robinet 5 en 1 sécurité'],
       ogType: 'article'
     },
     ecoresponsable: {
-      title: `Écoresponsabilité ${BRAND_NAME} - Fin du Plastique, Économies d'Énergie`,
-      description: 'HYDRAL écoresponsable : éliminez 2000 bouteilles plastique/an, réduisez votre empreinte carbone de 80%, économies d\'énergie A++, filtration écologique.',
+      title: `Robinet écologique : zéro bouteille plastique | HYDRAL écoresponsable`,
+      description: 'Éliminez 2000 bouteilles plastique/an avec le robinet 5-en-1 HYDRAL. Microplastiques eau en bouteille : danger évité grâce à l\'eau filtrée. Réduisez votre empreinte carbone de 85%.',
       canonical: `${BASE_URL}/ecoresponsable`,
-      keywords: ['robinet écologique', 'fin bouteilles plastique', 'économies énergie', 'empreinte carbone', 'développement durable', 'eau écologique'],
+      keywords: ['microplastique eau bouteille danger', 'plastique bouteille eau santé', 'eau du robinet vs eau en bouteille', 'robinet écologique', 'filtrer eau du robinet', 'robinet eau filtrée', 'zéro bouteille plastique'],
       ogType: 'article'
     },
     cube: {
@@ -199,17 +199,17 @@ function getSEOData(page: Page, productId?: string): SEOData {
       ogType: 'product'
     },
     prix: {
-      title: `Prix Transparent ${BRAND_NAME} - 490€ TTC + Abonnement 59-119€/an`,
-      description: 'Prix transparent HYDRAL : robinet 490€ TTC, abonnements consommables de 59€ à 119€/an. TCO complet détaillé, comparaison avec bouteilles, calcul économies réelles.',
+      title: `Prix robinet HYDRAL : 490€ à 990€ | Alternative Quooker jusqu'à 3x moins cher`,
+      description: 'Robinet eau bouillante prix : HYDRAL dès 490€ vs Quooker à 1500-3500€. Robinet 5-en-1 pas cher avec eau gazeuse, filtrée et bouillante. Comparatif prix complet et TCO détaillé.',
       canonical: `${BASE_URL}/prix`,
-      keywords: ['prix HYDRAL', '490 euros', 'abonnement robinet', 'coût total', 'TCO robinet', 'prix transparent', 'économies robinet'],
+      keywords: ['quooker pas cher', 'robinet eau bouillante prix', 'eau bouillante robinet prix', 'combien coûte un robinet 5 en 1', 'alternative quooker', 'robinet type quooker moins cher', 'robinet 5 en 1 prix', 'prix HYDRAL'],
       ogType: 'article'
     },
     faq: {
-      title: `FAQ ${BRAND_NAME} - Questions Fréquentes | Installation, Utilisation, Entretien`,
-      description: 'Toutes vos questions sur HYDRAL : installation, compatibilité, entretien, garantie, abonnements, consommation électrique. Réponses détaillées et transparentes.',
+      title: `FAQ Robinet 5-en-1 HYDRAL | Installation, prix, fonctionnement`,
+      description: 'Questions fréquentes sur le robinet eau bouillante HYDRAL : combien coûte un robinet 5-en-1, comment ça fonctionne, installation, alternative Quooker, entretien et garantie.',
       canonical: `${BASE_URL}/faq`,
-      keywords: ['FAQ HYDRAL', 'questions robinet', 'installation robinet', 'entretien robinet', 'garantie HYDRAL', 'aide HYDRAL'],
+      keywords: ['robinet eau bouillante', 'combien coûte un robinet 5 en 1', 'robinet 5 en 1', 'alternative quooker', 'comment fonctionne robinet eau bouillante', 'installation robinet 5 en 1', 'avis robinet multifonction cuisine'],
       ogType: 'article',
       structuredData: getFAQSchema()
     },
@@ -279,10 +279,10 @@ function getSEOData(page: Page, productId?: string): SEOData {
       structuredData: getReviewsSchema()
     },
     savings: {
-      title: `Calculez Vos Économies ${BRAND_NAME} - Combien Vous Allez Économiser`,
-      description: 'Découvrez combien vous économisez avec HYDRAL : jusqu\'à 300€ à 1 000€/an selon votre foyer. Comparaison transparente eau embouteillée vs robinet 5-en-1.',
+      title: `Calculateur d'économies eau en bouteille | Combien économiser avec HYDRAL`,
+      description: 'Calculez vos économies : jusqu\'à 1 000€/an en remplaçant l\'eau en bouteille par un robinet 5-en-1 HYDRAL. Comparatif eau du robinet vs eau en bouteille, fin des microplastiques.',
       canonical: `${BASE_URL}/economies`,
-      keywords: ['économies eau robinet', 'prix eau bouteille vs robinet', 'calculer économies HYDRAL', 'rentabilité robinet 5-en-1', 'économies annuelles'],
+      keywords: ['eau du robinet vs eau en bouteille', 'économies eau robinet', 'prix eau bouteille vs robinet', 'microplastique eau bouteille danger', 'robinet 5 en 1', 'calculer économies HYDRAL', 'plastique bouteille eau santé'],
       ogType: 'website'
     },
     objections: {
@@ -314,10 +314,10 @@ function getSEOData(page: Page, productId?: string): SEOData {
       ogType: 'article'
     },
     blog: {
-      title: `Blog ${BRAND_NAME} - Conseils, Recettes et Actualités`,
-      description: 'Le blog HYDRAL : conseils d\'utilisation, recettes avec eau pétillante, guides d\'entretien, témoignages clients.',
+      title: `Blog HYDRAL | Microplastiques, eau filtrée, économies eau en bouteille`,
+      description: 'Blog HYDRAL : danger des microplastiques dans l\'eau en bouteille, avantages de l\'eau filtrée, comparatif eau du robinet vs eau en bouteille, économies et conseils cuisine.',
       canonical: `${BASE_URL}/blog`,
-      keywords: ['blog HYDRAL', 'conseils robinet', 'recettes eau pétillante', 'entretien robinet'],
+      keywords: ['microplastique eau bouteille danger', 'eau du robinet vs eau en bouteille', 'plastique bouteille eau santé', 'filtrer eau du robinet', 'eau bouillante instantanée avantages', 'robinet eau filtrée', 'blog HYDRAL'],
       ogType: 'article'
     },
     'video-hub': {
@@ -376,7 +376,7 @@ function getOrganizationSchema() {
     name: BRAND_NAME,
     url: BASE_URL,
     logo: `${BASE_URL}/logo.png`,
-    description: 'HYDRAL - Robinets 5-en-1 premium avec eau bouillante, filtrée, pétillante. Design européen premium.',
+    description: 'HYDRAL - Robinet multifonction cuisine 5-en-1 : eau bouillante instantanée, gazeuse, filtrée. Alternative Quooker dès 490€. Livraison offerte France.',
     address: {
       '@type': 'PostalAddress',
       addressCountry: 'FR'
@@ -397,22 +397,35 @@ function getOrganizationSchema() {
 }
 
 function getProductSchema(productId: string) {
+  const productPrices: Record<string, string> = {
+    'pure': '490',
+    'spark': '890',
+    'one': '990'
+  };
+  const productNames: Record<string, string> = {
+    'pure': 'HYDRAL Pure — Robinet eau bouillante et filtrée 5-en-1',
+    'spark': 'HYDRAL Spark — Robinet eau bouillante, gazeuse et filtrée 5-en-1',
+    'one': 'HYDRAL One — Robinet multifonction cuisine eau bouillante gazeuse filtrée 5-en-1'
+  };
+  const price = productPrices[productId.toLowerCase()] || '490';
+  const name = productNames[productId.toLowerCase()] || `Robinet HYDRAL ${productId.toUpperCase()} 5-en-1`;
   return {
     '@context': 'https://schema.org',
     '@type': 'Product',
-    name: `Robinet HYDRAL ${productId.toUpperCase()} 5-en-1`,
-    description: 'Robinet premium 5 types d\'eau : bouillante 100°C, froide filtrée, pétillante, chaude et froide.',
+    name,
+    description: 'Robinet multifonction cuisine 5-en-1 : eau bouillante instantanée 100°C, gazeuse, filtrée, chaude et froide. Alternative Quooker premium dès 490€. Robinet eau bouillante, gazeuse et filtrée pour cuisine.',
     brand: {
       '@type': 'Brand',
       name: BRAND_NAME
     },
+    category: 'Robinets de cuisine multifonction',
     offers: {
       '@type': 'Offer',
-      price: '490',
+      price,
       priceCurrency: 'EUR',
       availability: 'https://schema.org/InStock',
       url: `${BASE_URL}/produit/${productId}`,
-      priceValidUntil: '2026-12-31',
+      priceValidUntil: '2027-12-31',
       seller: {
         '@type': 'Organization',
         name: BRAND_NAME
@@ -432,9 +445,26 @@ function getProductCollectionSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
-    name: 'Gamme de Robinets HYDRAL',
-    description: '3 modèles de robinets premium 5-en-1',
-    url: `${BASE_URL}/gamme`
+    name: 'Robinets multifonction cuisine HYDRAL — Pure, Spark, One',
+    description: 'Gamme de robinets 5-en-1 HYDRAL : eau bouillante, gazeuse, filtrée dès 490€. Alternative Quooker jusqu\'à 3x moins cher. 3 modèles de robinets multifonction cuisine.',
+    url: `${BASE_URL}/gamme`,
+    hasPart: [
+      {
+        '@type': 'Product',
+        name: 'HYDRAL Pure — Robinet eau bouillante et filtrée',
+        offers: { '@type': 'Offer', price: '490', priceCurrency: 'EUR' }
+      },
+      {
+        '@type': 'Product',
+        name: 'HYDRAL Spark — Robinet eau bouillante, gazeuse et filtrée',
+        offers: { '@type': 'Offer', price: '890', priceCurrency: 'EUR' }
+      },
+      {
+        '@type': 'Product',
+        name: 'HYDRAL One — Robinet multifonction 5-en-1 complet',
+        offers: { '@type': 'Offer', price: '990', priceCurrency: 'EUR' }
+      }
+    ]
   };
 }
 
@@ -468,26 +498,50 @@ function getFAQSchema() {
     mainEntity: [
       {
         '@type': 'Question',
-        name: 'Quel est le prix du robinet HYDRAL ?',
+        name: 'Combien coûte un robinet 5-en-1 ?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Le robinet HYDRAL coûte 490€ TTC, avec des abonnements consommables de 59€ à 119€ par an selon vos besoins.'
+          text: 'Le robinet 5-en-1 HYDRAL est disponible à partir de 490€ TTC (modèle Pure). Le Spark est à 890€ et le One à 990€. Les abonnements consommables vont de 59€ à 119€/an. C\'est jusqu\'à 3 fois moins cher qu\'un Quooker (1500€ à 3500€).'
         }
       },
       {
         '@type': 'Question',
-        name: 'Quels types d\'eau propose HYDRAL ?',
+        name: 'Quelle est la meilleure alternative au Quooker ?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'HYDRAL propose 5 types d\'eau : bouillante à 100°C, froide filtrée, pétillante réfrigérée, chaude et froide classique, le tout en un seul robinet.'
+          text: 'HYDRAL est la meilleure alternative au Quooker en France. Avec un robinet 5-en-1 dès 490€ contre 1500€ à 3500€ pour un Quooker, HYDRAL offre eau bouillante instantanée, gazeuse, filtrée, chaude et froide avec la même qualité premium à un prix jusqu\'à 3x moins cher.'
         }
       },
       {
         '@type': 'Question',
-        name: 'L\'installation est-elle difficile ?',
+        name: 'Comment fonctionne un robinet eau bouillante ?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'L\'installation prend environ 1h et peut être réalisée par un bricoleur ou un professionnel de votre choix.'
+          text: 'Le robinet eau bouillante HYDRAL intègre un boiler compact sous l\'évier qui maintient 3L d\'eau à 100°C en permanence. L\'eau bouillante instantanée est disponible en tournant la poignée de sécurité. Le système est isolé thermiquement et consomme seulement 15€/an en électricité.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Est-ce que l\'eau du robinet filtrée est meilleure que l\'eau en bouteille ?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Oui, l\'eau filtrée HYDRAL élimine 99,9% des impuretés (chlore, métaux lourds, microplastiques, pesticides) sans les risques des microplastiques présents dans les bouteilles. Des études montrent que l\'eau en bouteille contient jusqu\'à 240 000 particules de plastique par litre. L\'eau du robinet filtrée est plus sûre, plus économique et plus écologique.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Le robinet eau bouillante est-il sécurisé pour les enfants ?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Oui, le robinet HYDRAL dispose d\'un verrouillage enfant intégré : double action poussée + rotation pour l\'eau bouillante, impossible à actionner par un enfant. Protection anti-brûlure sur le corps du robinet, normes CE et NF respectées.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'L\'installation du robinet 5-en-1 est-elle compliquée ?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Non, l\'installation du robinet HYDRAL 5-en-1 prend environ 1h. 80% des clients l\'installent eux-mêmes grâce à notre guide vidéo. Il suffit d\'un évier avec trou standard (35-40mm), une arrivée d\'eau froide et une prise 230V à proximité.'
         }
       }
     ]
