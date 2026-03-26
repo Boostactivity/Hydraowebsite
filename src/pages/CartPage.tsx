@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Page } from '../App';
 import { useCart } from '../context/CartContext';
 import { Trash2, ShoppingBag, Check, Lock, Truck, Shield, ArrowRight, Info } from 'lucide-react';
@@ -10,13 +10,9 @@ interface CartPageProps {
 
 export function CartPage({ navigate }: CartPageProps) {
   const { cart, removeFromCart, cartTotal, clearCart } = useCart();
-  const [showInstallationInfo, setShowInstallationInfo] = useState(false);
-
   const shipping = 0; // Livraison offerte
-  const installation = 280; // Installation standard (optionnelle)
-  const [includeInstallation, setIncludeInstallation] = useState(false);
 
-  const total = cartTotal + shipping + (includeInstallation ? installation : 0);
+  const total = cartTotal + shipping;
 
   if (cart.length === 0) {
     return (
@@ -113,82 +109,22 @@ export function CartPage({ navigate }: CartPageProps) {
               </motion.div>
             ))}
 
-            {/* Installation optionnelle */}
+            {/* Note installation */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className={`bg-white p-8 rounded-3xl border-2 transition-all cursor-pointer ${
-                includeInstallation
-                  ? 'border-[#6B1E3E] bg-[#6B1E3E]/5'
-                  : 'border-gray-200 hover:border-[#6B1E3E]/30'
-              }`}
-              onClick={() => setIncludeInstallation(!includeInstallation)}
+              className="bg-white p-8 rounded-3xl border border-gray-200/50"
             >
-              <div className="flex items-start justify-between mb-4">
-                <div className="flex items-start gap-4">
-                  <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center flex-shrink-0 transition-colors ${
-                    includeInstallation
-                      ? 'border-[#6B1E3E] bg-[#6B1E3E]'
-                      : 'border-gray-300'
-                  }`}>
-                    {includeInstallation && <Check className="w-4 h-4 text-white" />}
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl text-gray-900 mb-2">Installation par un professionnel (optionnel)</h3>
-                    <p className="text-[#8B7E74] mb-4 leading-relaxed">
-                      Un installateur agréé HYDRAL intervient chez vous sous 7-10 jours. Installation complète en environ 1h (raccordement, boiler, tests).
-                    </p>
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        setShowInstallationInfo(!showInstallationInfo);
-                      }}
-                      className="flex items-center gap-2 text-sm text-[#6B1E3E] hover:underline"
-                    >
-                      <Info className="w-4 h-4" />
-                      {showInstallationInfo ? 'Masquer les détails' : 'Voir les détails'}
-                    </button>
-
-                    {showInstallationInfo && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: 'auto', opacity: 1 }}
-                        className="mt-4 p-4 bg-[#FAF8F5] rounded-2xl"
-                      >
-                        <p className="text-sm text-[#8B7E74] mb-3">L'installation inclut :</p>
-                        <ul className="space-y-2 text-sm text-[#8B7E74]">
-                          <li className="flex items-start gap-2">
-                            <Check className="w-4 h-4 text-[#6B1E3E] flex-shrink-0 mt-0.5" />
-                            <span>Dépose ancien robinet</span>
-                          </li>
-                          <li className="flex items-start gap-2">
-                            <Check className="w-4 h-4 text-[#6B1E3E] flex-shrink-0 mt-0.5" />
-                            <span>Pose robinet HYDRAL + boiler</span>
-                          </li>
-                          <li className="flex items-start gap-2">
-                            <Check className="w-4 h-4 text-[#6B1E3E] flex-shrink-0 mt-0.5" />
-                            <span>Raccordement électrique (230V)</span>
-                          </li>
-                          <li className="flex items-start gap-2">
-                            <Check className="w-4 h-4 text-[#6B1E3E] flex-shrink-0 mt-0.5" />
-                            <span>Tests + explication fonctionnement</span>
-                          </li>
-                          <li className="flex items-start gap-2">
-                            <Check className="w-4 h-4 text-[#6B1E3E] flex-shrink-0 mt-0.5" />
-                            <span>Nettoyage du chantier</span>
-                          </li>
-                        </ul>
-                        <p className="text-xs text-[#8B7E74] mt-4">
-                          Vous pouvez aussi installer vous-même (notice fournie) ou faire appel à votre plombier.
-                        </p>
-                      </motion.div>
-                    )}
-                  </div>
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 bg-[#6B1E3E]/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <Info className="w-5 h-5 text-[#6B1E3E]" />
                 </div>
-                <div className="text-right">
-                  <p className="text-3xl text-[#6B1E3E]">280€</p>
-                  <p className="text-sm text-[#8B7E74]">HT</p>
+                <div>
+                  <h3 className="text-lg text-gray-900 mb-2">Installation</h3>
+                  <p className="text-[#8B7E74] leading-relaxed">
+                    Installation simple, réalisable par un bricoleur ou un professionnel de votre choix. Guide d'installation détaillé et vidéo fournis avec chaque robinet.
+                  </p>
                 </div>
               </div>
             </motion.div>
@@ -212,12 +148,6 @@ export function CartPage({ navigate }: CartPageProps) {
                   <span>Sous-total ({cart.length} article{cart.length > 1 ? 's' : ''})</span>
                   <span className="text-gray-900">{cartTotal}€</span>
                 </div>
-                {includeInstallation && (
-                  <div className="flex justify-between text-[#8B7E74]">
-                    <span>Installation pro</span>
-                    <span className="text-gray-900">{installation}€</span>
-                  </div>
-                )}
                 <div className="flex justify-between text-[#8B7E74]">
                   <span>Livraison</span>
                   <span className="text-green-600 font-medium">Offerte</span>

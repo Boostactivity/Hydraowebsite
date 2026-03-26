@@ -291,94 +291,6 @@ export function ConversionTunnel({ navigate }: ConversionTunnelProps) {
 
   return (
     <div className="relative bg-[#FAF8F5]">
-      {/* BARRE DE PROGRESSION FIXE - Design subtil flottant - Visible à partir section 1 */}
-      {currentSection >= 1 && (
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="fixed top-20 left-1/2 -translate-x-1/2 z-30"
-        >
-          <div className="bg-white/80 backdrop-blur-md rounded-full shadow-md border border-gray-200/40 px-4 py-2">
-            <div className="flex items-center gap-2">
-              {[
-                { id: 1, label: 'Économies', icon: '💧' },
-                { id: 2, label: 'Robinet', icon: '🚿' },
-                { id: 3, label: 'Formule', icon: '📦' },
-                { id: 4, label: 'Mon pack', icon: '✨' }
-              ].map((step, idx) => (
-                <div key={step.id} className="flex items-center gap-1.5">
-                  <div className={`flex items-center gap-1.5 transition-all ${
-                    currentSection >= step.id ? 'opacity-100' : 'opacity-30'
-                  }`}>
-                    <div className={`w-6 h-6 rounded-full flex items-center justify-center text-xs transition-colors ${
-                      currentSection >= step.id
-                        ? 'bg-[#6B1E3E] text-white'
-                        : 'bg-gray-200 text-[#8B7E74]'
-                    }`}>
-                      {step.icon}
-                    </div>
-                    <span className="hidden md:inline text-xs font-medium text-gray-700">
-                      {step.label}
-                    </span>
-                  </div>
-                  {idx < 3 && (
-                    <div className={`w-6 h-0.5 transition-colors ${
-                      currentSection > step.id ? 'bg-[#6B1E3E]' : 'bg-gray-200'
-                    }`} />
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-        </motion.div>
-      )}
-      
-      {/* Bouton retour - Position fixe en haut à gauche */}
-      {currentSection >= 2 && (
-        <motion.button
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          onClick={() => {
-            // Revenir à l'étape précédente dans le parcours
-            if (currentSection === 2) {
-              scrollToSection(section1Ref);
-            } else if (currentSection === 3) {
-              scrollToSection(section2Ref);
-            } else if (currentSection === 4) {
-              scrollToSection(section3Ref);
-            }
-          }}
-          className="fixed top-24 left-6 z-40 w-10 h-10 flex items-center justify-center bg-white/90 backdrop-blur-md text-[#6B1E3E] hover:bg-[#6B1E3E] hover:text-white border border-gray-200 rounded-full shadow-lg transition-all"
-          title="Retour à l'étape précédente"
-        >
-          ←
-        </motion.button>
-      )}
-      
-      {/* Bouton recommencer - Position fixe en haut à droite */}
-      {currentSection >= 1 && (
-        <motion.button
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          onClick={() => {
-            setState({
-              selectedWaters: [],
-              selectedColoris: 'chrome-brillant',
-              paymentRhythm: 'annual',
-              yearlyTotal: 0,
-              monthlyTotal: 0,
-              itemColors: {},
-              itemNames: {},
-              extraBottles: []
-            });
-            scrollToSection(section0Ref);
-          }}
-          className="fixed top-24 right-6 z-40 px-4 py-2 bg-white/90 backdrop-blur-md text-xs text-[#6B1E3E] hover:bg-[#6B1E3E] hover:text-white border border-gray-200 rounded-full shadow-lg transition-all"
-        >
-          ↺ Recommencer
-        </motion.button>
-      )}
-
       {/* SECTION 0 - INTRO */}
       <Section0
         ref={section0Ref}
@@ -516,10 +428,10 @@ const Section1 = React.forwardRef<HTMLElement, {
 
   // Profiles with default monthly spend
   const profiles = [
-    { id: 'solo', label: 'Solo', monthly: 20 },
-    { id: 'couple', label: 'Couple', monthly: 35 },
-    { id: 'family', label: 'Famille', monthly: 75 },
-    { id: 'family-plus', label: 'Grande famille', monthly: 100 }
+    { id: 'solo', label: 'Solo', subtitle: '1 personne', monthly: 20 },
+    { id: 'couple', label: 'Couple', subtitle: '2 personnes', monthly: 35 },
+    { id: 'family', label: 'Famille', subtitle: '3-4 personnes', monthly: 75 },
+    { id: 'family-plus', label: 'Grande famille', subtitle: '5+ personnes', monthly: 100 }
   ];
 
   const [selectedProfile, setSelectedProfile] = useState<string | null>(null);
@@ -676,13 +588,16 @@ const Section1 = React.forwardRef<HTMLElement, {
             <button
               key={profile.id}
               onClick={() => handleProfileClick(profile)}
-              className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all ${
+              className={`px-5 py-3 rounded-full text-sm font-medium transition-all ${
                 selectedProfile === profile.id
                   ? 'bg-[#6B1E3E] text-white shadow-lg'
                   : 'bg-white text-gray-700 border border-gray-200 hover:border-[#6B1E3E]/40'
               }`}
             >
-              {profile.label}
+              <span>{profile.label}</span>
+              <span className={`ml-1.5 text-xs ${selectedProfile === profile.id ? 'text-white/70' : 'text-[#8B7E74]'}`}>
+                {profile.subtitle}
+              </span>
             </button>
           ))}
         </div>

@@ -65,9 +65,9 @@ export function InstallationWizard({ onComplete, onClose }: InstallationWizardPr
       question: 'Budget installation souhaité ?',
       icon: <User className="w-8 h-8" />,
       options: [
-        { value: 'diy', label: 'DIY (0€)', desc: 'Je veux installer moi-même' },
-        { value: 'standard', label: '250-400€', desc: 'Installation professionnelle standard' },
-        { value: 'premium', label: '400-600€', desc: 'Installation premium + conseil' }
+        { value: 'diy', label: 'Je le fais moi-même', desc: 'Installation DIY avec notre guide vidéo' },
+        { value: 'standard', label: 'Faites appel à votre plombier', desc: 'Votre plombier habituel peut l\'installer facilement' },
+        { value: 'premium', label: 'Je ne sais pas encore', desc: 'Je verrai selon la difficulté' }
       ]
     }
   ];
@@ -83,14 +83,14 @@ export function InstallationWizard({ onComplete, onClose }: InstallationWizardPr
     const { housingType, skills, currentSetup, urgency, budget } = answers;
 
     // Logic pour recommandation
-    if (budget === 'diy' && skills === 'expert') {
+    if (budget === 'diy' && (skills === 'expert' || skills === 'intermediate')) {
       return {
         type: 'diy',
         title: 'Installation DIY recommandée',
         desc: 'Vous avez les compétences nécessaires pour installer HYDRAL vous-même.',
         time: 'environ 1h',
         difficulty: 'Intermédiaire',
-        cost: '0€',
+        cost: 'Gratuit',
         steps: [
           'Couper l\'arrivée d\'eau principale',
           'Démonter l\'ancien robinet',
@@ -101,58 +101,38 @@ export function InstallationWizard({ onComplete, onClose }: InstallationWizardPr
         ],
         warning: 'Assurez-vous d\'avoir les outils nécessaires : clé à molette, tournevis, téflon.'
       };
-    } else if (skills === 'intermediate' && budget === 'standard') {
+    } else if (skills === 'beginner' || budget === 'standard') {
       return {
-        type: 'assisted',
-        title: 'Installation assistée recommandée',
-        desc: 'Un plombier partenaire HYDRAL pour une installation rapide et garantie.',
+        type: 'pro',
+        title: 'Faites appel à un plombier de votre choix',
+        desc: 'Le robinet HYDRAL est compatible avec toute plomberie standard. Votre plombier habituel peut l\'installer facilement.',
         time: 'environ 1h',
-        difficulty: 'Professionnel',
-        cost: '280€',
+        difficulty: 'Standard',
+        cost: 'Selon votre plombier',
         steps: [
-          'Prise de rendez-vous avec installateur agréé',
-          'Visite technique (30 min)',
+          'Contactez votre plombier habituel',
+          'Transmettez-lui notre guide d\'installation (fourni)',
           'Installation complète (environ 1h)',
-          'Test et formation à l\'utilisation',
-          'Garantie installation 3 ans'
+          'Testez toutes les fonctions ensemble'
         ],
-        warning: urgency === 'urgent' 
-          ? 'Installation possible sous 48-72h selon disponibilité.' 
-          : 'Délai standard : 5-7 jours ouvrés.'
-      };
-    } else if (skills === 'beginner' || budget === 'premium') {
-      return {
-        type: 'premium',
-        title: 'Installation Premium recommandée',
-        desc: 'Service complet avec expert HYDRAL : installation + formation + suivi.',
-        time: 'environ 1h',
-        difficulty: 'Professionnel Expert',
-        cost: '490€',
-        steps: [
-          'Rendez-vous avec expert HYDRAL certifié',
-          'Vérification complète de compatibilité',
-          'Installation premium avec finitions soignées',
-          'Formation complète à toutes les fonctionnalités',
-          'Suivi SAV prioritaire 3 ans',
-          'Garantie installation + pièces 3 ans'
-        ],
-        warning: 'Idéal pour une tranquillité totale et un accompagnement personnalisé.'
+        warning: 'Notre guide d\'installation détaillé est fourni avec chaque robinet. Votre plombier n\'a pas besoin de formation spécifique.'
       };
     } else {
       return {
-        type: 'standard',
-        title: 'Installation Standard recommandée',
-        desc: 'Notre solution la plus populaire : efficace, rapide, garantie.',
+        type: 'diy',
+        title: 'Installation simple à votre rythme',
+        desc: 'Le robinet HYDRAL s\'installe simplement. Un bricoleur peut le faire en environ 1h.',
         time: 'environ 1h',
-        difficulty: 'Professionnel',
-        cost: '280€',
+        difficulty: 'Accessible',
+        cost: 'Gratuit',
         steps: [
-          'Prise de rendez-vous installateur',
-          'Installation complète',
-          'Test fonctionnel',
-          'Garantie 3 ans'
+          'Suivez notre guide vidéo étape par étape',
+          'Couper l\'arrivée d\'eau',
+          'Démonter l\'ancien robinet',
+          'Installer le module + robinet HYDRAL',
+          'Tester et profiter'
         ],
-        warning: 'Installation facile dans tous nos packs.'
+        warning: 'Vous pouvez aussi faire appel au plombier de votre choix si vous préférez.'
       };
     }
   };
@@ -309,7 +289,7 @@ export function InstallationWizard({ onComplete, onClose }: InstallationWizardPr
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                Trouver un installateur
+                Voir le guide d'installation
               </motion.button>
             </div>
           </motion.div>

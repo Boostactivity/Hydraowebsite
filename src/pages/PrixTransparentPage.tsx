@@ -225,7 +225,7 @@ export function PrixTransparentPage({ navigate }: PrixTransparentPageProps) {
               <h3 className="text-2xl mb-6 text-gray-900">En supplément (optionnel)</h3>
               <ul className="space-y-4">
                 {[
-                  'Installation par professionnel partenaire (280€ TTC)',
+                  'Installation réalisable par un bricoleur ou un professionnel de votre choix',
                   'Toutes finitions incluses dans le prix de base',
                   'Extension de garantie à 10 ans : prix à définir',
                   'Abonnement filtres + CO₂ : dès 59€/an'

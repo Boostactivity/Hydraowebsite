@@ -252,7 +252,7 @@ function getSEOData(page: Page, productId?: string): SEOData {
       title: `Installateurs Agréés ${BRAND_NAME} - Réseau de Professionnels Certifiés`,
       description: 'Trouvez un installateur agréé HYDRAL près de chez vous : plombiers certifiés, formation spécialisée, garantie installation. Service professionnel partout en France.',
       canonical: `${BASE_URL}/installateurs`,
-      keywords: ['installateurs HYDRAL', 'plombier agréé', 'installation professionnelle', 'réseau installateurs', 'pose robinet'],
+      keywords: ['pose robinet', 'installation robinet', 'compatibilité plomberie', 'robinet HYDRAL'],
       ogType: 'website'
     },
     subscriptions: {
@@ -487,7 +487,7 @@ function getFAQSchema() {
         name: 'L\'installation est-elle difficile ?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'L\'installation prend environ 1h par un plombier professionnel. Nous proposons un réseau d\'installateurs agréés partout en France.'
+          text: 'L\'installation prend environ 1h et peut être réalisée par un bricoleur ou un professionnel de votre choix.'
         }
       }
     ]
@@ -542,7 +542,7 @@ function getReviewsSchema() {
     '@context': 'https://schema.org',
     '@type': 'Product',
     name: 'Robinet HYDRAL 5-en-1',
-    description: 'Robinet premium offrant 5 types d\'eau : bouillante, filtrée, pétillante, chaude et froide. Installation professionnelle incluse.',
+    description: 'Robinet premium offrant 5 types d\'eau : bouillante, filtrée, pétillante, chaude et froide. Installation simple.',
     brand: {
       '@type': 'Brand',
       name: BRAND_NAME
@@ -589,7 +589,7 @@ function getReviewsSchema() {
           ratingValue: '5',
           bestRating: '5'
         },
-        reviewBody: 'HYDRAL offre un excellent rapport qualité-prix pour un robinet premium 5-en-1. Installation impeccable, service client réactif. Je recommande.'
+        reviewBody: 'HYDRAL offre un excellent rapport qualité-prix pour un robinet premium 5-en-1. Produit de qualité, service client réactif. Je recommande.'
       },
       {
         '@type': 'Review',

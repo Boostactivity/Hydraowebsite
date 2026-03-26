@@ -29,14 +29,14 @@ export function InstallersPage({ navigate }: InstallersPageProps) {
           >
             <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#6B1E3E]/10 rounded-full mb-8 border border-[#6B1E3E]/20">
               <Wrench className="w-4 h-4 text-[#6B1E3E]" />
-              <span className="text-sm text-[#6B1E3E]">Réseau installateurs pro</span>
+              <span className="text-sm text-[#6B1E3E]">Installation & Compatibilité</span>
             </div>
             <h1 className="mb-8">
-              <span className="block text-gray-900">Vous êtes plombier-installateur ?</span>
-              <span className="block text-[#6B1E3E]">Devenez partenaire HYDRAL</span>
+              <span className="block text-gray-900">Installation simple</span>
+              <span className="block text-[#6B1E3E]">Compatible avec toute plomberie standard</span>
             </h1>
             <p className="text-xl text-[#8B7E74] leading-relaxed max-w-3xl mx-auto">
-              Nous cherchons des professionnels sérieux pour installer nos robinets chez nos clients. Pas de démarchage, pas de vente. Juste de l'installation technique de qualité.
+              Le robinet HYDRAL s'installe simplement. Un bricoleur peut le faire en environ 1h. Vous pouvez aussi faire appel au plombier de votre choix.
             </p>
           </motion.div>
         </div>

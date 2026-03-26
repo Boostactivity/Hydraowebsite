@@ -35,16 +35,13 @@ export function CheckoutPage({ navigate }: CheckoutPageProps) {
     billingAddress: '',
     billingPostalCode: '',
     billingCity: '',
-    // Options
-    includeInstallation: false,
-    installationDate: '',
     // Paiement
     paymentMethod: 'card',
   });
 
   const shipping = 0; // Livraison offerte
-  const installation = formData.includeInstallation ? 280 : 0;
-  const total = cartTotal + shipping + installation;
+  const installation = 0;
+  const total = cartTotal + shipping;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -114,12 +111,6 @@ export function CheckoutPage({ navigate }: CheckoutPageProps) {
                   <span>Livraison estimée :</span>
                   <span className="text-gray-900">5 à 7 jours ouvrés</span>
                 </div>
-                {formData.includeInstallation && (
-                  <div className="flex justify-between">
-                    <span>Installation :</span>
-                    <span className="text-gray-900">Planifiée le {formData.installationDate}</span>
-                  </div>
-                )}
               </div>
             </div>
 
@@ -286,24 +277,6 @@ export function CheckoutPage({ navigate }: CheckoutPageProps) {
                     onAddressChange={handleAddressAutocomplete}
                     onSelectAddress={selectAddress}
                   />
-
-                  {/* Installation */}
-                  {formData.includeInstallation && (
-                    <div className="bg-white p-4 sm:p-6 lg:p-8 rounded-2xl sm:rounded-3xl border border-gray-200/50">
-                      <h2 className="text-2xl mb-6 text-gray-900">Date d'installation souhaitée</h2>
-                      <input
-                        type="date"
-                        required
-                        value={formData.installationDate}
-                        onChange={(e) => setFormData({ ...formData, installationDate: e.target.value })}
-                        min={new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString().split('T')[0]}
-                        className="w-full px-4 py-3 bg-white border border-gray-300 rounded-xl focus:outline-none focus:border-[#6B1E3E] transition-colors"
-                      />
-                      <p className="text-sm text-[#8B7E74] mt-3">
-                        Un installateur vous contactera sous 48h pour confirmer le rendez-vous.
-                      </p>
-                    </div>
-                  )}
 
                   <motion.button
                     type="submit"
