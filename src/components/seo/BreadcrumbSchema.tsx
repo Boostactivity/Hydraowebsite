@@ -114,7 +114,7 @@ export function AutoBreadcrumbSchema({ currentPage }: { currentPage: Page }) {
     ],
     'installers': [
       { name: 'Accueil', url: baseUrl },
-      { name: 'Installateurs Agréés', url: `${baseUrl}/installateurs` }
+      { name: 'Installation', url: `${baseUrl}/installateurs` }
     ],
     'subscriptions': [
       { name: 'Accueil', url: baseUrl },

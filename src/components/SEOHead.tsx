@@ -243,14 +243,14 @@ function getSEOData(page: Page, productId?: string): SEOData {
     },
     checkout: {
       title: `Commande - ${BRAND_NAME}`,
-      description: 'Finalisez votre commande HYDRAL : paiement sécurisé, livraison gratuite, installation optionnelle. Transformez votre cuisine aujourd\'hui.',
+      description: 'Finalisez votre commande HYDRAL : paiement sécurisé, livraison gratuite. Transformez votre cuisine aujourd\'hui.',
       canonical: `${BASE_URL}/commande`,
       keywords: ['commande HYDRAL', 'achat robinet', 'paiement sécurisé'],
       ogType: 'website'
     },
     installers: {
-      title: `Installateurs Agréés ${BRAND_NAME} - Réseau de Professionnels Certifiés`,
-      description: 'Trouvez un installateur agréé HYDRAL près de chez vous : plombiers certifiés, formation spécialisée, garantie installation. Service professionnel partout en France.',
+      title: `Installation ${BRAND_NAME} - Guide et Compatibilité Plomberie`,
+      description: 'Installation simple du robinet HYDRAL : guide vidéo, compatibilité plomberie standard, réalisable par un bricoleur ou le plombier de votre choix.',
       canonical: `${BASE_URL}/installateurs`,
       keywords: ['pose robinet', 'installation robinet', 'compatibilité plomberie', 'robinet HYDRAL'],
       ogType: 'website'

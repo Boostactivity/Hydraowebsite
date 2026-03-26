@@ -123,8 +123,6 @@ const PLANS = {
     filters: 2,
     co2: 4,
     delivery: 'Incluse',
-    checkup: '—',
-    parts: '—',
     welcomePack: {
       items: [
         { id: 'verre-1l-1', name: 'Bouteille en verre 1L', qty: 2 },
@@ -143,8 +141,6 @@ const PLANS = {
     filters: 4,
     co2: 8,
     delivery: 'Prioritaire',
-    checkup: '1/an offert',
-    parts: '—',
     popular: true,
     welcomePack: {
       items: [
@@ -165,8 +161,6 @@ const PLANS = {
     filters: 6,
     co2: 12,
     delivery: 'Express',
-    checkup: '2/an offerts',
-    parts: 'Prix réduit',
     welcomePack: {
       items: [
         { id: 'verre-1l-1', name: 'Bouteille en verre 1L', qty: 4 },
@@ -1323,18 +1317,6 @@ const Section3 = React.forwardRef<HTMLElement, {
                     <span className="text-gray-700">Livraison</span>
                     <span className="font-semibold text-gray-900">
                       {plan.delivery}
-                    </span>
-                  </div>
-                  <div className="flex items-center justify-between text-sm">
-                    <span className="text-gray-700">Check-up</span>
-                    <span className="font-semibold text-gray-900">
-                      {plan.checkup}
-                    </span>
-                  </div>
-                  <div className="flex items-center justify-between text-sm">
-                    <span className="text-gray-700">Pièces usure</span>
-                    <span className="font-semibold text-gray-900">
-                      {plan.parts}
                     </span>
                   </div>
                 </div>
