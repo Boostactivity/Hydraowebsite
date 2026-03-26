@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { motion } from 'motion/react';
 import { Play, Pause, Volume2, VolumeX, Maximize, Loader } from 'lucide-react';
 
@@ -32,6 +32,7 @@ export function MobileOptimizedVideo({
 
   // Intersection Observer pour lazy loading
   useEffect(() => {
+    const container = containerRef.current;
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -53,16 +54,16 @@ export function MobileOptimizedVideo({
       { threshold: 0.5 }
     );
 
-    if (containerRef.current) {
-      observer.observe(containerRef.current);
+    if (container) {
+      observer.observe(container);
     }
 
     return () => {
-      if (containerRef.current) {
-        observer.unobserve(containerRef.current);
+      if (container) {
+        observer.unobserve(container);
       }
     };
-  }, [autoPlay, hasStarted, isPlaying]);
+  }, [autoPlay, hasStarted, isPlaying, handlePlay]);
 
   // Gestion de la progression
   useEffect(() => {
@@ -78,7 +79,7 @@ export function MobileOptimizedVideo({
     return () => video.removeEventListener('timeupdate', updateProgress);
   }, []);
 
-  const handlePlay = async () => {
+  const handlePlay = useCallback(async () => {
     const video = videoRef.current;
     if (!video) return;
 
@@ -98,7 +99,7 @@ export function MobileOptimizedVideo({
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [isPlaying]);
 
   const handleMuteToggle = () => {
     const video = videoRef.current;

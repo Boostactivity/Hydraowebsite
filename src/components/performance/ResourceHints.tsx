@@ -85,13 +85,9 @@ function addPreconnect(href: string) {
   document.head.appendChild(dnsPrefetch);
 }
 
-// Prefetch route (charge le JS/CSS en avance)
-function prefetchRoute(page: Page) {
-  const link = document.createElement('link');
-  link.rel = 'prefetch';
-  link.as = 'script';
-  link.href = `/pages/${page}.js`; // Chemin fictif - React gère ça via code splitting
-  document.head.appendChild(link);
+// Prefetch route - no-op since Vite SPA uses hashed chunks, static paths don't exist
+function prefetchRoute(_page: Page) {
+  return;
 }
 
 // Preload assets critiques selon la page

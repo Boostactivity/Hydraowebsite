@@ -22,7 +22,7 @@ export function PerformanceMonitor() {
 
   useEffect(() => {
     // Seulement en dev
-    if (process.env.NODE_ENV !== 'development') return;
+    if (!import.meta.env.DEV) return;
 
     // Mesurer FCP (First Contentful Paint)
     const fcpObserver = new PerformanceObserver((list) => {
@@ -114,7 +114,7 @@ export function PerformanceMonitor() {
     return `${value.toFixed(0)}${unit}`;
   };
 
-  if (process.env.NODE_ENV !== 'development' || !showDebug) {
+  if (!import.meta.env.DEV || !showDebug) {
     return null;
   }
 
@@ -243,7 +243,7 @@ export function usePerformanceLogger(componentName: string) {
       const endTime = performance.now();
       const renderTime = endTime - startTime;
       
-      if (process.env.NODE_ENV === 'development' && renderTime > 16) {
+      if (import.meta.env.DEV && renderTime > 16) {
         console.warn(
           `[Performance] ${componentName} took ${renderTime.toFixed(2)}ms to render (>16ms threshold)`
         );

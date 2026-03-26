@@ -122,15 +122,13 @@ export function TouchGestureCarousel({
         <>
           <button
             onClick={handlePrevious}
-            disabled={currentIndex === 0}
-            className="hidden md:flex absolute left-2 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 backdrop-blur-sm hover:bg-white rounded-full items-center justify-center shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed z-10"
+            className="hidden md:flex absolute left-2 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 backdrop-blur-sm hover:bg-white rounded-full items-center justify-center shadow-lg transition-all z-10"
           >
             <ChevronLeft className="w-6 h-6 text-gray-900" />
           </button>
           <button
             onClick={handleNext}
-            disabled={currentIndex === items.length - 1}
-            className="hidden md:flex absolute right-2 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 backdrop-blur-sm hover:bg-white rounded-full items-center justify-center shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed z-10"
+            className="hidden md:flex absolute right-2 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 backdrop-blur-sm hover:bg-white rounded-full items-center justify-center shadow-lg transition-all z-10"
           >
             <ChevronRight className="w-6 h-6 text-gray-900" />
           </button>
@@ -198,8 +196,6 @@ export function PinchZoomImage({ src, alt, className = '' }: PinchZoomImageProps
   useEffect(() => {
     const element = imageRef.current;
     if (!element) return;
-
-    let lastScale = 1;
 
     const handleGestureStart = (e: any) => {
       e.preventDefault();
