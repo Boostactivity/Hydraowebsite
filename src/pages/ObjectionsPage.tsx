@@ -97,8 +97,8 @@ export function ObjectionsPage({ navigate }: ObjectionsPageProps) {
       {/* BATCH 24 - One-Click Upsell (Point 120) - P2 IMPORTANT */}
       <OneClickUpsell 
         mainProduct={{ name: 'HYDRAL Robinet 5-en-1', price: 490 }}
-        onUpsellAccepted={(productId) => console.log('Upsell accepted:', productId)}
-        onUpsellDeclined={() => console.log('Upsell declined')}
+        onUpsellAccepted={(productId) => {/* TODO: handle upsell */}}
+        onUpsellDeclined={() => {/* TODO: handle decline */}}
       />
 
       {/* CTA Final */}

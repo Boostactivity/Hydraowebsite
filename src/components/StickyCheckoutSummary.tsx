@@ -40,7 +40,7 @@ export function StickyCheckoutSummary({
       setPromoApplied(true);
       setPromoDiscount(discount);
     } else {
-      alert('Code promo invalide');
+      // Code promo invalide - TODO: show inline error
     }
   };
 

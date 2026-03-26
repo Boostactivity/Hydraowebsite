@@ -4,7 +4,7 @@ import { Instagram, Facebook, Twitter, Youtube, Mail, Phone, MapPin, ArrowRight 
 import { motion } from 'motion/react';
 
 interface FooterProps {
-  navigate: (page: Page, params?: { legalType: 'mentions' | 'privacy' | 'cgv' }) => void;
+  navigate: (page: Page, params?: { legalType: 'mentions' | 'privacy' | 'cookies' | 'cgv' }) => void;
 }
 
 export function Footer({ navigate }: FooterProps) {
@@ -191,6 +191,9 @@ export function Footer({ navigate }: FooterProps) {
               </button>
               <button onClick={() => navigate('legal', { legalType: 'cgv' })} className="hover:text-gray-900 transition-colors">
                 CGV
+              </button>
+              <button onClick={() => navigate('legal', { legalType: 'cookies' })} className="hover:text-gray-900 transition-colors">
+                Cookies
               </button>
             </div>
           </div>

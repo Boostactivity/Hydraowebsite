@@ -165,7 +165,7 @@ function VideosTab({ navigate }: { navigate: (page: Page) => void }) {
         Tutoriels d'installation, témoignages clients, comparatifs produits et bien plus encore
       </p>
       <button
-        onClick={() => navigate('home')}
+        onClick={() => navigate('video-hub')}
         className="px-8 py-4 bg-[#6B1E3E] text-white rounded-full font-medium hover:bg-[#6B1E3E]/90 hover:shadow-xl transition-all"
       >
         Accéder aux vidéos
@@ -189,7 +189,7 @@ function BlogTab({ navigate }: { navigate: (page: Page) => void }) {
         Inspirations, conseils et guides pour tirer le meilleur de votre robinet 5-en-1
       </p>
       <button
-        onClick={() => navigate('home')}
+        onClick={() => navigate('blog')}
         className="px-8 py-4 bg-gradient-to-r from-[#6B1E3E] to-[#8B2E4E] text-white rounded-full font-semibold hover:shadow-xl transition-all"
       >
         Lire les articles

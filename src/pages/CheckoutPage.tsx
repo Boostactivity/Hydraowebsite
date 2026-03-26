@@ -69,12 +69,7 @@ export function CheckoutPage({ navigate }: CheckoutPageProps) {
       // Pour la démo, on simule avec un timeout
       setTimeout(() => {
         if (value.toLowerCase().includes('par')) {
-          // Suggestions simulées
-          console.log('Suggestions:', [
-            '123 Avenue des Champs-Élysées, 75008 Paris',
-            '45 Rue de la Paix, 75002 Paris',
-            '78 Boulevard Haussmann, 75008 Paris'
-          ]);
+          // En production : afficher suggestions Google Places API
         }
       }, 300);
     }

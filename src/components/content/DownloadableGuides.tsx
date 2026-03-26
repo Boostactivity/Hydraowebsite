@@ -82,16 +82,11 @@ export function DownloadableGuides() {
     e.preventDefault();
     
     // En production : API call pour enregistrer l'email et envoyer le guide
-    console.log('Guide downloaded:', {
-      guideId: selectedGuide?.id,
-      email
-    });
 
     setDownloaded(true);
-    
+
     // Simuler téléchargement
     setTimeout(() => {
-      alert(`Guide "${selectedGuide?.title}" téléchargé ! Vérifiez votre email.`);
       setSelectedGuide(null);
       setDownloaded(false);
       setEmail('');

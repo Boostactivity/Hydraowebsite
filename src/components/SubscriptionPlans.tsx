@@ -126,7 +126,7 @@ export default function SubscriptionPlans({
   const [showWelcomePack, setShowWelcomePack] = useState(true);
 
   // Vérifier si le SKU a la fonction CO₂
-  const hasCO2 = selectedSKU.toLowerCase() === 'spark' || selectedSKU.toLowerCase() === 'one';
+  const hasCO2 = selectedSKU && ['spark', 'one', 'sku1', 'sku3'].includes(selectedSKU.toLowerCase());
 
   const formatPrice = (amount: number) => {
     return new Intl.NumberFormat('fr-FR', {

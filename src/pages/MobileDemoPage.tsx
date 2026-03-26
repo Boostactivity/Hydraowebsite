@@ -22,8 +22,7 @@ export function MobileDemoPage({ navigate }: MobileDemoPageProps) {
   });
 
   const handleFormSubmit = (data: Record<string, string>) => {
-    console.log('Form submitted:', data);
-    alert('Formulaire envoyé avec succès ! (démo)');
+    // Form submitted (demo)
   };
 
   // Carousel items

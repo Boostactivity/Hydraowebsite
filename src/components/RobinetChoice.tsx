@@ -154,7 +154,7 @@ export default function RobinetChoice({ yearlySavings, onRobinetSelected }: Robi
             Choisissez <span className="text-[#6B1E3E] font-medium">votre modèle</span>
           </h2>
           <p className="text-xl text-gray-600">
-            Tous nos robinets sont au même prix. Choisissez selon vos besoins.
+            Choisissez le modèle adapté à vos besoins.
           </p>
         </motion.div>
 
