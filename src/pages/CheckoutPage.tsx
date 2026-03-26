@@ -40,7 +40,6 @@ export function CheckoutPage({ navigate }: CheckoutPageProps) {
   });
 
   const shipping = 0; // Livraison offerte
-  const installation = 0;
   const total = cartTotal + shipping;
 
   const handleSubmit = (e: React.FormEvent) => {

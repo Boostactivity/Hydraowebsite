@@ -86,7 +86,7 @@ export function TestimonialsPage({ navigate }: TestimonialsPageProps) {
 
   const stats = [
     { number: "4,9/5", label: "Note moyenne client" },
-    { number: "2000+", label: "Foyers équipés" },
+    { number: "350+", label: "Foyers équipés" },
     { number: "98%", label: "Clients satisfaits" },
     { number: "4,2 ans", label: "Durée moyenne d'utilisation" },
   ];
@@ -242,7 +242,7 @@ export function TestimonialsPage({ navigate }: TestimonialsPageProps) {
           >
             <h2 className="mb-6">
               Prêt à rejoindre
-              <span className="block">nos 2000+ clients ?</span>
+              <span className="block">nos 350+ clients ?</span>
             </h2>
             <p className="text-xl text-white/90 mb-12 max-w-2xl mx-auto">
               Choisissez votre HYDRAL maintenant et transformez votre quotidien en cuisine.

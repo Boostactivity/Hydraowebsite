@@ -123,7 +123,7 @@ export function WarrantyPage({ navigate }: WarrantyPageProps) {
               {[
                 'Filtres (changement tous les 6 mois)',
                 'Cartouches CO₂',
-                'Pièces d\'usure normale',
+                'Usure normale des consommables (filtres, CO2)',
                 'Dommages dus à une mauvaise utilisation'
               ].map((item, index) => (
                 <motion.li

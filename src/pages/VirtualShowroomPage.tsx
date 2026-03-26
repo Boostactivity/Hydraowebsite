@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Maximize2, ArrowLeft, ArrowRight, MapPin, Eye, Sparkles, Play, Info, ShoppingCart, X } from 'lucide-react';
-import { Page } from '../../App';
+import { Page } from '../App';
 
 interface VirtualShowroomProps {
   navigate: (page: Page) => void;
@@ -38,7 +38,7 @@ export function VirtualShowroom({ navigate }: VirtualShowroomProps) {
       description: 'Design épuré avec finitions chromées',
       image: '/api/placeholder/1920/1080?text=Cuisine+Moderne',
       hotspots: [
-        { id: '1', x: 45, y: 40, productId: 'premium', productName: 'HYDRAL Premium', price: '490€' },
+        { id: '1', x: 45, y: 40, productId: 'premium', productName: 'HYDRAL One', price: '490€' },
         { id: '2', x: 60, y: 55, productId: 'filtre', productName: 'Filtre Charbon', price: '29€' }
       ]
     },
@@ -48,7 +48,7 @@ export function VirtualShowroom({ navigate }: VirtualShowroomProps) {
       description: 'Style loft avec finitions noires mates',
       image: '/api/placeholder/1920/1080?text=Cuisine+Industrielle',
       hotspots: [
-        { id: '3', x: 50, y: 45, productId: 'premium', productName: 'HYDRAL Premium Black', price: '490€' }
+        { id: '3', x: 50, y: 45, productId: 'premium', productName: 'HYDRAL One Black', price: '490€' }
       ]
     },
     {
@@ -57,7 +57,7 @@ export function VirtualShowroom({ navigate }: VirtualShowroomProps) {
       description: 'Élégance intemporelle avec finitions dorées',
       image: '/api/placeholder/1920/1080?text=Cuisine+Classique',
       hotspots: [
-        { id: '4', x: 48, y: 42, productId: 'premium', productName: 'HYDRAL Premium Gold', price: '490€' }
+        { id: '4', x: 48, y: 42, productId: 'premium', productName: 'HYDRAL One Gold', price: '490€' }
       ]
     }
   ];

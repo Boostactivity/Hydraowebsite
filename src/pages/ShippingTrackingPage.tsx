@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Package, Truck, Check, MapPin, Calendar, Phone, Mail, Download, Share2 } from 'lucide-react';
-import { Page } from '../../App';
+import { Page } from '../App';
 
 interface TrackingPageProps {
   navigate: (page: Page) => void;

@@ -234,7 +234,7 @@ export function LegalPage({ navigate, type = 'mentions' }: LegalPageProps) {
                 <div>
                   <h2 className="text-2xl mb-4 text-gray-900">Article 6 - Droit de rétractation</h2>
                   <p className="text-[#8B7E74] leading-relaxed mb-4">
-                    Conformément à l'article L221-18 du Code de la consommation, vous disposez d'un délai de 14 jours à compter de la réception du produit pour exercer votre droit de rétractation sans motif.
+                    Conformément à l'article L221-18 du Code de la consommation, vous disposez d'un délai de 14 jours à compter de la réception du produit pour exercer votre droit de rétractation sans motif. HYDRAL étend ce délai à 30 jours.
                   </p>
                   <p className="text-[#8B7E74] leading-relaxed mb-4">
                     Le produit doit être retourné dans son emballage d'origine, non installé, complet. Les frais de retour sont à votre charge sauf défaut ou erreur de notre part.

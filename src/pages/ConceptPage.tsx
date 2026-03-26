@@ -122,7 +122,7 @@ export function ConceptPage({ navigate }: ConceptPageProps) {
                   </div>
                 </div>
                 <p className="text-xl text-[#8B7E74] mb-8 leading-relaxed">
-                  Le thé prêt en 10 secondes. Les pâtes qui démarrent immédiatement. Plus d'attente. Plus de bouilloire qui traîne. Juste l'eau dont vous avez besoin, quand vous en avez besoin.
+                  Le thé prêt en quelques secondes. Les pâtes qui démarrent immédiatement. Plus d'attente. Plus de bouilloire qui traîne. Juste l'eau dont vous avez besoin, quand vous en avez besoin.
                 </p>
                 <ul className="space-y-4">
                   {['Thé, café, infusions instantanés', 'Cuisson rapide (pâtes, légumes)', 'Stérilisation biberons', 'Sécurité enfant intégrée'].map((item, i) => (

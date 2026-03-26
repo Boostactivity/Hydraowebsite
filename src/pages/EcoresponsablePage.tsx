@@ -441,7 +441,7 @@ export function EcoresponsablePage({ navigate }: EcoresponsablePageProps) {
             <h2 className="mb-6 text-gray-900">Soyons honnêtes</h2>
             <div className="space-y-4 text-lg text-[#8B7E74]">
               <p>
-                <strong className="text-gray-900">HYDRAL n'est pas neutre en carbone.</strong> Sa fabrication émet du CO₂. Les composants électroniques viennent d'Asie. Le boiler est fabriqué en Europe, mais avec de l'acier dont la production émet du CO₂.
+                <strong className="text-gray-900">HYDRAL n'est pas neutre en carbone.</strong> Sa fabrication émet du CO₂. Les composants électroniques viennent d'Asie. Le boiler est conçu selon les normes européennes, mais avec de l'acier dont la production émet du CO₂.
               </p>
               <p>
                 <strong className="text-gray-900">Mais.</strong> Sur sa durée de vie (10 ans minimum), il compense largement son empreinte initiale en évitant 1 460 bouteilles plastique par an, 104 packs transportés, 85€ d'électricité gaspillée.

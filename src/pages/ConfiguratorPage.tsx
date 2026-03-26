@@ -70,9 +70,12 @@ const hydroModels = [
 const finishes = [
   { id: 'chrome', name: 'Chrome Brillant', color: 'bg-gradient-to-br from-gray-300 via-gray-100 to-gray-400', colorisId: 'chrome-brillant' },
   { id: 'brushed', name: 'Acier Brossé', color: 'bg-gradient-to-br from-gray-400 to-gray-500', colorisId: 'nickel-brosse' },
-  { id: 'black', name: 'Noir Mat', color: 'bg-gradient-to-br from-gray-900 to-black', colorisId: 'noir-mat' },
+  { id: 'black-matt', name: 'Noir Mat', color: 'bg-gradient-to-br from-gray-900 to-black', colorisId: 'noir-mat' },
+  { id: 'white-matt', name: 'Blanc Mat', color: 'bg-gradient-to-br from-gray-50 to-gray-200', colorisId: 'blanc-mat' },
   { id: 'gold', name: 'Or Brossé', color: 'bg-gradient-to-br from-[#D4AF37] to-[#C59B2A]', premium: true, colorisId: 'or-brosse' },
-  { id: 'gray', name: 'Gris métallisé', color: 'bg-gradient-to-br from-gray-500 to-gray-600', colorisId: 'gris-metallise' }
+  { id: 'copper', name: 'Cuivre', color: 'bg-gradient-to-br from-orange-600 to-orange-700', premium: true, colorisId: 'cuivre' },
+  { id: 'champagne', name: 'Champagne', color: 'bg-gradient-to-br from-[#D4AF37] to-[#E5C158]', premium: true, colorisId: 'champagne' },
+  { id: 'gunmetal', name: 'Gun Metal', color: 'bg-gradient-to-br from-gray-600 to-gray-700', premium: true, colorisId: 'gunmetal' }
 ];
 
 // Couleurs de personnalisation
@@ -166,16 +169,18 @@ export function ConfiguratorPage({ navigate }: ConfiguratorPageProps) {
     if (selectedSubscription) {
       const pack = welcomePacks[selectedSubscription as keyof typeof welcomePacks];
       if (pack) {
-        const defaultCustomizations: { [key: string]: ItemCustomization } = {};
-        pack.items.forEach((item) => {
-          for (let i = 0; i < item.qty; i++) {
-            const key = `${item.id}-${i}`;
-            if (!customizations[key]) {
-              defaultCustomizations[key] = { color: 'bordeaux' };
+        setCustomizations(prev => {
+          const defaultCustomizations: { [key: string]: ItemCustomization } = {};
+          pack.items.forEach((item) => {
+            for (let i = 0; i < item.qty; i++) {
+              const key = `${item.id}-${i}`;
+              if (!prev[key]) {
+                defaultCustomizations[key] = { color: 'bordeaux' };
+              }
             }
-          }
+          });
+          return { ...defaultCustomizations, ...prev };
         });
-        setCustomizations(prev => ({ ...defaultCustomizations, ...prev }));
       }
     }
   }, [selectedSubscription]);

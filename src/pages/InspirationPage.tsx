@@ -44,7 +44,7 @@ export function InspirationPage({ navigate }: InspirationPageProps) {
               { img: productImages['gunmetal'].faucet, style: 'Industriel' },
               { img: productImages['brushed'].faucet, style: 'Scandinave' },
               { img: productImages['black-matt'].faucet, style: 'Minimaliste' },
-              { img: productImages['chrome'].sparkling, style: 'Contemporary' },
+              { img: productImages['chrome'].sparkling, style: 'Contemporain' },
             ].map((item, i) => (
               <div key={i} className="group relative aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all">
                 <ImageWithFallback

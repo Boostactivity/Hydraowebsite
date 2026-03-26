@@ -66,7 +66,7 @@ const VIDEOS: VideoContent[] = [
   },
   {
     id: '5',
-    title: 'Unboxing HYDRAL Premium : découverte complète',
+    title: 'Unboxing HYDRAL One : découverte complète',
     description: 'Déballage et première impression du robinet 5-en-1. Contenu du colis, qualité de fabrication, accessoires inclus.',
     thumbnail: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=500&fit=crop',
     duration: '7:23',

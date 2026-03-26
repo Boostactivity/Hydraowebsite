@@ -99,7 +99,7 @@ export function CubePage({ navigate }: CubePageProps) {
                   'Système CO₂ avec détendeur intégré',
                   'Température réglable 4-12°C',
                   'Cartouche CO₂ 425g = 60L d\'eau pétillante',
-                  'Filtration : 1 cartouche = 1 an',
+                  'Filtration : 1 cartouche = 6 mois',
                   'Installation rapide en environ 1h'
                 ].map((spec, idx) => (
                   <li key={idx} className="flex items-start gap-3">

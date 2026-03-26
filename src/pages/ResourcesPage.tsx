@@ -30,7 +30,7 @@ const CASE_STUDIES: CaseStudy[] = [
     location: 'Paris 8ème',
     situation: 'Restaurant gastronomique de 80 couverts utilisant 500L d\'eau filtrée par jour',
     challenge: 'Coûts élevés en eau embouteillée pour cuisine et service, impact environnemental négatif',
-    solution: '3 HYDRAL Premium installés : cuisine, bar, service',
+    solution: '3 HYDRAL One installés : cuisine, bar, service',
     results: [
       '€2,400 économisés par an',
       '12,000 bouteilles plastique évitées',
@@ -48,7 +48,7 @@ const CASE_STUDIES: CaseStudy[] = [
     location: 'Lyon',
     situation: 'Famille avec 3 enfants, grosse consommation d\'eau pétillante (15 packs/mois)',
     challenge: 'Budget bouteilles élevé, corvée de courses, manque de place stockage',
-    solution: 'HYDRAL Premium + abonnement Standard',
+    solution: 'HYDRAL One + abonnement Standard',
     results: [
       '€1,200 économisés par an',
       '5,400 bouteilles évitées',
@@ -66,7 +66,7 @@ const CASE_STUDIES: CaseStudy[] = [
     location: 'Paris La Défense',
     situation: 'Startup tech de 50 employés avec forte consommation café/thé',
     challenge: 'Machine à café médiocre, fontaine à eau basique, team insatisfait',
-    solution: 'HYDRAL Premium espace café + 2 Compact aux étages',
+    solution: 'HYDRAL One espace café + 2 Compact aux étages',
     results: [
       '€3,600 économisés par an',
       'Satisfaction employés +85%',

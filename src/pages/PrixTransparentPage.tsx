@@ -47,7 +47,7 @@ export function PrixTransparentPage({ navigate }: PrixTransparentPageProps) {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
             {[
               {
                 brand: "Marché Premium",
