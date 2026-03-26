@@ -186,7 +186,7 @@ export function UltimateCalculator({ navigate }: UltimateCalculatorProps) {
     const avgBottlePrice = 0.50; // prix moyen pondéré toutes eaux
     const avgLitersPerBottle = 1.5;
     const hydroPrice = 490;
-    const subscriptionYearly = 99;
+    const subscriptionYearly = simpleInput.household === 'solo' || simpleInput.household === 'couple' ? 59 : 99;
 
     const yearlyBottles = simpleInput.bottlesPerWeek * 52;
     const yearlyBottleCost = yearlyBottles * avgBottlePrice;

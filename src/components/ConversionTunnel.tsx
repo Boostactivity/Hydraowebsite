@@ -208,23 +208,30 @@ export function ConversionTunnel({ navigate }: ConversionTunnelProps) {
 
   const [currentSection, setCurrentSection] = useState(0);
 
-  // Persist state in sessionStorage
-  useEffect(() => {
-    if (state.selectedWaters.length > 0 || state.selectedSKU || state.selectedPlan) {
-      sessionStorage.setItem('hydral-tunnel', JSON.stringify(state));
-    }
-  }, [state]);
-
-  // Restore state on mount
+  // Restore state on mount (runs once)
   useEffect(() => {
     const saved = sessionStorage.getItem('hydral-tunnel');
     if (saved) {
       try {
         const parsed = JSON.parse(saved);
-        setState(parsed);
+        if (parsed.selectedWaters?.length > 0 || parsed.selectedSKU || parsed.selectedPlan) {
+          setState(parsed);
+        }
       } catch {}
     }
   }, []);
+
+  // Persist state (skip initial empty state)
+  const isInitialMount = useRef(true);
+  useEffect(() => {
+    if (isInitialMount.current) {
+      isInitialMount.current = false;
+      return;
+    }
+    if (state.selectedWaters.length > 0 || state.selectedSKU || state.selectedPlan) {
+      sessionStorage.setItem('hydral-tunnel', JSON.stringify(state));
+    }
+  }, [state]);
 
   // Refs pour chaque section
   const section0Ref = useRef<HTMLElement>(null);
@@ -265,7 +272,8 @@ export function ConversionTunnel({ navigate }: ConversionTunnelProps) {
     const savings1y = savingsPerYear - robinetPrice;
     const savings5y = (savingsPerYear * 5) - robinetPrice;
     const monthlySavings = savingsPerYear / 12;
-    const breakEvenMonths = monthlySavings > 0 ? Math.ceil(robinetPrice / monthlySavings) : 999;
+    const rawBreakEven = monthlySavings > 0 ? Math.ceil(robinetPrice / monthlySavings) : 999;
+    const breakEvenMonths = rawBreakEven > 60 ? 999 : rawBreakEven;
     const yearlySavings = savingsPerYear;
 
     return { savings1y, savings5y, breakEvenMonths, yearlySavings, subscriptionYearly };
@@ -904,7 +912,7 @@ const Section1 = React.forwardRef<HTMLElement, {
               <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-4 sm:mb-6">Ce que vous dépensez aujourd'hui en bouteilles</h3>
               <div className="text-center">
                 <p className="text-sm text-[#8B7E74] mb-2">Dépense annuelle en eau embouteillée</p>
-                <p className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">{state.yearlyTotal}€<span className="text-lg text-gray-600">/an</span></p>
+                <p className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">{new Intl.NumberFormat('fr-FR').format(state.yearlyTotal)}€<span className="text-lg text-gray-600">/an</span></p>
                 {state.yearlyTotal >= 100 && (
                   <p className="text-sm text-[#8B7E74] mb-4">
                     {state.yearlyTotal >= 100 && state.yearlyTotal < 250 && "Soit l'équivalent d'un week-end en famille chaque année"}
@@ -913,8 +921,8 @@ const Section1 = React.forwardRef<HTMLElement, {
                   </p>
                 )}
                 <div className="flex items-center justify-center gap-6 text-sm text-[#8B7E74]">
-                  <span>Sur 5 ans : <span className="font-semibold text-gray-900">{state.yearlyTotal * 5}€</span></span>
-                  <span>Sur 10 ans : <span className="font-semibold text-gray-900">{state.yearlyTotal * 10}€</span></span>
+                  <span>Sur 5 ans : <span className="font-semibold text-gray-900">{new Intl.NumberFormat('fr-FR').format(state.yearlyTotal * 5)}€</span></span>
+                  <span>Sur 10 ans : <span className="font-semibold text-gray-900">{new Intl.NumberFormat('fr-FR').format(state.yearlyTotal * 10)}€</span></span>
                 </div>
                 {state.yearlyTotal < 100 && (
                   <p className="text-xs text-[#8B7E74] mt-4 bg-gray-50 rounded-lg p-3">
@@ -933,13 +941,13 @@ const Section1 = React.forwardRef<HTMLElement, {
             >
               <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2 sm:mb-3">Ce que vous économiseriez avec Hydral</h3>
               <p className="text-xs text-[#8B7E74] mb-6">
-                Robinet = achat unique. Abonnement filtres dès 49€/an (remplace vos achats d'eau en bouteille).
+                Robinet = achat unique. Abonnement filtres dès 59€/an (remplace vos achats d'eau en bouteille).
               </p>
 
               {/* Les 3 robinets avec économies calculées */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {ROBINETS.map((robinet) => {
-                  const subYearly = robinet.hasCO2 ? 59 : 49;
+                  const subYearly = 59;
                   const { savings5y, breakEvenMonths, yearlySavings } = calculateSavings(robinet.price, subYearly);
                   const Icon = robinet.icon;
                   return (
@@ -988,7 +996,7 @@ const Section1 = React.forwardRef<HTMLElement, {
             </motion.div>
 
             {/* Si rentable : break-even visuel */}
-            {calculateSavings(490, 49).yearlySavings > 0 && (
+            {calculateSavings(490, 59).yearlySavings > 0 && (
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -998,7 +1006,7 @@ const Section1 = React.forwardRef<HTMLElement, {
                 <h4 className="text-lg font-semibold text-gray-900 mb-6 text-center">Quand commencez-vous à économiser ?</h4>
                 <div className="space-y-4">
                   {ROBINETS.map((robinet) => {
-                    const { breakEvenMonths, yearlySavings: ys } = calculateSavings(robinet.price, robinet.hasCO2 ? 59 : 49);
+                    const { breakEvenMonths, yearlySavings: ys } = calculateSavings(robinet.price, 59);
                     const progress = breakEvenMonths < 100 ? Math.min((breakEvenMonths / 24) * 100, 100) : 100;
                     return (
                       <div key={robinet.sku} className="flex items-center gap-4">
@@ -1029,7 +1037,7 @@ const Section1 = React.forwardRef<HTMLElement, {
             )}
 
             {/* Si PAS rentable : arguments de conviction */}
-            {calculateSavings(490, 49).yearlySavings <= 0 && (
+            {calculateSavings(490, 59).yearlySavings <= 0 && (
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -1146,7 +1154,7 @@ const Section2 = React.forwardRef<HTMLElement, {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
           {ROBINETS.map((robinet, idx) => {
             const Icon = robinet.icon;
-            const { savings5y, breakEvenMonths, yearlySavings } = calculateSavings(robinet.price, robinet.hasCO2 ? 59 : 49);
+            const { savings5y, breakEvenMonths, yearlySavings } = calculateSavings(robinet.price, 59);
 
             return (
               <motion.div
@@ -2097,7 +2105,10 @@ const Section4 = React.forwardRef<HTMLElement, {
               // Log des données (à remplacer par API réelle)
               console.log('=== COMMANDE HYDRAL ===');
               console.log(JSON.stringify(orderData, null, 2));
-              
+
+              // Sauvegarder dans sessionStorage pour le panier
+              sessionStorage.setItem('hydral-order', JSON.stringify(orderData));
+
               // Redirection vers le panier
               navigate('cart');
             }}
