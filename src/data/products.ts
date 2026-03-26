@@ -102,7 +102,7 @@ export interface Module {
 export const modules: Module[] = [
   {
     id: 'boiler-compact',
-    name: 'Boiler Compact',
+    name: 'Chauffe-eau Compact',
     type: 'boiler',
     description: 'Réservoir d\'eau bouillante instantanée 3L',
     features: [
@@ -121,7 +121,7 @@ export const modules: Module[] = [
   },
   {
     id: 'chiller-pro',
-    name: 'Chiller Pro',
+    name: 'Refroidisseur Pro',
     type: 'chiller',
     description: 'Système de réfrigération pour eau fraîche',
     features: [

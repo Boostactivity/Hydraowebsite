@@ -96,7 +96,7 @@ const ROBINETS = [
   {
     sku: 'one' as SKUType,
     name: 'Hydral One',
-    tagline: 'Le plus choisi',
+    tagline: 'Le tout-en-un',
     price: 990,
     icon: Zap,
     image: defaultImages.boiling,
@@ -395,7 +395,7 @@ const Section0 = React.forwardRef<HTMLElement, { onStart: () => void }>(
                   <div key={i} className="w-3 h-3 rounded-full bg-amber-400" />
                 ))}
               </div>
-              <span>5/5 — Nos premiers testeurs</span>
+              <span>5/5 — Avis clients</span>
             </div>
             <span className="hidden sm:inline text-gray-300">|</span>
             <span>Rentabilisé en quelques mois</span>
@@ -1185,7 +1185,7 @@ const Section2 = React.forwardRef<HTMLElement, {
                       <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#6B1E3E]/70 to-[#8B2E5E]/70 border-2 border-white" />
                     </div>
                     <p className="text-sm text-[#8B7E74]">
-                      <span className="font-semibold text-gray-900">350+ familles</span> équipées
+                      <span className="font-semibold text-gray-900">Nos clients</span> témoignent
                     </p>
                   </div>
                 </div>

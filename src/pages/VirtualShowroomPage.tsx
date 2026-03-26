@@ -36,7 +36,7 @@ export function VirtualShowroom({ navigate }: VirtualShowroomProps) {
       id: 'kitchen-modern',
       name: 'Cuisine Moderne',
       description: 'Design épuré avec finitions chromées',
-      image: '/api/placeholder/1920/1080?text=Cuisine+Moderne',
+      image: '',
       hotspots: [
         { id: '1', x: 45, y: 40, productId: 'premium', productName: 'HYDRAL One', price: '490€' },
         { id: '2', x: 60, y: 55, productId: 'filtre', productName: 'Filtre Charbon', price: '29€' }
@@ -46,7 +46,7 @@ export function VirtualShowroom({ navigate }: VirtualShowroomProps) {
       id: 'kitchen-industrial',
       name: 'Cuisine Industrielle',
       description: 'Style loft avec finitions noires mates',
-      image: '/api/placeholder/1920/1080?text=Cuisine+Industrielle',
+      image: '',
       hotspots: [
         { id: '3', x: 50, y: 45, productId: 'premium', productName: 'HYDRAL One Black', price: '490€' }
       ]
@@ -55,7 +55,7 @@ export function VirtualShowroom({ navigate }: VirtualShowroomProps) {
       id: 'kitchen-classic',
       name: 'Cuisine Classique',
       description: 'Élégance intemporelle avec finitions dorées',
-      image: '/api/placeholder/1920/1080?text=Cuisine+Classique',
+      image: '',
       hotspots: [
         { id: '4', x: 48, y: 42, productId: 'premium', productName: 'HYDRAL One Gold', price: '490€' }
       ]
@@ -122,11 +122,17 @@ export function VirtualShowroom({ navigate }: VirtualShowroomProps) {
         >
           {/* Scene Image with Hotspots */}
           <div className="relative aspect-video">
-            <img
-              src={currentScene.image}
-              alt={currentScene.name}
-              className="w-full h-full object-cover"
-            />
+            {currentScene.image ? (
+              <img
+                src={currentScene.image}
+                alt={currentScene.name}
+                className="w-full h-full object-cover"
+              />
+            ) : (
+              <div className="w-full h-full bg-gradient-to-br from-gray-800 via-gray-700 to-gray-900 flex items-center justify-center">
+                <span className="text-2xl text-white/60 font-light">{currentScene.name}</span>
+              </div>
+            )}
 
             {/* Hotspots */}
             {currentScene.hotspots.map((hotspot) => (

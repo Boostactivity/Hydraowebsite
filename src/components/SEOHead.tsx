@@ -135,8 +135,8 @@ function getSEOData(page: Page, productId?: string): SEOData {
       structuredData: getProductCollectionSchema()
     },
     product: {
-      title: `Robinet ${BRAND_NAME} ${productId?.toUpperCase()} - 490€ TTC | 5 Types d'Eau`,
-      description: `Robinet ${productId?.toUpperCase()} HYDRAL : design premium, 5 types d'eau (bouillante, filtrée, pétillante, chaude, froide). Prix transparent 490€ TTC avec abonnement consommables dès 59€/an.`,
+      title: `Robinet ${BRAND_NAME} ${productId?.toUpperCase()} - à partir de 490€ TTC | 5 Types d'Eau`,
+      description: `Robinet ${productId?.toUpperCase()} HYDRAL : design premium, 5 types d'eau (bouillante, filtrée, pétillante, chaude, froide). Prix transparent à partir de 490€ TTC avec abonnement consommables dès 59€/an.`,
       canonical: `${BASE_URL}/produit/${productId}`,
       keywords: [`robinet ${productId}`, 'HYDRAL', 'robinet premium', 'eau bouillante', 'prix robinet', '490 euros'],
       ogType: 'product',
@@ -433,7 +433,7 @@ function getProductCollectionSchema() {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
     name: 'Gamme de Robinets HYDRAL',
-    description: '5 modèles de robinets premium 5-en-1',
+    description: '3 modèles de robinets premium 5-en-1',
     url: `${BASE_URL}/gamme`
   };
 }
@@ -507,7 +507,7 @@ function getSubscriptionSchema() {
     offers: [
       {
         '@type': 'Offer',
-        name: 'Filtre Only',
+        name: 'Essentiel',
         price: '59',
         priceCurrency: 'EUR',
         billingDuration: 'P1Y'

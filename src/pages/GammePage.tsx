@@ -46,31 +46,6 @@ export function GammePage({ navigate }: GammePageProps) {
         </div>
       </section>
 
-      {/* Filtres */}
-      <section className="py-8 bg-white border-y border-gray-200/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap gap-3 justify-center">
-            {[
-              { value: 'all', label: 'Tous les modèles' },
-            ].map(filter => (
-              <motion.button
-                key={filter.value}
-                onClick={() => setSelectedStyle(filter.value)}
-                className={`px-6 py-3 rounded-full transition-all ${
-                  selectedStyle === filter.value
-                    ? 'bg-[#6B1E3E] text-white shadow-md'
-                    : 'bg-[#FAF8F5] border border-gray-200 hover:border-[#6B1E3E]/30 text-gray-700'
-                }`}
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                {filter.label}
-              </motion.button>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Modèles */}
       <section className="py-12 sm:py-16 lg:py-20 bg-[#FAF8F5]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

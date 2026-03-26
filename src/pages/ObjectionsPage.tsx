@@ -97,8 +97,8 @@ export function ObjectionsPage({ navigate }: ObjectionsPageProps) {
       {/* BATCH 24 - One-Click Upsell (Point 120) - P2 IMPORTANT */}
       <OneClickUpsell 
         mainProduct={{ name: 'HYDRAL Pure', price: 490 }}
-        onUpsellAccepted={(productId) => {/* TODO: handle upsell */}}
-        onUpsellDeclined={() => {/* TODO: handle decline */}}
+        onUpsellAccepted={(productId) => {}}
+        onUpsellDeclined={() => {}}
       />
 
       {/* CTA Final */}

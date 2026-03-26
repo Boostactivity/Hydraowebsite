@@ -361,7 +361,7 @@ export function SinkCompatibilityChecker({ className = '' }: SinkCompatibilityCh
                     <div className="w-6 h-6 rounded-full bg-[#6B1E3E] text-white flex items-center justify-center flex-shrink-0 text-xs">1</div>
                     <span className="text-gray-700">
                       {result === 'compatible'
-                        ? 'Réservez votre installation gratuite'
+                        ? 'Découvrez comment installer votre HYDRAL'
                         : 'Contactez notre équipe pour une étude personnalisée'}
                     </span>
                   </li>
@@ -382,7 +382,7 @@ export function SinkCompatibilityChecker({ className = '' }: SinkCompatibilityCh
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <button className="flex-1 px-8 py-4 bg-gradient-to-r from-[#6B1E3E] to-[#8B2E4E] text-white rounded-full font-medium hover:shadow-xl transition-all">
-                  {result === 'compatible' ? 'Réserver mon installation' : 'Demander une étude gratuite'}
+                  {result === 'compatible' ? 'Voir le guide d\'installation' : 'Demander une étude gratuite'}
                   <ArrowRight className="inline w-5 h-5 ml-2" />
                 </button>
                 <button

@@ -159,7 +159,7 @@ export function ShopPage({ navigate }: ShopPageProps) {
               <div className="w-10 h-10 bg-[#6B1E3E]/10 rounded-xl flex items-center justify-center mx-auto mb-3">
                 <Check className="w-5 h-5 text-[#6B1E3E]" />
               </div>
-              <h4 className="text-sm font-medium text-gray-900 mb-2">Retour 14 jours</h4>
+              <h4 className="text-sm font-medium text-gray-900 mb-2">Retour 30 jours</h4>
               <p className="text-xs text-[#8B7E74]">
                 Produits non ouverts
               </p>

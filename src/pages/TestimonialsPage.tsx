@@ -203,34 +203,6 @@ export function TestimonialsPage({ navigate }: TestimonialsPageProps) {
         </div>
       </section>
 
-      {/* Video testimonials section - Coming soon */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-[#FAF8F5] to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-          >
-            <h2 className="mb-6 text-gray-900">
-              Témoignages vidéo
-              <span className="block text-[#6B1E3E]">Bientôt disponibles</span>
-            </h2>
-            <p className="text-xl text-[#8B7E74] mb-12 max-w-3xl mx-auto">
-              Nous préparons une série de visites chez nos clients pour vous montrer leur HYDRAL en action, dans de vraies cuisines, avec de vrais retours d'expérience.
-            </p>
-            <div className="aspect-video max-w-4xl mx-auto bg-gradient-to-br from-gray-100 to-gray-200 rounded-3xl flex items-center justify-center border border-gray-300">
-              <div className="text-center">
-                <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-                  <div className="w-0 h-0 border-t-8 border-t-transparent border-l-12 border-l-[#6B1E3E] border-b-8 border-b-transparent ml-1"></div>
-                </div>
-                <p className="text-[#8B7E74]">Prochainement</p>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
       {/* CTA */}
       <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-[#6B1E3E] to-[#6B1E3E]/90 text-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

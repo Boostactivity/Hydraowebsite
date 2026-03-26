@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Search, Calendar, Clock, ArrowRight, Tag, TrendingUp, Heart, BookOpen, User } from 'lucide-react';
+import { Search, Calendar, Clock, ArrowRight, Tag, TrendingUp, Heart, User } from 'lucide-react';
 import { Page } from '../App';
 
 interface BlogPageProps {
@@ -208,32 +208,6 @@ export function BlogPage({ navigate }: BlogPageProps) {
           </div>
         </div>
 
-        {/* Newsletter CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mt-16 bg-gradient-to-r from-[#6B1E3E] to-[#8B2E4E] rounded-3xl p-12 text-center text-white"
-        >
-          <BookOpen className="w-16 h-16 mx-auto mb-6 text-white/90" />
-          <h2 className="text-3xl font-semibold mb-4">
-            Recevez nos meilleurs articles
-          </h2>
-          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            1 email par mois avec conseils exclusifs, guides pratiques et inspirations lifestyle
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-            <input
-              type="email"
-              placeholder="votre@email.com"
-              className="flex-1 px-6 py-4 rounded-full text-gray-900 focus:outline-none focus:ring-2 focus:ring-white/50"
-            />
-            <button className="px-8 py-4 bg-white text-[#6B1E3E] rounded-full font-semibold hover:shadow-xl transition-all whitespace-nowrap">
-              S'abonner
-            </button>
-          </div>
-        </motion.div>
       </div>
     </div>
   );

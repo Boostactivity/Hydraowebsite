@@ -140,7 +140,7 @@ export function HYDRALProductSchema() {
         {
           author: 'Claire Rousseau',
           datePublished: '2026-03-05',
-          reviewBody: 'Produit premium qui tient ses promesses. L\'application mobile est pratique. Petit bémol sur le prix mais l\'investissement vaut le coup.',
+          reviewBody: 'Produit premium qui tient ses promesses. Le design est élégant et la qualité premium. Petit bémol sur le prix mais l\'investissement vaut le coup.',
           reviewRating: 4
         }
       ]}

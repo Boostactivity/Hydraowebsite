@@ -104,19 +104,19 @@ export function InstallationWizard({ className = '', onComplete }: InstallationW
     if (complexity <= 2) {
       installationType = 'simple';
       estimatedTime = 'moins d\'1h';
-      estimatedCost = 0; // Inclus
+      estimatedCost = -1; // Non inclus
     } else if (complexity <= 5) {
       installationType = 'standard';
       estimatedTime = 'environ 1h';
-      estimatedCost = 0; // Inclus
+      estimatedCost = -1; // Non inclus
     } else {
       installationType = 'complex';
       estimatedTime = 'environ 1h';
-      estimatedCost = 150; // Travaux supplémentaires
+      estimatedCost = -1; // Travaux supplémentaires possibles
     }
 
     if (requirements.length === 0) {
-      requirements.push('Installation standard incluse');
+      requirements.push('Installation simple, réalisable par un bricoleur ou un professionnel de votre choix');
     }
 
     return {
@@ -303,9 +303,9 @@ export function InstallationWizard({ className = '', onComplete }: InstallationW
                 <div className="bg-white rounded-2xl p-6 text-center">
                   <Wrench className="w-8 h-8 text-[#6B1E3E] mx-auto mb-3" />
                   <div className="text-2xl font-light text-gray-900 mb-1">
-                    {result.estimatedCost === 0 ? 'Inclus' : `+${result.estimatedCost}€`}
+                    À prévoir
                   </div>
-                  <div className="text-sm text-gray-600">Coût installation</div>
+                  <div className="text-sm text-gray-600">Installation par vos soins ou un pro</div>
                 </div>
               </div>
 

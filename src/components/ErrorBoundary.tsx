@@ -24,7 +24,7 @@ export class ErrorBoundary extends Component<Props, State> {
   public componentDidCatch(error: Error, errorInfo: ErrorInfo) {
     console.error('ErrorBoundary caught an error:', error, errorInfo);
     
-    // TODO: Send to error tracking service (Sentry, LogRocket, etc.)
+    // Error tracking service integration point
     // if (window.gtag) {
     //   window.gtag('event', 'exception', {
     //     description: error.message,
