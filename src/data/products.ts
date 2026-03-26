@@ -2,7 +2,7 @@
 
 // Prix des modèles HYDRAL
 export const HYDRAL_PRICES = {
-  pure: 490,   // Eau filtrée uniquement
+  pure: 490,   // Eau filtrée + bouillante
   spark: 890,  // Eau filtrée + gazeuse + froide
   one: 990     // Tout-en-un (5 eaux)
 };
