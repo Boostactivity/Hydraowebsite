@@ -872,7 +872,13 @@ const Section2 = React.forwardRef<HTMLElement, {
     <section
       ref={ref}
       data-section="2"
-      className="min-h-[60vh] flex items-center justify-center px-4 sm:px-6 py-12"
+      className="min-h-[60vh] flex items-center justify-center px-4 sm:px-6 py-12 transition-colors duration-500"
+      style={{
+        background: state.selectedColoris === 'or-brosse' ? 'linear-gradient(to bottom, #FAF8F5, #FBF5E8)' :
+          state.selectedColoris === 'noir-mat' ? 'linear-gradient(to bottom, #FAF8F5, #F0EEEC)' :
+          state.selectedColoris === 'gris-metallise' ? 'linear-gradient(to bottom, #FAF8F5, #EEEEF0)' :
+          undefined
+      }}
     >
       <motion.div
         initial={{ opacity: 0, y: 50 }}
@@ -923,13 +929,12 @@ const Section2 = React.forwardRef<HTMLElement, {
                     <img
                       src={robinet.image}
                       alt={robinet.name}
-                      className="w-full h-48 object-cover"
+                      className="w-full h-56 sm:h-64 object-cover"
                     />
                   </div>
                 )}
 
                 <div className="text-center mb-6">
-                  <Icon className="w-12 h-12 text-[#6B1E3E] mx-auto mb-4" />
                   <h3 className="text-2xl mb-2 text-gray-900">{robinet.name}</h3>
                   <p className="text-sm text-[#8B7E74]">{robinet.tagline}</p>
                 </div>
@@ -1060,19 +1065,44 @@ const Section2 = React.forwardRef<HTMLElement, {
                 </p>
               </div>
 
-              {/* Sélecteur de coloris avec label */}
-              <div className="mb-12">
-                <div className="flex items-center justify-between mb-4">
-                  <p className="text-sm font-medium text-gray-700">Finition sélectionnée</p>
-                  <p className="text-sm text-[#6B1E3E] font-semibold">
-                    {ROBINET_COLORIS.find(c => c.id === state.selectedColoris)?.name || 'Chrome'}
-                  </p>
+              {/* Sélecteur de finition — mini-cards */}
+              <div className="mb-10">
+                <p className="text-sm font-medium text-gray-700 mb-4">Choisissez votre finition</p>
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+                  {ROBINET_COLORIS.map((coloris) => {
+                    const isSelected = state.selectedColoris === coloris.id;
+                    return (
+                      <button
+                        key={coloris.id}
+                        onClick={() => setState({ ...state, selectedColoris: coloris.id })}
+                        className={`relative p-4 rounded-xl transition-all text-left ${
+                          isSelected
+                            ? 'ring-2 ring-[#6B1E3E] shadow-lg bg-white scale-105'
+                            : 'bg-white/60 border border-gray-200 hover:border-[#6B1E3E]/30 hover:shadow-md'
+                        }`}
+                      >
+                        <div
+                          className="w-full h-12 rounded-lg mb-3 shadow-inner"
+                          style={{
+                            background: coloris.id === 'chrome-brillant' ? 'linear-gradient(135deg, #E8E8E8 0%, #B0B0B0 30%, #F5F5F5 50%, #A0A0A0 70%, #D0D0D0 100%)' :
+                              coloris.id === 'noir-mat' ? 'linear-gradient(135deg, #2A2A2A 0%, #1A1A1A 50%, #333333 100%)' :
+                              coloris.id === 'nickel-brosse' ? 'linear-gradient(135deg, #C0B8A8 0%, #A89888 30%, #D0C8B8 50%, #B0A898 100%)' :
+                              coloris.id === 'or-brosse' ? 'linear-gradient(135deg, #D4A843 0%, #C49833 30%, #E4B853 50%, #B48823 100%)' :
+                              'linear-gradient(135deg, #5A5A5A 0%, #4A4A4A 30%, #6A6A6A 50%, #3A3A3A 100%)'
+                          }}
+                        />
+                        <p className={`text-xs font-medium ${isSelected ? 'text-[#6B1E3E]' : 'text-gray-700'}`}>
+                          {coloris.name}
+                        </p>
+                        {isSelected && (
+                          <div className="absolute top-2 right-2 w-5 h-5 bg-[#6B1E3E] rounded-full flex items-center justify-center">
+                            <Check className="w-3 h-3 text-white" />
+                          </div>
+                        )}
+                      </button>
+                    );
+                  })}
                 </div>
-                <ColorisSelector
-                  selectedColoris={state.selectedColoris}
-                  onSelectColoris={(colorisId) => setState({ ...state, selectedColoris: colorisId })}
-                  colorisOptions={ROBINET_COLORIS}
-                />
               </div>
 
               {/* Galerie d'images + Informations côte à côte */}
