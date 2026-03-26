@@ -78,7 +78,7 @@ export function TestimonialsPage({ navigate }: TestimonialsPageProps) {
       date: "Installé depuis 5 mois",
       image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400",
       quote: "Installation rapide, zéro problème",
-      text: "Commande passée un lundi, installateur chez moi le vendredi suivant. Installation en 2h30 chrono, tout fonctionne parfaitement. Le SAV a répondu à toutes mes questions techniques en moins de 24h.",
+      text: "Commande passée un lundi, installateur chez moi le vendredi suivant. Installation en moins d'1h chrono, tout fonctionne parfaitement. Le SAV a répondu à toutes mes questions techniques en moins de 24h.",
       verified: true,
       usage: "Apprécie la qualité du service"
     },

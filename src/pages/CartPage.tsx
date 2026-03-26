@@ -137,7 +137,7 @@ export function CartPage({ navigate }: CartPageProps) {
                   <div className="flex-1">
                     <h3 className="text-xl text-gray-900 mb-2">Installation par un professionnel (optionnel)</h3>
                     <p className="text-[#8B7E74] mb-4 leading-relaxed">
-                      Un installateur agréé HYDRAL intervient chez vous sous 7-10 jours. Installation complète en 2-3h (raccordement, boiler, tests).
+                      Un installateur agréé HYDRAL intervient chez vous sous 7-10 jours. Installation complète en environ 1h (raccordement, boiler, tests).
                     </p>
                     <button
                       onClick={(e) => {

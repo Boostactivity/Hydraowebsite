@@ -51,7 +51,7 @@ export function AutoBreadcrumbSchema({ currentPage }: { currentPage: Page }) {
     'product': [
       { name: 'Accueil', url: baseUrl },
       { name: 'La Gamme', url: `${baseUrl}/gamme` },
-      { name: 'Robinet 5-en-1', url: `${baseUrl}/product` }
+      { name: 'Robinet 5-en-1', url: `${baseUrl}/produit` }
     ],
     'modules': [
       { name: 'Accueil', url: baseUrl },
@@ -63,7 +63,7 @@ export function AutoBreadcrumbSchema({ currentPage }: { currentPage: Page }) {
     ],
     'configurator': [
       { name: 'Accueil', url: baseUrl },
-      { name: 'Configurateur', url: `${baseUrl}/configurator` }
+      { name: 'Configurateur', url: `${baseUrl}/configurateur` }
     ],
     'avantages': [
       { name: 'Accueil', url: baseUrl },
@@ -99,26 +99,26 @@ export function AutoBreadcrumbSchema({ currentPage }: { currentPage: Page }) {
     ],
     'shop': [
       { name: 'Accueil', url: baseUrl },
-      { name: 'Boutique', url: `${baseUrl}/shop` }
+      { name: 'Boutique', url: `${baseUrl}/boutique` }
     ],
     'cart': [
       { name: 'Accueil', url: baseUrl },
-      { name: 'Boutique', url: `${baseUrl}/shop` },
-      { name: 'Panier', url: `${baseUrl}/cart` }
+      { name: 'Boutique', url: `${baseUrl}/boutique` },
+      { name: 'Panier', url: `${baseUrl}/panier` }
     ],
     'checkout': [
       { name: 'Accueil', url: baseUrl },
-      { name: 'Boutique', url: `${baseUrl}/shop` },
-      { name: 'Panier', url: `${baseUrl}/cart` },
-      { name: 'Paiement', url: `${baseUrl}/checkout` }
+      { name: 'Boutique', url: `${baseUrl}/boutique` },
+      { name: 'Panier', url: `${baseUrl}/panier` },
+      { name: 'Paiement', url: `${baseUrl}/commande` }
     ],
     'installers': [
       { name: 'Accueil', url: baseUrl },
-      { name: 'Installateurs Agréés', url: `${baseUrl}/installers` }
+      { name: 'Installateurs Agréés', url: `${baseUrl}/installateurs` }
     ],
     'subscriptions': [
       { name: 'Accueil', url: baseUrl },
-      { name: 'Abonnements', url: `${baseUrl}/subscriptions` }
+      { name: 'Abonnements', url: `${baseUrl}/abonnements` }
     ],
     'faq': [
       { name: 'Accueil', url: baseUrl },
@@ -126,15 +126,15 @@ export function AutoBreadcrumbSchema({ currentPage }: { currentPage: Page }) {
     ],
     'legal': [
       { name: 'Accueil', url: baseUrl },
-      { name: 'Mentions Légales', url: `${baseUrl}/legal` }
+      { name: 'Mentions Légales', url: `${baseUrl}/mentions-legales` }
     ],
     'testimonials': [
       { name: 'Accueil', url: baseUrl },
-      { name: 'Témoignages', url: `${baseUrl}/testimonials` }
+      { name: 'Témoignages', url: `${baseUrl}/avis` }
     ],
     'savings': [
       { name: 'Accueil', url: baseUrl },
-      { name: 'Calculateur d\'Économies', url: `${baseUrl}/savings` }
+      { name: 'Calculateur d\'Économies', url: `${baseUrl}/economies` }
     ],
     'objections': [
       { name: 'Accueil', url: baseUrl },
@@ -142,15 +142,15 @@ export function AutoBreadcrumbSchema({ currentPage }: { currentPage: Page }) {
     ],
     'mobile-demo': [
       { name: 'Accueil', url: baseUrl },
-      { name: 'Démo Mobile', url: `${baseUrl}/mobile-demo` }
+      { name: 'Démo Mobile', url: `${baseUrl}/demo-mobile` }
     ],
     'warranty': [
       { name: 'Accueil', url: baseUrl },
-      { name: 'Garantie', url: `${baseUrl}/warranty` }
+      { name: 'Garantie', url: `${baseUrl}/garantie` }
     ],
     'payment-security': [
       { name: 'Accueil', url: baseUrl },
-      { name: 'Paiement Sécurisé', url: `${baseUrl}/payment-security` }
+      { name: 'Paiement Sécurisé', url: `${baseUrl}/paiement-securise` }
     ],
     'blog': [
       { name: 'Accueil', url: baseUrl },
@@ -158,27 +158,27 @@ export function AutoBreadcrumbSchema({ currentPage }: { currentPage: Page }) {
     ],
     'video-hub': [
       { name: 'Accueil', url: baseUrl },
-      { name: 'Vidéos', url: `${baseUrl}/video-hub` }
+      { name: 'Vidéos', url: `${baseUrl}/videos` }
     ],
     'resources': [
       { name: 'Accueil', url: baseUrl },
-      { name: 'Ressources', url: `${baseUrl}/resources` }
+      { name: 'Ressources', url: `${baseUrl}/ressources` }
     ],
     'shipping-tracking': [
       { name: 'Accueil', url: baseUrl },
-      { name: 'Suivi de Commande', url: `${baseUrl}/shipping-tracking` }
+      { name: 'Suivi de Commande', url: `${baseUrl}/suivi-commande` }
     ],
     'virtual-showroom': [
       { name: 'Accueil', url: baseUrl },
-      { name: 'Showroom Virtuel', url: `${baseUrl}/virtual-showroom` }
+      { name: 'Showroom Virtuel', url: `${baseUrl}/showroom` }
     ],
     'personalization': [
       { name: 'Accueil', url: baseUrl },
-      { name: 'Personnalisation', url: `${baseUrl}/personalization` }
+      { name: 'Personnalisation', url: `${baseUrl}/personnalisation` }
     ],
     'robinet-choice': [
       { name: 'Accueil', url: baseUrl },
-      { name: 'Guide de Choix', url: `${baseUrl}/robinet-choice` }
+      { name: 'Guide de Choix', url: `${baseUrl}/guide-choix` }
     ]
   };
 

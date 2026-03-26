@@ -35,11 +35,11 @@ export function SupportPage({ navigate }: SupportPageProps) {
         },
         {
           q: 'Ai-je besoin d\'un professionnel ?',
-          a: 'Recommandé si vous n\'êtes pas bricoleur. Un plombier classique peut l\'installer facilement (2-3h). Le manuel fourni est conçu pour les professionnels et les particuliers.'
+          a: 'Recommandé si vous n\'êtes pas bricoleur. Un plombier classique peut l\'installer facilement (environ 1h). Le manuel fourni est conçu pour les professionnels et les particuliers.'
         },
         {
           q: 'Combien de temps dure l\'installation ?',
-          a: '2 à 3 heures pour un professionnel. Comptez une demi-journée si vous le faites vous-même (première fois).'
+          a: 'Environ 1h pour un professionnel. Comptez un peu plus si vous le faites vous-même (première fois).'
         }
       ]
     },

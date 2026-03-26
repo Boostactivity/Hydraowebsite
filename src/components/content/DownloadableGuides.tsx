@@ -17,7 +17,7 @@ const GUIDES: Guide[] = [
   {
     id: 'savings-guide',
     title: 'Guide ultime des économies d\'eau',
-    description: 'Calculateurs détaillés, astuces pratiques et témoignages pour économiser jusqu\'à 1200€/an sur votre facture d\'eau.',
+    description: 'Calculateurs détaillés, astuces pratiques et témoignages pour économiser jusqu\'à 1 000€/an sur votre facture d\'eau.',
     pages: 24,
     downloadCount: 3421,
     image: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=400&h=500&fit=crop',

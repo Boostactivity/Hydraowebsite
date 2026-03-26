@@ -100,7 +100,7 @@ export function CubePage({ navigate }: CubePageProps) {
                   'Température réglable 4-12°C',
                   'Cartouche CO₂ 425g = 60L d\'eau pétillante',
                   'Filtration : 1 cartouche = 1 an',
-                  'Installation rapide en 30 minutes'
+                  'Installation rapide en environ 1h'
                 ].map((spec, idx) => (
                   <li key={idx} className="flex items-start gap-3">
                     <Check className="w-6 h-6 text-[#6B1E3E] flex-shrink-0 mt-0.5" />

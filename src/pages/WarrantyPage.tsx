@@ -308,7 +308,7 @@ const warrantyFaqs = [
   },
   {
     question: 'Puis-je installer moi-même ?',
-    answer: 'Oui si vous êtes bricoleur. Nous fournissons un manuel détaillé + vidéo. Sinon, faites appel à un plombier de votre choix. L\'installation est simple pour un professionnel (2-3h).'
+    answer: 'Oui si vous êtes bricoleur. Nous fournissons un manuel détaillé + vidéo. Sinon, faites appel à un plombier de votre choix. L\'installation est simple pour un professionnel (environ 1h).'
   },
   {
     question: 'Quelle est la durée de vie du robinet ?',

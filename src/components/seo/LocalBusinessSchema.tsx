@@ -47,7 +47,7 @@ export function LocalBusinessSchema({
   priceRange = '€€€',
   rating = {
     value: 4.9,
-    count: 523
+    count: 47
   }
 }: LocalBusinessSchemaProps) {
   const schema = {

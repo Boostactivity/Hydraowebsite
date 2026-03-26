@@ -230,7 +230,7 @@ export function AvantagesPage({ navigate }: AvantagesPageProps) {
               </div>
 
               <div className="text-center p-6 bg-gradient-to-br from-[#6B1E3E]/10 to-white rounded-2xl">
-                <p className="text-4xl text-[#6B1E3E] mb-2">~1 200€</p>
+                <p className="text-4xl text-[#6B1E3E] mb-2">~1 000€</p>
                 <p className="text-sm text-[#8B7E74]">Économies par an</p>
               </div>
             </motion.div>

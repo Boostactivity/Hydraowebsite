@@ -88,7 +88,7 @@ export function InstallationWizard({ onComplete, onClose }: InstallationWizardPr
         type: 'diy',
         title: 'Installation DIY recommandée',
         desc: 'Vous avez les compétences nécessaires pour installer HYDRAL vous-même.',
-        time: '3-4 heures',
+        time: 'environ 1h',
         difficulty: 'Intermédiaire',
         cost: '0€',
         steps: [
@@ -106,13 +106,13 @@ export function InstallationWizard({ onComplete, onClose }: InstallationWizardPr
         type: 'assisted',
         title: 'Installation assistée recommandée',
         desc: 'Un plombier partenaire HYDRAL pour une installation rapide et garantie.',
-        time: '2-3 heures',
+        time: 'environ 1h',
         difficulty: 'Professionnel',
-        cost: '290€',
+        cost: '280€',
         steps: [
           'Prise de rendez-vous avec installateur agréé',
           'Visite technique (30 min)',
-          'Installation complète (2h)',
+          'Installation complète (environ 1h)',
           'Test et formation à l\'utilisation',
           'Garantie installation 3 ans'
         ],
@@ -125,7 +125,7 @@ export function InstallationWizard({ onComplete, onClose }: InstallationWizardPr
         type: 'premium',
         title: 'Installation Premium recommandée',
         desc: 'Service complet avec expert HYDRAL : installation + formation + suivi.',
-        time: '2 heures',
+        time: 'environ 1h',
         difficulty: 'Professionnel Expert',
         cost: '490€',
         steps: [
@@ -143,9 +143,9 @@ export function InstallationWizard({ onComplete, onClose }: InstallationWizardPr
         type: 'standard',
         title: 'Installation Standard recommandée',
         desc: 'Notre solution la plus populaire : efficace, rapide, garantie.',
-        time: '2-3 heures',
+        time: 'environ 1h',
         difficulty: 'Professionnel',
-        cost: '290€',
+        cost: '280€',
         steps: [
           'Prise de rendez-vous installateur',
           'Installation complète',

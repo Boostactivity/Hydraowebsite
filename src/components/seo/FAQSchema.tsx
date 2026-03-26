@@ -38,7 +38,7 @@ export function HYDRALFAQSchema() {
   const faqs: FAQItem[] = [
     {
       question: 'Combien coûte le robinet HYDRAL 5-en-1 ?',
-      answer: 'Le robinet HYDRAL 5-en-1 est proposé à 490€ TTC, avec des abonnements optionnels de 59€ à 139€ par an pour les consommables (filtres, CO2). Installation professionnelle disponible à partir de 150€.'
+      answer: 'Le robinet HYDRAL 5-en-1 est proposé à 490€ TTC, avec des abonnements optionnels de 59€ à 139€ par an pour les consommables (filtres, CO2). Installation professionnelle disponible à 280 euros.'
     },
     {
       question: 'Quelles sont les 5 fonctions du robinet HYDRAL ?',
@@ -46,11 +46,11 @@ export function HYDRALFAQSchema() {
     },
     {
       question: 'Combien puis-je économiser avec HYDRAL ?',
-      answer: 'Les utilisateurs HYDRAL économisent en moyenne 1200€ à 2400€ par an en éliminant l\'achat d\'eau en bouteille, café en capsules, et bouilloire électrique. Le retour sur investissement est généralement atteint en 6 à 12 mois selon la taille du foyer.'
+      answer: 'Les utilisateurs HYDRAL économisent en moyenne 300€ à 1 000€ par an en éliminant l\'achat d\'eau en bouteille, café en capsules, et bouilloire électrique. Le retour sur investissement est généralement atteint en 6 à 12 mois selon la taille du foyer.'
     },
     {
       question: 'L\'installation est-elle compliquée ?',
-      answer: 'Non, l\'installation HYDRAL est simple : 80% des clients l\'installent eux-mêmes en 45 minutes grâce à notre guide vidéo étape par étape. Pour plus de confort, nous proposons un service d\'installation professionnelle par un plombier agréé.'
+      answer: 'Non, l\'installation HYDRAL est simple : 80% des clients l\'installent eux-mêmes en environ 1h grâce à notre guide vidéo étape par étape. Pour plus de confort, nous proposons un service d\'installation professionnelle par un plombier agréé.'
     },
     {
       question: 'Le robinet HYDRAL est-il compatible avec ma cuisine ?',

@@ -40,7 +40,7 @@ export function SEOHead({ page, productId }: SEOHeadProps) {
     updateMetaTag('og:type', seoData.ogType, 'property');
     updateMetaTag('og:site_name', SITE_NAME, 'property');
     updateMetaTag('og:locale', 'fr_FR', 'property');
-    updateMetaTag('og:image', `${BASE_URL}/images/og-image-hydral.jpg`, 'property');
+    updateMetaTag('og:image', `${BASE_URL}/og-image.jpg`, 'property');
     updateMetaTag('og:image:alt', 'Robinet HYDRAL 5-en-1 - Eau bouillante, filtrée, pétillante', 'property');
     updateMetaTag('og:image:width', '1200', 'property');
     updateMetaTag('og:image:height', '630', 'property');
@@ -112,7 +112,7 @@ function getSEOData(page: Page, productId?: string): SEOData {
   const seoPages: Record<Page, SEOData> = {
     home: {
       title: `${BRAND_NAME} - Robinet 5-en-1 Premium | Eau Bouillante, Filtrée, Pétillante`,
-      description: 'Découvrez HYDRAL, le robinet 5-en-1 haut de gamme à 490€. Eau bouillante instantanée, filtrée, pétillante, chaude et froide. Transformez votre cuisine avec la technologie premium française.',
+      description: 'Découvrez HYDRAL, le robinet 5-en-1 haut de gamme à 490€. Eau bouillante instantanée, filtrée, pétillante, chaude et froide. Transformez votre cuisine avec la technologie européenne premium.',
       canonical: `${BASE_URL}/`,
       keywords: ['robinet 5 en 1', 'robinet eau bouillante', 'robinet premium', 'eau pétillante robinet', 'HYDRAL', 'robinet cuisine', 'eau filtrée', 'robinet intelligent'],
       ogType: 'website',
@@ -120,7 +120,7 @@ function getSEOData(page: Page, productId?: string): SEOData {
     },
     concept: {
       title: `Le Concept ${BRAND_NAME} - 5 Types d'Eau en Un Seul Robinet`,
-      description: 'Le robinet HYDRAL révolutionne votre cuisine : eau bouillante 100°C, froide filtrée, pétillante, chaude et froide en un seul point. Design premium, technologie française.',
+      description: 'Le robinet HYDRAL révolutionne votre cuisine : eau bouillante 100°C, froide filtrée, pétillante, chaude et froide en un seul point. Design européen premium.',
       canonical: `${BASE_URL}/concept`,
       keywords: ['concept HYDRAL', 'robinet multifonction', '5 types eau', 'innovation cuisine', 'technologie robinet'],
       ogType: 'article',
@@ -144,7 +144,7 @@ function getSEOData(page: Page, productId?: string): SEOData {
     },
     modules: {
       title: `Modules Techniques ${BRAND_NAME} - Boiler, Chiller, CO₂, Filtration`,
-      description: 'Modules sous-évier HYDRAL : boiler compact 3L pour eau bouillante, chiller pro réfrigération, système CO₂ pour eau pétillante, filtre premium. Technologie française.',
+      description: 'Modules sous-évier HYDRAL : boiler compact 3L pour eau bouillante, chiller pro réfrigération, système CO₂ pour eau pétillante, filtre premium. Technologie européenne.',
       canonical: `${BASE_URL}/modules`,
       keywords: ['modules HYDRAL', 'boiler eau bouillante', 'chiller', 'système CO2', 'filtre eau', 'modules sous-évier'],
       ogType: 'article'
@@ -165,7 +165,7 @@ function getSEOData(page: Page, productId?: string): SEOData {
     },
     avantages: {
       title: `Avantages ${BRAND_NAME} - Économies, Confort, Écologie, Santé`,
-      description: 'Les avantages du robinet HYDRAL : économies jusqu\'à 1200€/an, gain de place, écologie (fin des bouteilles plastique), eau purifiée, confort au quotidien.',
+      description: 'Les avantages du robinet HYDRAL : économies jusqu\'à 1 000€/an, gain de place, écologie (fin des bouteilles plastique), eau purifiée, confort au quotidien.',
       canonical: `${BASE_URL}/avantages`,
       keywords: ['avantages robinet', 'économies eau', 'robinet écologique', 'eau purifiée', 'confort cuisine', 'fin bouteilles plastique'],
       ogType: 'article'
@@ -193,7 +193,7 @@ function getSEOData(page: Page, productId?: string): SEOData {
     },
     cube: {
       title: `CUBE ${BRAND_NAME} - Unité Sous-Évier Compacte | Installation Facile`,
-      description: 'Le CUBE HYDRAL : unité sous-évier ultra-compacte, installation en 2h, technologie tout-en-un. Boiler, chiller, CO₂ et filtration dans un seul module 40x40cm.',
+      description: 'Le CUBE HYDRAL : unité sous-évier ultra-compacte, installation en environ 1h, technologie tout-en-un. Boiler, chiller, CO₂ et filtration dans un seul module 40x40cm.',
       canonical: `${BASE_URL}/cube`,
       keywords: ['cube HYDRAL', 'unité sous-évier', 'installation robinet', 'module compact', 'système tout-en-un'],
       ogType: 'product'
@@ -271,8 +271,8 @@ function getSEOData(page: Page, productId?: string): SEOData {
       ogType: 'website'
     },
     testimonials: {
-      title: `Avis Clients ${BRAND_NAME} - Témoignages Vérifiés | 4.8/5`,
-      description: 'Découvrez les avis clients HYDRAL : témoignages vérifiés, retours d\'expérience authentiques, photos installations. Note moyenne 4.9/5 sur 500+ avis.',
+      title: `Avis Clients ${BRAND_NAME} - Témoignages Vérifiés | 4.9/5`,
+      description: 'Découvrez les avis clients HYDRAL : témoignages vérifiés, retours d\'expérience authentiques, photos installations. Note moyenne 4.9/5 sur 47 avis.',
       canonical: `${BASE_URL}/avis`,
       keywords: ['avis HYDRAL', 'témoignages clients', 'retours expérience', 'avis robinet', 'satisfaction clients'],
       ogType: 'article',
@@ -280,7 +280,7 @@ function getSEOData(page: Page, productId?: string): SEOData {
     },
     savings: {
       title: `Calculez Vos Économies ${BRAND_NAME} - Combien Vous Allez Économiser`,
-      description: 'Découvrez combien vous économisez avec HYDRAL : au minimum 500€ à 1200€/an selon votre foyer. Comparaison transparente eau embouteillée vs robinet 5-en-1.',
+      description: 'Découvrez combien vous économisez avec HYDRAL : jusqu\'à 300€ à 1 000€/an selon votre foyer. Comparaison transparente eau embouteillée vs robinet 5-en-1.',
       canonical: `${BASE_URL}/economies`,
       keywords: ['économies eau robinet', 'prix eau bouteille vs robinet', 'calculer économies HYDRAL', 'rentabilité robinet 5-en-1', 'économies annuelles'],
       ogType: 'website'
@@ -376,14 +376,14 @@ function getOrganizationSchema() {
     name: BRAND_NAME,
     url: BASE_URL,
     logo: `${BASE_URL}/logo.png`,
-    description: 'HYDRAL - Robinets 5-en-1 premium avec eau bouillante, filtrée, pétillante. Design français haut de gamme.',
+    description: 'HYDRAL - Robinets 5-en-1 premium avec eau bouillante, filtrée, pétillante. Design européen premium.',
     address: {
       '@type': 'PostalAddress',
       addressCountry: 'FR'
     },
     contactPoint: {
       '@type': 'ContactPoint',
-      telephone: '+33-1-XX-XX-XX-XX',
+      telephone: '+33 1 76 34 00 00',
       contactType: 'customer service',
       availableLanguage: ['French'],
       areaServed: 'FR'
@@ -421,7 +421,7 @@ function getProductSchema(productId: string) {
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: '4.9',
-      reviewCount: '500',
+      reviewCount: '47',
       bestRating: '5',
       worstRating: '1'
     }
@@ -487,7 +487,7 @@ function getFAQSchema() {
         name: 'L\'installation est-elle difficile ?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'L\'installation prend environ 2 heures par un plombier professionnel. Nous proposons un réseau d\'installateurs agréés partout en France.'
+          text: 'L\'installation prend environ 1h par un plombier professionnel. Nous proposons un réseau d\'installateurs agréés partout en France.'
         }
       }
     ]
@@ -558,7 +558,7 @@ function getReviewsSchema() {
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: '4.9',
-      reviewCount: '500',
+      reviewCount: '47',
       bestRating: '5',
       worstRating: '1'
     },

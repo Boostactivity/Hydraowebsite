@@ -509,84 +509,146 @@ const Section1 = React.forwardRef<HTMLElement, {
   calculateSavings: (robinetPrice: number, subscriptionYearly?: number) => { savings1y: number; savings5y: number; breakEvenMonths: number; yearlySavings: number; subscriptionYearly: number };
   onNext: () => void;
 }>(({ state, setState, calculateSavings, onNext }, ref) => {
-  const [mode, setMode] = useState<'complete' | 'quick'>('complete');
-  const [waterSearch, setWaterSearch] = useState('');
-  const [selectedBrand, setSelectedBrand] = useState<string | null>(null);
+  const [showDetail, setShowDetail] = useState(false);
+  const [brandSearch, setBrandSearch] = useState('');
+  const [detailTab, setDetailTab] = useState<'still' | 'sparkling'>('still');
+  const [detailOverride, setDetailOverride] = useState(false);
 
-  // Marques uniques pour le type d'eau sélectionné
-  const uniqueBrands = useMemo(() => {
-    if (!state.waterType) return [];
-    let waters = WATER_DATABASE;
-    if (state.waterType === 'still') waters = waters.filter(w => w.type === 'still');
-    else if (state.waterType === 'sparkling') waters = waters.filter(w => w.type === 'sparkling');
+  // Profiles with default monthly spend
+  const profiles = [
+    { id: 'solo', label: 'Solo', monthly: 20 },
+    { id: 'couple', label: 'Couple', monthly: 35 },
+    { id: 'family', label: 'Famille', monthly: 75 },
+    { id: 'family-plus', label: 'Grande famille', monthly: 100 }
+  ];
 
-    const brandMap = new Map<string, { brand: string; minPrice: number; type: string }>();
-    waters.forEach(w => {
-      if (!brandMap.has(w.brand) || w.packPrice < brandMap.get(w.brand)!.minPrice) {
-        brandMap.set(w.brand, { brand: w.brand, minPrice: w.packPrice, type: w.type });
-      }
-    });
+  const [selectedProfile, setSelectedProfile] = useState<string | null>(null);
+  const [monthlyBudget, setMonthlyBudget] = useState(0);
 
-    const brands = Array.from(brandMap.values());
-    if (waterSearch.trim()) {
-      const q = waterSearch.toLowerCase();
-      return brands.filter(b => b.brand.toLowerCase().includes(q));
-    }
-    return brands.sort((a, b) => a.brand.localeCompare(b.brand));
-  }, [state.waterType, waterSearch]);
+  // When profile clicked, set budget
+  const handleProfileClick = (profile: typeof profiles[0]) => {
+    setSelectedProfile(profile.id);
+    setMonthlyBudget(profile.monthly);
+    setDetailOverride(false);
+    const yearly = profile.monthly * 12;
+    setState(prev => ({ ...prev, yearlyTotal: yearly, monthlyTotal: profile.monthly }));
+  };
 
-  // Formats disponibles pour la marque sélectionnée
-  const availableFormats = useMemo(() => {
-    if (!selectedBrand) return [];
-    return WATER_DATABASE.filter(w => w.brand === selectedBrand);
-  }, [selectedBrand]);
+  // When slider changes
+  const handleSliderChange = (value: number) => {
+    setMonthlyBudget(value);
+    setSelectedProfile(null);
+    setDetailOverride(false);
+    const yearly = value * 12;
+    setState(prev => ({ ...prev, yearlyTotal: yearly, monthlyTotal: value }));
+  };
 
-  // Ajout eau avec format choisi
-  const addWater = useCallback((water: WaterData) => {
-    setState(prev => {
-      const exists = prev.selectedWaters.find(
-        w => w.brand === water.brand && w.format === water.format
+  // Reset everything
+  const handleReset = () => {
+    setSelectedProfile(null);
+    setMonthlyBudget(0);
+    setShowDetail(false);
+    setBrandSearch('');
+    setDetailOverride(false);
+    setState(prev => ({ ...prev, selectedWaters: [], yearlyTotal: 0, monthlyTotal: 0 }));
+  };
+
+  // Popular waters deduped by brand+format
+  const popularStill = useMemo(() => {
+    const seen = new Set<string>();
+    return WATER_DATABASE.filter(w => {
+      if (w.type !== 'still') return false;
+      const key = `${w.brand}|${w.format}`;
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    }).slice(0, 10);
+  }, []);
+
+  const popularSparkling = useMemo(() => {
+    const seen = new Set<string>();
+    return WATER_DATABASE.filter(w => {
+      if (w.type !== 'sparkling') return false;
+      const key = `${w.brand}|${w.format}`;
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    }).slice(0, 10);
+  }, []);
+
+  const displayWaters = detailTab === 'still' ? popularStill : popularSparkling;
+
+  // Filter by search
+  const filteredWaters = useMemo(() => {
+    if (brandSearch.trim()) {
+      const q = brandSearch.toLowerCase();
+      return WATER_DATABASE.filter(w =>
+        w.brand.toLowerCase().includes(q) || w.format.toLowerCase().includes(q)
       );
-      if (exists) return prev;
+    }
+    return displayWaters;
+  }, [brandSearch, displayWaters]);
 
-      const newWater: SelectedWater = {
-        ...water,
-        quantity: 1,
-        period: 'week'
-      };
-      return { ...prev, selectedWaters: [...prev.selectedWaters, newWater] };
-    });
-    setSelectedBrand(null);
-  }, [setState]);
+  // Get quantity of a specific water in selectedWaters
+  const getWaterQty = useCallback((brand: string, format: string) => {
+    const found = state.selectedWaters.find(w => w.brand === brand && w.format === format);
+    return found ? found.quantity : 0;
+  }, [state.selectedWaters]);
 
-  // Supprimer une eau
-  const removeWater = useCallback((index: number) => {
+  // Stepper: increment water
+  const incrementWater = useCallback((water: WaterData) => {
     setState(prev => {
-      const updated = prev.selectedWaters.filter((_, i) => i !== index);
-      if (updated.length > 0) {
-        const yearlyTotal = updated.reduce((sum, w) => {
-          const perWeek = w.period === 'week' ? w.quantity : w.quantity / 4.33;
-          return sum + (perWeek * 52 * w.packPrice);
-        }, 0);
-        return { ...prev, selectedWaters: updated, yearlyTotal: Math.round(yearlyTotal), monthlyTotal: Math.round(yearlyTotal / 12) };
+      const idx = prev.selectedWaters.findIndex(w => w.brand === water.brand && w.format === water.format);
+      let updated: SelectedWater[];
+      if (idx >= 0) {
+        updated = [...prev.selectedWaters];
+        updated[idx] = { ...updated[idx], quantity: updated[idx].quantity + 1 };
       } else {
-        return { ...prev, selectedWaters: [], yearlyTotal: 0, monthlyTotal: 0 };
+        updated = [...prev.selectedWaters, { ...water, quantity: 1, period: 'week' as const }];
       }
-    });
-  }, [setState]);
-
-  // Update quantité
-  const updateQuantity = useCallback((index: number, quantity: number, period: 'week' | 'month') => {
-    setState(prev => {
-      const updated = [...prev.selectedWaters];
-      updated[index] = { ...updated[index], quantity, period };
-      const yearlyTotal = updated.reduce((sum, w) => {
-        const perWeek = w.period === 'week' ? w.quantity : w.quantity / 4.33;
-        return sum + (perWeek * 52 * w.packPrice);
-      }, 0);
+      const yearlyTotal = updated.reduce((sum, w) => sum + (w.quantity * 52 * w.packPrice), 0);
       return { ...prev, selectedWaters: updated, yearlyTotal: Math.round(yearlyTotal), monthlyTotal: Math.round(yearlyTotal / 12) };
     });
+    setDetailOverride(true);
   }, [setState]);
+
+  // Stepper: decrement water
+  const decrementWater = useCallback((water: WaterData) => {
+    setState(prev => {
+      const idx = prev.selectedWaters.findIndex(w => w.brand === water.brand && w.format === water.format);
+      if (idx < 0) return prev;
+      let updated: SelectedWater[];
+      if (prev.selectedWaters[idx].quantity <= 1) {
+        updated = prev.selectedWaters.filter((_, i) => i !== idx);
+      } else {
+        updated = [...prev.selectedWaters];
+        updated[idx] = { ...updated[idx], quantity: updated[idx].quantity - 1 };
+      }
+      if (updated.length === 0) {
+        setDetailOverride(false);
+        return { ...prev, selectedWaters: [], yearlyTotal: monthlyBudget * 12, monthlyTotal: monthlyBudget };
+      }
+      const yearlyTotal = updated.reduce((sum, w) => sum + (w.quantity * 52 * w.packPrice), 0);
+      return { ...prev, selectedWaters: updated, yearlyTotal: Math.round(yearlyTotal), monthlyTotal: Math.round(yearlyTotal / 12) };
+    });
+  }, [setState, monthlyBudget]);
+
+  // Detail weekly + yearly totals
+  const detailWeekly = useMemo(() => {
+    return state.selectedWaters.reduce((sum, w) => sum + (w.quantity * w.packPrice), 0);
+  }, [state.selectedWaters]);
+
+  const detailYearly = useMemo(() => {
+    return state.selectedWaters.reduce((sum, w) => sum + (w.quantity * 52 * w.packPrice), 0);
+  }, [state.selectedWaters]);
+
+  // The effective yearly total for calculations
+  const effectiveYearly = state.yearlyTotal || 0;
+
+  // Live savings calculation
+  const savingsPure = useMemo(() => calculateSavings(490, 59), [effectiveYearly, calculateSavings]);
+  const savingsSpark = useMemo(() => calculateSavings(890, 59), [effectiveYearly, calculateSavings]);
+  const savingsOne = useMemo(() => calculateSavings(990, 59), [effectiveYearly, calculateSavings]);
 
   return (
     <section
@@ -608,517 +670,283 @@ const Section1 = React.forwardRef<HTMLElement, {
           Combien dépensez-vous vraiment en eau embouteillée ?
         </p>
 
-        {/* Toggle mode - TOUJOURS VISIBLE */}
-        <div className="flex justify-center gap-4 mb-8">
-          <button
-            onClick={() => {
-              setMode('complete');
-              // Reset mode simple
-              if (mode === 'quick') {
-                setState({ ...state, yearlyTotal: 0, monthlyTotal: 0 });
-              }
-            }}
-            className={`px-6 py-3 rounded-full transition-all ${
-              mode === 'complete'
-                ? 'bg-[#6B1E3E] text-white shadow-lg'
-                : 'bg-white text-gray-700 border-2 border-gray-200'
-            }`}
-          >
-            Mode complet
-          </button>
-          <button
-            onClick={() => {
-              setMode('quick');
-              // Reset mode complet
-              if (mode === 'complete') {
-                setState({ ...state, waterType: null, selectedWaters: [], yearlyTotal: 0, monthlyTotal: 0 });
-              }
-            }}
-            className={`px-6 py-3 rounded-full transition-all ${
-              mode === 'quick'
-                ? 'bg-[#6B1E3E] text-white shadow-lg'
-                : 'bg-white text-gray-700 border-2 border-gray-200'
-            }`}
-          >
-            Mode simple
-          </button>
+        {/* ZONE 1 — Profile chips */}
+        <div className="flex flex-wrap justify-center gap-3 mb-8">
+          {profiles.map((profile) => (
+            <button
+              key={profile.id}
+              onClick={() => handleProfileClick(profile)}
+              className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all ${
+                selectedProfile === profile.id
+                  ? 'bg-[#6B1E3E] text-white shadow-lg'
+                  : 'bg-white text-gray-700 border border-gray-200 hover:border-[#6B1E3E]/40'
+              }`}
+            >
+              {profile.label}
+            </button>
+          ))}
         </div>
 
-        {/* MODE SIMPLE - TOUJOURS VISIBLE */}
-        {mode === 'quick' && (
-          <div className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-xl border border-gray-200/50 mb-6 sm:mb-8">
-            <div className="flex items-center justify-between mb-4">
-              <h3 className="text-lg font-semibold text-gray-900">Nombre de personnes dans votre foyer</h3>
-              {state.yearlyTotal > 0 && (
-                <button
-                  onClick={() => setState({ ...state, yearlyTotal: 0, monthlyTotal: 0 })}
-                  className="text-sm text-[#6B1E3E] hover:text-[#6B1E3E]/80 font-medium"
-                >
-                  Réinitialiser
-                </button>
-              )}
-            </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 sm:gap-4">
-              {/* 1,5L/jour/personne × prix moyen 0,42€/L (moyenne pondérée toutes marques/enseignes) */}
-              {[
-                { value: 1, label: '1 personne', yearly: 230, monthly: 19 },
-                { value: 2, label: '2 personnes', yearly: 460, monthly: 38 },
-                { value: 3, label: '3 personnes', yearly: 690, monthly: 58 },
-                { value: 4, label: '4 personnes', yearly: 920, monthly: 77 },
-                { value: 5, label: '5+ personnes', yearly: 1150, monthly: 96 }
-              ].map((option) => {
-                const isSelected = state.yearlyTotal === option.yearly && state.monthlyTotal === option.monthly;
-                return (
-                  <button
-                    key={option.value}
-                    onClick={() => {
-                      setState({
-                        ...state,
-                        yearlyTotal: option.yearly,
-                        monthlyTotal: option.monthly
-                      });
-                    }}
-                    className={`p-6 rounded-xl transition-all border-2 text-center ${
-                      isSelected
-                        ? 'bg-[#6B1E3E] text-white border-[#6B1E3E] shadow-lg'
-                        : 'bg-[#FAF8F5] hover:bg-[#6B1E3E]/10 text-gray-900 border-gray-200 hover:border-[#6B1E3E]/50'
-                    }`}
-                  >
-                    <p className="font-semibold text-lg mb-2">{option.label}</p>
-                    <p className={`text-sm ${isSelected ? 'opacity-100' : 'opacity-70'}`}>{option.yearly}€/an</p>
-                  </button>
-                );
-              })}
-            </div>
-            <p className="text-xs text-[#8B7E74] text-center mt-6 leading-relaxed">
-              Estimation basée sur 1,5L/jour/personne — recommandation santé — et le prix moyen constaté en grande surface.
-            </p>
+        {/* ZONE 2 — Budget slider */}
+        <div className="bg-white rounded-2xl border border-gray-200/50 shadow-sm p-6 mb-8">
+          <label className="block text-sm font-medium text-gray-700 mb-4 text-center">
+            Combien dépensez-vous en eau par mois ?
+          </label>
+          <div className="text-center mb-4">
+            <span className="text-4xl sm:text-5xl font-bold text-gray-900">
+              {detailOverride ? Math.round(detailYearly / 12) : monthlyBudget}€
+            </span>
+            <span className="text-lg text-gray-500">/mois</span>
           </div>
-        )}
+          <input
+            type="range"
+            min={0}
+            max={200}
+            step={5}
+            value={detailOverride ? Math.round(detailYearly / 12) : monthlyBudget}
+            onChange={(e) => handleSliderChange(Number(e.target.value))}
+            disabled={detailOverride}
+            className={`w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider-thumb-bordeaux ${detailOverride ? 'opacity-50 cursor-not-allowed' : ''}`}
+          />
+          <div className="flex justify-between items-center mt-3">
+            <span className="text-xs text-[#8B7E74]">0€</span>
+            <span className="text-sm font-medium text-[#6B1E3E]">
+              {detailOverride ? Math.round(detailYearly) : monthlyBudget * 12}€/an
+            </span>
+            <span className="text-xs text-[#8B7E74]">200€</span>
+          </div>
+          <p className="text-xs text-[#8B7E74] text-center mt-3">
+            Estimation ajustable. Glissez pour affiner.
+          </p>
+        </div>
 
-        {/* MODE COMPLET */}
-        {mode === 'complete' && (
-          <>
-            {/* Étape A - Type d'eau - TOUJOURS VISIBLE */}
-            <div className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-xl border border-gray-200/50 mb-6 sm:mb-8">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-lg font-semibold text-gray-900">Quel type d'eau achetez-vous ?</h3>
-                {state.waterType && (
-                  <button
-                    onClick={() => setState({ ...state, waterType: null, selectedWaters: [], yearlyTotal: 0, monthlyTotal: 0 })}
-                    className="text-sm text-[#6B1E3E] hover:text-[#6B1E3E]/80 font-medium"
-                  >
-                    Modifier
-                  </button>
-                )}
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                {[
-                  { value: 'still' as WaterType, icon: '💧', label: 'Eau plate' },
-                  { value: 'sparkling' as WaterType, icon: '🫧', label: 'Eau gazeuse' },
-                  { value: 'both' as WaterType, icon: '💧🫧', label: 'Les deux' }
-                ].map((option) => {
-                  const isSelected = state.waterType === option.value;
-                  return (
-                    <button
-                      key={option.value}
-                      onClick={() => setState({ ...state, waterType: option.value, selectedWaters: state.waterType === option.value ? state.selectedWaters : [], yearlyTotal: state.waterType === option.value ? state.yearlyTotal : 0, monthlyTotal: state.waterType === option.value ? state.monthlyTotal : 0 })}
-                      className={`p-6 rounded-xl transition-all border-2 text-center ${
-                        isSelected
-                          ? 'bg-[#6B1E3E] text-white border-[#6B1E3E] shadow-lg'
-                          : 'bg-[#FAF8F5] hover:bg-[#6B1E3E]/10 border-gray-200 hover:border-[#6B1E3E]/50'
-                      }`}
-                    >
-                      <div className="text-4xl mb-2">{option.icon}</div>
-                      <p className="font-medium">{option.label}</p>
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
+        {/* ZONE 3 — Live results */}
+        {effectiveYearly > 0 && (
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+            className="bg-white rounded-2xl border-2 border-[#6B1E3E]/20 shadow-xl p-6 mb-8"
+          >
+            {savingsPure.yearlySavings > 0 ? (
+              <>
+                {/* Savings summary */}
+                <div className="text-center mb-6">
+                  <p className="text-sm text-[#8B7E74] mb-1">Avec le robinet le plus accessible</p>
+                  <p className="text-3xl sm:text-4xl font-bold text-green-600 mb-1">
+                    {Math.round(savingsPure.yearlySavings)}€/an
+                  </p>
+                  <p className="text-sm text-gray-600">d'économies</p>
+                </div>
 
-            {/* Étape B - Choix marque */}
-            {state.waterType && (
-              <div className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-xl border border-gray-200/50 mb-6 sm:mb-8">
-                <div className="flex items-center justify-between mb-2">
-                  <h3 className="text-lg font-semibold text-gray-900">
-                    {!selectedBrand ? 'Quelle marque achetez-vous ?' : `${selectedBrand} — choisissez le format`}
-                  </h3>
-                  <div className="flex items-center gap-3">
-                    {selectedBrand && (
-                      <button
-                        onClick={() => setSelectedBrand(null)}
-                        className="text-sm text-[#6B1E3E] hover:text-[#6B1E3E]/80 font-medium"
-                      >
-                        ← Autres marques
-                      </button>
-                    )}
-                    {state.selectedWaters.length > 0 && !selectedBrand && (
-                      <button
-                        onClick={() => setState({ ...state, selectedWaters: [], yearlyTotal: 0, monthlyTotal: 0 })}
-                        className="text-sm text-red-600 hover:text-red-700 font-medium flex items-center gap-1"
-                      >
-                        <X className="w-4 h-4" />
-                        Tout effacer
-                      </button>
-                    )}
+                {/* Break-even + progress */}
+                <div className="mb-5">
+                  <div className="flex items-center justify-between text-sm mb-2">
+                    <span className="text-[#8B7E74]">Rentabilisé en</span>
+                    <span className="font-semibold text-gray-900">
+                      {savingsPure.breakEvenMonths < 100 ? `${savingsPure.breakEvenMonths} mois` : '--'}
+                    </span>
+                  </div>
+                  <div className="h-3 bg-gray-100 rounded-full overflow-hidden">
+                    <div
+                      className="h-full bg-[#6B1E3E] rounded-full transition-all duration-700"
+                      style={{ width: `${savingsPure.breakEvenMonths < 100 ? Math.min((savingsPure.breakEvenMonths / 24) * 100, 100) : 100}%` }}
+                    />
                   </div>
                 </div>
-                <p className="text-sm text-[#8B7E74] mb-4">Prix moyen constaté en grande surface</p>
 
-                {/* Eaux déjà sélectionnées */}
-                {state.selectedWaters.length > 0 && !selectedBrand && (
-                  <div className="mb-4 p-3 bg-[#6B1E3E]/5 rounded-xl border border-[#6B1E3E]/20">
-                    <p className="text-xs font-medium text-[#6B1E3E] mb-2">Vos eaux ({state.selectedWaters.length})</p>
-                    <div className="flex flex-wrap gap-2">
-                      {state.selectedWaters.map((water, idx) => (
-                        <div key={idx} className="inline-flex items-center gap-2 px-3 py-1.5 bg-white rounded-full border border-[#6B1E3E]/30 text-sm">
-                          <span className="text-gray-900 font-medium">{water.brand}</span>
-                          <span className="text-[#8B7E74]">{water.format}</span>
-                          <button onClick={() => removeWater(idx)} className="text-red-500 hover:text-red-700">
-                            <X className="w-3.5 h-3.5" />
-                          </button>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
+                {/* 5-year projection */}
+                <div className="text-center mb-6 p-3 bg-green-50 rounded-xl">
+                  <p className="text-sm text-gray-700">
+                    Sur 5 ans : <span className="font-bold text-green-600">+{Math.round(savingsPure.savings5y)}€</span> d'économies nettes
+                  </p>
+                </div>
 
-                {/* Vue marques (pas de marque sélectionnée) */}
-                {!selectedBrand && (
-                  <>
-                    <input
-                      type="text"
-                      placeholder="Rechercher une marque..."
-                      value={waterSearch}
-                      onChange={(e) => setWaterSearch(e.target.value)}
-                      className="w-full px-4 py-3 mb-4 rounded-xl border-2 border-gray-200 focus:border-[#6B1E3E] focus:outline-none text-sm"
-                    />
-                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 max-h-80 overflow-y-auto">
-                      {uniqueBrands.map((item) => {
-                        const alreadyAdded = state.selectedWaters.some(w => w.brand === item.brand);
-                        return (
-                          <button
-                            key={item.brand}
-                            onClick={() => { setSelectedBrand(item.brand); setWaterSearch(''); }}
-                            className={`p-4 rounded-xl border-2 text-center transition-all ${
-                              alreadyAdded
-                                ? 'bg-[#6B1E3E]/5 border-[#6B1E3E]/30'
-                                : 'bg-[#FAF8F5] border-gray-200 hover:border-[#6B1E3E]/50 hover:bg-[#6B1E3E]/10'
-                            }`}
-                          >
-                            <p className="font-semibold text-sm text-gray-900">{item.brand}</p>
-                            <p className="text-xs text-[#8B7E74] mt-1">dès {item.minPrice.toFixed(2)}€</p>
-                            {alreadyAdded && <p className="text-xs text-[#6B1E3E] mt-1 font-medium">Ajoutée</p>}
-                          </button>
-                        );
-                      })}
-                    </div>
-                    {state.selectedWaters.length > 0 && (
-                      <p className="text-xs text-[#8B7E74] text-center mt-4">
-                        Vous pouvez ajouter plusieurs marques
+                {/* Compact robinet comparison row */}
+                <div className="grid grid-cols-3 gap-3 mb-6">
+                  {[
+                    { name: 'Pure', savings: savingsPure },
+                    { name: 'Spark', savings: savingsSpark },
+                    { name: 'One', savings: savingsOne }
+                  ].map((r) => (
+                    <div key={r.name} className="text-center p-3 bg-[#FAF8F5] rounded-xl">
+                      <p className="text-xs font-medium text-gray-500 mb-1">{r.name}</p>
+                      <p className={`text-sm font-bold ${r.savings.yearlySavings > 0 ? 'text-green-600' : 'text-gray-400'}`}>
+                        {r.savings.yearlySavings > 0 ? `${Math.round(r.savings.yearlySavings)}€/an` : '--'}
                       </p>
-                    )}
-                  </>
-                )}
-
-                {/* Vue formats (marque sélectionnée) */}
-                {selectedBrand && (
-                  <div className="space-y-3">
-                    {availableFormats.map((water, idx) => {
-                      const isSelected = state.selectedWaters.some(
-                        w => w.brand === water.brand && w.format === water.format
-                      );
-                      const isPack = water.format.startsWith('6') || water.format.startsWith('8');
-                      return (
-                        <button
-                          key={idx}
-                          onClick={() => !isSelected && addWater(water)}
-                          disabled={isSelected}
-                          className={`w-full p-4 rounded-xl text-left transition-all flex items-center justify-between border-2 ${
-                            isSelected
-                              ? 'bg-[#6B1E3E] text-white border-[#6B1E3E] shadow-lg cursor-default'
-                              : 'bg-[#FAF8F5] hover:bg-[#6B1E3E]/10 hover:border-[#6B1E3E]/50 border-gray-200 cursor-pointer'
-                          }`}
-                        >
-                          <div className="flex items-center gap-3">
-                            <div className={`px-2 py-1 rounded-lg text-xs font-medium ${
-                              isSelected ? 'bg-white/20 text-white' : 'bg-white text-[#6B1E3E] border border-[#6B1E3E]/20'
-                            }`}>
-                              {isPack ? 'Pack' : 'Unité'}
-                            </div>
-                            <div>
-                              <p className="font-semibold">{water.format}</p>
-                              <p className={`text-xs ${isSelected ? 'opacity-90' : 'text-[#8B7E74]'}`}>
-                                {water.pricePerLiter.toFixed(2)}€/litre
-                              </p>
-                            </div>
-                          </div>
-                          <div className="text-right">
-                            <p className="text-xl font-bold">{water.packPrice.toFixed(2)}€</p>
-                            {isSelected && <p className="text-xs opacity-90">Ajouté</p>}
-                          </div>
-                        </button>
-                      );
-                    })}
-                  </div>
-                )}
-              </div>
-            )}
-
-            {/* Étape C - Quantités */}
-            {state.selectedWaters.length > 0 && (
-              <div className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-xl border border-gray-200/50 mb-6 sm:mb-8">
-                <h3 className="text-lg font-semibold text-gray-900 mb-6">Combien en achetez-vous ?</h3>
-                <div className="space-y-6">
-                  {state.selectedWaters.map((water, idx) => (
-                    <div key={idx} className="p-4 bg-[#FAF8F5] rounded-xl">
-                      <p className="font-semibold text-gray-900 mb-3">{water.brand} {water.format}</p>
-                      <div className="flex flex-col sm:flex-row gap-4">
-                        <input
-                          type="number"
-                          min="0"
-                          placeholder="Quantité"
-                          value={water.quantity || ''}
-                          onChange={(e) => updateQuantity(idx, parseFloat(e.target.value) || 0, water.period)}
-                          className="flex-1 px-4 py-2 rounded-lg border-2 border-gray-200 focus:border-[#6B1E3E] focus:outline-none"
-                        />
-                        <select
-                          value={water.period}
-                          onChange={(e) => updateQuantity(idx, water.quantity, e.target.value as 'week' | 'month')}
-                          className="px-4 py-2 rounded-lg border-2 border-gray-200 focus:border-[#6B1E3E] focus:outline-none"
-                        >
-                          <option value="week">par semaine</option>
-                          <option value="month">par mois</option>
-                        </select>
-                      </div>
                     </div>
                   ))}
                 </div>
-              </div>
+              </>
+            ) : (
+              <>
+                {/* Conviction arguments when not financially advantageous */}
+                <h4 className="text-lg font-semibold text-gray-900 mb-2 text-center">
+                  Vous faites déjà attention à votre budget eau.
+                </h4>
+                <p className="text-sm text-[#8B7E74] text-center mb-6">
+                  HYDRAL n'est pas un choix financier pour vous. Mais saviez-vous que l'eau en bouteille pose d'autres problèmes ?
+                </p>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                  <div className="p-4 rounded-xl bg-gradient-to-br from-red-50 to-orange-50 border border-red-100">
+                    <p className="text-xl font-bold text-gray-900 mb-1">240 000</p>
+                    <p className="text-xs font-medium text-gray-900 mb-1">microplastiques par litre d'eau en bouteille</p>
+                    <p className="text-xs text-gray-600">Étude PNAS 2024 — Columbia University. La filtration HYDRAL les élimine.</p>
+                  </div>
+                  <div className="p-4 rounded-xl bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-100">
+                    <p className="text-xl font-bold text-gray-900 mb-1">9 kg</p>
+                    <p className="text-xs font-medium text-gray-900 mb-1">le poids d'un pack de 6 bouteilles</p>
+                    <p className="text-xs text-gray-600">Fini les courses lourdes. Votre eau sort du robinet, filtrée et fraîche.</p>
+                  </div>
+                  <div className="p-4 rounded-xl bg-gradient-to-br from-green-50 to-emerald-50 border border-green-100">
+                    <p className="text-xl font-bold text-gray-900 mb-1">73%</p>
+                    <p className="text-xs font-medium text-gray-900 mb-1">des bouteilles non recyclées en France</p>
+                    <p className="text-xs text-gray-600">450 ans pour se décomposer. HYDRAL élimine des centaines de bouteilles/an.</p>
+                  </div>
+                  <div className="p-4 rounded-xl bg-gradient-to-br from-amber-50 to-yellow-50 border border-amber-100">
+                    <p className="text-xl font-bold text-gray-900 mb-1">3 secondes</p>
+                    <p className="text-xs font-medium text-gray-900 mb-1">pour de l'eau bouillante</p>
+                    <p className="text-xs text-gray-600">Thé, café, biberon, pâtes... Plus de bouilloire, plus d'attente.</p>
+                  </div>
+                </div>
+
+                <div className="text-center p-3 bg-[#6B1E3E]/5 rounded-xl border border-[#6B1E3E]/10">
+                  <p className="text-sm font-medium text-[#6B1E3E]">L'eau que vous buvez est plus importante que son prix.</p>
+                  <p className="text-xs text-[#8B7E74] mt-1">À partir de 490€ une fois, puis 59€/an pour les filtres. Garantie 3 ans.</p>
+                </div>
+              </>
             )}
-          </>
+
+            {/* CTA */}
+            <button
+              onClick={onNext}
+              className="w-full mt-6 py-4 bg-[#6B1E3E] text-white font-semibold text-lg rounded-xl hover:bg-[#6B1E3E]/90 transition-all shadow-lg hover:shadow-xl"
+            >
+              Choisir mon robinet →
+            </button>
+
+            {/* Reset link */}
+            <div className="text-center mt-4">
+              <button
+                onClick={handleReset}
+                className="text-sm text-[#8B7E74] hover:text-[#6B1E3E] transition-colors underline"
+              >
+                Réinitialiser
+              </button>
+            </div>
+          </motion.div>
         )}
 
-        {/* BLOC RÉSULTATS - Affichés dès qu'il y a un total */}
-        {state.yearlyTotal && state.yearlyTotal > 0 && (
-          <>
-            {/* Cadre 1 - Dépenses actuelles */}
+        {/* ZONE 4 — "Préciser mes achats" (collapsed by default) */}
+        <div className="mb-8">
+          <button
+            onClick={() => setShowDetail(!showDetail)}
+            className="w-full py-3 text-sm font-medium text-[#6B1E3E] hover:text-[#6B1E3E]/80 transition-colors flex items-center justify-center gap-2"
+          >
+            Préciser mes achats
+            <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${showDetail ? 'rotate-180' : ''}`} />
+          </button>
+
+          {showDetail && (
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-xl border border-gray-200/50 mb-8"
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              transition={{ duration: 0.3 }}
+              className="bg-white rounded-2xl border border-gray-200/50 shadow-sm p-6 mt-2"
             >
-              <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-4 sm:mb-6">Ce que vous dépensez aujourd'hui en bouteilles</h3>
-              <div className="text-center">
-                <p className="text-sm text-[#8B7E74] mb-2">Dépense annuelle en eau embouteillée</p>
-                <p className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">{new Intl.NumberFormat('fr-FR').format(state.yearlyTotal)}€<span className="text-lg text-gray-600">/an</span></p>
-                {state.yearlyTotal >= 100 && (
-                  <p className="text-sm text-[#8B7E74] mb-4">
-                    {state.yearlyTotal >= 100 && state.yearlyTotal < 250 && "Soit l'équivalent d'un week-end en famille chaque année"}
-                    {state.yearlyTotal >= 250 && state.yearlyTotal < 500 && "Soit presque un billet d'avion chaque année"}
-                    {state.yearlyTotal >= 500 && "Soit plus que le prix d'un robinet HYDRAL — chaque année"}
-                  </p>
-                )}
-                <div className="flex items-center justify-center gap-6 text-sm text-[#8B7E74]">
-                  <span>Sur 5 ans : <span className="font-semibold text-gray-900">{new Intl.NumberFormat('fr-FR').format(state.yearlyTotal * 5)}€</span></span>
-                  <span>Sur 10 ans : <span className="font-semibold text-gray-900">{new Intl.NumberFormat('fr-FR').format(state.yearlyTotal * 10)}€</span></span>
-                </div>
-                {state.yearlyTotal < 100 && (
-                  <p className="text-xs text-[#8B7E74] mt-4 bg-gray-50 rounded-lg p-3">
-                    Votre consommation est déjà économique. HYDRAL ne sera pas un choix financier mais un choix de confort et de santé (eau filtrée, zéro plastique, bouillante instantanée).
-                  </p>
-                )}
+              {/* Tabs */}
+              <div className="flex gap-2 mb-4">
+                <button
+                  onClick={() => { setDetailTab('still'); setBrandSearch(''); }}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                    detailTab === 'still'
+                      ? 'bg-[#6B1E3E] text-white'
+                      : 'bg-white text-gray-700 border border-gray-200'
+                  }`}
+                >
+                  Eaux plates
+                </button>
+                <button
+                  onClick={() => { setDetailTab('sparkling'); setBrandSearch(''); }}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                    detailTab === 'sparkling'
+                      ? 'bg-[#6B1E3E] text-white'
+                      : 'bg-white text-gray-700 border border-gray-200'
+                  }`}
+                >
+                  Eaux gazeuses
+                </button>
               </div>
-            </motion.div>
 
-            {/* Cadre 2 - Économies avec Hydral + les 3 robinets */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-xl border border-gray-200/50 mb-12"
-            >
-              <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2 sm:mb-3">Ce que vous économiseriez avec Hydral</h3>
-              <p className="text-xs text-[#8B7E74] mb-6">
-                Robinet = achat unique. Abonnement filtres dès 59€/an (remplace vos achats d'eau en bouteille).
-              </p>
+              {/* Search */}
+              <input
+                type="text"
+                placeholder="Rechercher une marque ou un format..."
+                value={brandSearch}
+                onChange={(e) => setBrandSearch(e.target.value)}
+                className="w-full px-4 py-2.5 mb-4 rounded-xl border border-gray-200 focus:border-[#6B1E3E] focus:outline-none text-sm"
+              />
 
-              {/* Les 3 robinets avec économies calculées */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {ROBINETS.map((robinet) => {
-                  const subYearly = 59;
-                  const { savings5y, breakEvenMonths, yearlySavings } = calculateSavings(robinet.price, subYearly);
-                  const Icon = robinet.icon;
+              {/* Water list with steppers */}
+              <div className="space-y-2 max-h-80 overflow-y-auto">
+                {filteredWaters.map((water, idx) => {
+                  const qty = getWaterQty(water.brand, water.format);
                   return (
-                    <div key={robinet.sku} className="h-full flex flex-col p-6 bg-gradient-to-br from-[#FAF8F5] to-white rounded-2xl border-2 border-gray-200">
-                      {/* Image du robinet */}
-                      {robinet.image && (
-                        <div className="mb-4 overflow-hidden rounded-xl bg-[#FAF8F5]">
-                          <img
-                            src={robinet.image}
-                            alt={robinet.name}
-                            className="w-full h-32 object-cover"
-                          />
-                        </div>
-                      )}
-                      <div className="text-center mb-4">
-                        <Icon className="w-10 h-10 text-[#6B1E3E] mx-auto mb-2" />
-                        <h4 className="font-semibold text-gray-900 min-h-[2.5rem] flex items-center justify-center">{robinet.name}</h4>
-                        <p className="text-2xl font-bold text-[#6B1E3E] my-2">{robinet.price}€ <span className="text-sm font-normal text-[#8B7E74]">+ {subYearly}€/an</span></p>
+                    <div
+                      key={`${water.brand}-${water.format}-${idx}`}
+                      className="flex items-center justify-between py-2.5 px-3 rounded-lg hover:bg-[#FAF8F5] transition-colors"
+                    >
+                      <div className="flex-1 min-w-0 mr-3">
+                        <span className="text-sm font-medium text-gray-900">{water.brand}</span>
+                        <span className="text-xs text-[#8B7E74] ml-2">{water.format}</span>
                       </div>
-                      <div className="space-y-2 text-sm flex-1">
-                        {yearlySavings > 0 ? (
-                          <>
-                            <div className="flex items-center justify-between py-2 border-t border-gray-200">
-                              <span className="text-[#8B7E74]">Rentabilisé en</span>
-                              <span className="font-semibold text-gray-900">{breakEvenMonths < 100 ? `${breakEvenMonths} mois` : '—'}</span>
-                            </div>
-                            <div className="flex items-center justify-between py-2 border-t border-gray-200">
-                              <span className="text-[#8B7E74]">Vous économisez</span>
-                              <span className="font-semibold text-green-600">{Math.round(yearlySavings)}€/an</span>
-                            </div>
-                            <div className="flex items-center justify-between py-2 border-t border-gray-200">
-                              <span className="text-[#8B7E74]">Économie sur 5 ans</span>
-                              <span className="font-semibold text-green-600">+{Math.round(savings5y)}€</span>
-                            </div>
-                          </>
-                        ) : (
-                          <div className="py-2 border-t border-gray-200 text-center">
-                            <p className="text-[#8B7E74] text-xs leading-relaxed">Pas un choix financier pour vous, mais un choix de qualité de vie.</p>
-                          </div>
-                        )}
+                      <span className="text-sm font-medium text-gray-700 mr-4 flex-shrink-0">
+                        {water.packPrice.toFixed(2)}€
+                      </span>
+                      <div className="flex items-center gap-2 flex-shrink-0">
+                        <button
+                          onClick={() => decrementWater(water)}
+                          disabled={qty === 0}
+                          className={`w-8 h-8 rounded-full flex items-center justify-center transition-all ${
+                            qty > 0
+                              ? 'border border-gray-300 text-gray-600 hover:border-[#6B1E3E] hover:text-[#6B1E3E]'
+                              : 'border border-gray-200 text-gray-300 cursor-not-allowed'
+                          }`}
+                        >
+                          -
+                        </button>
+                        <span className={`w-6 text-center text-sm font-semibold ${qty > 0 ? 'text-gray-900' : 'text-gray-400'}`}>
+                          {qty}
+                        </span>
+                        <button
+                          onClick={() => incrementWater(water)}
+                          className="w-8 h-8 rounded-full bg-[#6B1E3E] text-white flex items-center justify-center hover:bg-[#6B1E3E]/90 transition-all"
+                        >
+                          +
+                        </button>
                       </div>
                     </div>
                   );
                 })}
+                {filteredWaters.length === 0 && (
+                  <p className="text-sm text-[#8B7E74] text-center py-4">Aucun résultat trouvé</p>
+                )}
               </div>
-            </motion.div>
 
-            {/* Si rentable : break-even visuel */}
-            {calculateSavings(490, 59).yearlySavings > 0 && (
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
-                className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-xl border border-gray-200/50 mb-8 mt-8"
-              >
-                <h4 className="text-lg font-semibold text-gray-900 mb-6 text-center">Quand commencez-vous à économiser ?</h4>
-                <div className="space-y-4">
-                  {ROBINETS.map((robinet) => {
-                    const { breakEvenMonths, yearlySavings: ys } = calculateSavings(robinet.price, 59);
-                    const progress = breakEvenMonths < 100 ? Math.min((breakEvenMonths / 24) * 100, 100) : 100;
-                    return (
-                      <div key={robinet.sku} className="flex items-center gap-4">
-                        <div className="w-24 text-sm font-medium text-gray-700 flex-shrink-0">{robinet.name}</div>
-                        <div className="flex-1 relative">
-                          <div className="h-8 bg-gray-100 rounded-full overflow-hidden">
-                            <div
-                              className="h-full bg-gradient-to-r from-[#6B1E3E]/80 to-[#6B1E3E] rounded-full flex items-center justify-end pr-3 transition-all duration-700"
-                              style={{ width: `${progress}%` }}
-                            >
-                              <span className="text-xs text-white font-semibold whitespace-nowrap">
-                                {breakEvenMonths < 100 ? `${breakEvenMonths} mois` : '—'}
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="w-20 text-right text-sm font-semibold text-green-600 flex-shrink-0">
-                          {ys > 0 ? `+${Math.round(ys)}€/an` : '—'}
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-                <p className="text-xs text-[#8B7E74] text-center mt-4">
-                  Après la période de rentabilisation, chaque euro est une économie nette
-                </p>
-              </motion.div>
-            )}
-
-            {/* Si PAS rentable : arguments de conviction */}
-            {calculateSavings(490, 59).yearlySavings <= 0 && (
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
-                className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-xl border border-gray-200/50 mb-8 mt-8"
-              >
-                <h4 className="text-lg font-semibold text-gray-900 mb-2 text-center">
-                  Vous faites déjà attention à votre budget eau.
-                </h4>
-                <p className="text-sm text-[#8B7E74] text-center mb-8">
-                  HYDRAL n'est pas un choix financier pour vous. Mais saviez-vous que l'eau en bouteille pose d'autres problèmes ?
-                </p>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-6">
-                  {/* Microplastiques */}
-                  <div className="p-5 rounded-2xl bg-gradient-to-br from-red-50 to-orange-50 border border-red-100">
-                    <p className="text-2xl font-bold text-gray-900 mb-1">240 000</p>
-                    <p className="text-sm font-medium text-gray-900 mb-2">particules de microplastique par litre d'eau en bouteille</p>
-                    <p className="text-xs text-gray-600 leading-relaxed">
-                      Étude PNAS 2024 — Columbia University. Même les eaux premier prix contiennent des nano et microplastiques issus du contenant. La filtration HYDRAL les élimine.
-                    </p>
-                  </div>
-
-                  {/* Porter les packs */}
-                  <div className="p-5 rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-100">
-                    <p className="text-2xl font-bold text-gray-900 mb-1">9 kg</p>
-                    <p className="text-sm font-medium text-gray-900 mb-2">le poids d'un pack de 6 bouteilles d'1,5L</p>
-                    <p className="text-xs text-gray-600 leading-relaxed">
-                      Courses, coffre, escaliers... Avec HYDRAL, votre eau sort directement du robinet. Filtrée, à la bonne température, sans effort.
-                    </p>
-                  </div>
-
-                  {/* Plastique */}
-                  <div className="p-5 rounded-2xl bg-gradient-to-br from-green-50 to-emerald-50 border border-green-100">
-                    <p className="text-2xl font-bold text-gray-900 mb-1">73%</p>
-                    <p className="text-sm font-medium text-gray-900 mb-2">des bouteilles plastique ne sont pas recyclées en France</p>
-                    <p className="text-xs text-gray-600 leading-relaxed">
-                      Chaque bouteille met 450 ans à se décomposer. Avec HYDRAL, votre foyer élimine des centaines de bouteilles par an.
-                    </p>
-                  </div>
-
-                  {/* Bouillante */}
-                  <div className="p-5 rounded-2xl bg-gradient-to-br from-amber-50 to-yellow-50 border border-amber-100">
-                    <p className="text-2xl font-bold text-gray-900 mb-1">3 secondes</p>
-                    <p className="text-sm font-medium text-gray-900 mb-2">pour de l'eau bouillante au robinet</p>
-                    <p className="text-xs text-gray-600 leading-relaxed">
-                      Thé, café, biberon, pâtes, riz... Plus de bouilloire à attendre, plus de casserole à chauffer. Un confort qu'on ne quitte plus une fois qu'on l'a goûté.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="text-center p-4 bg-[#6B1E3E]/5 rounded-xl border border-[#6B1E3E]/10">
+              {/* Detail total */}
+              {state.selectedWaters.length > 0 && (
+                <div className="mt-4 pt-4 border-t border-gray-200 text-center">
                   <p className="text-sm text-gray-700">
-                    <span className="font-medium text-[#6B1E3E]">L'eau que vous buvez est plus importante que son prix.</span>
-                  </p>
-                  <p className="text-xs text-[#8B7E74] mt-1">
-                    À partir de 490€ une fois, puis 59€/an pour les filtres. Garantie 3 ans.
+                    Total détaillé : <span className="font-semibold">{detailWeekly.toFixed(2)}€/semaine</span>
+                    {' → '}
+                    <span className="font-bold text-[#6B1E3E]">{Math.round(detailYearly)}€/an</span>
                   </p>
                 </div>
-              </motion.div>
-            )}
-
-            {/* Transition */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.4 }}
-              className="text-center"
-            >
-              <p className="text-lg text-[#8B7E74] mb-6">
-                Quel robinet vous correspond ? ↓
-              </p>
-              <button
-                onClick={onNext}
-                className="text-[#6B1E3E] hover:text-[#6B1E3E]/80 transition-colors animate-bounce"
-              >
-                <ChevronDown className="w-8 h-8 mx-auto" />
-              </button>
+              )}
             </motion.div>
-          </>
-        )}
+          )}
+        </div>
       </motion.div>
     </section>
   );

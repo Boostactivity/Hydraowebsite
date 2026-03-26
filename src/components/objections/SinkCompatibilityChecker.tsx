@@ -374,7 +374,7 @@ export function SinkCompatibilityChecker({ className = '' }: SinkCompatibilityCh
                     <span className="text-gray-700">
                       {result === 'incompatible'
                         ? 'Solutions alternatives proposées (installation murale, modules compacts)'
-                        : 'Installation en 2-3h maximum'}
+                        : 'Installation en environ 1h'}
                     </span>
                   </li>
                 </ul>

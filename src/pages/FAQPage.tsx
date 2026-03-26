@@ -19,12 +19,12 @@ const faqData: FAQItem[] = [
   {
     category: 'Installation',
     question: "Puis-je installer le robinet moi-même ?",
-    answer: "Techniquement oui, si vous avez des compétences en plomberie. Le robinet se branche sur l'arrivée d'eau existante (raccords standards). Les modules sous évier (boiler, chiller, filtre) se connectent ensuite. Notice complète fournie. Mais attention : cela implique une intervention électrique (boiler 230V) et des raccords sous pression. Si vous n'êtes pas sûr, faites appel à un installateur. Nous avons un réseau de partenaires dans toute la France (installation selon région - prix à définir). Pas de honte à déléguer : c'est votre cuisine, pas un chantier d'apprentissage."
+    answer: "Techniquement oui, si vous avez des compétences en plomberie. Le robinet se branche sur l'arrivée d'eau existante (raccords standards). Les modules sous évier (boiler, chiller, filtre) se connectent ensuite. Notice complète fournie. Mais attention : cela implique une intervention électrique (boiler 230V) et des raccords sous pression. Si vous n'êtes pas sûr, faites appel à un installateur. Nous avons un réseau de partenaires dans toute la France (installation 280€ TTC). Pas de honte à déléguer : c'est votre cuisine, pas un chantier d'apprentissage."
   },
   {
     category: 'Installation',
     question: "Combien de temps dure l'installation ?",
-    answer: "Comptez 2 à 3 heures pour un professionnel. Si vous le faites vous-même et que c'est votre première fois, prévoyez une demi-journée. L'installation inclut : dépose de l'ancien robinet, perçage si nécessaire (Ø 35mm), fixation du nouveau, raccordement eau froide/chaude, installation des modules sous évier, branchement électrique, test de tous les circuits. Ce n'est pas compliqué, c'est juste méthodique."
+    answer: "Comptez environ 1h pour un professionnel. Si vous le faites vous-même et que c'est votre première fois, prévoyez un peu plus de temps. L'installation inclut : dépose de l'ancien robinet, perçage si nécessaire (Ø 35mm), fixation du nouveau, raccordement eau froide/chaude, installation des modules sous évier, branchement électrique, test de tous les circuits. Ce n'est pas compliqué, c'est juste méthodique."
   },
   {
     category: 'Installation',
@@ -78,7 +78,7 @@ const faqData: FAQItem[] = [
   {
     category: 'Prix',
     question: "Y a-t-il des frais cachés ?",
-    answer: "Non. À partir de 490€ pour le Pure (eau filtrée + bouillante), 890€ pour le Spark (+ gazeuse + froide), 990€ pour le One (toutes les eaux). Toutes les finitions sont incluses dans le prix. Ce qui est EN PLUS (optionnel) : installation par professionnel (prix à définir selon région), extension de garantie à 10 ans (prix à définir), formule d'entretien annuelle (59-139€/an selon usage). Garantie 3 ans incluse sur tous les modèles. Tout est transparent. Zéro surprise."
+    answer: "Non. À partir de 490€ pour le Pure (eau filtrée + bouillante), 890€ pour le Spark (+ gazeuse + froide), 990€ pour le One (toutes les eaux). Toutes les finitions sont incluses dans le prix. Ce qui est EN PLUS (optionnel) : installation par professionnel (280€ TTC), extension de garantie à 10 ans (prix à définir), formule d'entretien annuelle (59-139€/an selon usage). Garantie 3 ans incluse sur tous les modèles. Tout est transparent. Zéro surprise."
   },
   {
     category: 'Prix',

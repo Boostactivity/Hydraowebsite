@@ -23,7 +23,7 @@ interface VideoContent {
 const VIDEOS: VideoContent[] = [
   {
     id: '1',
-    title: 'Installation HYDRAL en 15 minutes : tutoriel complet',
+    title: 'Installation HYDRAL en moins d\'1h : tutoriel complet',
     description: 'Suivez notre expert pas à pas pour installer votre robinet HYDRAL sans plombier. Outils nécessaires, astuces et pièges à éviter.',
     thumbnail: 'https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?w=800&h=500&fit=crop',
     duration: '15:23',
@@ -34,7 +34,7 @@ const VIDEOS: VideoContent[] = [
   },
   {
     id: '2',
-    title: 'Témoignage : Comment j\'économise 1200€/an avec HYDRAL',
+    title: 'Témoignage : Comment j\'économise jusqu\'à 1 000€/an avec HYDRAL',
     description: 'Marie, mère de 3 enfants à Lyon, partage son expérience après 1 an d\'utilisation. Calculs détaillés et surprise à la clé !',
     thumbnail: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&h=500&fit=crop',
     duration: '8:45',

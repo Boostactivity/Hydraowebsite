@@ -103,15 +103,15 @@ export function InstallationWizard({ className = '', onComplete }: InstallationW
 
     if (complexity <= 2) {
       installationType = 'simple';
-      estimatedTime = '1-2 heures';
+      estimatedTime = 'moins d\'1h';
       estimatedCost = 0; // Inclus
     } else if (complexity <= 5) {
       installationType = 'standard';
-      estimatedTime = '2-3 heures';
+      estimatedTime = 'environ 1h';
       estimatedCost = 0; // Inclus
     } else {
       installationType = 'complex';
-      estimatedTime = '3-4 heures';
+      estimatedTime = 'environ 1h';
       estimatedCost = 150; // Travaux supplémentaires
     }
 

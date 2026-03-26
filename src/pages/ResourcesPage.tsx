@@ -43,7 +43,7 @@ const CASE_STUDIES: CaseStudy[] = [
   },
   {
     id: '2',
-    title: 'Famille de 5 personnes : 1200€ économisés',
+    title: 'Famille de 5 personnes : 1 000€ économisés',
     client: 'Famille Martin',
     location: 'Lyon',
     situation: 'Famille avec 3 enfants, grosse consommation d\'eau pétillante (15 packs/mois)',

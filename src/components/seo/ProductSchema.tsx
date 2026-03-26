@@ -120,7 +120,7 @@ export function HYDRALProductSchema() {
       sku="HYDRAL-5EN1-001"
       rating={{
         value: 4.9,
-        count: 523,
+        count: 47,
         bestRating: 5,
         worstRating: 1
       }}
