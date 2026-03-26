@@ -34,14 +34,12 @@ interface UltimateCalculatorProps {
 // ==================== TYPES ====================
 type CalculatorMode = 'simple' | 'detailed';
 type HouseholdType = 'solo' | 'couple' | 'family' | 'family-plus';
-type Priority = 'savings' | 'health' | 'environment' | 'time';
-type SKUType = 'sku2' | 'sku1' | 'sku3';
+type SKUType = 'pure' | 'spark' | 'one';
 
 // ==================== INTERFACES ====================
 interface SimpleInput {
   household: HouseholdType;
   bottlesPerWeek: number;
-  priorities: Priority[];
 }
 
 interface DetailedInput {
@@ -92,24 +90,24 @@ interface CalculatorResults {
 // ==================== SKU OPTIONS ====================
 const skuOptions = [
   {
-    value: 'sku2' as SKUType,
-    label: 'SKU2 - Bouillant + Filtré',
+    value: 'pure' as SKUType,
+    label: 'Pure - Bouillant + Filtré',
     price: 490,
     description: 'Eau bouillante instantanée + eau filtrée',
     features: ['Eau bouillante', 'Eau filtrée', 'Idéal pour thé/café'],
     hasGazeux: false
   },
   {
-    value: 'sku1' as SKUType,
-    label: 'SKU1 - Froid + Gazeux + Filtré',
+    value: 'spark' as SKUType,
+    label: 'Spark - Froid + Gazeux + Filtré',
     price: 890,
     description: 'Eau froide + eau gazeuse + eau filtrée',
     features: ['Eau froide', 'Eau gazeuse', 'Eau filtrée', 'Parfait pour apéros'],
     hasGazeux: true
   },
   {
-    value: 'sku3' as SKUType,
-    label: 'SKU3 - Complet 5-en-1',
+    value: 'one' as SKUType,
+    label: 'One - Complet 5-en-1',
     price: 990,
     description: 'Tout-en-un : bouillant + froid + gazeux + filtré',
     features: ['Eau bouillante', 'Eau froide', 'Eau gazeuse', 'Eau filtrée', 'Solution complète'],
@@ -120,14 +118,13 @@ const skuOptions = [
 
 // ==================== COMPOSANT PRINCIPAL ====================
 export function UltimateCalculator({ navigate }: UltimateCalculatorProps) {
-  const [mode, setMode] = useState<CalculatorMode>('detailed');
+  const [mode, setMode] = useState<CalculatorMode>('simple');
 
   // Simple mode state
   const [simpleStep, setSimpleStep] = useState<'input' | 'results'>('input');
   const [simpleInput, setSimpleInput] = useState<SimpleInput>({
     household: 'family',
-    bottlesPerWeek: 12,
-    priorities: []
+    bottlesPerWeek: 12
   });
 
   // Detailed mode state
@@ -149,13 +146,6 @@ export function UltimateCalculator({ navigate }: UltimateCalculatorProps) {
     { value: 'family-plus' as HouseholdType, label: 'Famille+', subtitle: '5+ personnes', icon: Users, defaultBottles: 24 }
   ];
 
-  const priorityOptions = [
-    { value: 'savings' as Priority, label: 'Économiser de l\'argent', icon: PiggyBank },
-    { value: 'health' as Priority, label: 'Protéger ma santé', icon: Heart },
-    { value: 'environment' as Priority, label: 'Réduire mes déchets plastique', icon: Leaf },
-    { value: 'time' as Priority, label: 'Gagner du temps au quotidien', icon: Clock }
-  ];
-
   useEffect(() => {
     const selected = householdOptions.find(h => h.value === simpleInput.household);
     if (selected) {
@@ -165,8 +155,8 @@ export function UltimateCalculator({ navigate }: UltimateCalculatorProps) {
 
   // Auto-select SKU based on water type
   useEffect(() => {
-    if (detailedInput.waterType === 'gazeuse' && detailedInput.selectedSKU === 'sku2') {
-      setDetailedInput(prev => ({ ...prev, selectedSKU: 'sku1' }));
+    if (detailedInput.waterType === 'gazeuse' && detailedInput.selectedSKU === 'pure') {
+      setDetailedInput(prev => ({ ...prev, selectedSKU: 'spark' }));
     }
   }, [detailedInput.waterType]);
 
@@ -218,8 +208,8 @@ export function UltimateCalculator({ navigate }: UltimateCalculatorProps) {
     const if6MonthsLater = monthlyBottleCost * 6;
 
     const peerData = simpleInput.household === 'family' || simpleInput.household === 'family-plus'
-      ? { recommendedModel: 'SKU3', recommendedSubscription: 'Standard', percentageChose: 87 }
-      : { recommendedModel: 'SKU2', recommendedSubscription: 'Essentiel', percentageChose: 76 };
+      ? { recommendedModel: 'One', recommendedSubscription: 'Standard', percentageChose: 87 }
+      : { recommendedModel: 'Pure', recommendedSubscription: 'Essentiel', percentageChose: 76 };
 
     return {
       current: { yearlyBottleCost, monthlyBottleCost, yearlyMicroplastics, yearlyPlasticKg, yearlyBottles, shoppingHours, kettleHours: kettleHoursPerYear },
@@ -267,7 +257,7 @@ export function UltimateCalculator({ navigate }: UltimateCalculatorProps) {
     const costPerDaySaved = costPerDayWithoutHydro - costPerDayWithHydro;
     const if6MonthsLater = monthlyBottleCost * 6;
 
-    const recommendedModel = skuOptions.find(s => s.value === detailedInput.selectedSKU)?.label.split(' - ')[0] || 'SKU3';
+    const recommendedModel = skuOptions.find(s => s.value === detailedInput.selectedSKU)?.label.split(' - ')[0] || 'One';
     const recommendedSub = detailedInput.householdSize <= 2 ? 'Essentiel' : detailedInput.householdSize <= 4 ? 'Standard' : 'Plus';
     const peerData = { recommendedModel, recommendedSubscription: recommendedSub, percentageChose: 87 };
 
@@ -379,14 +369,14 @@ export function UltimateCalculator({ navigate }: UltimateCalculatorProps) {
               className={`flex items-center gap-2 px-6 py-3 rounded-full transition-all duration-300 ${mode === 'detailed' ? 'bg-[#6B1E3E] text-white shadow-md' : 'text-gray-600 hover:text-gray-900'}`}
             >
               <Search className="w-4 h-4" />
-              <span className="font-medium">Mode complet</span>
+              <span className="font-medium">Mode précis</span>
             </button>
             <button
               onClick={() => { setMode('simple'); setResults(null); setSimpleStep('input'); }}
               className={`flex items-center gap-2 px-6 py-3 rounded-full transition-all duration-300 ${mode === 'simple' ? 'bg-[#6B1E3E] text-white shadow-md' : 'text-gray-600 hover:text-gray-900'}`}
             >
               <Zap className="w-4 h-4" />
-              <span className="font-medium">Mode simple</span>
+              <span className="font-medium">Mode rapide</span>
             </button>
           </div>
         </motion.div>
@@ -398,7 +388,6 @@ export function UltimateCalculator({ navigate }: UltimateCalculatorProps) {
                 simpleInput={simpleInput}
                 setSimpleInput={setSimpleInput}
                 householdOptions={householdOptions}
-                priorityOptions={priorityOptions}
                 handleCalculate={handleSimpleCalculate}
               />
             ) : results ? (
@@ -480,7 +469,7 @@ export function UltimateCalculator({ navigate }: UltimateCalculatorProps) {
 }
 
 // ==================== MODE SIMPLE : SAISIE ====================
-function SimpleInputView({ simpleInput, setSimpleInput, householdOptions, priorityOptions, handleCalculate }: any) {
+function SimpleInputView({ simpleInput, setSimpleInput, householdOptions, handleCalculate }: any) {
   return (
     <motion.div
       key="simple-input"
@@ -535,58 +524,31 @@ function SimpleInputView({ simpleInput, setSimpleInput, householdOptions, priori
             </div>
           </div>
 
-          <input
-            type="range"
-            min="0"
-            max="30"
-            value={simpleInput.bottlesPerWeek}
-            onChange={(e) => setSimpleInput((prev: any) => ({ ...prev, bottlesPerWeek: parseInt(e.target.value) }))}
-            className="w-full h-2 bg-gray-200 rounded-full appearance-none cursor-pointer slider-thumb-bordeaux"
-            style={{ background: `linear-gradient(to right, #6B1E3E 0%, #6B1E3E ${(simpleInput.bottlesPerWeek / 30) * 100}%, #E5E7EB ${(simpleInput.bottlesPerWeek / 30) * 100}%, #E5E7EB 100%)` }}
-          />
-          <div className="flex justify-between mt-2 text-sm text-gray-500">
-            <span>0</span>
-            <span>30 bouteilles</span>
+          <div className="flex items-center gap-4">
+            <button
+              onClick={() => setSimpleInput((prev: any) => ({ ...prev, bottlesPerWeek: Math.max(0, prev.bottlesPerWeek - 1) }))}
+              className="w-10 h-10 rounded-full border-2 border-[#6B1E3E] text-[#6B1E3E] hover:bg-[#6B1E3E] hover:text-white transition-all flex items-center justify-center text-lg"
+            >-</button>
+            <div className="flex-1">
+              <input
+                type="range"
+                min="0"
+                max="30"
+                value={simpleInput.bottlesPerWeek}
+                onChange={(e) => setSimpleInput((prev: any) => ({ ...prev, bottlesPerWeek: parseInt(e.target.value) }))}
+                className="w-full h-2 bg-gray-200 rounded-full appearance-none cursor-pointer slider-thumb-bordeaux"
+                style={{ background: `linear-gradient(to right, #6B1E3E 0%, #6B1E3E ${(simpleInput.bottlesPerWeek / 30) * 100}%, #E5E7EB ${(simpleInput.bottlesPerWeek / 30) * 100}%, #E5E7EB 100%)` }}
+              />
+              <div className="flex justify-between mt-2 text-sm text-gray-500">
+                <span>0</span>
+                <span>30 bouteilles</span>
+              </div>
+            </div>
+            <button
+              onClick={() => setSimpleInput((prev: any) => ({ ...prev, bottlesPerWeek: Math.min(30, prev.bottlesPerWeek + 1) }))}
+              className="w-10 h-10 rounded-full border-2 border-[#6B1E3E] text-[#6B1E3E] hover:bg-[#6B1E3E] hover:text-white transition-all flex items-center justify-center text-lg"
+            >+</button>
           </div>
-        </div>
-      </div>
-
-      <div className="mb-10">
-        <label className="block text-lg font-medium text-gray-900 mb-2">
-          3. Vos priorités <span className="text-sm font-normal text-gray-500">(optionnel, max 2)</span>
-        </label>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {priorityOptions.map((option: any) => {
-            const Icon = option.icon;
-            const isSelected = simpleInput.priorities.includes(option.value);
-            return (
-              <motion.button
-                key={option.value}
-                onClick={() => {
-                  setSimpleInput((prev: any) => {
-                    const newPriorities = isSelected
-                      ? prev.priorities.filter((p: Priority) => p !== option.value)
-                      : prev.priorities.length < 2
-                        ? [...prev.priorities, option.value]
-                        : prev.priorities;
-                    return { ...prev, priorities: newPriorities };
-                  });
-                }}
-                disabled={!isSelected && simpleInput.priorities.length >= 2}
-                className={`flex items-center gap-4 p-5 rounded-xl border-2 transition-all duration-300 text-left ${isSelected ? 'bg-white border-[#6B1E3E] shadow-md' : 'bg-white/50 border-[#6B1E3E]/10 hover:border-[#6B1E3E]/30'} ${!isSelected && simpleInput.priorities.length >= 2 ? 'opacity-40 cursor-not-allowed' : ''}`}
-                whileHover={isSelected || simpleInput.priorities.length < 2 ? { x: 4 } : {}}
-                whileTap={{ scale: 0.98 }}
-              >
-                <div className={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center ${isSelected ? 'bg-[#6B1E3E]/10' : 'bg-gray-100'}`}>
-                  <Icon className={`w-6 h-6 ${isSelected ? 'text-[#6B1E3E]' : 'text-gray-400'}`} />
-                </div>
-                <div className="flex-1">
-                  <div className={`font-medium ${isSelected ? 'text-[#6B1E3E]' : 'text-gray-900'}`}>{option.label}</div>
-                </div>
-                {isSelected && <CheckCircle2 className="w-5 h-5 text-[#6B1E3E]" />}
-              </motion.button>
-            );
-          })}
         </div>
       </div>
 
@@ -923,7 +885,7 @@ function DetailedCalculator({
 
   // Filter SKU options: if plate, hide gazeux-only SKU1
   const filteredSKUs = detailedInput.waterType === 'plate'
-    ? skuOptions.filter((s: any) => s.value !== 'sku1')
+    ? skuOptions.filter((s: any) => s.value !== 'spark')
     : skuOptions;
 
   return (
@@ -1334,6 +1296,22 @@ function DetailedResultsView({
             </div>
           </div>
         </div>
+
+        {/* ROI Timeline - only if savings > 0 */}
+        {results.withHydro.yearlySavings > 0 && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="mt-8 p-6 bg-gradient-to-br from-[#6B1E3E]/5 to-[#6B1E3E]/10 rounded-2xl border border-[#6B1E3E]/20"
+          >
+            <h4 className="text-lg font-medium text-gray-900 mb-4">Votre retour sur investissement</h4>
+            <div className="space-y-1 text-sm text-gray-700">
+              <div>Année 1 : <strong className="text-[#6B1E3E]">{formatCurrency(results.withHydro.yearlySavings - results.withHydro.skuPrice)}</strong> {results.withHydro.yearlySavings - results.withHydro.skuPrice > 0 ? '(déjà rentabilisé)' : '(investissement initial)'}</div>
+              <div>Année 2 : <strong className="text-[#6B1E3E]">+{formatCurrency(results.withHydro.yearlySavings)}</strong></div>
+              <div>Année 5 : <strong className="text-[#6B1E3E]">+{formatCurrency(results.withHydro.savings5Years)}</strong></div>
+            </div>
+          </motion.div>
+        )}
       </div>
 
       {/* CTA */}
