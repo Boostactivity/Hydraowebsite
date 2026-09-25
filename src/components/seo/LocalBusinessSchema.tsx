@@ -53,13 +53,13 @@ export function LocalBusinessSchema({
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    '@id': 'https://hydral.fr',
+    '@id': 'https://hydral-kitchen.fr',
     name,
     description,
     image: chromeFaucet,
     telephone,
     email,
-    url: 'https://hydral.fr',
+    url: 'https://hydral-kitchen.fr',
     address: {
       '@type': 'PostalAddress',
       streetAddress: address.streetAddress,
@@ -141,11 +141,11 @@ export function OrganizationSchema() {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    '@id': 'https://hydral.fr/#organization',
+    '@id': 'https://hydral-kitchen.fr/#organization',
     name: 'HYDRAL',
     legalName: 'HYDRAL SAS',
-    url: 'https://hydral.fr',
-    logo: 'https://hydral.fr/logo.png',
+    url: 'https://hydral-kitchen.fr',
+    logo: 'https://hydral-kitchen.fr/logo.png',
     description: 'Robinet multifonction cuisine 5-en-1 HYDRAL : eau bouillante, gazeuse, filtrée. Alternative Quooker dès 490€. Leader français du robinet eau bouillante.',
     foundingDate: '2019',
     founders: [

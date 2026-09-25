@@ -15,7 +15,7 @@ interface SEOData {
   structuredData?: any;
 }
 
-const BASE_URL = 'https://hydral.fr';
+const BASE_URL = 'https://hydral-kitchen.fr';
 const BRAND_NAME = 'HYDRAL';
 const SITE_NAME = 'HYDRAL - Robinet 5-en-1 Premium';
 

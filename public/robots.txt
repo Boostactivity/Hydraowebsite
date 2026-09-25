@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
-Sitemap: https://hydral.fr/sitemap.xml
+Sitemap: https://hydral-kitchen.fr/sitemap.xml
 
 Disallow: /panier
 Disallow: /commande
