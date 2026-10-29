@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Page } from '../App';
+import { Page, PAGE_TO_PATH } from '../App';
 
 interface SEOHeadProps {
   page: Page;
@@ -135,8 +135,8 @@ function getSEOData(page: Page, productId?: string): SEOData {
       structuredData: getProductCollectionSchema()
     },
     product: {
-      title: `Robinet HYDRAL ${productId?.toUpperCase()} — Eau bouillante gazeuse filtrée | À partir de 490€ TTC`,
-      description: `Robinet multifonction ${productId?.toUpperCase()} HYDRAL : eau bouillante instantanée, gazeuse, filtrée, chaude et froide. Robinet 5-en-1 premium dès 490€ TTC. Alternative Quooker jusqu'à 3x moins cher. Livraison offerte.`,
+      title: `Robinet HYDRAL${productId ? ' ' + productId.toUpperCase() : ''} — Eau bouillante gazeuse filtrée | À partir de 490€ TTC`,
+      description: `Robinet multifonction${productId ? ' ' + productId.toUpperCase() : ''} HYDRAL : eau bouillante instantanée, gazeuse, filtrée, chaude et froide. Robinet 5-en-1 premium dès 490€ TTC. Alternative Quooker jusqu'à 3x moins cher. Livraison offerte.`,
       canonical: `${BASE_URL}/produit/${productId}`,
       keywords: ['robinet eau bouillante', 'robinet 5 en 1', 'robinet eau gazeuse cuisine', 'robinet multifonction cuisine', 'alternative quooker', `HYDRAL ${productId}`, 'robinet eau filtrée', 'robinet eau bouillante gazeuse filtrée cuisine'],
       ogType: 'product',
@@ -364,7 +364,13 @@ function getSEOData(page: Page, productId?: string): SEOData {
     }
   };
 
-  return seoPages[page] || seoPages.home;
+  const data = seoPages[page] || seoPages.home;
+  // Canonique = la VRAIE adresse de la page (table du routage). Écrites à la main, plusieurs pointaient
+  // vers des adresses qui n'existent pas (/avis, /economies, /installateurs, /demo-mobile, /produit/…) :
+  // Google ignorait alors la page (29/10/2026).
+  const chemin = PAGE_TO_PATH[page] ?? '/';
+  const canonical = `${BASE_URL}${chemin}${page === 'product' && productId ? `?product=${encodeURIComponent(productId)}` : ''}`;
+  return { ...data, canonical };
 }
 
 // Structured Data Schemas

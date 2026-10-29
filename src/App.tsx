@@ -90,8 +90,8 @@ export type Page =
   | 'personalization'
   | 'robinet-choice';
 
-// Mapping Page → URL path
-const PAGE_TO_PATH: Record<Page, string> = {
+// Mapping Page → URL path (aussi la source des canoniques, voir SEOHead)
+export const PAGE_TO_PATH: Record<Page, string> = {
   'home': '/',
   'concept': '/concept',
   'gamme': '/gamme',
