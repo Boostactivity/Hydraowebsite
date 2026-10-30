@@ -1,23 +1,23 @@
 // Product images organized by finish
-import noirMatSparkling from './noir-mat-sparkling.png';
-import noirMatBoiling from './noir-mat-boiling.png';
-import noirMatFaucet from './noir-mat-faucet.png';
+import noirMatSparkling from './noir-mat-sparkling.webp';
+import noirMatBoiling from './noir-mat-boiling.webp';
+import noirMatFaucet from './noir-mat-faucet.webp';
 
-import chromeSparkling from './chrome-sparkling.png';
-import chromeBoiling from './chrome-boiling.png';
-import chromeFaucet from './chrome-faucet.png';
+import chromeSparkling from './chrome-sparkling.webp';
+import chromeBoiling from './chrome-boiling.webp';
+import chromeFaucet from './chrome-faucet.webp';
 
-import brushedNickelSparkling from './brushed-nickel-sparkling.png';
-import brushedNickelBoiling from './brushed-nickel-boiling.png';
-import brushedNickelFaucet from './brushed-nickel-faucet.png';
+import brushedNickelSparkling from './brushed-nickel-sparkling.webp';
+import brushedNickelBoiling from './brushed-nickel-boiling.webp';
+import brushedNickelFaucet from './brushed-nickel-faucet.webp';
 
-import orBrosseSparkling from './or-brosse-sparkling.png';
-import orBrosseBoiling from './or-brosse-boiling.png';
-import orBrosseFaucet from './or-brosse-faucet.png';
+import orBrosseSparkling from './or-brosse-sparkling.webp';
+import orBrosseBoiling from './or-brosse-boiling.webp';
+import orBrosseFaucet from './or-brosse-faucet.webp';
 
-import gunMetalSparkling from './gun-metal-sparkling.png';
-import gunMetalBoiling from './gun-metal-boiling.png';
-import gunMetalFaucet from './gun-metal-faucet.png';
+import gunMetalSparkling from './gun-metal-sparkling.webp';
+import gunMetalBoiling from './gun-metal-boiling.webp';
+import gunMetalFaucet from './gun-metal-faucet.webp';
 
 export const productImages = {
   'black-matt': {

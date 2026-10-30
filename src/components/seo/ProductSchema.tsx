@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import chromeFaucet from '../../assets/products/chrome-faucet.png';
+import chromeFaucet from '../../assets/products/chrome-faucet.webp';
 
 interface ProductSchemaProps {
   name: string;

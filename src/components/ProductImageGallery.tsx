@@ -1,21 +1,21 @@
 import { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
-import mattBlackImage from 'figma:asset/cb012487c8e9251d2e8d275f7b2078135d0b6e71.png';
-import mattBlackImage2 from 'figma:asset/3f01b53a06901483d974931b853c2c7fcd2cd90e.png';
-import mattBlackImage3 from 'figma:asset/34f15b516878f9444e820ffe79c92b6f460bbcff.png';
-import chromeBrillantImage from 'figma:asset/5454ff11ee6825dc019bd65b717efd2549be9282.png';
-import chromeBrillantImage2 from 'figma:asset/2269ffd704c3a702579045450db0c1da17df5597.png';
-import chromeBrillantImage3 from 'figma:asset/d1f0deca8673def675075340fc21797fc65d573a.png';
-import nickelBrosseImage from 'figma:asset/ae387035b13c403bc67e44f640c3fa2e5cc3ed31.png';
-import nickelBrosseImage2 from 'figma:asset/b73251087b4eede05583a68f2ba45f1911f0343b.png';
-import nickelBrosseImage3 from 'figma:asset/e594697f0a193d86366d6eddad81cf3e1bc91f3d.png';
-import orBrosseImage from 'figma:asset/3b0291b7436075a29671cd3199ee81ebbb1c349d.png';
-import orBrosseImage2 from 'figma:asset/7723295fa5109e5c3b2fba0889f4a607c5ff4c10.png';
-import orBrosseImage3 from 'figma:asset/f48ee0a1110bc62466a0f7fe521ac29a4170a918.png';
-import grisMetalliseImage from 'figma:asset/69b2ac2ddbebb7df61da03657da18182f9468a9e.png';
-import grisMetalliseImage2 from 'figma:asset/1174ff5140dfe6ba9618eb25f3e0c8d4f9c0159a.png';
-import grisMetalliseImage3 from 'figma:asset/cb30198bda25705dfe0eebda1678b044f2e15012.png';
+import mattBlackImage from 'figma:asset/cb012487c8e9251d2e8d275f7b2078135d0b6e71.webp';
+import mattBlackImage2 from 'figma:asset/3f01b53a06901483d974931b853c2c7fcd2cd90e.webp';
+import mattBlackImage3 from 'figma:asset/34f15b516878f9444e820ffe79c92b6f460bbcff.webp';
+import chromeBrillantImage from 'figma:asset/5454ff11ee6825dc019bd65b717efd2549be9282.webp';
+import chromeBrillantImage2 from 'figma:asset/2269ffd704c3a702579045450db0c1da17df5597.webp';
+import chromeBrillantImage3 from 'figma:asset/d1f0deca8673def675075340fc21797fc65d573a.webp';
+import nickelBrosseImage from 'figma:asset/ae387035b13c403bc67e44f640c3fa2e5cc3ed31.webp';
+import nickelBrosseImage2 from 'figma:asset/b73251087b4eede05583a68f2ba45f1911f0343b.webp';
+import nickelBrosseImage3 from 'figma:asset/e594697f0a193d86366d6eddad81cf3e1bc91f3d.webp';
+import orBrosseImage from 'figma:asset/3b0291b7436075a29671cd3199ee81ebbb1c349d.webp';
+import orBrosseImage2 from 'figma:asset/7723295fa5109e5c3b2fba0889f4a607c5ff4c10.webp';
+import orBrosseImage3 from 'figma:asset/f48ee0a1110bc62466a0f7fe521ac29a4170a918.webp';
+import grisMetalliseImage from 'figma:asset/69b2ac2ddbebb7df61da03657da18182f9468a9e.webp';
+import grisMetalliseImage2 from 'figma:asset/1174ff5140dfe6ba9618eb25f3e0c8d4f9c0159a.webp';
+import grisMetalliseImage3 from 'figma:asset/cb30198bda25705dfe0eebda1678b044f2e15012.webp';
 
 interface ProductImage {
   id: string;

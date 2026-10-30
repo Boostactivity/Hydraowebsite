@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Page } from '../App';
+import { Page, PAGE_TO_PATH } from '../App';
 import { ShoppingCart, Menu, X, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useCart } from '../context/CartContext';
@@ -79,8 +79,10 @@ export function Header({ navigate, currentPage }: HeaderProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
-            <motion.button
-              onClick={() => navigate('home')}
+            <motion.a
+              href="/"
+              aria-label="HYDRAL — accueil"
+              onClick={(e) => { e.preventDefault(); navigate('home'); }}
               className="relative group"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
@@ -94,17 +96,18 @@ export function Header({ navigate, currentPage }: HeaderProps) {
                 whileHover={{ width: '100%' }}
                 transition={{ duration: 0.3 }}
               />
-            </motion.button>
+            </motion.a>
 
             {/* Desktop Navigation - 5 ÉLÉMENTS */}
             <nav className="hidden lg:flex items-center gap-1">
               {/* 1. Calculez vos économies - PRIORITÉ #1 */}
-              <button
-                onClick={() => navigate('savings')}
+              <a
+                href={PAGE_TO_PATH.savings}
+                onClick={(e) => { e.preventDefault(); navigate('savings'); }}
                 className="px-4 py-2 text-sm font-medium text-[#6B1E3E] hover:text-[#6B1E3E]/80 transition-colors"
               >
                 Calculez vos économies
-              </button>
+              </a>
 
               {/* 2. Choisissez votre HYDRAL */}
               <button

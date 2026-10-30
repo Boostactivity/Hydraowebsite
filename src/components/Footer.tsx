@@ -1,5 +1,5 @@
 import React from 'react';
-import { Page } from '../App';
+import { Page, PAGE_TO_PATH } from '../App';
 import { Instagram, Facebook, Twitter, Youtube, Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
 import { motion } from 'motion/react';
 
@@ -8,6 +8,12 @@ interface FooterProps {
 }
 
 export function Footer({ navigate }: FooterProps) {
+  // Vrais liens <a href> (29/10/2026) : des boutons en JavaScript, Google ne suit rien — les pages n'étaient trouvées
+  // que par le sitemap. Le clic reste géré par l'application (pas de rechargement).
+  const lien = (page: Page, params?: { legalType: 'mentions' | 'privacy' | 'cookies' | 'cgv' }) => ({
+    href: PAGE_TO_PATH[page] + (params ? `?type=${params.legalType}` : ''),
+    onClick: (e: React.MouseEvent) => { e.preventDefault(); navigate(page, params); },
+  });
   const currentYear = new Date().getFullYear();
 
   const footerSections = [
@@ -37,7 +43,8 @@ export function Footer({ navigate }: FooterProps) {
         { label: 'Pourquoi 490€ ?', page: 'prix' as Page },
         { label: 'Formules d\'entretien', page: 'subscriptions' as Page },
         { label: 'FAQ', page: 'faq' as Page },
-        { label: 'Configurateur', page: 'configurator' as Page }
+        { label: 'Configurateur', page: 'configurator' as Page },
+        { label: "Calculateur d'économies", page: 'savings' as Page }
       ]
     },
     {
@@ -46,6 +53,9 @@ export function Footer({ navigate }: FooterProps) {
         { label: 'Centre d\'aide', page: 'support' as Page },
         { label: 'Installateurs pro', page: 'installers' as Page },
         { label: 'Témoignages', page: 'testimonials' as Page },
+        { label: 'Garantie 3 ans', page: 'warranty' as Page },
+        { label: 'Blog', page: 'blog' as Page },
+        { label: 'Ressources', page: 'resources' as Page },
         { label: 'Mentions légales', page: 'legal' as Page }
       ]
     }
@@ -147,12 +157,12 @@ export function Footer({ navigate }: FooterProps) {
               <ul className="space-y-3">
                 {section.links.map((link, linkIdx) => (
                   <li key={linkIdx}>
-                    <button
-                      onClick={() => navigate(link.page)}
+                    <a
+                      {...lien(link.page)}
                       className="text-sm text-[#8B7E74] hover:text-gray-900 transition-colors font-light"
                     >
                       {link.label}
-                    </button>
+                    </a>
                   </li>
                 ))}
               </ul>
@@ -183,18 +193,18 @@ export function Footer({ navigate }: FooterProps) {
             </p>
 
             <div className="flex flex-wrap gap-4 sm:gap-6 font-light justify-center md:justify-end">
-              <button onClick={() => navigate('legal', { legalType: 'mentions' })} className="hover:text-gray-900 transition-colors">
+              <a {...lien('legal', { legalType: 'mentions' })} className="hover:text-gray-900 transition-colors">
                 Mentions légales
-              </button>
-              <button onClick={() => navigate('legal', { legalType: 'privacy' })} className="hover:text-gray-900 transition-colors">
+              </a>
+              <a {...lien('legal', { legalType: 'privacy' })} className="hover:text-gray-900 transition-colors">
                 Confidentialité
-              </button>
-              <button onClick={() => navigate('legal', { legalType: 'cgv' })} className="hover:text-gray-900 transition-colors">
+              </a>
+              <a {...lien('legal', { legalType: 'cgv' })} className="hover:text-gray-900 transition-colors">
                 CGV
-              </button>
-              <button onClick={() => navigate('legal', { legalType: 'cookies' })} className="hover:text-gray-900 transition-colors">
+              </a>
+              <a {...lien('legal', { legalType: 'cookies' })} className="hover:text-gray-900 transition-colors">
                 Cookies
-              </button>
+              </a>
             </div>
           </div>
         </div>
