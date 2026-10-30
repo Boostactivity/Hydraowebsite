@@ -339,7 +339,7 @@ export function FAQPage({ navigate }: FAQPageProps) {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="mailto:contact@hydral.fr"
+                href="mailto:boostactivityfr@gmail.com"
                 className="px-8 py-4 bg-[#6B1E3E] text-white rounded-full hover:bg-[#6B1E3E]/90 transition-colors"
               >
                 Envoyer un email

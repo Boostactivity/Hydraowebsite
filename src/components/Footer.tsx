@@ -137,9 +137,9 @@ export function Footer({ navigate }: FooterProps) {
                 <Phone className="w-4 h-4" />
                 <span>+33 6 60 96 85 16</span>
               </a>
-              <a href="mailto:contact@hydral.fr" className="flex items-center gap-3 hover:text-gray-900 transition-colors">
+              <a href="mailto:boostactivityfr@gmail.com" className="flex items-center gap-3 hover:text-gray-900 transition-colors">
                 <Mail className="w-4 h-4" />
-                <span>contact@hydral.fr</span>
+                <span>boostactivityfr@gmail.com</span>
               </a>
               <div className="flex items-center gap-3">
                 <MapPin className="w-4 h-4" />

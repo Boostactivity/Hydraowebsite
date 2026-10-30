@@ -29,7 +29,7 @@ export function LocalBusinessSchema({
   name = 'HYDRAL France',
   description = 'Robinet multifonction cuisine 5-en-1 : eau bouillante instantanée, gazeuse, filtrée. Alternative Quooker dès 490€. Livraison offerte France.',
   telephone = '+33 6 60 96 85 16',
-  email = 'contact@hydral.fr',
+  email = 'boostactivityfr@gmail.com',
   address = {
     streetAddress: '12 Avenue du President Wilson',
     addressLocality: 'Saint-Denis',
@@ -158,7 +158,7 @@ export function OrganizationSchema() {
       '@type': 'ContactPoint',
       telephone: '+33 6 60 96 85 16',
       contactType: 'Customer Service',
-      email: 'contact@hydral.fr',
+      email: 'boostactivityfr@gmail.com',
       areaServed: 'FR',
       availableLanguage: ['French', 'English']
     },

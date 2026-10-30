@@ -51,7 +51,7 @@ export function LegalPage({ navigate, type = 'mentions' }: LegalPageProps) {
                       RCS Bobigny<br />
                       Siège social : 12 Avenue du President Wilson, 93200 Saint-Denis<br />
                       Téléphone : +33 6 60 96 85 16<br />
-                      Email : contact@hydral.fr
+                      Email : boostactivityfr@gmail.com
                     </p>
                   </div>
                 </div>
@@ -133,7 +133,7 @@ export function LegalPage({ navigate, type = 'mentions' }: LegalPageProps) {
                     <li>• <strong className="text-gray-900">Droit d'opposition :</strong> refuser l'utilisation de vos données à des fins marketing</li>
                   </ul>
                   <p className="text-[#8B7E74] mt-4">
-                    Pour exercer ces droits, contactez-nous à <a href="mailto:privacy@hydral.fr" className="text-[#6B1E3E] hover:underline">privacy@hydral.fr</a>. Nous vous répondons sous 30 jours.
+                    Pour exercer ces droits, contactez-nous à <a href="mailto:boostactivityfr@gmail.com" className="text-[#6B1E3E] hover:underline">boostactivityfr@gmail.com</a>. Nous vous répondons sous 30 jours.
                   </p>
                 </div>
 
@@ -277,7 +277,7 @@ export function LegalPage({ navigate, type = 'mentions' }: LegalPageProps) {
                 <div>
                   <h2 className="text-2xl mb-4 text-gray-900">Article 10 - Litiges</h2>
                   <p className="text-[#8B7E74] leading-relaxed mb-4">
-                    En cas de litige, nous vous invitons à nous contacter en priorité à contact@hydral.fr. Nous nous engageons à trouver une solution amiable.
+                    En cas de litige, nous vous invitons à nous contacter en priorité à boostactivityfr@gmail.com. Nous nous engageons à trouver une solution amiable.
                   </p>
                   <p className="text-[#8B7E74] leading-relaxed">
                     À défaut d'accord amiable, vous pouvez recourir gratuitement à un médiateur de la consommation : Médiateur de la consommation (à désigner). En dernier recours, les tribunaux de Paris sont compétents.

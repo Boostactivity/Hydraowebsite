@@ -240,11 +240,11 @@ export function WarrantyPage({ navigate }: WarrantyPageProps) {
               <span>Contacter le support</span>
             </button>
             <a
-              href="mailto:support@hydral.fr"
+              href="mailto:boostactivityfr@gmail.com"
               className="px-8 py-4 bg-white/20 text-white rounded-full hover:bg-white/30 transition-all flex items-center gap-2 backdrop-blur-sm"
             >
               <Mail className="w-5 h-5" />
-              <span>support@hydral.fr</span>
+              <span>boostactivityfr@gmail.com</span>
             </a>
           </div>
         </motion.div>
@@ -300,7 +300,7 @@ const warrantyFaqs = [
   },
   {
     question: 'Que faire en cas de problème ?',
-    answer: 'Contactez notre support par email (support@hydral.fr) ou téléphone. Nous effectuons un diagnostic et vous guidons vers la solution adaptée : envoi de pièces, manuel de dépannage, ou retour produit selon le cas.'
+    answer: 'Contactez notre support par email (boostactivityfr@gmail.com) ou téléphone. Nous effectuons un diagnostic et vous guidons vers la solution adaptée : envoi de pièces, manuel de dépannage, ou retour produit selon le cas.'
   },
   {
     question: 'Les filtres sont-ils couverts ?',

@@ -215,7 +215,7 @@ export function InstallersPage({ navigate }: InstallersPageProps) {
                 <Mail className="w-6 h-6 text-[#6B1E3E]" />
               </div>
               <p className="text-sm text-[#8B7E74] mb-2">Email support</p>
-              <p className="text-lg text-gray-900">support@hydral.fr</p>
+              <p className="text-lg text-gray-900">boostactivityfr@gmail.com</p>
             </div>
 
             <div className="p-8 bg-white rounded-3xl border border-gray-200/50 text-center">
