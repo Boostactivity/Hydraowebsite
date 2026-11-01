@@ -185,11 +185,11 @@ export default function SubscriptionPlans({
           transition={{ delay: 0.1 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl lg:text-4xl font-light text-gray-900 mb-4">
-            Transparence <span className="text-[#6B1E3E] font-medium">totale</span> sur nos prix.
-          </h2>
+          <h1 className="text-3xl lg:text-4xl font-light text-gray-900 mb-4">
+            Abonnements filtres et CO₂ <span className="text-[#6B1E3E] font-medium">HYDRAL</span>
+          </h1>
           <p className="text-xl text-gray-600">
-            Tout est inclus. Aucun frais caché. Résiliable à tout moment.
+            Transparence totale sur nos prix. Tout est inclus. Aucun frais caché. Résiliable à tout moment.
           </p>
         </motion.div>
 

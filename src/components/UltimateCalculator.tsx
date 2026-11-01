@@ -355,12 +355,12 @@ export function UltimateCalculator({ navigate }: UltimateCalculatorProps) {
             <Sparkles className="w-4 h-4 text-[#6B1E3E]" />
             <span className="text-sm font-medium text-[#6B1E3E]">Simulateur personnalisé</span>
           </div>
-          <h2 className="mb-4">
-            <span className="block text-gray-900">Découvrez en 30 secondes</span>
+          <h1 className="mb-4">
+            <span className="block text-gray-900">Calculateur d'économies</span>
             <span className="block text-[#6B1E3E]">ce que HYDRAL change pour vous</span>
-          </h2>
+          </h1>
           <p className="text-lg text-[#6B5E54] max-w-2xl mx-auto mb-8">
-            Votre simulation personnalisée : économies, santé, environnement, temps gagné.
+            Découvrez en 30 secondes votre simulation personnalisée : économies, santé, environnement, temps gagné.
           </p>
 
           <div className="inline-flex items-center gap-2 p-1 bg-white/80 backdrop-blur-sm border-2 border-[#6B1E3E]/10 rounded-full">
